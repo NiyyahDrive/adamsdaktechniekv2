@@ -1,0 +1,1592 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#0a0a0a" />
+<title>Adams Daktechniek — Een dak waar je op kunt rekenen | Heerlen & Limburg</title>
+<meta name="description" content="Top 30 Vakbedrijf 2026–2027. Adams Daktechniek uit Heerlen: platte daken, pannendaken, dakkapellen, zinkwerk, dakrenovatie en spoedlekkages in heel Limburg. Gratis dakinspectie. Bel 06-83396082." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+
+<link rel="icon" type="image/png" href="../Images/LogoAdamsDaktechniek.png">
+
+<style>
+  :root{
+    --bg:#070707;
+    --bg-2:#0d0d0d;
+    --bg-3:#141414;
+    --line:#1f1f1f;
+    --line-2:#2a2a2a;
+    --ink:#f6f6f6;
+    --ink-dim:#a8a8a8;
+    --ink-mute:#6b6b6b;
+    --green:#5CC27A;
+    --green-2:#2E7D45;
+    --green-glow:rgba(92,194,122,0.18);
+    --radius:18px;
+    --radius-sm:12px;
+    --container:1200px;
+    --ease:cubic-bezier(.22,.61,.36,1);
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    font-family:'Inter',system-ui,-apple-system,sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.55;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
+
+  /* Subtle grid backdrop */
+  body::before{
+    content:"";
+    position:fixed;inset:0;
+    background-image:
+      radial-gradient(circle at 20% 0%, rgba(92,194,122,0.06), transparent 40%),
+      radial-gradient(circle at 80% 100%, rgba(92,194,122,0.04), transparent 50%),
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:auto, auto, 64px 64px, 64px 64px;
+    opacity:.25;
+    pointer-events:none;
+    z-index:-1;
+    mask-image:linear-gradient(180deg, rgba(0,0,0,.9), rgba(0,0,0,.2));
+  }
+
+  .container{max-width:var(--container);margin:0 auto;padding:0 24px}
+
+  /* ============ NAV ============ */
+  .nav{
+    position:fixed;top:0;left:0;right:0;z-index:50;
+    background:rgba(0,0,0,0.88);
+    backdrop-filter:blur(14px) saturate(140%);
+    -webkit-backdrop-filter:blur(14px) saturate(140%);
+    border-bottom:1px solid transparent;
+    transition:border-color .3s var(--ease), background .3s var(--ease);
+  }
+  .nav.scrolled{
+    border-color:var(--line);
+    background:rgba(0,0,0,0.95);
+  }
+  .nav-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    height:112px;
+  }
+  .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:1.5px}
+  .brand-logo{height:92px;width:auto;display:block;mix-blend-mode:lighten;filter:drop-shadow(0 0 0 transparent)}
+  .nav-links{display:flex;gap:32px;align-items:center}
+  .nav-links a{
+    font-size:14px;font-weight:500;color:var(--ink-dim);
+    position:relative;padding:6px 0;transition:color .25s var(--ease);
+  }
+  .nav-links a::after{
+    content:"";position:absolute;left:0;bottom:0;
+    width:0;height:1px;background:var(--green);
+    transition:width .3s var(--ease);
+  }
+  .nav-links a:hover{color:#fff}
+  .nav-links a:hover::after{width:100%}
+  .nav-cta{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:10px 18px;border-radius:999px;
+    background:var(--green);color:#0a0a0a;
+    font-weight:700;font-size:13px;letter-spacing:.5px;
+    transition:transform .25s var(--ease), box-shadow .25s var(--ease);
+    box-shadow:0 8px 30px var(--green-glow);
+  }
+  .nav-cta:hover{transform:translateY(-1px);box-shadow:0 12px 36px rgba(92,194,122,.35)}
+
+  .burger{display:none;width:42px;height:42px;border-radius:10px;border:1px solid var(--line-2);position:relative}
+  .burger span{position:absolute;left:11px;right:11px;height:2px;background:#fff;border-radius:2px;
+    transition:transform .45s cubic-bezier(.7,0,.3,1), opacity .25s var(--ease), top .2s var(--ease);
+    transform-origin:center;
+  }
+  .burger span:nth-child(1){top:14px}
+  .burger span:nth-child(2){top:20px}
+  .burger span:nth-child(3){top:26px}
+  .nav.open .burger span:nth-child(1){top:20px;transform:rotate(45deg)}
+  .nav.open .burger span:nth-child(2){opacity:0;transform:scaleX(0)}
+  .nav.open .burger span:nth-child(3){top:20px;transform:rotate(-45deg)}
+
+  .mobile-menu{
+    position:fixed;left:0;right:0;top:112px;
+    height:calc(100svh - 112px);
+    height:calc(100dvh - 112px);
+    background:#000;
+    z-index:49;
+    display:flex;
+    flex-direction:column;
+    padding:28px 28px 32px;
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .35s var(--ease);
+  }
+  .mobile-menu.open{opacity:1;pointer-events:auto}
+
+  .mobile-menu nav{display:block;flex:0 0 auto}
+  .mobile-menu nav a{
+    display:flex;align-items:baseline;gap:18px;
+    padding:clamp(14px, 2.6vw, 18px) 0;
+    font-family:'Manrope','Inter',sans-serif;
+    font-size:clamp(24px, 6.6vw, 32px);
+    font-weight:700;
+    letter-spacing:-.02em;
+    line-height:1;
+    color:#fff;
+    border-bottom:1px solid rgba(255,255,255,.06);
+    text-decoration:none;
+
+    opacity:0;
+    transform:translateY(14px);
+    transition:opacity .2s var(--ease), transform .25s var(--ease), color .2s var(--ease);
+  }
+  .mobile-menu.open nav a{
+    opacity:1;transform:none;
+    transition:
+      opacity .55s var(--ease) calc(var(--i,0) * 70ms + 140ms),
+      transform .8s cubic-bezier(.16,1,.3,1) calc(var(--i,0) * 70ms + 140ms),
+      color .2s var(--ease);
+  }
+  .mobile-menu nav a:last-of-type{border-bottom:none}
+  .mobile-menu nav a:active{color:var(--green)}
+  .mobile-menu nav a .mm-num{
+    font-size:11px;font-weight:600;letter-spacing:2.5px;
+    color:var(--green);opacity:.55;
+    font-family:'Inter',sans-serif;
+    width:18px;flex-shrink:0;
+  }
+
+  .mobile-menu .mm-foot{
+    margin-top:auto;
+    display:flex;flex-direction:column;gap:16px;
+    padding-top:24px;
+    border-top:1px solid rgba(255,255,255,.06);
+
+    opacity:0;
+    transform:translateY(14px);
+    transition:opacity .2s var(--ease), transform .25s var(--ease);
+  }
+  .mobile-menu.open .mm-foot{
+    opacity:1;transform:none;
+    transition:
+      opacity .55s var(--ease) 520ms,
+      transform .8s cubic-bezier(.16,1,.3,1) 520ms;
+  }
+
+  .mobile-menu .mm-cta{
+    display:block;
+    padding:20px 24px;
+    background:var(--green);color:#0a0a0a;
+    font-family:'Manrope','Inter',sans-serif;
+    font-weight:800;font-size:18px;letter-spacing:.3px;
+    text-align:center;border-radius:999px;text-decoration:none;
+    box-shadow:0 14px 40px rgba(92,194,122,.22);
+    transition:transform .2s var(--ease), box-shadow .2s var(--ease);
+  }
+  .mobile-menu .mm-cta:active{transform:scale(.985);box-shadow:0 6px 20px rgba(92,194,122,.3)}
+  .mobile-menu .mm-cta small{
+    display:block;font-size:10px;font-weight:600;
+    letter-spacing:2.5px;text-transform:uppercase;
+    opacity:.6;margin-bottom:3px;
+  }
+
+  .mobile-menu .mm-meta{
+    display:flex;align-items:center;justify-content:center;
+    gap:10px;flex-wrap:wrap;
+    font-size:12px;color:var(--ink-mute);font-weight:500;
+    letter-spacing:.2px;
+  }
+  .mobile-menu .mm-meta a{color:var(--ink-dim);text-decoration:none}
+  .mobile-menu .mm-meta a:active{color:#fff}
+  .mobile-menu .mm-meta .sep{opacity:.4}
+
+  /* ============ HERO ============ */
+  .hero{
+    position:relative;
+    min-height:100svh;
+    display:flex;align-items:center;
+    padding:120px 0 80px;
+    overflow:hidden;
+  }
+  .hero-grid{
+    display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center;
+  }
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:8px 14px;border-radius:999px;
+    border:1px solid var(--line-2);
+    background:rgba(255,255,255,.02);
+    font-size:12px;font-weight:600;letter-spacing:1.5px;
+    color:var(--ink-dim);text-transform:uppercase;
+    margin-bottom:24px;
+  }
+  .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 12px var(--green)}
+  h1{
+    font-family:'Manrope','Inter',sans-serif;
+    font-size:clamp(40px, 6.4vw, 76px);
+    line-height:1.02;font-weight:800;letter-spacing:-.02em;
+    margin-bottom:24px;
+  }
+  h1 .green{
+    background:linear-gradient(135deg,var(--green) 0%, #8be0a0 100%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  h1 .stroke{
+    -webkit-text-stroke:1.5px #fff;color:transparent;
+  }
+  .hero p.lead{
+    font-size:clamp(16px,1.6vw,19px);color:var(--ink-dim);
+    max-width:540px;margin-bottom:36px;
+  }
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:16px 26px;border-radius:999px;
+    font-weight:700;font-size:15px;letter-spacing:.3px;
+    transition:transform .25s var(--ease), background .25s var(--ease), box-shadow .25s var(--ease);
+    border:1px solid transparent;
+  }
+  .btn-primary{
+    background:var(--green);color:#0a0a0a;
+    box-shadow:0 10px 30px var(--green-glow);
+  }
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(92,194,122,.4)}
+  .btn-ghost{
+    background:transparent;border-color:var(--line-2);color:#fff;
+  }
+  .btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.04)}
+
+  .hero-stats{
+    display:flex;gap:36px;margin-top:48px;flex-wrap:wrap;
+    padding-top:28px;border-top:1px solid var(--line);
+  }
+  .stat .num{font-family:'Manrope';font-size:32px;font-weight:800;letter-spacing:-.02em}
+  .stat .num span{color:var(--green)}
+  .stat .lbl{font-size:12px;color:var(--ink-mute);text-transform:uppercase;letter-spacing:1.5px;margin-top:2px}
+  .hero-slogan{
+    margin-top:28px;font-family:'Manrope','Inter',sans-serif;
+    font-size:13px;letter-spacing:4px;color:var(--green);
+    text-transform:uppercase;font-weight:700;
+  }
+
+  /* ============ URGENCY STRIP ============ */
+  .urgency{
+    background:linear-gradient(90deg, rgba(220,38,38,0.12), rgba(220,38,38,0.04) 60%, transparent);
+    border-top:1px solid rgba(220,38,38,.2);
+    border-bottom:1px solid rgba(220,38,38,.2);
+    padding:14px 0;
+  }
+  .urgency-inner{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;font-size:14px;color:#f1f1f1}
+  .urgency-inner a{color:#fff;font-weight:700;border-bottom:1px solid rgba(255,255,255,.4);padding-bottom:1px}
+  .urgency .red-pulse{
+    width:9px;height:9px;border-radius:50%;background:#ef4444;
+    box-shadow:0 0 0 0 rgba(239,68,68,.6);animation:redPulse 2s infinite;
+  }
+  @keyframes redPulse{
+    0%{box-shadow:0 0 0 0 rgba(239,68,68,.5)}
+    70%{box-shadow:0 0 0 14px rgba(239,68,68,0)}
+    100%{box-shadow:0 0 0 0 rgba(239,68,68,0)}
+  }
+
+  /* ============ VALUES BAR ============ */
+  .values-bar{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+    background:var(--line);padding:1px 0;
+  }
+  .v-item{
+    background:var(--bg);padding:24px 16px;text-align:center;
+  }
+  .v-item .ic{font-size:14px;color:var(--green);margin-bottom:6px;letter-spacing:8px}
+  .v-item .lbl{font-family:'Manrope';font-weight:700;font-size:15px;letter-spacing:1px;text-transform:uppercase}
+
+  /* ============ TRUST BADGES ============ */
+  .badges{padding:56px 0;border-bottom:1px solid var(--line)}
+  .badges-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:24px;
+  }
+  .badge{
+    display:flex;align-items:center;gap:14px;
+    padding:18px 22px;border-radius:14px;
+    background:rgba(255,255,255,.02);
+    border:1px solid var(--line-2);
+    font-size:14px;font-weight:600;color:#e6e6e6;
+    transition:border-color .25s var(--ease);
+  }
+  .badge:hover{border-color:var(--green)}
+  .badge svg{flex-shrink:0;color:var(--green)}
+
+  /* ============ INSPECTIE SECTIE ============ */
+  .insp-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+  .insp-card{
+    padding:32px;border-radius:20px;
+    background:linear-gradient(180deg,#0e0e0e,#080808);
+    border:1px solid var(--line-2);
+  }
+  .insp-card h3{font-family:'Manrope';font-size:18px;font-weight:700;margin-bottom:18px;display:flex;align-items:center;gap:10px}
+  .insp-card h3 .shield{width:26px;height:26px;border-radius:8px;background:var(--green);display:flex;align-items:center;justify-content:center}
+  .insp-list{list-style:none;display:flex;flex-direction:column;gap:14px}
+  .insp-list li{display:flex;gap:12px;font-size:14.5px;color:var(--ink-dim);line-height:1.5}
+  .insp-list li strong{color:#fff;font-weight:600}
+  .check-g{
+    flex:0 0 22px;height:22px;border-radius:50%;
+    background:rgba(92,194,122,.15);color:var(--green);
+    font-size:13px;font-weight:700;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .insp-card .note{
+    margin-top:18px;padding-top:14px;border-top:1px solid var(--line);
+    font-size:12.5px;color:var(--ink-mute);line-height:1.5;
+  }
+
+  /* ============ AWARD STRIP ============ */
+  .award{
+    margin:40px auto;max-width:var(--container);
+    display:flex;align-items:center;gap:24px;
+    padding:28px 32px;border-radius:18px;
+    background:linear-gradient(135deg,#15281b,#0a0a0a 70%);
+    border:1px solid rgba(92,194,122,.3);
+  }
+  .award-icon{
+    width:64px;height:64px;flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;
+    background:var(--green);border-radius:14px;
+    font-family:'Manrope';font-weight:900;font-size:24px;color:#0a0a0a;
+  }
+  .award h3{font-family:'Manrope';font-size:18px;font-weight:700;margin-bottom:4px}
+  .award p{font-size:14px;color:var(--ink-dim)}
+
+  /* ============ FAQ ============ */
+  .faq{
+    border-bottom:1px solid var(--line);padding:24px 0;
+    transition:padding .3s var(--ease);
+  }
+  .faq summary{
+    list-style:none;cursor:pointer;
+    display:flex;align-items:center;justify-content:space-between;gap:20px;
+    font-family:'Manrope';font-size:19px;font-weight:600;letter-spacing:-.01em;
+  }
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{
+    content:"+";font-size:24px;color:var(--green);font-weight:400;
+    transition:transform .3s var(--ease);
+  }
+  .faq[open] summary::after{transform:rotate(45deg)}
+  .faq p{margin-top:14px;color:var(--ink-dim);font-size:15px;line-height:1.6;max-width:65ch}
+
+  /* ============ WHATSAPP FAB ============ */
+  .wa-fab{
+    position:fixed;right:18px;bottom:90px;z-index:55;
+    width:54px;height:54px;border-radius:50%;
+    background:#25D366;color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 12px 32px rgba(37,211,102,.4), 0 4px 12px rgba(0,0,0,.4);
+    transition:transform .25s var(--ease);
+  }
+  .wa-fab:hover{transform:scale(1.08)}
+  @media (min-width:981px){.wa-fab{bottom:24px}}
+
+  /* ============ PROJECTS GALLERY ============ */
+  .projects-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .project-card{
+    position:relative;border-radius:16px;overflow:hidden;
+    aspect-ratio:4/5;background:#0a0a0a;
+    border:1px solid var(--line-2);
+  }
+  .project-card img{
+    width:100%;height:100%;object-fit:cover;
+    transition:transform .8s cubic-bezier(.2,.6,.2,1);
+  }
+  .project-card:hover img{transform:scale(1.06)}
+  .project-card::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,.85) 100%);
+    pointer-events:none;
+  }
+  .project-tag{
+    position:absolute;top:16px;left:16px;z-index:2;
+    padding:6px 12px;border-radius:999px;
+    background:rgba(7,7,7,.7);backdrop-filter:blur(8px);
+    font-size:11px;letter-spacing:1.5px;text-transform:uppercase;
+    font-weight:700;color:var(--green);
+    border:1px solid rgba(92,194,122,.3);
+  }
+  .project-body{
+    position:absolute;bottom:0;left:0;right:0;z-index:2;
+    padding:22px;
+  }
+  .project-body h3{font-family:'Manrope';font-size:18px;font-weight:700;margin-bottom:4px;line-height:1.2}
+  .project-body p{font-size:13.5px;color:rgba(255,255,255,.75);line-height:1.4}
+
+  /* ============ END CTA BANNER ============ */
+  .end-cta{
+    position:relative;
+    padding:90px 0;
+    background:
+      radial-gradient(circle at 80% 50%, var(--green-glow), transparent 55%),
+      linear-gradient(180deg, #050505 0%, #0a0a0a 100%);
+    border-top:1px solid var(--line);
+    overflow:hidden;
+  }
+  .end-cta::before{
+    content:"";position:absolute;inset:0;
+    background-image:
+      linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+    background-size:64px 64px;
+    opacity:.4;
+    mask-image:radial-gradient(circle at center, #000 30%, transparent 70%);
+    pointer-events:none;
+  }
+  .end-cta-inner{
+    position:relative;z-index:1;
+    display:flex;align-items:center;justify-content:space-between;
+    gap:40px;flex-wrap:wrap;
+  }
+  .end-cta h2{
+    font-family:'Manrope';font-size:clamp(32px, 4.4vw, 48px);
+    font-weight:800;letter-spacing:-.02em;line-height:1.05;
+    margin-bottom:12px;
+  }
+  .end-cta h2 .green{
+    background:linear-gradient(135deg,var(--green) 0%, #8be0a0 100%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .end-cta p{color:var(--ink-dim);font-size:17px;max-width:48ch}
+
+  /* ============ WERKGEBIED ============ */
+  .werkgebied{padding:80px 0;background:#050505;border-top:1px solid var(--line)}
+  .city-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+  .city-chip{padding:10px 18px;border-radius:999px;background:rgba(255,255,255,.03);border:1px solid var(--line-2);font-size:14px;font-weight:600;color:#fff;transition:all .25s var(--ease)}
+  .city-chip:hover{background:rgba(92,194,122,.1);border-color:var(--green);color:var(--green);transform:translateY(-1px)}
+  .btn-xl{
+    padding:22px 34px;font-size:16px;border-radius:999px;
+    box-shadow:0 16px 50px var(--green-glow);
+  }
+  @media (max-width: 720px){
+    .end-cta{padding:64px 0}
+    .end-cta-inner{flex-direction:column;align-items:flex-start;gap:24px}
+    .btn-xl{width:100%;justify-content:center}
+  }
+
+  /* Logo card in hero */
+  .hero-logo-wrap{
+    position:relative;aspect-ratio:1/1;max-width:520px;margin-left:auto;
+    border-radius:24px;
+    background:radial-gradient(circle at 30% 20%, #1a1a1a, #060606);
+    border:1px solid var(--line-2);
+    display:flex;align-items:center;justify-content:center;
+    overflow:hidden;
+    box-shadow:0 30px 80px rgba(0,0,0,.6), inset 0 1px 0 rgba(255,255,255,.04);
+  }
+  .hero-logo-wrap::before{
+    content:"";position:absolute;inset:-1px;border-radius:24px;
+    background:conic-gradient(from 0deg, transparent 0deg, var(--green) 40deg, transparent 80deg, transparent 360deg);
+    opacity:.3;animation:rotateBorder 8s linear infinite;
+    z-index:0;
+  }
+  .hero-logo-wrap::after{
+    content:"";position:absolute;inset:1px;border-radius:23px;
+    background:radial-gradient(circle at 30% 20%, #161616, #050505);
+    z-index:1;
+  }
+  .hero-logo-wrap > img{position:relative;z-index:2;width:88%;height:auto}
+  @keyframes rotateBorder{to{transform:rotate(360deg)}}
+
+  .hero-badge{
+    position:absolute;bottom:24px;left:24px;z-index:3;
+    display:flex;align-items:center;gap:10px;
+    padding:10px 14px;border-radius:999px;
+    background:rgba(7,7,7,.7);backdrop-filter:blur(10px);
+    border:1px solid var(--line-2);
+    font-size:12px;font-weight:600;
+  }
+  .hero-badge .pulse{
+    width:8px;height:8px;border-radius:50%;background:var(--green);
+    box-shadow:0 0 0 0 var(--green);
+    animation:pulse 2s infinite;
+  }
+  @keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(92,194,122,.5)}
+    70%{box-shadow:0 0 0 14px rgba(92,194,122,0)}
+    100%{box-shadow:0 0 0 0 rgba(92,194,122,0)}
+  }
+
+  /* ============ SECTION SHELL ============ */
+  section{padding:120px 0;position:relative}
+  .section-head{margin-bottom:60px;max-width:760px}
+  .section-eyebrow{
+    font-size:12px;font-weight:700;letter-spacing:3px;
+    color:var(--green);text-transform:uppercase;margin-bottom:16px;
+    display:flex;align-items:center;gap:12px;
+  }
+  .section-eyebrow::before{
+    content:"";width:32px;height:1px;background:var(--green);
+  }
+  h2{
+    font-family:'Manrope';font-size:clamp(32px,4.4vw,52px);
+    font-weight:800;letter-spacing:-.02em;line-height:1.1;
+    margin-bottom:18px;
+  }
+  .section-head p{color:var(--ink-dim);font-size:17px;max-width:600px}
+
+  /* ============ DIENSTEN ============ */
+  .services{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
+  }
+  .service{
+    position:relative;padding:32px;border-radius:var(--radius);
+    background:linear-gradient(180deg,#0f0f0f,#0a0a0a);
+    border:1px solid var(--line);
+    overflow:hidden;
+    transition:transform .35s var(--ease), border-color .3s var(--ease);
+  }
+  .service::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(circle at var(--mx,50%) var(--my,0%), var(--green-glow), transparent 50%);
+    opacity:0;transition:opacity .4s var(--ease);
+    pointer-events:none;
+  }
+  .service:hover{transform:translateY(-4px);border-color:var(--line-2)}
+  .service:hover::before{opacity:1}
+  .service-icon{
+    width:48px;height:48px;border-radius:12px;
+    background:linear-gradient(135deg,rgba(92,194,122,.15),rgba(46,125,69,.05));
+    border:1px solid rgba(92,194,122,.25);
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:24px;color:var(--green);
+  }
+  .service h3{font-family:'Manrope';font-size:22px;font-weight:700;margin-bottom:10px;letter-spacing:-.01em}
+  .service p{color:var(--ink-dim);font-size:15px;line-height:1.6}
+  .service .arrow{
+    margin-top:24px;font-size:13px;font-weight:600;color:var(--green);
+    display:inline-flex;align-items:center;gap:8px;
+  }
+  .service .arrow svg{transition:transform .25s var(--ease)}
+  .service:hover .arrow svg{transform:translateX(4px)}
+
+  /* ============ WERKWIJZE ============ */
+  .process{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:24px;
+    position:relative;
+  }
+  .process::before{
+    content:"";position:absolute;top:32px;left:5%;right:5%;height:1px;
+    background:linear-gradient(90deg,transparent,var(--line-2) 10%,var(--line-2) 90%,transparent);
+  }
+  .step{position:relative;text-align:left}
+  .step-num{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:64px;height:64px;border-radius:50%;
+    background:var(--bg-2);border:1px solid var(--line-2);
+    font-family:'Manrope';font-size:22px;font-weight:800;
+    color:var(--green);
+    position:relative;z-index:2;margin-bottom:20px;
+  }
+  .step h4{font-family:'Manrope';font-size:18px;font-weight:700;margin-bottom:8px}
+  .step p{color:var(--ink-dim);font-size:14px;line-height:1.6}
+
+  /* ============ USP / OVER ============ */
+  .about{
+    display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;
+  }
+  .about-visual{
+    aspect-ratio:4/5;border-radius:24px;overflow:hidden;
+    background:
+      linear-gradient(180deg, rgba(0,0,0,.1) 0%, rgba(0,0,0,.35) 50%, rgba(0,0,0,.82) 100%),
+      url('../Images/pannendak-renovatie-heerlen.jpeg') center/cover no-repeat;
+    border:1px solid var(--line-2);
+    position:relative;
+    display:flex;align-items:flex-end;padding:32px;
+  }
+  .about-visual::before{
+    content:"";position:absolute;inset:0;
+    background-image:
+      repeating-linear-gradient(45deg, rgba(255,255,255,.02) 0 2px, transparent 2px 14px);
+    mask-image:linear-gradient(180deg,#000 60%,transparent);
+  }
+  .about-visual-content{position:relative;z-index:2}
+  .about-visual-content .kicker{color:var(--green);font-size:12px;letter-spacing:3px;font-weight:700;text-transform:uppercase;margin-bottom:10px}
+  .about-visual-content .big{font-family:'Manrope';font-size:36px;font-weight:800;line-height:1.05;letter-spacing:-.02em}
+
+  .usp-list{display:flex;flex-direction:column;gap:18px;margin-top:32px}
+  .usp{
+    display:flex;gap:16px;padding:18px;border-radius:var(--radius-sm);
+    background:rgba(255,255,255,.02);border:1px solid var(--line);
+    transition:border-color .25s var(--ease);
+  }
+  .usp:hover{border-color:var(--line-2)}
+  .usp-icon{
+    flex:0 0 36px;height:36px;border-radius:8px;
+    background:rgba(92,194,122,.12);color:var(--green);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .usp h5{font-size:15px;font-weight:700;margin-bottom:4px}
+  .usp p{font-size:14px;color:var(--ink-dim)}
+
+  /* ============ REVIEWS ============ */
+  .reviews{
+    display:grid;grid-template-columns:repeat(2,1fr);gap:20px;
+  }
+  .review{
+    padding:28px;border-radius:var(--radius);
+    background:linear-gradient(180deg,#0f0f0f,#0a0a0a);
+    border:1px solid var(--line);
+    display:flex;flex-direction:column;gap:16px;
+  }
+  .stars{color:var(--green);font-size:14px;letter-spacing:2px}
+  .review-text{color:#e6e6e6;font-size:15px;line-height:1.6;font-style:italic}
+  .review-author{display:flex;align-items:center;gap:12px;margin-top:auto}
+  .avatar{
+    width:40px;height:40px;border-radius:50%;
+    background:linear-gradient(135deg,var(--green-2),var(--green));
+    display:flex;align-items:center;justify-content:center;
+    font-weight:700;font-size:14px;color:#0a0a0a;
+  }
+  .review-author .name{font-weight:600;font-size:14px}
+  .review-author .loc{font-size:12px;color:var(--ink-mute)}
+
+  /* ============ CONTACT ============ */
+  .contact-wrap{
+    display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center;
+  }
+  .contact-card{
+    padding:48px;border-radius:24px;
+    background:linear-gradient(180deg,#0f0f0f,#080808);
+    border:1px solid var(--line-2);
+    position:relative;overflow:hidden;
+  }
+  .contact-card::before{
+    content:"";position:absolute;top:-50%;right:-30%;width:80%;height:200%;
+    background:radial-gradient(circle, var(--green-glow), transparent 60%);
+  }
+  .contact-card > *{position:relative;z-index:1}
+  .contact-row{display:flex;align-items:center;gap:18px;padding:18px 0;border-bottom:1px solid var(--line)}
+  .contact-row:last-of-type{border-bottom:none}
+  .contact-row .ico{
+    width:42px;height:42px;border-radius:10px;
+    background:rgba(92,194,122,.1);color:var(--green);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .contact-row .lbl{font-size:12px;color:var(--ink-mute);text-transform:uppercase;letter-spacing:1.5px}
+  .contact-row .val{font-size:17px;font-weight:600;color:#fff;margin-top:2px}
+  .contact-row a.val:hover{color:var(--green)}
+
+  /* Form */
+  .quote{
+    padding:36px;border-radius:24px;
+    background:linear-gradient(180deg,#0c0c0c,#070707);
+    border:1px solid var(--line-2);
+  }
+  .quote h3{font-family:'Manrope';font-size:24px;font-weight:700;margin-bottom:6px}
+  .quote p.muted{color:var(--ink-dim);font-size:14px;margin-bottom:22px}
+  .field{margin-bottom:14px}
+  .field label{display:block;font-size:12px;color:var(--ink-mute);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px}
+  .field input,.field select,.field textarea{
+    width:100%;padding:14px 16px;border-radius:12px;
+    background:#080808;border:1px solid var(--line-2);
+    color:#fff;font:inherit;font-size:15px;
+    transition:border-color .25s var(--ease), background .25s var(--ease);
+  }
+  .field input:focus,.field select:focus,.field textarea:focus{
+    outline:none;border-color:var(--green);background:#0c0c0c;
+  }
+  .field textarea{resize:vertical;min-height:100px}
+  .quote .btn{width:100%;justify-content:center;margin-top:8px}
+
+  /* ============ FOOTER ============ */
+
+  /* Sticky mobile call bar */
+  .mobile-cta{
+    display:none;position:fixed;bottom:14px;left:14px;right:14px;z-index:60;
+    background:rgba(7,7,7,.92);backdrop-filter:blur(14px);
+    border:1px solid var(--line-2);border-radius:16px;
+    padding:10px;gap:8px;
+    box-shadow:0 20px 50px rgba(0,0,0,.6);
+  }
+  .mobile-cta a{
+    flex:1;padding:13px 8px;border-radius:11px;font-weight:700;font-size:13.5px;
+    display:flex;align-items:center;justify-content:center;gap:7px;
+    text-decoration:none;
+  }
+  .mobile-cta .mb-call{background:var(--green);color:#0a0a0a}
+  .mobile-cta .mb-offerte{background:transparent;border:1px solid var(--green);color:var(--green)}
+  .mobile-cta .mb-mail{background:#0a0a0a;border:1px solid var(--line-2);color:#fff}
+
+  /* Reveal animations */
+  [data-reveal]{
+    opacity:0;transform:translateY(24px);
+    transition:opacity .8s var(--ease), transform .8s var(--ease);
+  }
+  [data-reveal].on{opacity:1;transform:none}
+  [data-reveal-delay="1"]{transition-delay:.08s}
+  [data-reveal-delay="2"]{transition-delay:.16s}
+  [data-reveal-delay="3"]{transition-delay:.24s}
+  [data-reveal-delay="4"]{transition-delay:.32s}
+  @media (prefers-reduced-motion: reduce){
+    *{transition:none !important;animation:none !important}
+    [data-reveal]{opacity:1;transform:none}
+  }
+
+  @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 980px){
+    .nav-inner{height:92px}
+    .brand-logo{height:72px}
+    .mobile-menu{
+      top:92px;
+      height:calc(100svh - 92px);
+      height:calc(100dvh - 92px);
+    }
+    .hero{padding:120px 0 60px;min-height:auto}
+    .hero-grid{grid-template-columns:1fr;gap:40px}
+    .hero-logo-wrap{margin:0 auto;max-width:380px}
+    .services{grid-template-columns:1fr 1fr}
+    .process{grid-template-columns:1fr 1fr;gap:32px}
+    .process::before{display:none}
+    .about{grid-template-columns:1fr;gap:48px}
+    .about-visual{aspect-ratio:auto;align-items:center;padding:48px 28px;min-height:220px}
+    .about-visual-content .big{font-size:28px}
+    .reviews{grid-template-columns:1fr}
+    .insp-grid{grid-template-columns:1fr;gap:32px}
+    .badges-grid{grid-template-columns:1fr 1fr}
+    .values-bar{grid-template-columns:1fr 1fr}
+    .award{margin:24px;padding:22px;gap:18px;flex-direction:column;text-align:center}
+    .projects-grid{grid-template-columns:1fr 1fr;gap:12px}
+    .contact-wrap{grid-template-columns:1fr;gap:32px}
+    section{padding:80px 0}
+    .nav-links{display:none}
+    .nav-cta{display:none}
+    .burger{display:block}
+    .mobile-cta{display:flex}
+  }
+  @media (max-width: 560px){
+    .services{grid-template-columns:1fr}
+    .process{grid-template-columns:1fr}
+    .contact-card,.quote{padding:28px}
+    .hero-stats{gap:24px}
+    .stat .num{font-size:26px}
+    h1{font-size:44px}
+    h2{font-size:32px}
+    .about-visual{padding:36px 22px;min-height:180px}
+    .about-visual-content .big{font-size:24px}
+    .about-visual-content .big br{display:none}
+  }
+
+  /* ============ DIENSTEN DROPDOWN ============ */
+  .nav-dropdown{position:relative}
+  .nav-dropdown > .nav-dropdown-toggle{display:flex !important;align-items:center;gap:5px;cursor:pointer}
+  .nav-dropdown > .nav-dropdown-toggle svg{transition:transform .25s var(--ease);opacity:.7}
+  .nav-dropdown:hover > .nav-dropdown-toggle svg{transform:rotate(180deg);opacity:1}
+  .nav-dropdown:hover > .nav-dropdown-toggle{color:#fff !important}
+  .nav-dropdown:hover > .nav-dropdown-toggle::after{width:100% !important}
+  .nav-dropdown-panel{
+    position:absolute;top:calc(100% + 14px);left:-24px;
+    background:rgba(0,0,0,0.96);backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+    border:1px solid var(--line-2);border-radius:16px;
+    padding:14px;width:520px;
+    opacity:0;visibility:hidden;transform:translateY(-8px);
+    transition:opacity .25s var(--ease),transform .25s var(--ease),visibility .25s;
+    display:grid;grid-template-columns:1fr 1fr;gap:2px;
+    box-shadow:0 30px 80px rgba(0,0,0,.6);z-index:51;
+  }
+  .nav-dropdown::before{content:"";position:absolute;top:100%;left:0;right:0;height:14px}
+  .nav-dropdown:hover .nav-dropdown-panel{opacity:1;visibility:visible;transform:translateY(0)}
+  .nav-dropdown-panel a{
+    padding:11px 14px !important;font-size:13.5px !important;font-weight:600 !important;
+    border-radius:10px;color:#e6e6e6 !important;
+    transition:background .15s var(--ease),color .15s var(--ease);
+    border-bottom:none !important;display:flex !important;align-items:center;gap:6px;
+    line-height:1.2 !important;
+  }
+  .nav-dropdown-panel a::after{content:none !important}
+  .nav-dropdown-panel a:hover{background:rgba(92,194,122,0.12) !important;color:var(--green) !important}
+
+  /* Mobile menu sub-section */
+  .mobile-menu .mm-sub{
+    display:none;flex-direction:column;gap:0;
+    margin:0 0 14px 0;padding:6px 0 14px;
+    border-bottom:1px solid rgba(255,255,255,.06);
+  }
+  .mobile-menu .mm-sub.open{display:flex}
+  .mobile-menu .mm-sub a{
+    padding:11px 0 11px 22px !important;
+    font-size:17px !important;font-weight:500 !important;
+    color:var(--ink-dim) !important;
+    border-bottom:none !important;
+    opacity:1 !important;transform:none !important;
+    line-height:1.2 !important;letter-spacing:0 !important;
+    transition:color .15s var(--ease) !important;
+  }
+  .mobile-menu .mm-sub a:active{color:var(--green) !important}
+  .mobile-menu .mm-trigger{cursor:pointer;position:relative}
+  .mobile-menu .mm-trigger::after{
+    content:"+" !important;color:var(--green);font-size:24px;font-weight:300;
+    margin-left:auto;transition:transform .25s var(--ease);
+    position:absolute;right:0;top:50%;transform:translateY(-50%);
+  }
+  .mobile-menu .mm-trigger.open::after{transform:translateY(-50%) rotate(45deg)}
+
+
+  /* Dropdown defensive fixes */
+  .nav-dropdown-panel{z-index:9999 !important}
+  .nav-dropdown.is-open .nav-dropdown-panel{opacity:1 !important;visibility:visible !important;transform:translateY(0) !important}
+  .nav-dropdown.is-open .nav-dropdown-toggle svg{transform:rotate(180deg) !important;opacity:1 !important}
+  .nav-dropdown::before{height:18px}
+
+
+  /* ============ FOOTER ============ */
+  footer{padding:50px 0 100px;border-top:1px solid var(--line);background:#050505}
+  .foot-grid{display:grid;grid-template-columns:2fr 1fr 1.2fr 1fr;gap:48px}
+  .foot-brand p{color:var(--ink-dim);font-size:14px;margin-top:18px;max-width:300px}
+  .foot-brand .brand-logo--footer{height:120px;mix-blend-mode:lighten}
+  .foot-slogan{margin-top:18px;font-family:'Manrope';font-size:12px;letter-spacing:3px;color:var(--green);text-transform:uppercase;font-weight:700}
+  .foot h6{font-size:12px;text-transform:uppercase;letter-spacing:2px;color:#fff;margin-bottom:18px}
+  .foot ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .foot a{color:var(--ink-dim);font-size:14px;transition:color .2s}
+  .foot a:hover{color:var(--green)}
+  .legal{margin-top:48px;padding-top:24px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;color:var(--ink-mute);font-size:12px}
+  .socials{display:flex;gap:10px}
+  .socials a{width:38px;height:38px;border-radius:10px;border:1px solid var(--line-2);background:#0a0a0a;display:flex;align-items:center;justify-content:center;color:var(--ink-dim);transition:all .25s var(--ease)}
+  .socials a:hover{color:var(--green);border-color:var(--green)}
+</style>
+</head>
+<body>
+
+<!-- ============= NAV ============= -->
+<nav class="nav" id="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="#top" aria-label="Adams Daktechniek — terug naar boven">
+      <img class="brand-logo" src="../Images/LogoAdamsDaktechniek.png" alt="Adams Daktechniek">
+    </a>
+    <div class="nav-links">
+      <div class="nav-dropdown">
+      <a href="#diensten" class="nav-dropdown-toggle">Diensten<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></a>
+      <div class="nav-dropdown-panel">
+        <a href="platte-daken.html">🏠 Platte daken</a>
+        <a href="pannendaken.html">🏡 Pannendaken</a>
+        <a href="dakkapellen.html">🪟 Dakkapellen</a>
+        <a href="zinkwerken.html">⚙️ Zinkwerken</a>
+        <a href="trespawerken.html">🧱 Trespawerken</a>
+        <a href="spoed-lekkages.html">🚨 Spoed & lekkages</a>
+        <a href="dakraam-velux.html">☀️ Dakraam / Velux</a>
+        <a href="dakisolatie.html">🌡️ Dakisolatie</a>
+        <a href="schoorstenen.html">🏭 Schoorstenen</a>
+        <a href="onderhoud-inspectie.html">🔧 Onderhoud & inspectie</a>
+        <a href="renovatie-verbouw.html">🏗️ Renovatie & verbouw</a>
+        <a href="dakreiniging.html">🧹 Dakreiniging</a>
+      </div>
+    </div>
+      <a href="projecten.html">Projecten</a>
+      <a href="#werkwijze">Werkwijze</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a class="nav-cta" href="offerte.html">
+      Offerte aanvragen
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </a>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <nav>
+      <a href="#diensten" class="mm-trigger" data-mm-toggle>Diensten</a>
+      <div class="mm-sub">
+        <a href="platte-daken.html">Platte daken</a>
+        <a href="pannendaken.html">Pannendaken</a>
+        <a href="dakkapellen.html">Dakkapellen</a>
+        <a href="zinkwerken.html">Zinkwerken</a>
+        <a href="trespawerken.html">Trespawerken</a>
+        <a href="spoed-lekkages.html">Spoed & lekkages</a>
+        <a href="dakraam-velux.html">Dakraam / Velux</a>
+        <a href="dakisolatie.html">Dakisolatie</a>
+        <a href="schoorstenen.html">Schoorstenen</a>
+        <a href="onderhoud-inspectie.html">Onderhoud & inspectie</a>
+        <a href="renovatie-verbouw.html">Renovatie & verbouw</a>
+        <a href="dakreiniging.html">Dakreiniging</a>
+      </div>
+      <a href="projecten.html"  style="--i:1">Projecten</a>
+      <a href="#werkwijze"  style="--i:2">Werkwijze</a>
+      <a href="#waarom"     style="--i:3">Waarom Adams</a>
+      <a href="#contact"    style="--i:4">Contact</a>
+    </nav>
+    <div class="mm-foot">
+      <a class="mm-cta" href="tel:0683396082"><small>Bel direct</small>06-83396082</a>
+      <div class="mm-meta">
+        <a href="mailto:info@adamsdaktechniek.nl">info@adamsdaktechniek.nl</a>
+        <span class="sep">·</span>
+        <span>Heerlen · Limburg</span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ============= HERO ============= -->
+<header class="hero" id="top">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow" data-reveal><span class="dot"></span> ★ Top 30 Vakbedrijf 2026–2027 · Heerlen</div>
+      <h1 data-reveal data-reveal-delay="1">
+        Een dak waar je<br>
+        <span class="green">op kunt rekenen.</span>
+      </h1>
+      <p class="lead" data-reveal data-reveal-delay="2">
+        Adams Daktechniek uit Heerlen verzorgt platte daken, hellende daken, dakkapellen,
+        zinkwerk en dakrenovaties in heel Limburg. Eerlijk advies, nette uitvoering, scherpe prijs.
+      </p>
+      <div class="cta-row" data-reveal data-reveal-delay="3">
+        <a class="btn btn-primary" href="tel:0683396082">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Bel direct
+        </a>
+        <a class="btn btn-ghost" href="#inspectie">
+          Gratis dakinspectie
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+      <div class="hero-stats" data-reveal data-reveal-delay="4">
+        <div class="stat"><div class="num"><span>4,9</span>★</div><div class="lbl">24 reviews</div></div>
+        <div class="stat"><div class="num"><span>10</span> jr</div><div class="lbl">Garantie uitvoering</div></div>
+        <div class="stat"><div class="num"><span>48u</span></div><div class="lbl">Offerte op de mat</div></div>
+        <div class="stat"><div class="num"><span>1u</span></div><div class="lbl">Bij spoed ter plaatse</div></div>
+      </div>
+      <div class="hero-slogan" data-reveal data-reveal-delay="4">Samen duurzaam de toekomst in.</div>
+    </div>
+    <div class="hero-logo-wrap" data-reveal data-reveal-delay="2">
+      <img src="../Images/LogoAdamsDaktechniek.png" alt="Adams Daktechniek — Kwaliteit · Vakmanschap · Duurzaam">
+      <div class="hero-badge"><span class="pulse"></span> Beschikbaar voor spoedklussen</div>
+    </div>
+  </div>
+</header>
+
+<!-- ============= URGENCY STRIP ============= -->
+<div class="urgency">
+  <div class="container urgency-inner">
+    <span class="red-pulse"></span>
+    <span>Lekkage in huis? <a href="tel:0683396082">Bel 06-83396082</a> — we zijn er vaak binnen 1 uur.</span>
+  </div>
+</div>
+
+<!-- ============= VALUES BAR ============= -->
+<div class="values-bar">
+  <div class="v-item"><div class="ic">◆</div><div class="lbl">Kwaliteit</div></div>
+  <div class="v-item"><div class="ic">◆</div><div class="lbl">Vakmanschap</div></div>
+  <div class="v-item"><div class="ic">◆</div><div class="lbl">Duurzaam</div></div>
+  <div class="v-item"><div class="ic">◆</div><div class="lbl">Betrouwbaar</div></div>
+</div>
+
+<!-- ============= TRUST BADGES ============= -->
+<section class="badges">
+  <div class="container badges-grid">
+    <div class="badge" data-reveal data-reveal-delay="1">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.5 9 8 10 4.5-1 8-5 8-10V6Z"/></svg>
+      10 jaar garantie
+    </div>
+    <div class="badge" data-reveal data-reveal-delay="2">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="9 12 11 14 15 10"/></svg>
+      VCA gecertificeerd
+    </div>
+    <div class="badge" data-reveal data-reveal-delay="3">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4"/></svg>
+      A-merk materialen
+    </div>
+    <div class="badge" data-reveal data-reveal-delay="4">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14 9 11"/></svg>
+      100% verzekerd
+    </div>
+  </div>
+</section>
+
+<!-- ============= GRATIS DAKINSPECTIE ============= -->
+<section id="inspectie">
+  <div class="container insp-grid">
+    <div data-reveal>
+      <div class="section-eyebrow">Gratis dakinspectie</div>
+      <h2>Voorkom lekkages en onverwachte kosten</h2>
+      <p style="color:var(--ink-dim);font-size:17px;margin-top:14px;max-width:52ch">
+        Niet zeker of je dak nog in goede staat is? Bij Adams Daktechniek krijg je een
+        <strong style="color:#fff">gratis dakinspectie</strong> — geen verplichtingen, geen sales-praatjes.
+        Binnen 24 uur ontvang je een helder rapport met aanbevelingen.
+      </p>
+      <a class="btn btn-primary" href="offerte.html" style="margin-top:28px">
+        Plan jouw gratis inspectie
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+    <div class="insp-card" data-reveal data-reveal-delay="1">
+      <h3>
+        <span class="shield"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0a0a0a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+        Wat we controleren
+      </h3>
+      <ul class="insp-list">
+        <li><span class="check-g">✓</span><span><strong>Dakbedekking</strong> — bitumen, pannen of zink. Scheuren, blazen en loszittende delen.</span></li>
+        <li><span class="check-g">✓</span><span><strong>Dakgoten & afvoeren</strong> — lekkages, doorstroming en bevestiging.</span></li>
+        <li><span class="check-g">✓</span><span><strong>Nokvorsten & aansluitingen</strong> — openingen die lekkage veroorzaken.</span></li>
+        <li><span class="check-g">✓</span><span><strong>Isolatie & ventilatie</strong> — warmteverlies of vochtophoping.</span></li>
+        <li><span class="check-g">✓</span><span><strong>Schoorstenen & dakkapellen</strong> — staat van loodslabben en afdichting.</span></li>
+      </ul>
+      <p class="note">Na afloop ontvang je een duidelijk inspectierapport — geschikt voor verzekering of onderhoudsbudget.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============= DIENSTEN ============= -->
+<section id="diensten">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <div class="section-eyebrow">Diensten</div>
+      <h2>Alles voor jouw dak.</h2>
+      <p>Van klein lekkageherstel tot complete dakrenovatie. Eén aanspreekpunt, vakkundig uitgevoerd in heel Limburg.</p>
+    </div>
+
+    <div class="services">
+      <a class="service" href="platte-daken.html" data-reveal data-reveal-delay="1">
+        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M3 7l9-5 9 5v10l-9 5-9-5V7z"/></svg></div>
+        <h3>Platte daken</h3>
+        <p>Bitumen en EPDM. Aanleg, vervanging en lekdetectie. Strakke aansluitingen die jaren meegaan.</p>
+      </a>
+      <a class="service" href="pannendaken.html" data-reveal data-reveal-delay="2">
+        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-8 9 8M5 10v10h14V10"/></svg></div>
+        <h3>Pannendaken</h3>
+        <p>Pannendaken, dakvervanging en isolatie. Onder elke pan: zorgvuldig vakwerk.</p>
+      </a>
+      <a class="service" href="dakkapellen.html" data-reveal data-reveal-delay="3">
+        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M3 21V8l9-5 9 5v13M9 21v-7h6v7"/></svg></div>
+        <h3>Dakkapellen</h3>
+        <p>Meer ruimte en licht op zolder. Op maat geplaatst, netjes afgewerkt en goed geïsoleerd.</p>
+      </a>
+      <a class="service" href="zinkwerken.html" data-reveal data-reveal-delay="1">
+        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17l6-6 4 4 6-6"/><path d="M14 5h6v6"/></svg></div>
+        <h3>Zinkwerken</h3>
+        <p>Goten, kilgoten, daktrimmen en aansluitingen. Strak, lekvrij en voor de lange termijn.</p>
+      </a>
+      <a class="service" href="trespawerken.html" data-reveal data-reveal-delay="2">
+        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h3l2 12h12l2-8H7"/></svg></div>
+        <h3>Trespawerken</h3>
+        <p>Duurzame trespa gevelbekleding — strak, modern en onderhoudsarm voor uitbouwen en bedrijfspanden.</p>
+      </a>
+      <a class="service" href="spoed-lekkages.html" data-reveal data-reveal-delay="3">
+        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+        <h3>Spoed & lekkages</h3>
+        <p>Lekkage in huis? Bel direct. We komen snel ter plaatse en stoppen het probleem bij de bron.</p>
+      </a>
+      <a class="service" href="dakraam-velux.html" data-reveal data-reveal-delay="1">
+        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/></svg></div>
+        <h3>Dakraam & Velux</h3>
+        <p>Plaatsing en vervanging van dakramen. Daglicht en ventilatie zonder gedoe.</p>
+      </a>
+      <a class="service" href="dakisolatie.html" data-reveal data-reveal-delay="2">
+        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M5 19l3-3M16 8l3-3"/></svg></div>
+        <h3>Isolaties</h3>
+        <p>Dak- en zolderisolatie. Lager energieverbruik, comfortabeler huis en hogere woningwaarde.</p>
+      </a>
+      <a class="service" href="schoorstenen.html" data-reveal data-reveal-delay="3">
+        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 22V8l7-5 7 5v14M9 22v-6h6v6"/><path d="M14 6h3v3"/></svg></div>
+        <h3>Schoorstenen</h3>
+        <p>Renovatie, voegwerk en loodslabben. Lekvrij en wind-bestendig.</p>
+      </a>
+      <a class="service" href="onderhoud-inspectie.html" data-reveal data-reveal-delay="1">
+        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12h18M3 6h18M3 18h18"/></svg></div>
+        <h3>Onderhoud & inspectie</h3>
+        <p>Jaarlijkse check, goten reinigen en kleine reparaties. Voorkom grote kosten later.</p>
+      </a>
+      <a class="service" href="renovatie-verbouw.html" data-reveal data-reveal-delay="2">
+        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M4 21V10l8-6 8 6v11M9 21v-6h6v6"/></svg></div>
+        <h3>Renovatie & verbouw</h3>
+        <p>Aanbouw, opbouw en verbouwingen. Eén partij voor je hele klus.</p>
+      </a>
+      <a class="service" href="dakreiniging.html" data-reveal data-reveal-delay="3">
+        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-8 9 8M5 10v10h14V10M9 16h6"/></svg></div>
+        <h3>Dakreiniging</h3>
+        <p>Mos en algen verwijderen + preventieve behandeling. Dak gaat jaren langer mee.</p>
+      </a>
+    </div>
+
+    <!-- AWARD STRIP -->
+    <div class="award" data-reveal>
+      <div class="award-icon">30</div>
+      <div>
+        <h3>Top 30 Vakbedrijf — Geselecteerd 2026–2027</h3>
+        <p>Adams Daktechniek is erkend als een van de beste 30 vakbedrijven in Nederland.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= WERKWIJZE ============= -->
+<section id="werkwijze" style="background:linear-gradient(180deg,transparent, #050505 30%, #050505 70%, transparent)">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <div class="section-eyebrow">Werkwijze</div>
+      <h2>Helder. Snel. Geen verrassingen.</h2>
+      <p>In vier stappen van eerste belletje naar afgewerkt dak. Vooraf weet je waar je aan toe bent — qua planning én qua prijs.</p>
+    </div>
+
+    <div class="process">
+      <div class="step" data-reveal data-reveal-delay="1">
+        <div class="step-num">01</div>
+        <h4>Contact</h4>
+        <p>Bel of stuur een bericht. Bij lekkage komen we vaak dezelfde dag langs.</p>
+      </div>
+      <div class="step" data-reveal data-reveal-delay="2">
+        <div class="step-num">02</div>
+        <h4>Inspectie op locatie</h4>
+        <p>Gratis dakinspectie inclusief foto's en eerlijk advies — geen verkooppraat.</p>
+      </div>
+      <div class="step" data-reveal data-reveal-delay="3">
+        <div class="step-num">03</div>
+        <h4>Vaste offerte</h4>
+        <p>Binnen 48 uur een vaste prijs. Wat er staat, is wat je betaalt. Geen meerwerk-truc.</p>
+      </div>
+      <div class="step" data-reveal data-reveal-delay="4">
+        <div class="step-num">04</div>
+        <h4>Uitvoering & garantie</h4>
+        <p>Schoon werken, op tijd opleveren, tot 10 jaar garantie op materiaal én arbeid.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= PROJECTEN ============= -->
+<section id="projecten">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <div class="section-eyebrow">Werk in beeld</div>
+      <h2>Recente projecten.</h2>
+      <p>Een greep uit ons werk. Op TikTok zie je meer voor- en na-beelden.</p>
+    </div>
+    <div class="projects-grid">
+      <article class="project-card" data-reveal data-reveal-delay="1">
+        <img src="../Images/pannendak-vervangen-heerlen.jpeg" alt="Dakdekker Adams Daktechniek aan het werk op pannendak in Heerlen — pannenvervanging" loading="lazy">
+        <span class="project-tag">Hellend dak</span>
+        <div class="project-body"><h3>Pannendak vervangen — eengezinswoning</h3><p>Volledige pannenvervanging incl. tengels en isolatie in Heerlen.</p></div>
+      </article>
+      <article class="project-card" data-reveal data-reveal-delay="2">
+        <img src="../Images/bitumen-platdak-heerlen.jpeg" alt="Bitumen plat dak aanleg met gasbrander door Adams Daktechniek in Heerlen — twee laags bitumen" loading="lazy">
+        <span class="project-tag">Plat dak</span>
+        <div class="project-body"><h3>Bitumen platdak — garage Heerlen</h3><p>Twee laags bitumen met nieuwe daktrim. Strak en lekvrij.</p></div>
+      </article>
+      <article class="project-card" data-reveal data-reveal-delay="3">
+        <img src="../Images/velux-dakraam-heerlen.jpeg" alt="VELUX dakraam plaatsing op pannendak in Heerlen — Adams Daktechniek vakkundige montage" loading="lazy">
+        <span class="project-tag">Dakraam</span>
+        <div class="project-body"><h3>VELUX dakraam plaatsen</h3><p>Vakkundige plaatsing en waterdichte aansluiting op pannendak.</p></div>
+      </article>
+      <article class="project-card" data-reveal data-reveal-delay="4">
+        <img src="../Images/zinken-daktrim-boeiboord-limburg.jpeg" alt="Zinken daktrim en boeiboord vakkundig aangebracht door Adams Daktechniek in Limburg — strak afgewerkt zinkwerk" loading="lazy">
+        <span class="project-tag">Zinkwerk</span>
+        <div class="project-body"><h3>Zinken daktrim & boeiboord</h3><p>Compleet vervangen met strakke aansluitingen — vakwerk dat decennia meegaat.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============= OVER / USP ============= -->
+<section id="over">
+  <div class="container about">
+    <div class="about-visual" data-reveal>
+      <div class="about-visual-content">
+        <div class="kicker">Sinds 2018</div>
+        <div class="big">Vakmanschap dat<br>je terugziet — en<br>nooit hoeft te zien.</div>
+      </div>
+    </div>
+    <div data-reveal data-reveal-delay="1">
+      <div class="section-eyebrow">Over Adams</div>
+      <h2>Geen verkooppraat.<br>Wel een strak dak.</h2>
+      <p style="color:var(--ink-dim);font-size:17px;margin-bottom:8px">
+        Adams Daktechniek (voorheen Mano Dak en Bouw) is een familiebedrijf uit Heerlen. We werken voor particulieren, VvE's en aannemers in heel Limburg. Klein genoeg om persoonlijk te zijn, ervaren genoeg om de complexe klussen aan te kunnen.
+      </p>
+
+      <div class="usp-list">
+        <div class="usp">
+          <div class="usp-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div><h5>Vaste prijs vooraf</h5><p>Geen meerwerk-trucs. Wat we afspreken, is wat je betaalt.</p></div>
+        </div>
+        <div class="usp">
+          <div class="usp-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+          <div><h5>Snel ter plaatse</h5><p>Bij spoed (lekkage, stormschade) reageren we vaak binnen een dag.</p></div>
+        </div>
+        <div class="usp">
+          <div class="usp-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.5 9 8 10 4.5-1 8-5 8-10V6Z"/></svg></div>
+          <div><h5>Tot 10 jaar garantie</h5><p>Op materiaal én arbeid. Schriftelijk vastgelegd.</p></div>
+        </div>
+        <div class="usp">
+          <div class="usp-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg></div>
+          <div><h5>KvK + verzekerd</h5><p>KvK 89562135 · WA-verzekerd · BTW-nummer op offerte.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= WAAROM / FAQ ============= -->
+<section id="waarom">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <div class="section-eyebrow">Waarom Adams</div>
+      <h2>Eerlijk advies. Vakkundig werk.<br>Klaar als beloofd.</h2>
+      <p>Geen praatjes, wel een dak dat staat. We werken met vaste vakmensen, kwalitatieve materialen en houden je op elk moment op de hoogte.</p>
+    </div>
+    <div data-reveal data-reveal-delay="1">
+      <details class="faq" open>
+        <summary>Wat kost een dakdekker gemiddeld?</summary>
+        <p>Dat hangt af van type dak, oppervlakte en materiaal. We komen vrijblijvend langs en geven binnen 48 uur een duidelijke offerte met onderbouwing.</p>
+      </details>
+      <details class="faq">
+        <summary>Komen jullie ook bij spoed?</summary>
+        <p>Ja, bij acute lekkage proberen we binnen 1 uur ter plaatse te zijn in onze regio. Bel 06-83396082 voor de snelste reactie.</p>
+      </details>
+      <details class="faq">
+        <summary>Geven jullie garantie?</summary>
+        <p>Op uitvoering geven we 10 jaar garantie. Op materialen geldt de fabrieksgarantie (vaak 10–20 jaar bij A-merken).</p>
+      </details>
+      <details class="faq">
+        <summary>Is de dakinspectie echt gratis?</summary>
+        <p>Ja, in de meeste gevallen rekenen we niets voor een inspectie binnen ons werkgebied. We melden het vooraf als er kosten zijn.</p>
+      </details>
+      <details class="faq">
+        <summary>Werken jullie ook voor VvE's en bedrijven?</summary>
+        <p>Ja. Voor VvE-bestuurders en zakelijke opdrachtgevers bieden we onderhoudscontracten, jaarlijkse controleplannen en rapportages aan.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============= REVIEWS ============= -->
+<section id="reviews" style="background:#050505">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <div class="section-eyebrow">Klanten</div>
+      <h2>Wat opdrachtgevers zeggen.</h2>
+      <p>Een greep uit de reacties die we de afgelopen jaren mochten ontvangen — vrij citaten van particulieren en VvE's.</p>
+    </div>
+    <div class="reviews">
+      <div class="review" data-reveal data-reveal-delay="1">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">"Snel ter plaatse bij een lekkage en netjes opgelost. Geen geklungel, gewoon vakmanschap."</p>
+        <div class="review-author"><div class="avatar">JV</div><div><div class="name">Jan V.</div><div class="loc">Eengezinswoning, Heerlen</div></div></div>
+      </div>
+      <div class="review" data-reveal data-reveal-delay="2">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">"Heldere offerte, strakke planning, mooi opgeleverd. Komen graag terug voor de volgende klus."</p>
+        <div class="review-author"><div class="avatar">MK</div><div><div class="name">Marleen K.</div><div class="loc">VvE-bestuurder, Kerkrade</div></div></div>
+      </div>
+      <div class="review" data-reveal data-reveal-delay="3">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">"Professioneel team. Dak is helemaal top afgewerkt en ze hebben netjes opgeruimd. Echt aanrader."</p>
+        <div class="review-author"><div class="avatar">RB</div><div><div class="name">Ruud B.</div><div class="loc">Particulier, Brunssum</div></div></div>
+      </div>
+      <div class="review" data-reveal data-reveal-delay="4">
+        <div class="stars">★★★★★</div>
+        <p class="review-text">"Gratis inspectie aangevraagd — binnen 24u een helder rapport én een eerlijke prijs. Top service."</p>
+        <div class="review-author"><div class="avatar">SL</div><div><div class="name">Sandra L.</div><div class="loc">Appartement, Landgraaf</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= WERKGEBIED ============= -->
+<section id="werkgebied" class="werkgebied">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <div class="section-eyebrow">Werkgebied</div>
+      <h2>Vakwerk in heel <span style="background:linear-gradient(135deg,var(--green) 0%,#8be0a0 100%);-webkit-background-clip:text;background-clip:text;color:transparent">Zuid-Limburg</span>.</h2>
+      <p>Vanuit Heerlen rijden we dagelijks voor klussen in deze plaatsen. Klik op uw plaats voor lokale info, of bel direct als u liever overlegt.</p>
+    </div>
+    <div class="city-chips" data-reveal data-reveal-delay="1">
+      <a class="city-chip" href="dakdekker-heerlen.html">Heerlen</a>
+      <a class="city-chip" href="dakdekker-brunssum.html">Brunssum</a>
+      <a class="city-chip" href="dakdekker-hoensbroek.html">Hoensbroek</a>
+      <a class="city-chip" href="dakdekker-landgraaf.html">Landgraaf</a>
+      <a class="city-chip" href="dakdekker-kerkrade.html">Kerkrade</a>
+      <a class="city-chip" href="dakdekker-voerendaal.html">Voerendaal</a>
+      <a class="city-chip" href="dakdekker-eygelshoven.html">Eygelshoven</a>
+      <a class="city-chip" href="dakdekker-simpelveld.html">Simpelveld</a>
+      <a class="city-chip" href="dakdekker-schinveld.html">Schinveld</a>
+      <a class="city-chip" href="dakdekker-nuth.html">Nuth</a>
+      <a class="city-chip" href="dakdekker-schinnen.html">Schinnen</a>
+      <a class="city-chip" href="dakdekker-klimmen.html">Klimmen</a>
+      <a class="city-chip" href="dakdekker-valkenburg.html">Valkenburg</a>
+      <a class="city-chip" href="dakdekker-beek.html">Beek</a>
+      <a class="city-chip" href="dakdekker-geleen.html">Geleen</a>
+      <a class="city-chip" href="dakdekker-sittard.html">Sittard</a>
+      <a class="city-chip" href="dakdekker-born.html">Born</a>
+      <a class="city-chip" href="dakdekker-echt.html">Echt</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============= CONTACT ============= -->
+<section id="contact">
+  <div class="container contact-wrap">
+    <div data-reveal>
+      <div class="section-eyebrow">Contact</div>
+      <h2>Vraag een gratis<br>offerte aan.</h2>
+      <p style="color:var(--ink-dim);font-size:17px;margin-bottom:32px;max-width:480px">
+        Bel direct of laat je gegevens achter — we nemen binnen één werkdag contact op met een eerlijke prijs.
+      </p>
+
+      <div class="contact-card">
+        <div class="contact-row">
+          <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <div><div class="lbl">Telefoon</div><a class="val" href="tel:+31683396082">+31 6 83 396 082</a></div>
+        </div>
+        <div class="contact-row">
+          <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div>
+          <div><div class="lbl">E-mail</div><a class="val" href="mailto:info@adamsdaktechniek.nl">info@adamsdaktechniek.nl</a></div>
+        </div>
+        <div class="contact-row">
+          <div class="ico" style="background:rgba(37,211,102,.12)"><svg width="20" height="20" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.122 1.532 5.856L.057 23.215a.75.75 0 0 0 .922.924l5.421-1.461A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.718 9.718 0 0 1-4.964-1.356l-.355-.211-3.685.993.977-3.596-.232-.369A9.718 9.718 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg></div>
+          <div><div class="lbl">WhatsApp</div><a class="val" href="https://wa.me/31683396082?text=Hallo%20Adams%20Daktechniek%2C%20ik%20heb%20een%20vraag%20over%20mijn%20dak." target="_blank" rel="noopener" style="color:#25D366">Stuur een bericht</a></div>
+        </div>
+        <div class="contact-row">
+          <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 7-8 12-8 12s-8-5-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><div class="lbl">Werkgebied</div><div class="val">Heel Limburg & omstreken</div></div>
+        </div>
+        <div class="contact-row">
+          <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h4"/></svg></div>
+          <div><div class="lbl">KvK</div><div class="val">89562135</div></div>
+        </div>
+      </div>
+    </div>
+
+    <form class="quote" data-reveal data-reveal-delay="1" onsubmit="event.preventDefault(); alert('Bedankt! We nemen binnen één werkdag contact op.'); this.reset();">
+      <h3>Offerte aanvragen</h3>
+      <p class="muted">Vrijblijvend — reactie binnen 1 werkdag.</p>
+
+      <div class="field"><label>Naam</label><input type="text" required placeholder="Voor- en achternaam"></div>
+      <div class="field"><label>Telefoon</label><input type="tel" required placeholder="06-..."></div>
+      <div class="field"><label>E-mail</label><input type="email" placeholder="optioneel"></div>
+      <div class="field"><label>Welke dienst heeft u nodig?</label>
+        <select required>
+          <option value="">Maak een keuze…</option>
+          <option>Platte daken</option>
+          <option>Pannedaken / hellend dak</option>
+          <option>Dakkapellen</option>
+          <option>Zinkwerken</option>
+          <option>Trespawerken</option>
+          <option>Isolaties</option>
+          <option>Spoed / lekkage</option>
+          <option>Dakinspectie (gratis)</option>
+          <option>Anders</option>
+        </select>
+      </div>
+      <div class="field"><label>Toelichting</label><textarea placeholder="Beschrijf kort de situatie of vraag"></textarea></div>
+      <button class="btn btn-primary" type="submit">
+        Verstuur aanvraag
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </button>
+    </form>
+  </div>
+</section>
+
+<!-- ============= END CTA ============= -->
+<section class="end-cta">
+  <div class="container end-cta-inner">
+    <div data-reveal>
+      <div class="section-eyebrow">Vrijblijvend · Reactie binnen 1 werkdag</div>
+      <h2>Klaar voor een dak<br>dat <span class="green">staat</span>?</h2>
+      <p>Bel direct of vraag online een offerte aan — eerlijke prijs, helder advies, vakkundige uitvoering.</p>
+    </div>
+    <a class="btn btn-primary btn-xl" href="offerte.html" data-reveal data-reveal-delay="1">
+      Vraag offerte aan
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- ============= FOOTER ============= -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+
+      <!-- Brand -->
+      <div class="foot-brand">
+        <a class="brand" href="index.html" aria-label="Adams Daktechniek">
+          <img class="brand-logo brand-logo--footer" src="../Images/LogoAdamsDaktechniek.png" alt="Adams Daktechniek">
+        </a>
+        <p>Specialist in pannendaken, platte daken, zinkwerken, trespawerken, dakkapellen en isolaties. Werkzaam in heel Limburg en omgeving.</p>
+        <div class="foot-slogan">Samen duurzaam de toekomst in.</div>
+        <div class="socials" style="margin-top:18px">
+          <a href="https://www.tiktok.com/@adamsdaktechniek" aria-label="TikTok" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 8.2a6 6 0 0 1-3.5-1.1v7.4a5.7 5.7 0 1 1-5.7-5.7v3a2.7 2.7 0 1 0 2.7 2.7V2h3a3.8 3.8 0 0 0 3.5 3.4v2.8z"/></svg>
+          </a>
+          </div>
+      </div>
+
+      <!-- Diensten -->
+      <div class="foot">
+        <h6>Diensten</h6>
+        <ul>
+          <li><a href="platte-daken.html">Platte daken</a></li>
+          <li><a href="pannendaken.html">Pannendaken</a></li>
+          <li><a href="dakkapellen.html">Dakkapellen</a></li>
+          <li><a href="zinkwerken.html">Zinkwerken &amp; dakgoten</a></li>
+          <li><a href="trespawerken.html">Trespawerken</a></li>
+          <li><a href="spoed-lekkages.html">Spoed &amp; lekkages</a></li>
+          <li><a href="dakraam-velux.html">Dakraam / Velux</a></li>
+          <li><a href="dakisolatie.html">Dakisolatie</a></li>
+          <li><a href="schoorstenen.html">Schoorstenen</a></li>
+          <li><a href="onderhoud-inspectie.html">Onderhoud &amp; inspectie</a></li>
+          <li><a href="renovatie-verbouw.html">Renovatie &amp; verbouw</a></li>
+          <li><a href="dakreiniging.html">Dakreiniging</a></li>
+        </ul>
+      </div>
+
+      <!-- Werkgebied -->
+      <div class="foot">
+        <h6>Werkgebied</h6>
+        <ul style="column-count:2;column-gap:20px;-webkit-column-count:2">
+          <li><a href="dakdekker-heerlen.html">Heerlen</a></li>
+          <li><a href="dakdekker-hoensbroek.html">Hoensbroek</a></li>
+          <li><a href="dakdekker-brunssum.html">Brunssum</a></li>
+          <li><a href="dakdekker-landgraaf.html">Landgraaf</a></li>
+          <li><a href="dakdekker-kerkrade.html">Kerkrade</a></li>
+          <li><a href="dakdekker-eygelshoven.html">Eygelshoven</a></li>
+          <li><a href="dakdekker-voerendaal.html">Voerendaal</a></li>
+          <li><a href="dakdekker-simpelveld.html">Simpelveld</a></li>
+          <li><a href="dakdekker-nuth.html">Nuth</a></li>
+          <li><a href="dakdekker-schinnen.html">Schinnen</a></li>
+          <li><a href="dakdekker-schinveld.html">Schinveld</a></li>
+          <li><a href="dakdekker-klimmen.html">Klimmen</a></li>
+          <li><a href="dakdekker-valkenburg.html">Valkenburg</a></li>
+          <li><a href="dakdekker-beek.html">Beek</a></li>
+          <li><a href="dakdekker-geleen.html">Geleen</a></li>
+          <li><a href="dakdekker-sittard.html">Sittard</a></li>
+          <li><a href="dakdekker-born.html">Born</a></li>
+          <li><a href="dakdekker-echt.html">Echt</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="foot">
+        <h6>Contact</h6>
+        <ul>
+          <li><a href="tel:0683396082">06-83 396 082</a></li>
+          <li><a href="mailto:info@adamsdaktechniek.nl">info@adamsdaktechniek.nl</a></li>
+          <li>KvK 89562135</li>
+        </ul>
+        <h6 style="margin-top:24px">Bedrijf</h6>
+        <ul>
+          <li><a href="offerte.html">Offerte aanvragen</a></li>
+          <li><a href="projecten.html">Projecten</a></li>
+          <li><a href="index.html#reviews">Reviews</a></li>
+          <li><a href="index.html#werkwijze">Werkwijze</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="legal">
+      <div>&#169; <span id="yr"></span> Adams Daktechniek &middot; Alle rechten voorbehouden</div>
+      <div>KvK 89562135 &middot; Heerlen, Limburg &middot; NL</div>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp floating action button -->
+<a class="wa-fab" href="https://wa.me/31683396082?text=Hallo%20Adams%20Daktechniek%2C%20ik%20heb%20een%20vraag%20over%20mijn%20dak." target="_blank" rel="noopener" aria-label="WhatsApp Adams Daktechniek">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.122 1.532 5.856L.057 23.215a.75.75 0 0 0 .922.924l5.421-1.461A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.718 9.718 0 0 1-4.964-1.356l-.355-.211-3.685.993.977-3.596-.232-.369A9.718 9.718 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+</a>
+
+<!-- Sticky mobile CTA — 3 channels -->
+<div class="mobile-cta">
+  <a class="mb-call" href="tel:0683396082" aria-label="Bel">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Bel
+  </a>
+  <a class="mb-offerte" href="offerte.html" aria-label="Offerte aanvragen">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg>
+    Offerte
+  </a>
+  <a class="mb-mail" href="mailto:info@adamsdaktechniek.nl" aria-label="E-mail">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+    Mail
+  </a>
+</div>
+
+<script>
+  // Year
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // Nav scroll state
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 12);
+  document.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  // Burger
+  const burger = document.getElementById('burger');
+  const menu = document.getElementById('mobileMenu');
+  burger.addEventListener('click', () => {
+    const open = !nav.classList.contains('open');
+    nav.classList.toggle('open', open);
+    menu.classList.toggle('open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    nav.classList.remove('open'); menu.classList.remove('open');
+    document.body.style.overflow = '';
+  }));
+
+  // Reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target);} });
+  }, {threshold:.12, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('[data-reveal]').forEach(el => io.observe(el));
+
+  // Service card cursor-tracking glow
+  document.querySelectorAll('.service').forEach(card => {
+    card.addEventListener('pointermove', (e) => {
+      const r = card.getBoundingClientRect();
+      card.style.setProperty('--mx', ((e.clientX - r.left)/r.width*100) + '%');
+      card.style.setProperty('--my', ((e.clientY - r.top)/r.height*100) + '%');
+    });
+  });
+
+  // Mobile menu Diensten accordion
+  document.querySelectorAll('[data-mm-toggle]').forEach(trigger => {
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      trigger.classList.toggle('open');
+      const sub = trigger.nextElementSibling;
+      if(sub && sub.classList.contains('mm-sub')) sub.classList.toggle('open');
+    });
+  });
+
+
+  // Diensten dropdown: click to toggle (in addition to hover)
+  document.querySelectorAll('.nav-dropdown').forEach(dd => {
+    const toggle = dd.querySelector('.nav-dropdown-toggle');
+    if (!toggle) return;
+    toggle.addEventListener('click', (e) => {
+      // On touch / narrow viewport, prevent navigation and toggle
+      const isTouch = window.matchMedia('(hover: none)').matches;
+      const isOpen = dd.classList.contains('is-open');
+      if (isTouch || !isOpen) {
+        e.preventDefault();
+        // Close other open dropdowns
+        document.querySelectorAll('.nav-dropdown.is-open').forEach(o => { if(o !== dd) o.classList.remove('is-open'); });
+        dd.classList.toggle('is-open');
+      }
+      // else allow navigation to #diensten on second click when already open via hover
+    });
+  });
+  // Close dropdown when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.nav-dropdown')) {
+      document.querySelectorAll('.nav-dropdown.is-open').forEach(o => o.classList.remove('is-open'));
+    }
+  });
+
+</script>
+
+</body>
+</html>

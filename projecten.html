@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#0a0a0a" />
+<title>Projecten — Adams Daktechniek | Dakwerk in Heerlen & Limburg</title>
+<meta name="description" content="Bekijk projecten van Adams Daktechniek: pannendaken, platte daken, dakramen, zinkwerk en renovaties in Heerlen en heel Limburg." />
+<link rel="canonical" href="https://adamsdaktechniek.nl/projecten.html" />
+<link rel="icon" type="image/png" href="../Images/LogoAdamsDaktechniek.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#070707; --bg-2:#0d0d0d; --line:#1f1f1f; --line-2:#2a2a2a;
+  --ink:#f6f6f6; --ink-dim:#a8a8a8; --green:#5CC27A; --green-2:#2E7D45;
+  --radius:18px; --radius-sm:12px; --container:1200px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.container{width:100%;max-width:var(--container);margin:0 auto;padding:0 24px}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(0,0,0,0.88);backdrop-filter:blur(14px) saturate(140%);border-bottom:1px solid transparent;transition:all .3s var(--ease)}
+.nav.scrolled{border-color:var(--line);background:rgba(0,0,0,0.95)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:112px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand-logo{height:92px;width:auto;display:block;mix-blend-mode:lighten}
+.nav-links{display:flex;gap:32px;align-items:center}
+  .nav-links a{font-size:14px;font-weight:500;color:var(--ink-dim);position:relative;padding:6px 0;transition:color .25s var(--ease)}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--green);transition:width .3s var(--ease)}
+.nav-links a:hover{color:#fff}
+.nav-links a:hover::after{width:100%}
+.nav-cta{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;background:var(--green);color:#0a0a0a;font-weight:700;font-size:13px;letter-spacing:.5px}
+.burger{display:none;width:42px;height:42px;border-radius:10px;border:1px solid var(--line-2);position:relative}
+.burger span{position:absolute;left:11px;right:11px;height:2px;background:#fff;border-radius:2px;transition:all .3s var(--ease)}
+.burger span:nth-child(1){top:14px}.burger span:nth-child(2){top:20px}.burger span:nth-child(3){top:26px}
+.nav.open .burger span:nth-child(1){top:20px;transform:rotate(45deg)}
+.nav.open .burger span:nth-child(2){opacity:0}
+.nav.open .burger span:nth-child(3){top:20px;transform:rotate(-45deg)}
+.mobile-menu{position:fixed;left:0;right:0;top:112px;height:calc(100svh - 112px);background:#000;z-index:49;padding:28px;opacity:0;pointer-events:none;transition:opacity .35s var(--ease)}
+.mobile-menu.open{opacity:1;pointer-events:auto}
+.mobile-menu nav a{display:block;padding:14px 0;font-family:'Manrope';font-size:26px;font-weight:700;color:#fff;border-bottom:1px solid rgba(255,255,255,.06)}
+.mobile-cta{display:none;position:fixed;bottom:14px;left:14px;right:14px;z-index:60;background:rgba(7,7,7,.92);backdrop-filter:blur(14px);border:1px solid var(--line-2);border-radius:16px;padding:10px;gap:8px}
+.mobile-cta a{flex:1;padding:13px 8px;border-radius:11px;font-weight:700;font-size:13.5px;display:flex;align-items:center;justify-content:center;gap:7px}
+.mobile-cta .mb-call{background:var(--green);color:#0a0a0a}
+.mobile-cta .mb-offerte{background:transparent;border:1px solid var(--green);color:var(--green)}
+/* DROPDOWN */
+.nav-dropdown{position:relative}
+.nav-dropdown > .nav-dropdown-toggle{display:flex !important;align-items:center;gap:5px;cursor:pointer}
+.nav-dropdown > .nav-dropdown-toggle svg{transition:transform .25s var(--ease);opacity:.7}
+.nav-dropdown:hover > .nav-dropdown-toggle svg{transform:rotate(180deg);opacity:1}
+.nav-dropdown:hover > .nav-dropdown-toggle{color:#fff !important}
+.nav-dropdown:hover > .nav-dropdown-toggle::after{width:100% !important}
+.nav-dropdown-panel{position:absolute;top:calc(100% + 14px);left:-24px;background:rgba(0,0,0,0.96);backdrop-filter:blur(20px);border:1px solid var(--line-2);border-radius:16px;padding:14px;width:520px;opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .25s var(--ease),transform .25s var(--ease),visibility .25s;display:grid;grid-template-columns:1fr 1fr;gap:2px;box-shadow:0 30px 80px rgba(0,0,0,.6);z-index:51}
+.nav-dropdown::before{content:"";position:absolute;top:100%;left:0;right:0;height:14px}
+.nav-dropdown:hover .nav-dropdown-panel{opacity:1;visibility:visible;transform:translateY(0)}
+.nav-dropdown-panel a{padding:11px 14px !important;font-size:13.5px !important;font-weight:600 !important;border-radius:10px;color:#e6e6e6 !important;transition:background .15s var(--ease),color .15s var(--ease);border-bottom:none !important;display:flex !important;align-items:center;gap:6px;line-height:1.2 !important}
+.nav-dropdown-panel a::after{content:none !important}
+.nav-dropdown-panel a:hover{background:rgba(92,194,122,0.12) !important;color:var(--green) !important}
+/* MOBILE SUB */
+.mobile-menu .mm-sub{display:none;flex-direction:column;gap:0;margin:0 0 14px 0;padding:6px 0 14px;border-bottom:1px solid rgba(255,255,255,.06)}
+.mobile-menu .mm-sub.open{display:flex}
+.mobile-menu .mm-sub a{padding:11px 0 11px 22px !important;font-size:17px !important;font-weight:500 !important;color:var(--ink-dim) !important;border-bottom:none !important;line-height:1.2 !important}
+.mobile-menu .mm-sub a:active{color:var(--green) !important}
+.mobile-menu .mm-trigger{cursor:pointer;position:relative}
+.mobile-menu .mm-trigger::after{content:"+";position:absolute;right:0;top:50%;transform:translateY(-50%);font-size:24px;color:var(--green);font-weight:400;transition:transform .3s var(--ease)}
+.mobile-menu .mm-trigger.open::after{transform:translateY(-50%) rotate(45deg)}
+@media (max-width:980px){.nav-inner{height:92px}.brand-logo{height:72px}.mobile-menu{top:92px;height:calc(100svh - 92px)}.nav-links,.nav-cta{display:none}.burger{display:block}.mobile-cta{display:flex}}
+/* push page-hero below fixed nav */
+.page-hero{padding-top:170px}
+
+/* HERO */
+.page-hero{padding:90px 0 50px;border-bottom:1px solid var(--line)}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--green);font-size:12px;letter-spacing:3px;text-transform:uppercase;font-weight:700;margin-bottom:18px}
+.eyebrow .dot{width:6px;height:6px;background:var(--green);border-radius:50%}
+.page-hero h1{font-family:'Manrope';font-size:clamp(36px,5vw,64px);font-weight:800;line-height:1.05;letter-spacing:-.02em;margin-bottom:18px}
+.page-hero h1 em{font-style:normal;color:var(--green)}
+.page-hero p{color:var(--ink-dim);max-width:62ch;font-size:17px}
+
+/* FILTERS */
+.filters{display:flex;flex-wrap:wrap;gap:10px;padding:32px 0 24px;border-bottom:1px solid var(--line)}
+.filter-btn{padding:10px 18px;border-radius:999px;background:rgba(255,255,255,.03);border:1px solid var(--line);color:var(--ink-dim);font-size:14px;font-weight:500;cursor:pointer;transition:all .25s}
+.filter-btn:hover{border-color:var(--line-2);color:var(--ink)}
+.filter-btn.active{background:var(--green);color:#072e15;border-color:var(--green);font-weight:700}
+.filter-count{margin-left:6px;opacity:.6;font-size:12px}
+
+/* GALLERY */
+.gallery{padding:48px 0 100px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media (max-width:900px){.gallery{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.gallery{grid-template-columns:1fr}}
+.card{border-radius:16px;overflow:hidden;background:var(--bg-2);border:1px solid var(--line);position:relative;display:block;transition:transform .3s var(--ease),border-color .3s var(--ease)}
+.card:hover{transform:translateY(-3px);border-color:var(--line-2)}
+.card-img{aspect-ratio:4/3;width:100%;object-fit:cover;background:#111;transition:transform .5s var(--ease)}
+.card:hover .card-img{transform:scale(1.03)}
+.card-tag{position:absolute;top:14px;left:14px;padding:5px 11px;border-radius:999px;background:rgba(0,0,0,.7);backdrop-filter:blur(8px);font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--green)}
+.card-body{padding:20px}
+.card-body h3{font-family:'Manrope';font-size:17px;font-weight:700;margin-bottom:6px}
+.card-body p{color:var(--ink-dim);font-size:14px}
+.empty{grid-column:1/-1;text-align:center;padding:60px;color:var(--ink-dim)}
+
+/* VIDEO PROJECTEN */
+.video-projects{padding:10px 0 72px}
+.video-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;margin-bottom:18px}
+.video-head h2{font-family:'Manrope';font-size:clamp(26px,3vw,38px);font-weight:800;letter-spacing:-.02em}
+.video-head p{color:var(--ink-dim);max-width:62ch;font-size:15px}
+.video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.video-card{border-radius:16px;overflow:hidden;background:var(--bg-2);border:1px solid var(--line);transition:transform .25s var(--ease),border-color .25s var(--ease)}
+.video-card:hover{transform:translateY(-3px);border-color:var(--line-2)}
+.video-thumb{display:block;position:relative;aspect-ratio:9/16;background:linear-gradient(150deg,#191919,#0b0b0b)}
+.video-thumb::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(circle at 25% 20%,rgba(92,194,122,.24),transparent 45%),
+  radial-gradient(circle at 80% 82%,rgba(92,194,122,.16),transparent 50%)}
+.video-tag{position:absolute;top:10px;left:10px;padding:5px 10px;border-radius:999px;background:rgba(0,0,0,.7);border:1px solid var(--line-2);font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--green)}
+.video-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.62);border:1px solid rgba(255,255,255,.25)}
+.video-meta{position:absolute;left:10px;right:10px;bottom:10px;display:flex;justify-content:space-between;font-size:12px}
+.video-chip{padding:4px 8px;border-radius:999px;background:rgba(0,0,0,.66);border:1px solid var(--line-2);color:#d7d7d7}
+.video-body{padding:16px}
+.video-body h3{font-family:'Manrope';font-size:18px;line-height:1.25;margin-bottom:6px}
+.video-body p{color:var(--ink-dim);font-size:14px;margin-bottom:14px}
+.video-actions{display:flex;gap:10px;flex-wrap:wrap}
+.video-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:10px 14px;border-radius:10px;font-size:13px;font-weight:700;border:1px solid var(--line-2);background:#0c0c0c;color:#eee;transition:all .2s var(--ease)}
+.video-btn:hover{border-color:var(--green);color:var(--green)}
+.video-btn.primary{background:var(--green);border-color:var(--green);color:#072e15}
+.video-btn.primary:hover{filter:brightness(1.03);color:#072e15}
+@media (max-width:1020px){.video-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:620px){.video-head{flex-direction:column;align-items:flex-start}.video-grid{grid-template-columns:1fr}}
+
+/* CTA */
+.cta{padding:64px 0;border-top:1px solid var(--line);text-align:center;background:linear-gradient(180deg,transparent,rgba(92,194,122,.05))}
+.cta h2{font-family:'Manrope';font-size:32px;font-weight:800;margin-bottom:12px;letter-spacing:-.02em}
+.cta p{color:var(--ink-dim);margin-bottom:24px}
+.cta a{display:inline-flex;gap:8px;align-items:center;background:var(--green);color:#072e15;padding:14px 24px;border-radius:999px;font-weight:700;font-size:15px}
+
+  /* ============ FOOTER ============ */
+  footer{padding:50px 0 100px;border-top:1px solid var(--line);background:#050505}
+  .foot-grid{display:grid;grid-template-columns:2fr 1fr 1.2fr 1fr;gap:48px}
+  .foot-brand p{color:var(--ink-dim);font-size:14px;margin-top:18px;max-width:300px}
+  .foot-brand .brand-logo--footer{height:120px;mix-blend-mode:lighten}
+  .foot-slogan{margin-top:18px;font-family:'Manrope';font-size:12px;letter-spacing:3px;color:var(--green);text-transform:uppercase;font-weight:700}
+  .foot h6{font-size:12px;text-transform:uppercase;letter-spacing:2px;color:#fff;margin-bottom:18px}
+  .foot ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .foot a{color:var(--ink-dim);font-size:14px;transition:color .2s}
+  .foot a:hover{color:var(--green)}
+  .legal{margin-top:48px;padding-top:24px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;color:var(--ink-mute);font-size:12px}
+  .socials{display:flex;gap:10px}
+  .socials a{width:38px;height:38px;border-radius:10px;border:1px solid var(--line-2);background:#0a0a0a;display:flex;align-items:center;justify-content:center;color:var(--ink-dim);transition:all .25s var(--ease)}
+  .socials a:hover{color:var(--green);border-color:var(--green)}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html" aria-label="Adams Daktechniek home"><img class="brand-logo" src="../Images/LogoAdamsDaktechniek.png" alt="Adams Daktechniek"></a>
+    <div class="nav-links">
+      <div class="nav-dropdown">
+        <a href="index.html#diensten" class="nav-dropdown-toggle">Diensten<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></a>
+        <div class="nav-dropdown-panel">
+          <a href="platte-daken.html">🏠 Platte daken</a>
+          <a href="pannendaken.html">🏡 Pannendaken</a>
+          <a href="dakkapellen.html">🪟 Dakkapellen</a>
+          <a href="zinkwerken.html">⚙️ Zinkwerken</a>
+          <a href="trespawerken.html">🧱 Trespawerken</a>
+          <a href="spoed-lekkages.html">🚨 Spoed & lekkages</a>
+          <a href="dakraam-velux.html">☀️ Dakraam / Velux</a>
+          <a href="dakisolatie.html">🌡️ Dakisolatie</a>
+          <a href="schoorstenen.html">🏭 Schoorstenen</a>
+          <a href="onderhoud-inspectie.html">🔧 Onderhoud & inspectie</a>
+          <a href="renovatie-verbouw.html">🏗️ Renovatie & verbouw</a>
+          <a href="dakreiniging.html">🧹 Dakreiniging</a>
+        </div>
+      </div>
+      <a href="projecten.html" class="active">Projecten</a>
+      <a href="index.html#werkwijze">Werkwijze</a>
+      <a href="index.html#reviews">Reviews</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+    <a class="nav-cta" href="offerte.html">Offerte aanvragen<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <nav>
+      <a href="index.html#diensten" class="mm-trigger" data-mm-toggle>Diensten</a>
+      <div class="mm-sub">
+        <a href="platte-daken.html">Platte daken</a>
+        <a href="pannendaken.html">Pannendaken</a>
+        <a href="dakkapellen.html">Dakkapellen</a>
+        <a href="zinkwerken.html">Zinkwerken</a>
+        <a href="trespawerken.html">Trespawerken</a>
+        <a href="spoed-lekkages.html">Spoed & lekkages</a>
+        <a href="dakraam-velux.html">Dakraam / Velux</a>
+        <a href="dakisolatie.html">Dakisolatie</a>
+        <a href="schoorstenen.html">Schoorstenen</a>
+        <a href="onderhoud-inspectie.html">Onderhoud & inspectie</a>
+        <a href="renovatie-verbouw.html">Renovatie & verbouw</a>
+        <a href="dakreiniging.html">Dakreiniging</a>
+      </div>
+      <a href="projecten.html">Projecten</a>
+      <a href="index.html#werkwijze">Werkwijze</a>
+      <a href="index.html#reviews">Reviews</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="container">
+    <div class="eyebrow"><span class="dot"></span> Projecten · Heerlen & Limburg</div>
+    <h1>Vakwerk dat <em>blijft staan.</em></h1>
+    <p>Een selectie van projecten die Adams Daktechniek heeft uitgevoerd in Heerlen en omstreken. Pannendaken, platte daken, zinkwerk, dakramen en renovaties — eerlijk advies en nette uitvoering.</p>
+  </div>
+</header>
+
+<section class="container">
+  <div class="filters" id="filters">
+    <!-- Filter buttons worden automatisch gegenereerd door JS -->
+  </div>
+  <div class="gallery" id="gallery">
+    <!-- Project cards worden automatisch gegenereerd door JS -->
+  </div>
+</section>
+
+<section class="video-projects">
+  <div class="container">
+    <div class="video-head">
+      <div>
+        <h2>Video Projecten op TikTok</h2>
+        <p>Bekijk korte voor- en na-video's van recente dakprojecten. Nieuwe video's verschijnen op ons TikTok account.</p>
+      </div>
+      <a class="video-btn" href="https://www.tiktok.com/@adamsdaktechniek" target="_blank" rel="noopener">Bekijk alle video's</a>
+    </div>
+
+    <div class="video-grid">
+      <article class="video-card">
+        <a class="video-thumb" href="https://www.tiktok.com/@adamsdaktechniek" target="_blank" rel="noopener" aria-label="Bekijk TikTok video van pannendak renovatie">
+          <span class="video-tag">TikTok Case</span>
+          <span class="video-play" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linejoin="round"><polygon points="8,5 19,12 8,19"/></svg>
+          </span>
+          <span class="video-meta"><span class="video-chip">Heerlen</span><span class="video-chip">Recent</span></span>
+        </a>
+        <div class="video-body">
+          <h3>Pannendak renovatie met voor/na</h3>
+          <p>Korte video met opname van startsituatie, uitvoering en eindresultaat.</p>
+          <div class="video-actions">
+            <a class="video-btn primary" href="https://www.tiktok.com/@adamsdaktechniek" target="_blank" rel="noopener">Bekijk op TikTok</a>
+            <a class="video-btn" href="offerte.html">Vraag offerte aan</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="video-card">
+        <a class="video-thumb" href="https://www.tiktok.com/@adamsdaktechniek" target="_blank" rel="noopener" aria-label="Bekijk TikTok video van plat dak herstel">
+          <span class="video-tag">TikTok Case</span>
+          <span class="video-play" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linejoin="round"><polygon points="8,5 19,12 8,19"/></svg>
+          </span>
+          <span class="video-meta"><span class="video-chip">Landgraaf</span><span class="video-chip">Recent</span></span>
+        </a>
+        <div class="video-body">
+          <h3>Bitumen dak lekvrij gemaakt</h3>
+          <p>Van inspectie tot afwerking: heldere uitleg in een korte projectvideo.</p>
+          <div class="video-actions">
+            <a class="video-btn primary" href="https://www.tiktok.com/@adamsdaktechniek" target="_blank" rel="noopener">Bekijk op TikTok</a>
+            <a class="video-btn" href="offerte.html">Plan inspectie</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="video-card">
+        <a class="video-thumb" href="https://www.tiktok.com/@adamsdaktechniek" target="_blank" rel="noopener" aria-label="Bekijk TikTok video van zinkwerk project">
+          <span class="video-tag">TikTok Case</span>
+          <span class="video-play" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linejoin="round"><polygon points="8,5 19,12 8,19"/></svg>
+          </span>
+          <span class="video-meta"><span class="video-chip">Kerkrade</span><span class="video-chip">Recent</span></span>
+        </a>
+        <div class="video-body">
+          <h3>Dakgoot en zinkrand vernieuwd</h3>
+          <p>Detailshots van strak zinkwerk en de uiteindelijke afwerking.</p>
+          <div class="video-actions">
+            <a class="video-btn primary" href="https://www.tiktok.com/@adamsdaktechniek" target="_blank" rel="noopener">Bekijk op TikTok</a>
+            <a class="video-btn" href="offerte.html">Offerte aanvragen</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+    <h2>Project in gedachten?</h2>
+    <p>Vraag een vrijblijvende offerte aan of bel direct voor een gratis dakinspectie.</p>
+    <a href="offerte.html">Offerte aanvragen →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+
+      <!-- Brand -->
+      <div class="foot-brand">
+        <a class="brand" href="index.html" aria-label="Adams Daktechniek">
+          <img class="brand-logo brand-logo--footer" src="../Images/LogoAdamsDaktechniek.png" alt="Adams Daktechniek">
+        </a>
+        <p>Specialist in pannendaken, platte daken, zinkwerken, trespawerken, dakkapellen en isolaties. Werkzaam in heel Limburg en omgeving.</p>
+        <div class="foot-slogan">Samen duurzaam de toekomst in.</div>
+        <div class="socials" style="margin-top:18px">
+          <a href="https://www.tiktok.com/@adamsdaktechniek" aria-label="TikTok" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 8.2a6 6 0 0 1-3.5-1.1v7.4a5.7 5.7 0 1 1-5.7-5.7v3a2.7 2.7 0 1 0 2.7 2.7V2h3a3.8 3.8 0 0 0 3.5 3.4v2.8z"/></svg>
+          </a>
+          </div>
+      </div>
+
+      <!-- Diensten -->
+      <div class="foot">
+        <h6>Diensten</h6>
+        <ul>
+          <li><a href="platte-daken.html">Platte daken</a></li>
+          <li><a href="pannendaken.html">Pannendaken</a></li>
+          <li><a href="dakkapellen.html">Dakkapellen</a></li>
+          <li><a href="zinkwerken.html">Zinkwerken &amp; dakgoten</a></li>
+          <li><a href="trespawerken.html">Trespawerken</a></li>
+          <li><a href="spoed-lekkages.html">Spoed &amp; lekkages</a></li>
+          <li><a href="dakraam-velux.html">Dakraam / Velux</a></li>
+          <li><a href="dakisolatie.html">Dakisolatie</a></li>
+          <li><a href="schoorstenen.html">Schoorstenen</a></li>
+          <li><a href="onderhoud-inspectie.html">Onderhoud &amp; inspectie</a></li>
+          <li><a href="renovatie-verbouw.html">Renovatie &amp; verbouw</a></li>
+          <li><a href="dakreiniging.html">Dakreiniging</a></li>
+        </ul>
+      </div>
+
+      <!-- Werkgebied -->
+      <div class="foot">
+        <h6>Werkgebied</h6>
+        <ul style="column-count:2;column-gap:20px;-webkit-column-count:2">
+          <li><a href="dakdekker-heerlen.html">Heerlen</a></li>
+          <li><a href="dakdekker-hoensbroek.html">Hoensbroek</a></li>
+          <li><a href="dakdekker-brunssum.html">Brunssum</a></li>
+          <li><a href="dakdekker-landgraaf.html">Landgraaf</a></li>
+          <li><a href="dakdekker-kerkrade.html">Kerkrade</a></li>
+          <li><a href="dakdekker-eygelshoven.html">Eygelshoven</a></li>
+          <li><a href="dakdekker-voerendaal.html">Voerendaal</a></li>
+          <li><a href="dakdekker-simpelveld.html">Simpelveld</a></li>
+          <li><a href="dakdekker-nuth.html">Nuth</a></li>
+          <li><a href="dakdekker-schinnen.html">Schinnen</a></li>
+          <li><a href="dakdekker-schinveld.html">Schinveld</a></li>
+          <li><a href="dakdekker-klimmen.html">Klimmen</a></li>
+          <li><a href="dakdekker-valkenburg.html">Valkenburg</a></li>
+          <li><a href="dakdekker-beek.html">Beek</a></li>
+          <li><a href="dakdekker-geleen.html">Geleen</a></li>
+          <li><a href="dakdekker-sittard.html">Sittard</a></li>
+          <li><a href="dakdekker-born.html">Born</a></li>
+          <li><a href="dakdekker-echt.html">Echt</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="foot">
+        <h6>Contact</h6>
+        <ul>
+          <li><a href="tel:0683396082">06-83 396 082</a></li>
+          <li><a href="mailto:info@adamsdaktechniek.nl">info@adamsdaktechniek.nl</a></li>
+          <li>KvK 89562135</li>
+        </ul>
+        <h6 style="margin-top:24px">Bedrijf</h6>
+        <ul>
+          <li><a href="offerte.html">Offerte aanvragen</a></li>
+          <li><a href="projecten.html">Projecten</a></li>
+          <li><a href="index.html#reviews">Reviews</a></li>
+          <li><a href="index.html#werkwijze">Werkwijze</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="legal">
+      <div>&#169; <span id="yr"></span> Adams Daktechniek &middot; Alle rechten voorbehouden</div>
+      <div>KvK 89562135 &middot; Heerlen, Limburg &middot; NL</div>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp floating action button -->
+<a class="wa-fab" href="https://wa.me/31683396082?text=Hallo%20Adams%20Daktechniek%2C%20ik%20heb%20een%20vraag%20over%20mijn%20dak." target="_blank" rel="noopener" aria-label="WhatsApp Adams Daktechniek">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.122 1.532 5.856L.057 23.215a.75.75 0 0 0 .922.924l5.421-1.461A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.718 9.718 0 0 1-4.964-1.356l-.355-.211-3.685.993.977-3.596-.232-.369A9.718 9.718 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+</a>
+
+<!-- Sticky mobile CTA — 3 channels -->
+<div class="mobile-cta">
+  <a class="mb-call" href="tel:0683396082" aria-label="Bel">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Bel
+  </a>
+  <a class="mb-offerte" href="offerte.html" aria-label="Offerte aanvragen">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg>
+    Offerte
+  </a>
+  <a class="mb-mail" href="mailto:info@adamsdaktechniek.nl" aria-label="E-mail">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+    Mail
+  </a>
+</div>
+
+<script>
+  const navEl = document.getElementById('nav');
+  document.addEventListener('scroll', () => navEl.classList.toggle('scrolled', window.scrollY > 12), {passive:true});
+  const burger = document.getElementById('burger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  burger.addEventListener('click', () => {
+    const open = !navEl.classList.contains('open');
+    navEl.classList.toggle('open', open);
+    mobileMenu.classList.toggle('open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    navEl.classList.remove('open'); mobileMenu.classList.remove('open');
+    document.body.style.overflow = '';
+  }));
+  document.querySelectorAll('[data-mm-toggle]').forEach(trigger => {
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      trigger.classList.toggle('open');
+      const sub = trigger.nextElementSibling;
+      if(sub && sub.classList.contains('mm-sub')) sub.classList.toggle('open');
+    });
+  });
+</script>
+
+<script>
+/* ============================================================
+   PROJECTEN — DATA-ARRAY
+   ------------------------------------------------------------
+   Nieuw project toevoegen? Plak een nieuwe regel bovenaan deze
+   array. Volgorde = bovenaan eerst zichtbaar.
+
+   Velden:
+     img   — bestandsnaam van foto (in dezelfde map als deze pagina)
+     cat   — categorie-key (gebruik: pannendak | platdak | dakraam |
+             zinkwerk | loodwerk | dakkapel | renovatie | spoed)
+     title — korte titel boven de card
+     desc  — 1 zin uitleg
+     alt   — alt-tag voor SEO (foto-beschrijving + dienst + plaats)
+
+   Categorieën in `categories` aanpassen om labels of volgorde te
+   wijzigen. Een categorie verschijnt automatisch als er minstens
+   1 project mee gekoppeld is.
+   ============================================================ */
+
+const projects = [
+  // ===== VOEG HIER NIEUW PROJECT TOE (bovenaan = nieuwste) =====
+
+  { img: '../Images/pannendak-vervangen-heerlen.jpeg',
+    cat: 'pannendak',
+    title: 'Pannendak vervangen — eengezinswoning',
+    desc: 'Volledige pannenvervanging incl. tengels en isolatie in Heerlen.',
+    alt: 'Dakdekker Adams Daktechniek op pannendak in Heerlen — pannenvervanging' },
+
+  { img: '../Images/bitumen-platdak-heerlen.jpeg',
+    cat: 'platdak',
+    title: 'Bitumen platdak — garage Heerlen',
+    desc: 'Twee laags bitumen met nieuwe daktrim. Strak en lekvrij.',
+    alt: 'Bitumen plat dak aanleg met gasbrander door Adams Daktechniek Heerlen' },
+
+  { img: '../Images/velux-dakraam-heerlen.jpeg',
+    cat: 'dakraam',
+    title: 'VELUX dakraam plaatsen',
+    desc: 'Vakkundige plaatsing en waterdichte aansluiting op bitumen dak.',
+    alt: 'VELUX dakraam geplaatst op plat dak door Adams Daktechniek Heerlen' },
+
+  { img: '../Images/zinken-daktrim-boeiboord-limburg.jpeg',
+    cat: 'zinkwerk',
+    title: 'Zinken daktrim & boeiboord',
+    desc: 'Compleet vervangen met strakke aansluitingen — vakwerk dat decennia meegaat.',
+    alt: 'Zinken daktrim en boeiboord door Adams Daktechniek in Limburg' },
+
+  { img: '../Images/pannendak-renovatie-heerlen.jpeg',
+    cat: 'renovatie',
+    title: 'Pannendak in aanbouw — tengels & panlatten',
+    desc: 'Complete dakrenovatie met dampopen folie, tengels en panlatten in Heerlen.',
+    alt: 'Pannendak renovatie met panlatten en tengels door Adams Daktechniek Heerlen' },
+
+  { img: '../Images/loodwerk-schoorsteen-heerlen.jpeg',
+    cat: 'loodwerk',
+    title: 'Loodwerk schoorsteenaansluiting',
+    desc: 'Lekvrije loodaansluiting op pannendak — vakwerk in detail.',
+    alt: 'Loodwerk schoorsteen aansluiting op pannendak door Adams Daktechniek' },
+
+  { img: '../Images/Boeiborden.jpeg',
+    cat: 'renovatie',
+    title: 'Boeiborden vervangen',
+    desc: 'Strakke afwerking van boeidelen met duurzame materialen.',
+    alt: 'Boeiborden vervangen door Adams Daktechniek in Limburg' },
+
+  { img: '../Images/Boeiborden_2.jpeg',
+    cat: 'renovatie',
+    title: 'Boeiborden renovatie',
+    desc: 'Herstel en vernieuwing voor een nette dakrand en gevelovergang.',
+    alt: 'Boeiborden renovatie en afwerking door Adams Daktechniek' },
+
+  { img: '../Images/Boeiborden_3.jpeg',
+    cat: 'renovatie',
+    title: 'Boeiborden detailafwerking',
+    desc: 'Net afgewerkte dakranddetails voor een duurzaam eindresultaat.',
+    alt: 'Boeiborden detailafwerking door Adams Daktechniek' },
+
+  { img: '../Images/Dakgoot.jpg',
+    cat: 'zinkwerk',
+    title: 'Dakgoot vervangen',
+    desc: 'Nieuwe dakgoot met nette aansluiting en goede waterafvoer.',
+    alt: 'Dakgoot vervangen en geplaatst door Adams Daktechniek' },
+
+  { img: '../Images/Dakgoot_2.jpg',
+    cat: 'zinkwerk',
+    title: 'Dakgoot & afvoer',
+    desc: 'Functionele afwatering met een strakke afwerking langs de gevel.',
+    alt: 'Dakgoot en regenafvoer door Adams Daktechniek' },
+
+  { img: '../Images/Dakkoepel-plaatsing-Platdak-heerlen.jpeg',
+    cat: 'platdak',
+    title: 'Dakkoepel plaatsen',
+    desc: 'Meer licht en ventilatie met een nette, waterdichte aansluiting.',
+    alt: 'Dakkoepel geplaatst op plat dak in Heerlen' },
+
+  { img: '../Images/HellendDak_Velux Raam.jpeg',
+    cat: 'dakraam',
+    title: 'VELUX op hellend dak',
+    desc: 'Vakkundige montage voor extra daglicht en ventilatie.',
+    alt: 'VELUX dakraam op hellend dak geplaatst door Adams Daktechniek' },
+
+  { img: '../Images/HellendDak_Velux Raam.jpeg',
+    cat: 'dakraam',
+    title: 'VELUX renovatie',
+    desc: 'Vervanging en afwerking van dakraam met oog voor detail.',
+    alt: 'VELUX dakraam renovatie op hellend dak door Adams Daktechniek' },
+
+  { img: '../Images/Platdak_Beek.jpeg',
+    cat: 'platdak',
+    title: 'Platdak in Beek',
+    desc: 'Strakke dakafwerking voor een duurzame, lekvrije oplossing.',
+    alt: 'Plat dak project in Beek uitgevoerd door Adams Daktechniek' },
+
+  { img: '../Images/Platdak_Hoensbroek.jpeg',
+    cat: 'platdak',
+    title: 'Platdak in Hoensbroek',
+    desc: 'Vakkundig geplaatst met aandacht voor afschot en aansluitingen.',
+    alt: 'Plat dak project in Hoensbroek uitgevoerd door Adams Daktechniek' },
+
+  { img: '../Images/Platdak_Kerkrade.jpeg',
+    cat: 'platdak',
+    title: 'Platdak in Kerkrade',
+    desc: 'Net afgewerkt dak met duurzame materialen en waterdichte details.',
+    alt: 'Plat dak project in Kerkrade uitgevoerd door Adams Daktechniek' },
+
+  { img: '../Images/Platdak_Klimmen.jpeg',
+    cat: 'platdak',
+    title: 'Platdak in Klimmen',
+    desc: 'Renovatie en vernieuwing voor langdurige bescherming.',
+    alt: 'Plat dak project in Klimmen uitgevoerd door Adams Daktechniek' },
+
+  { img: '../Images/Platdak_Landgraaf.jpg',
+    cat: 'platdak',
+    title: 'Platdak in Landgraaf',
+    desc: 'Stabiele opbouw en nette afwerking voor een betrouwbaar resultaat.',
+    alt: 'Plat dak project in Landgraaf uitgevoerd door Adams Daktechniek' },
+
+  { img: '../Images/Platdak_Landgraaf_2.jpg',
+    cat: 'platdak',
+    title: 'Platdak Landgraaf 2',
+    desc: 'Extra projectbeeld van een platdak met strakke dakrandafwerking.',
+    alt: 'Tweede plat dak project in Landgraaf uitgevoerd door Adams Daktechniek' },
+
+  { img: '../Images/Platdak_Schinnenjpeg.jpeg',
+    cat: 'platdak',
+    title: 'Platdak in Schinnen',
+    desc: 'Uitvoering met aandacht voor afdichting, detail en levensduur.',
+    alt: 'Plat dak project in Schinnen uitgevoerd door Adams Daktechniek' },
+
+  // ===== EINDE PROJECTEN =====
+];
+
+const categories = [
+  { key: 'all',       label: 'Alle projecten' },
+  { key: 'pannendak', label: 'Pannendaken' },
+  { key: 'platdak',   label: 'Platte daken' },
+  { key: 'dakraam',   label: 'Dakramen' },
+  { key: 'zinkwerk',  label: 'Zinkwerk' },
+  { key: 'loodwerk',  label: 'Loodwerk' },
+  { key: 'dakkapel',  label: 'Dakkapellen' },
+  { key: 'renovatie', label: 'Renovaties' },
+  { key: 'spoed',     label: 'Spoed & lekkages' },
+];
+
+/* ============================================================
+   RENDER (niet aanpassen tenzij je weet wat je doet)
+   ============================================================ */
+
+const filtersEl = document.getElementById('filters');
+const galleryEl = document.getElementById('gallery');
+let active = 'all';
+
+function counts(){
+  const c = { all: projects.length };
+  projects.forEach(p => c[p.cat] = (c[p.cat] || 0) + 1);
+  return c;
+}
+
+function renderFilters(){
+  const c = counts();
+  filtersEl.innerHTML = categories
+    .filter(cat => cat.key === 'all' || c[cat.key])
+    .map(cat => `
+      <button class="filter-btn ${cat.key===active?'active':''}" data-cat="${cat.key}">
+        ${cat.label}<span class="filter-count">${c[cat.key]||0}</span>
+      </button>`).join('');
+  filtersEl.querySelectorAll('.filter-btn').forEach(b => {
+    b.addEventListener('click', () => { active = b.dataset.cat; renderAll(); });
+  });
+}
+
+function renderGallery(){
+  const list = active === 'all' ? projects : projects.filter(p => p.cat === active);
+  if (!list.length){
+    galleryEl.innerHTML = '<div class="empty">Geen projecten in deze categorie.</div>';
+    return;
+  }
+  const catLabel = k => (categories.find(c=>c.key===k)||{}).label || k;
+  galleryEl.innerHTML = list.map(p => `
+    <a class="card" href="${p.img}" target="_blank" rel="noopener">
+      <img class="card-img" src="${p.img}" alt="${p.alt}" loading="lazy">
+      <span class="card-tag">${catLabel(p.cat)}</span>
+      <div class="card-body">
+        <h3>${p.title}</h3>
+        <p>${p.desc}</p>
+      </div>
+    </a>`).join('');
+}
+
+function renderAll(){ renderFilters(); renderGallery(); }
+renderAll();
+</script>
+
+</body>
+</html>

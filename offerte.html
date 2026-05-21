@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#0a0a0a" />
+<title>Gratis Offerte Aanvragen | Adams Daktechniek — Heerlen & Limburg</title>
+<meta name="description" content="Vraag gratis offerte aan bij Adams Daktechniek. 3 korte stappen, offerte binnen 48 uur. Particulieren, bedrijven en VvE's welkom. Bel 06-83396082." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="../Images/LogoAdamsDaktechniek.png">
+
+<style>
+  :root{
+    --bg:#070707; --bg-2:#0d0d0d; --bg-3:#141414;
+    --line:#1f1f1f; --line-2:#2a2a2a;
+    --ink:#f6f6f6; --ink-dim:#a8a8a8; --ink-mute:#6b6b6b;
+    --green:#5CC27A; --green-2:#2E7D45;
+    --green-glow:rgba(92,194,122,0.18);
+    --radius:18px; --radius-sm:12px; --container:1200px;
+    --ease:cubic-bezier(.22,.61,.36,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+  img,svg{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
+  body::before{
+    content:"";position:fixed;inset:0;
+    background-image:
+      radial-gradient(circle at 20% 0%, rgba(92,194,122,0.06), transparent 40%),
+      radial-gradient(circle at 80% 100%, rgba(92,194,122,0.04), transparent 50%),
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:auto, auto, 64px 64px, 64px 64px;
+    opacity:.25;pointer-events:none;z-index:-1;
+    mask-image:linear-gradient(180deg, rgba(0,0,0,.9), rgba(0,0,0,.2));
+  }
+  .container{max-width:var(--container);margin:0 auto;padding:0 24px}
+
+  /* ============ NAV (same as index) ============ */
+  .nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(0,0,0,0.88);backdrop-filter:blur(14px) saturate(140%);-webkit-backdrop-filter:blur(14px) saturate(140%);border-bottom:1px solid transparent;transition:border-color .3s var(--ease),background .3s var(--ease)}
+  .nav.scrolled{border-color:var(--line);background:rgba(0,0,0,0.95)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:112px}
+  .brand{display:flex;align-items:center;gap:12px}
+  .brand-logo{height:92px;width:auto;display:block;mix-blend-mode:lighten;filter:drop-shadow(0 0 0 transparent)}
+  .nav-links{display:flex;gap:32px;align-items:center}
+  .nav-links a{font-size:14px;font-weight:500;color:var(--ink-dim);position:relative;padding:6px 0;transition:color .25s var(--ease)}
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--green);transition:width .3s var(--ease)}
+  .nav-links a:hover{color:#fff}
+  .nav-links a:hover::after{width:100%}
+  .nav-cta{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;background:var(--green);color:#0a0a0a;font-weight:700;font-size:13px;letter-spacing:.5px;transition:transform .25s var(--ease),box-shadow .25s var(--ease);box-shadow:0 8px 30px var(--green-glow)}
+  .nav-cta:hover{transform:translateY(-1px);box-shadow:0 12px 36px rgba(92,194,122,.35)}
+  .burger{display:none;width:42px;height:42px;border-radius:10px;border:1px solid var(--line-2);position:relative}
+  .burger span{position:absolute;left:11px;right:11px;height:2px;background:#fff;border-radius:2px;transition:transform .45s cubic-bezier(.7,0,.3,1),opacity .25s var(--ease),top .2s var(--ease);transform-origin:center}
+  .burger span:nth-child(1){top:14px}.burger span:nth-child(2){top:20px}.burger span:nth-child(3){top:26px}
+  .nav.open .burger span:nth-child(1){top:20px;transform:rotate(45deg)}
+  .nav.open .burger span:nth-child(2){opacity:0;transform:scaleX(0)}
+  .nav.open .burger span:nth-child(3){top:20px;transform:rotate(-45deg)}
+
+  /* Mobile menu */
+  .mobile-menu{position:fixed;left:0;right:0;top:112px;height:calc(100svh - 112px);height:calc(100dvh - 112px);background:#000;z-index:49;display:flex;flex-direction:column;padding:28px 28px 32px;opacity:0;pointer-events:none;transition:opacity .35s var(--ease)}
+  .mobile-menu.open{opacity:1;pointer-events:auto}
+  .mobile-menu nav{display:block;flex:0 0 auto}
+  .mobile-menu nav a{display:flex;align-items:baseline;gap:18px;padding:clamp(14px,2.6vw,18px) 0;font-family:'Manrope','Inter',sans-serif;font-size:clamp(24px,6.6vw,32px);font-weight:700;letter-spacing:-.02em;line-height:1;color:#fff;border-bottom:1px solid rgba(255,255,255,.06);text-decoration:none;opacity:0;transform:translateY(14px);transition:opacity .2s var(--ease),transform .25s var(--ease)}
+  .mobile-menu.open nav a{opacity:1;transform:none;transition:opacity .55s var(--ease) calc(var(--i,0) * 70ms + 140ms),transform .8s cubic-bezier(.16,1,.3,1) calc(var(--i,0) * 70ms + 140ms)}
+  .mobile-menu nav a:last-of-type{border-bottom:none}
+  .mobile-menu nav a .mm-num{font-size:11px;font-weight:600;letter-spacing:2.5px;color:var(--green);opacity:.55;font-family:'Inter',sans-serif;width:18px;flex-shrink:0}
+  .mobile-menu .mm-foot{margin-top:auto;display:flex;flex-direction:column;gap:16px;padding-top:24px;border-top:1px solid rgba(255,255,255,.06);opacity:0;transform:translateY(14px);transition:opacity .2s var(--ease),transform .25s var(--ease)}
+  .mobile-menu.open .mm-foot{opacity:1;transform:none;transition:opacity .55s var(--ease) 520ms,transform .8s cubic-bezier(.16,1,.3,1) 520ms}
+  .mobile-menu .mm-cta{display:block;padding:20px 24px;background:var(--green);color:#0a0a0a;font-family:'Manrope';font-weight:800;font-size:18px;letter-spacing:.3px;text-align:center;border-radius:999px;box-shadow:0 14px 40px rgba(92,194,122,.22)}
+  .mobile-menu .mm-cta small{display:block;font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;opacity:.6;margin-bottom:3px}
+  .mobile-menu .mm-meta{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;font-size:12px;color:var(--ink-mute);font-weight:500}
+  .mobile-menu .mm-meta a{color:var(--ink-dim)}
+  .mobile-menu .mm-meta .sep{opacity:.4}
+
+  /* ============ PAGE HEADER ============ */
+  .page-head{padding:160px 0 40px;text-align:center}
+  .page-head .eyebrow{display:inline-flex;align-items:center;gap:10px;padding:8px 14px;border-radius:999px;border:1px solid var(--line-2);background:rgba(255,255,255,.02);font-size:12px;font-weight:600;letter-spacing:1.5px;color:var(--ink-dim);text-transform:uppercase;margin-bottom:24px}
+  .page-head .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 12px var(--green)}
+  .page-head h1{font-family:'Manrope';font-size:clamp(38px,5.6vw,64px);font-weight:800;letter-spacing:-.02em;line-height:1.05;margin-bottom:16px}
+  .page-head h1 .green{background:linear-gradient(135deg,var(--green) 0%,#8be0a0 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .page-head p{color:var(--ink-dim);font-size:17px;max-width:560px;margin:0 auto 32px}
+  .page-head .trust-row{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;font-size:13px;color:var(--ink-mute)}
+  .page-head .trust-row span{display:inline-flex;align-items:center;gap:6px}
+  .page-head .trust-row .gr{color:var(--green)}
+
+  /* ============ WIZARD LAYOUT ============ */
+  .offerte-wrap{
+    display:grid;grid-template-columns:1.6fr .9fr;gap:40px;
+    padding:40px 0 100px;
+    max-width:var(--container);margin:0 auto;padding-left:24px;padding-right:24px;
+    align-items:flex-start;
+  }
+
+  /* Stepper */
+  .stepper{
+    display:flex;align-items:center;gap:8px;margin-bottom:32px;
+    position:sticky;top:120px;background:var(--bg);
+    padding:14px 0;z-index:5;
+  }
+  .step-pill{
+    flex:1;display:flex;align-items:center;gap:10px;
+    padding:12px 14px;border-radius:12px;
+    background:rgba(255,255,255,.02);border:1px solid var(--line);
+    color:var(--ink-dim);font-size:13px;font-weight:600;
+    transition:all .3s var(--ease);
+  }
+  .step-pill.active{
+    background:rgba(92,194,122,.08);border-color:var(--green);color:#fff;
+  }
+  .step-pill.done{
+    background:rgba(92,194,122,.04);border-color:rgba(92,194,122,.3);color:var(--ink-dim);
+  }
+  .step-pill .pill-num{
+    width:24px;height:24px;border-radius:50%;
+    background:var(--bg-3);color:var(--ink-mute);
+    display:flex;align-items:center;justify-content:center;
+    font-size:12px;font-weight:700;flex-shrink:0;
+  }
+  .step-pill.active .pill-num{background:var(--green);color:#0a0a0a}
+  .step-pill.done .pill-num{background:rgba(92,194,122,.2);color:var(--green)}
+  .step-pill.done .pill-num::before{content:"✓";font-size:13px}
+  .step-pill.done .pill-num span{display:none}
+  .step-pill .pill-lbl{display:flex;flex-direction:column;line-height:1.2}
+  .step-pill .pill-lbl small{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-mute);font-weight:500;margin-bottom:2px}
+
+  /* Step content */
+  .step{display:none;animation:fadeUp .4s var(--ease)}
+  .step.is-active{display:block}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+
+  .step-head{margin-bottom:24px}
+  .step-head h2{font-family:'Manrope';font-size:clamp(24px,3vw,32px);font-weight:800;letter-spacing:-.02em;margin-bottom:8px}
+  .step-head p{color:var(--ink-dim);font-size:15px;max-width:54ch}
+  .step-head .time-est{
+    display:inline-flex;align-items:center;gap:6px;
+    margin-top:12px;padding:6px 12px;border-radius:999px;
+    background:rgba(92,194,122,.08);border:1px solid rgba(92,194,122,.2);
+    font-size:12px;color:var(--green);font-weight:600;
+  }
+
+  .field-group{margin-bottom:28px}
+  .field-group > label.field-label{
+    display:block;font-family:'Manrope';font-size:14px;font-weight:700;
+    margin-bottom:14px;color:#fff;
+  }
+  .field-group > label.field-label small{
+    font-family:'Inter';font-size:12px;font-weight:500;color:var(--ink-mute);
+    text-transform:none;letter-spacing:normal;margin-left:8px;
+  }
+  .field-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+  .field{display:flex;flex-direction:column;gap:8px;margin-bottom:14px}
+  .field label{font-size:12px;color:var(--ink-mute);text-transform:uppercase;letter-spacing:1.5px;font-weight:600}
+  .field label .req{color:var(--green)}
+  .field input,.field select,.field textarea{
+    padding:14px 16px;border-radius:12px;background:#080808;
+    border:1px solid var(--line-2);color:#fff;font:inherit;font-size:15px;
+    transition:border-color .25s var(--ease),background .25s var(--ease);
+  }
+  .field input:focus,.field select:focus,.field textarea:focus{
+    outline:none;border-color:var(--green);background:#0c0c0c;
+  }
+  .field textarea{resize:vertical;min-height:100px}
+
+  /* ============ UPLOAD ZONE ============ */
+  .upload-zone{position:relative;border:2px dashed var(--line-2);border-radius:14px;padding:28px 20px;text-align:center;cursor:pointer;transition:border-color .25s var(--ease),background .25s var(--ease);background:#080808;margin-bottom:14px}
+  .upload-zone:hover,.upload-zone.drag-over{border-color:var(--green);background:rgba(92,194,122,.04)}
+  .upload-zone input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
+  .upload-zone .uz-icon{font-size:32px;margin-bottom:10px;pointer-events:none}
+  .upload-zone .uz-title{font-size:14px;font-weight:600;color:var(--ink);pointer-events:none}
+  .upload-zone .uz-sub{font-size:12px;color:var(--ink-mute);margin-top:4px;pointer-events:none}
+  .upload-zone .uz-btn{display:inline-block;margin-top:12px;padding:8px 18px;border-radius:999px;border:1px solid var(--line-2);font-size:12px;font-weight:600;color:var(--ink-dim);background:transparent;pointer-events:none;transition:border-color .2s,color .2s}
+  .upload-zone:hover .uz-btn,.upload-zone.drag-over .uz-btn{border-color:var(--green);color:var(--green)}
+  .upload-previews{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px;margin-bottom:14px}
+  .upload-preview{position:relative;width:72px;height:72px;border-radius:10px;overflow:hidden;border:1px solid var(--line-2);background:#0d0d0d;flex-shrink:0}
+  .upload-preview img{width:100%;height:100%;object-fit:cover}
+  .upload-preview .up-icon{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:26px}
+  .upload-preview .up-name{position:absolute;inset:0;bottom:auto;top:auto;display:none}
+  .upload-preview .up-remove{position:absolute;top:3px;right:3px;width:18px;height:18px;border-radius:50%;background:rgba(0,0,0,.75);color:#fff;border:none;cursor:pointer;font-size:11px;display:flex;align-items:center;justify-content:center;line-height:1;padding:0;transition:background .2s}
+  .upload-preview .up-remove:hover{background:#ef4444}
+  .upload-label{font-size:12px;color:var(--ink-mute);text-transform:uppercase;letter-spacing:1.5px;font-weight:600;display:block;margin-bottom:8px}
+
+  .field select{cursor:pointer;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23a8a8a8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>");background-repeat:no-repeat;background-position:right 14px center;background-size:18px;padding-right:42px;-webkit-appearance:none;-moz-appearance:none;appearance:none}
+
+  /* Selectable tiles */
+  .tiles{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .tiles.three{grid-template-columns:repeat(3,1fr)}
+  .tile{
+    position:relative;padding:18px 16px;border-radius:14px;
+    background:#0a0a0a;border:1px solid var(--line-2);
+    cursor:pointer;transition:all .25s var(--ease);
+    display:flex;flex-direction:column;gap:6px;
+    text-align:left;
+  }
+  .tile:hover{border-color:#3a3a3a;background:#0e0e0e}
+  .tile.selected{
+    border-color:var(--green);
+    background:rgba(92,194,122,.05);
+    box-shadow:0 8px 24px var(--green-glow);
+  }
+  .tile.selected::after{
+    content:"✓";position:absolute;top:12px;right:12px;
+    width:22px;height:22px;border-radius:50%;
+    background:var(--green);color:#0a0a0a;
+    display:flex;align-items:center;justify-content:center;
+    font-size:13px;font-weight:700;
+  }
+  .tile-ico{font-size:22px;margin-bottom:4px;line-height:1}
+  .tile-title{font-family:'Manrope';font-size:15px;font-weight:700;color:#fff;line-height:1.2}
+  .tile-sub{font-size:12.5px;color:var(--ink-dim);line-height:1.4}
+
+  /* Step nav buttons */
+  .step-nav{
+    display:flex;justify-content:space-between;align-items:center;gap:12px;
+    margin-top:32px;padding-top:24px;border-top:1px solid var(--line);
+  }
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:999px;font-weight:700;font-size:14px;letter-spacing:.3px;cursor:pointer;transition:transform .2s var(--ease),background .2s var(--ease),box-shadow .2s var(--ease);border:1px solid transparent}
+  .btn-primary{background:var(--green);color:#0a0a0a;box-shadow:0 10px 30px var(--green-glow)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(92,194,122,.4)}
+  .btn-ghost{background:transparent;border-color:var(--line-2);color:#fff}
+  .btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.04)}
+  .btn-back{padding:14px 18px;color:var(--ink-dim);font-size:13px}
+  .btn-back:hover{color:#fff}
+
+  /* Conditional B2B block */
+  .b2b-block{
+    margin-top:16px;padding:20px;border-radius:14px;
+    background:rgba(255,255,255,.02);border:1px solid var(--line);
+    display:none;
+  }
+  .b2b-block.is-open{display:block;animation:fadeUp .25s var(--ease)}
+  .b2b-block h4{font-family:'Manrope';font-size:14px;font-weight:700;margin-bottom:14px;color:var(--green);display:flex;align-items:center;gap:8px}
+
+  /* Privacy checkbox */
+  .privacy{display:flex;align-items:flex-start;gap:12px;margin:24px 0 8px;font-size:13.5px;color:var(--ink-dim);line-height:1.5}
+  .privacy input[type=checkbox]{
+    flex-shrink:0;width:20px;height:20px;
+    border-radius:5px;border:1.5px solid var(--line-2);
+    background:#0a0a0a;cursor:pointer;
+    accent-color:var(--green);
+    margin-top:1px;
+  }
+  .privacy a{color:var(--green);text-decoration:underline}
+
+  /* Submit feedback */
+  .submit-foot{
+    display:flex;gap:18px;justify-content:center;flex-wrap:wrap;
+    margin-top:18px;font-size:12px;color:var(--ink-mute);
+  }
+  .submit-foot span{display:inline-flex;align-items:center;gap:6px}
+
+  /* ============ SIDEBAR ============ */
+  .side{display:flex;flex-direction:column;gap:14px;position:sticky;top:140px}
+  .side-card{
+    padding:22px;border-radius:16px;
+    background:linear-gradient(180deg,#0e0e0e,#080808);
+    border:1px solid var(--line-2);
+  }
+  .side-card h3{font-family:'Manrope';font-size:14px;font-weight:700;color:#fff;margin-bottom:6px;display:flex;align-items:center;gap:8px}
+  .side-card p{font-size:13px;color:var(--ink-dim);line-height:1.5}
+  .side-card .big-num{display:block;font-family:'Manrope';font-size:22px;font-weight:800;color:#fff;letter-spacing:-.01em;margin:4px 0 6px}
+  .side-card .big-num:hover{color:var(--green)}
+  .side-card .hrs{font-size:12px;color:var(--ink-mute);margin-top:4px}
+  .side-card .stars{color:var(--green);font-size:13px;letter-spacing:2px;margin-top:8px}
+  .side-card .stars b{color:#fff;font-family:'Manrope';margin-left:6px}
+  .side-card.wa{background:linear-gradient(180deg,rgba(37,211,102,.08),#080808);border-color:rgba(37,211,102,.25)}
+  .side-card.wa h3{color:#25D366}
+  .side-card.wa .big-num{color:#25D366;font-size:16px}
+  .side-card.promo{background:linear-gradient(135deg,#15281b,#0a0a0a);border-color:rgba(92,194,122,.3)}
+  .side-card.promo h3{color:var(--green);font-size:13px;letter-spacing:2px;text-transform:uppercase}
+  .side-card.promo .promo-h{font-family:'Manrope';font-size:18px;font-weight:800;margin:6px 0 8px;color:#fff;line-height:1.2}
+  .side-card.promo a{display:inline-flex;align-items:center;gap:6px;color:var(--green);font-weight:700;font-size:13px;margin-top:8px}
+  .side-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+  .side-chip{padding:6px 11px;border-radius:999px;background:rgba(255,255,255,.03);border:1px solid var(--line-2);font-size:12px;font-weight:600;color:#fff;transition:all .2s var(--ease)}
+  .side-chip:hover{background:rgba(92,194,122,.1);border-color:var(--green);color:var(--green)}
+
+  /* ============ FAQ ============ */
+  .faq-section{padding:80px 0;border-top:1px solid var(--line);background:#050505}
+  .faq-section h2{font-family:'Manrope';font-size:clamp(28px,3.6vw,40px);font-weight:800;letter-spacing:-.02em;margin-bottom:8px}
+  .faq-section .lead{color:var(--ink-dim);font-size:16px;margin-bottom:40px}
+  .faq{border-bottom:1px solid var(--line);padding:22px 0}
+  .faq summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:20px;font-family:'Manrope';font-size:17px;font-weight:600;letter-spacing:-.01em}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";font-size:24px;color:var(--green);font-weight:400;transition:transform .3s var(--ease)}
+  .faq[open] summary::after{transform:rotate(45deg)}
+  .faq p{margin-top:12px;color:var(--ink-dim);font-size:14.5px;line-height:1.6;max-width:65ch}
+
+  /* ============ THANK YOU ============ */
+  .ty{display:none;text-align:center;padding:80px 24px;animation:fadeUp .4s var(--ease)}
+  .ty.is-active{display:block}
+  .ty .ty-icon{width:72px;height:72px;border-radius:50%;background:rgba(92,194,122,.12);border:2px solid var(--green);color:var(--green);display:flex;align-items:center;justify-content:center;margin:0 auto 24px;font-size:32px}
+  .ty h2{font-family:'Manrope';font-size:36px;font-weight:800;letter-spacing:-.02em;margin-bottom:12px}
+  .ty p{color:var(--ink-dim);font-size:16px;max-width:48ch;margin:0 auto 32px}
+  /* ============ FOOTER ============ */
+  /* ============ WHATSAPP FAB ============ */
+  .wa-fab{position:fixed;right:18px;bottom:90px;z-index:55;width:54px;height:54px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 32px rgba(37,211,102,.4),0 4px 12px rgba(0,0,0,.4);transition:transform .25s var(--ease)}
+  .wa-fab:hover{transform:scale(1.08)}
+  @media (min-width:981px){.wa-fab{bottom:24px}}
+
+  /* ============ MOBILE CTA ============ */
+  .mobile-cta{display:none;position:fixed;bottom:14px;left:14px;right:14px;z-index:60;background:rgba(7,7,7,.92);backdrop-filter:blur(14px);border:1px solid var(--line-2);border-radius:16px;padding:10px;gap:8px;box-shadow:0 20px 50px rgba(0,0,0,.6)}
+  .mobile-cta a{flex:1;padding:13px 8px;border-radius:11px;font-weight:700;font-size:13.5px;display:flex;align-items:center;justify-content:center;gap:7px;text-decoration:none}
+  .mobile-cta .mb-call{background:var(--green);color:#0a0a0a}
+  .mobile-cta .mb-mail{background:#0a0a0a;border:1px solid var(--line-2);color:#fff}
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 980px){
+    .nav-inner{height:92px}
+    .brand-logo{height:72px}
+    .mobile-menu{top:92px;height:calc(100svh - 92px);height:calc(100dvh - 92px)}
+    .nav-links,.nav-cta{display:none}
+    .burger{display:block}
+    .mobile-cta{display:flex}
+    .page-head{padding:130px 0 24px}
+    .offerte-wrap{grid-template-columns:1fr;gap:32px;padding-bottom:120px}
+    .side{position:static}
+    .stepper{position:static;flex-wrap:wrap}
+    .step-pill{flex:1 1 calc(33% - 8px);min-width:0}
+    .step-pill .pill-lbl small{display:none}
+    .step-pill .pill-lbl span{font-size:12px}
+    .field-row{grid-template-columns:1fr}
+    .tiles{grid-template-columns:1fr 1fr}
+    .tiles.three{grid-template-columns:1fr 1fr}
+  }
+  @media (max-width: 560px){
+    .tiles{grid-template-columns:1fr}
+    .step-pill{flex:1 1 100%}
+    .step-pill .pill-lbl small{display:block}
+  }
+.mobile-menu .mm-cta,.mobile-menu .mm-foot{display:none !important} /* HIDE MM CTA */
+
+  /* ============ DIENSTEN DROPDOWN ============ */
+  .nav-dropdown{position:relative}
+  .nav-dropdown > .nav-dropdown-toggle{display:flex !important;align-items:center;gap:5px;cursor:pointer}
+  .nav-dropdown > .nav-dropdown-toggle svg{transition:transform .25s var(--ease);opacity:.7}
+  .nav-dropdown:hover > .nav-dropdown-toggle svg{transform:rotate(180deg);opacity:1}
+  .nav-dropdown:hover > .nav-dropdown-toggle{color:#fff !important}
+  .nav-dropdown:hover > .nav-dropdown-toggle::after{width:100% !important}
+  .nav-dropdown-panel{
+    position:absolute;top:calc(100% + 14px);left:-24px;
+    background:rgba(0,0,0,0.96);backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+    border:1px solid var(--line-2);border-radius:16px;
+    padding:14px;width:520px;
+    opacity:0;visibility:hidden;transform:translateY(-8px);
+    transition:opacity .25s var(--ease),transform .25s var(--ease),visibility .25s;
+    display:grid;grid-template-columns:1fr 1fr;gap:2px;
+    box-shadow:0 30px 80px rgba(0,0,0,.6);z-index:51;
+  }
+  .nav-dropdown::before{content:"";position:absolute;top:100%;left:0;right:0;height:14px}
+  .nav-dropdown:hover .nav-dropdown-panel{opacity:1;visibility:visible;transform:translateY(0)}
+  .nav-dropdown-panel a{
+    padding:11px 14px !important;font-size:13.5px !important;font-weight:600 !important;
+    border-radius:10px;color:#e6e6e6 !important;
+    transition:background .15s var(--ease),color .15s var(--ease);
+    border-bottom:none !important;display:flex !important;align-items:center;gap:6px;
+    line-height:1.2 !important;
+  }
+  .nav-dropdown-panel a::after{content:none !important}
+  .nav-dropdown-panel a:hover{background:rgba(92,194,122,0.12) !important;color:var(--green) !important}
+
+  /* Mobile menu sub-section */
+  .mobile-menu .mm-sub{
+    display:none;flex-direction:column;gap:0;
+    margin:0 0 14px 0;padding:6px 0 14px;
+    border-bottom:1px solid rgba(255,255,255,.06);
+  }
+  .mobile-menu .mm-sub.open{display:flex}
+  .mobile-menu .mm-sub a{
+    padding:11px 0 11px 22px !important;
+    font-size:17px !important;font-weight:500 !important;
+    color:var(--ink-dim) !important;
+    border-bottom:none !important;
+    opacity:1 !important;transform:none !important;
+    line-height:1.2 !important;letter-spacing:0 !important;
+    transition:color .15s var(--ease) !important;
+  }
+  .mobile-menu .mm-sub a:active{color:var(--green) !important}
+  .mobile-menu .mm-trigger{cursor:pointer;position:relative}
+  .mobile-menu .mm-trigger::after{
+    content:"+" !important;color:var(--green);font-size:24px;font-weight:300;
+    margin-left:auto;transition:transform .25s var(--ease);
+    position:absolute;right:0;top:50%;transform:translateY(-50%);
+  }
+  .mobile-menu .mm-trigger.open::after{transform:translateY(-50%) rotate(45deg)}
+
+
+  /* Dropdown defensive fixes */
+  .nav-dropdown-panel{z-index:9999 !important}
+  .nav-dropdown.is-open .nav-dropdown-panel{opacity:1 !important;visibility:visible !important;transform:translateY(0) !important}
+  .nav-dropdown.is-open .nav-dropdown-toggle svg{transform:rotate(180deg) !important;opacity:1 !important}
+  .nav-dropdown::before{height:18px}
+
+
+  /* ============ FOOTER ============ */
+  footer{padding:50px 0 100px;border-top:1px solid var(--line);background:#050505}
+  .foot-grid{display:grid;grid-template-columns:2fr 1fr 1.2fr 1fr;gap:48px}
+  .foot-brand p{color:var(--ink-dim);font-size:14px;margin-top:18px;max-width:300px}
+  .foot-brand .brand-logo--footer{height:120px;mix-blend-mode:lighten}
+  .foot-slogan{margin-top:18px;font-family:'Manrope';font-size:12px;letter-spacing:3px;color:var(--green);text-transform:uppercase;font-weight:700}
+  .foot h6{font-size:12px;text-transform:uppercase;letter-spacing:2px;color:#fff;margin-bottom:18px}
+  .foot ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .foot a{color:var(--ink-dim);font-size:14px;transition:color .2s}
+  .foot a:hover{color:var(--green)}
+  .legal{margin-top:48px;padding-top:24px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;color:var(--ink-mute);font-size:12px}
+  .socials{display:flex;gap:10px}
+  .socials a{width:38px;height:38px;border-radius:10px;border:1px solid var(--line-2);background:#0a0a0a;display:flex;align-items:center;justify-content:center;color:var(--ink-dim);transition:all .25s var(--ease)}
+  .socials a:hover{color:var(--green);border-color:var(--green)}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html" aria-label="Adams Daktechniek">
+      <img class="brand-logo" src="../Images/LogoAdamsDaktechniek.png" alt="Adams Daktechniek">
+    </a>
+    <div class="nav-links">
+      <div class="nav-dropdown">
+      <a href="index.html#diensten" class="nav-dropdown-toggle">Diensten<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></a>
+      <div class="nav-dropdown-panel">
+        <a href="platte-daken.html">🏠 Platte daken</a>
+        <a href="pannendaken.html">🏡 Pannendaken</a>
+        <a href="dakkapellen.html">🪟 Dakkapellen</a>
+        <a href="zinkwerken.html">⚙️ Zinkwerken</a>
+        <a href="trespawerken.html">🧱 Trespawerken</a>
+        <a href="spoed-lekkages.html">🚨 Spoed & lekkages</a>
+        <a href="dakraam-velux.html">☀️ Dakraam / Velux</a>
+        <a href="dakisolatie.html">🌡️ Dakisolatie</a>
+        <a href="schoorstenen.html">🏭 Schoorstenen</a>
+        <a href="onderhoud-inspectie.html">🔧 Onderhoud & inspectie</a>
+        <a href="renovatie-verbouw.html">🏗️ Renovatie & verbouw</a>
+        <a href="dakreiniging.html">🧹 Dakreiniging</a>
+      </div>
+    </div>
+      <a href="projecten.html">Projecten</a>
+      <a href="index.html#werkwijze">Werkwijze</a>
+      <a href="index.html#reviews">Reviews</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+    <a class="nav-cta" href="tel:0683396082">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      06-83396082
+    </a>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <nav>
+      <a href="index.html#diensten" class="mm-trigger" data-mm-toggle>Diensten</a>
+      <div class="mm-sub">
+        <a href="platte-daken.html">Platte daken</a>
+        <a href="pannendaken.html">Pannendaken</a>
+        <a href="dakkapellen.html">Dakkapellen</a>
+        <a href="zinkwerken.html">Zinkwerken</a>
+        <a href="trespawerken.html">Trespawerken</a>
+        <a href="spoed-lekkages.html">Spoed & lekkages</a>
+        <a href="dakraam-velux.html">Dakraam / Velux</a>
+        <a href="dakisolatie.html">Dakisolatie</a>
+        <a href="schoorstenen.html">Schoorstenen</a>
+        <a href="onderhoud-inspectie.html">Onderhoud & inspectie</a>
+        <a href="renovatie-verbouw.html">Renovatie & verbouw</a>
+        <a href="dakreiniging.html">Dakreiniging</a>
+      </div>
+      <a href="projecten.html" style="--i:1">Projecten</a>
+      <a href="index.html#werkwijze" style="--i:2">Werkwijze</a>
+      <a href="index.html#reviews" style="--i:3">Reviews</a>
+      <a href="index.html" style="--i:4">Home</a>
+    </nav>
+    <div class="mm-foot">
+      <a class="mm-cta" href="tel:0683396082"><small>Bel direct</small>06-83396082</a>
+      <div class="mm-meta">
+        <a href="mailto:info@adamsdaktechniek.nl">info@adamsdaktechniek.nl</a>
+        <span class="sep">·</span><span>Heerlen · Limburg</span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HEAD -->
+<header class="page-head">
+  <div class="container">
+    <div class="eyebrow"><span class="dot"></span> 3 korte stappen · ± 2 minuten</div>
+    <h1>Gratis offerte <span class="green">aanvragen</span></h1>
+    <p>Vul de drie stappen in. Wij bezorgen je binnen 48 uur een heldere offerte op maat. Vrijblijvend, geen verkooppraat.</p>
+    <div class="trust-row">
+      <span><span class="gr">✓</span> Reactie binnen 48u</span>
+      <span><span class="gr">✓</span> 4,9★ Google</span>
+      <span><span class="gr">✓</span> Top 30 Vakbedrijf '26-'27</span>
+      <span><span class="gr">✓</span> 10 jr garantie</span>
+    </div>
+  </div>
+</header>
+
+<!-- WIZARD + SIDEBAR -->
+<form class="offerte-wrap" id="offerteForm" onsubmit="event.preventDefault(); submitOfferte();" novalidate>
+
+  <!-- MAIN -->
+  <div>
+    <!-- STEPPER -->
+    <div class="stepper" role="tablist">
+      <div class="step-pill active" data-step-pill="1">
+        <div class="pill-num"><span>1</span></div>
+        <div class="pill-lbl"><small>Stap 1</small><span>Wat heeft u nodig?</span></div>
+      </div>
+      <div class="step-pill" data-step-pill="2">
+        <div class="pill-num"><span>2</span></div>
+        <div class="pill-lbl"><small>Stap 2</small><span>Locatie</span></div>
+      </div>
+      <div class="step-pill" data-step-pill="3">
+        <div class="pill-num"><span>3</span></div>
+        <div class="pill-lbl"><small>Stap 3</small><span>Contact</span></div>
+      </div>
+    </div>
+
+    <!-- ============ STEP 1: NEED ============ -->
+    <section class="step is-active" data-step="1">
+      <div class="step-head">
+        <h2>Wat heeft u nodig?</h2>
+        <p>Geen zorgen — bij twijfel adviseren we eerlijk ter plaatse.</p>
+        <span class="time-est">⏱ ~ 30 seconden</span>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label">👤 U bent…</label>
+        <div class="tiles">
+          <button type="button" class="tile" data-radio="customer" data-value="particulier">
+            <div class="tile-ico">🏠</div>
+            <div class="tile-title">Particulier</div>
+            <div class="tile-sub">Privéwoning of appartement</div>
+          </button>
+          <button type="button" class="tile" data-radio="customer" data-value="zakelijk">
+            <div class="tile-ico">🏢</div>
+            <div class="tile-title">Bedrijf / VvE</div>
+            <div class="tile-sub">VvE-bestuur, kantoor, residentie</div>
+          </button>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label">🛠️ Welke werkzaamheden? <small>meerdere mogelijk</small></label>
+        <div class="tiles">
+          <button type="button" class="tile" data-checkbox="services" data-value="Platte daken">
+            <div class="tile-ico">🏠</div>
+            <div class="tile-title">Platte daken</div>
+            <div class="tile-sub">Bitumen of EPDM</div>
+          </button>
+          <button type="button" class="tile" data-checkbox="services" data-value="Pannendaken">
+            <div class="tile-ico">🏡</div>
+            <div class="tile-title">Pannendaken</div>
+            <div class="tile-sub">Hellend dak, vervanging, reparatie</div>
+          </button>
+          <button type="button" class="tile" data-checkbox="services" data-value="Dakkapellen">
+            <div class="tile-ico">🪟</div>
+            <div class="tile-title">Dakkapellen</div>
+            <div class="tile-sub">Plaatsing of renovatie</div>
+          </button>
+          <button type="button" class="tile" data-checkbox="services" data-value="Zinkwerken / dakgoten">
+            <div class="tile-ico">⚙️</div>
+            <div class="tile-title">Zinkwerken / dakgoten</div>
+            <div class="tile-sub">Goten, kilgoten, daktrimmen</div>
+          </button>
+          <button type="button" class="tile" data-checkbox="services" data-value="Lekkage / spoed">
+            <div class="tile-ico">🚨</div>
+            <div class="tile-title">Lekkage / spoed</div>
+            <div class="tile-sub">Vaak binnen 1 uur ter plaatse</div>
+          </button>
+          <button type="button" class="tile" data-checkbox="services" data-value="Gratis dakinspectie">
+            <div class="tile-ico">🔍</div>
+            <div class="tile-title">Gratis dakinspectie</div>
+            <div class="tile-sub">Helder rapport binnen 24u</div>
+          </button>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label">➕ Ook interesse in:</label>
+        <div class="tiles three">
+          <button type="button" class="tile" data-checkbox="services" data-value="Dakisolatie">
+            <div class="tile-ico">🌡️</div>
+            <div class="tile-title">Dakisolatie</div>
+          </button>
+          <button type="button" class="tile" data-checkbox="services" data-value="Dakraam / Velux">
+            <div class="tile-ico">☀️</div>
+            <div class="tile-title">Dakraam / Velux</div>
+          </button>
+          <button type="button" class="tile" data-checkbox="services" data-value="Schoorstenen">
+            <div class="tile-ico">🏭</div>
+            <div class="tile-title">Schoorstenen</div>
+          </button>
+          <button type="button" class="tile" data-checkbox="services" data-value="Trespawerken">
+            <div class="tile-ico">🧱</div>
+            <div class="tile-title">Trespawerken</div>
+          </button>
+          <button type="button" class="tile" data-checkbox="services" data-value="Onderhoud & inspectie">
+            <div class="tile-ico">🔧</div>
+            <div class="tile-title">Onderhoud</div>
+          </button>
+          <button type="button" class="tile" data-checkbox="services" data-value="Renovatie & verbouw">
+            <div class="tile-ico">🏗️</div>
+            <div class="tile-title">Renovatie & verbouw</div>
+          </button>
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label>Type woning <small style="text-transform:none;letter-spacing:normal;color:var(--ink-mute);font-weight:500">(optioneel)</small></label>
+          <select name="house_type">
+            <option value="">— Type woning —</option>
+            <option>Rijtjeshuis</option>
+            <option>Twee-onder-een-kap</option>
+            <option>Vrijstaande woning</option>
+            <option>Appartement</option>
+            <option>Bedrijfspand</option>
+            <option>Anders</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Aantal verdiepingen <small style="text-transform:none;letter-spacing:normal;color:var(--ink-mute);font-weight:500">(optioneel)</small></label>
+          <select name="floors">
+            <option value="">— Aantal verdiepingen —</option>
+            <option>1 (gelijkvloers + zolder)</option>
+            <option>2 verdiepingen</option>
+            <option>3 verdiepingen</option>
+            <option>4+ verdiepingen</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="step-nav">
+        <span></span>
+        <button type="button" class="btn btn-primary" data-next="2">
+          Volgende: locatie
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- ============ STEP 2: LOCATION ============ -->
+    <section class="step" data-step="2">
+      <div class="step-head">
+        <h2>Waar moeten we komen?</h2>
+        <p>Adres helpt ons de juiste planning te maken en bij spoed sneller ter plaatse te zijn.</p>
+        <span class="time-est">⏱ ~ 30 seconden</span>
+      </div>
+
+      <div class="field-row">
+        <div class="field" style="grid-column:span 2">
+          <label>Straatnaam en huisnummer <span class="req">*</span></label>
+          <input type="text" name="address" placeholder="bv. Heerlenseweg 12" required>
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label>Postcode <span class="req">*</span></label>
+          <input type="text" name="postcode" placeholder="6411 AB" required>
+        </div>
+        <div class="field">
+          <label>Plaats <span class="req">*</span></label>
+          <input type="text" name="city" placeholder="Heerlen" required>
+        </div>
+      </div>
+
+      <div class="b2b-block" id="b2bBlock">
+        <h4>🏢 Bedrijfsgegevens</h4>
+        <div class="field-row">
+          <div class="field">
+            <label>Bedrijfsnaam / VvE</label>
+            <input type="text" name="company">
+          </div>
+          <div class="field">
+            <label>KvK of BTW-nummer</label>
+            <input type="text" name="vat">
+          </div>
+        </div>
+        <div class="field">
+          <label>Uw functie</label>
+          <select name="role">
+            <option value="">— Maak een keuze —</option>
+            <option>VvE-bestuurder</option>
+            <option>Syndicus / vastgoedbeheerder</option>
+            <option>Facility manager</option>
+            <option>Zaakvoerder</option>
+            <option>Andere</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="step-nav">
+        <button type="button" class="btn btn-back" data-prev="1">← Terug</button>
+        <button type="button" class="btn btn-primary" data-next="3">
+          Volgende: contact
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- ============ STEP 3: CONTACT ============ -->
+    <section class="step" data-step="3">
+      <div class="step-head">
+        <h2>Hoe nemen we contact op?</h2>
+        <p>Laatste stap. Daarna ontvangt u binnen 48 uur uw offerte.</p>
+        <span class="time-est">⏱ ~ 45 seconden</span>
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label>Voornaam <span class="req">*</span></label>
+          <input type="text" name="first_name" required>
+        </div>
+        <div class="field">
+          <label>Achternaam <span class="req">*</span></label>
+          <input type="text" name="last_name" required>
+        </div>
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label>Telefoonnummer <span class="req">*</span></label>
+          <input type="tel" name="phone" placeholder="06-..." required>
+        </div>
+        <div class="field">
+          <label>E-mailadres <span class="req">*</span></label>
+          <input type="email" name="email" placeholder="naam@email.nl" required>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label">⏰ Wanneer wilt u dit aanpakken?</label>
+        <div class="tiles">
+          <button type="button" class="tile" data-radio="urgency" data-value="spoed">
+            <div class="tile-ico">🚨</div>
+            <div class="tile-title">SPOED</div>
+            <div class="tile-sub">Acute lekkage — graag direct contact</div>
+          </button>
+          <button type="button" class="tile" data-radio="urgency" data-value="2-weken">
+            <div class="tile-ico">📅</div>
+            <div class="tile-title">Binnen 2 weken</div>
+            <div class="tile-sub">Klus moet snel ingepland</div>
+          </button>
+          <button type="button" class="tile" data-radio="urgency" data-value="paar-maanden">
+            <div class="tile-ico">🗓️</div>
+            <div class="tile-title">Komende maanden</div>
+            <div class="tile-sub">Voorbereiden, geen haast</div>
+          </button>
+          <button type="button" class="tile" data-radio="urgency" data-value="orienteren">
+            <div class="tile-ico">🤔</div>
+            <div class="tile-title">Oriënteren</div>
+            <div class="tile-sub">Eerst prijs en advies bekijken</div>
+          </button>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Bijkomende informatie <small style="text-transform:none;letter-spacing:normal;color:var(--ink-mute);font-weight:500">(optioneel — wat speelt er?)</small></label>
+        <textarea name="message" placeholder="Bv: lekkage boven slaapkamer, dakpannen lopen los na storm, ik wil graag dakkapel inplannen…"></textarea>
+      </div>
+
+      <!-- UPLOAD -->
+      <span class="upload-label">📎 Foto's of tekeningen toevoegen <small style="text-transform:none;letter-spacing:normal;color:var(--ink-mute);font-weight:500">(optioneel — max 10 bestanden, elk max 10 MB)</small></span>
+      <div class="upload-zone" id="uploadZone">
+        <input type="file" name="attachments" id="fileInput" multiple accept="image/*,.pdf" aria-label="Bestanden uploaden">
+        <div class="uz-icon">🖼️</div>
+        <div class="uz-title">Sleep foto's of tekeningen hierheen</div>
+        <div class="uz-sub">of klik om te bladeren — JPG, PNG, PDF tot 10 MB per bestand</div>
+        <span class="uz-btn">Bestand kiezen</span>
+      </div>
+      <div class="upload-previews" id="uploadPreviews"></div>
+
+      <label class="privacy">
+        <input type="checkbox" name="privacy" required>
+        <span>Ik ga akkoord dat Adams Daktechniek mijn gegevens gebruikt om contact op te nemen voor deze offerte. Lees onze <a href="#">privacyverklaring</a>. <span class="req">*</span></span>
+      </label>
+
+      <div class="step-nav">
+        <button type="button" class="btn btn-back" data-prev="2">← Terug</button>
+        <button type="submit" class="btn btn-primary">
+          📩 Offerte aanvragen — Gratis & vrijblijvend
+        </button>
+      </div>
+
+      <div class="submit-foot">
+        <span>⏱ Antwoord binnen 48u</span>
+        <span>⭐ 4,9/5 op Google</span>
+        <span>🔒 Uw gegevens zijn veilig</span>
+      </div>
+    </section>
+
+    <!-- ============ THANK YOU ============ -->
+    <section class="ty" data-ty>
+      <div class="ty-icon">✓</div>
+      <h2>Bedankt — we nemen contact op.</h2>
+      <p>Uw aanvraag is binnen. We reageren binnen 48 uur (vaak sneller). Voor spoed: bel direct <a href="tel:0683396082" style="color:var(--green);font-weight:700">06-83396082</a>.</p>
+      <a class="btn btn-primary" href="index.html">Terug naar home</a>
+    </section>
+  </div>
+
+  <!-- ============ SIDEBAR ============ -->
+  <aside class="side">
+    <div class="side-card">
+      <h3>📞 Liever direct bellen?</h3>
+      <a href="tel:0683396082" class="big-num">06-83 396 082</a>
+      <p class="hrs">Ma–Vr · 08:00 – 18:00<br>Zaterdag op afspraak</p>
+      <div class="stars">★★★★★ <b>4,9/5</b> · 24 reviews</div>
+    </div>
+
+    <a href="https://wa.me/31683396082?text=Hallo%20Adams%20Daktechniek%2C%20ik%20wil%20een%20offerte%20aanvragen." target="_blank" rel="noopener" class="side-card wa" style="text-decoration:none">
+      <h3>💬 Sneller via WhatsApp?</h3>
+      <span class="big-num">Stuur een bericht →</span>
+      <p>Foto van de situatie meesturen kan ook — vaak het snelst.</p>
+    </a>
+
+    <div class="side-card">
+      <h3>📧 E-mail</h3>
+      <a href="mailto:info@adamsdaktechniek.nl" class="big-num" style="font-size:15px">info@adamsdaktechniek.nl</a>
+      <p>Reactie binnen 1 werkdag.</p>
+    </div>
+
+    <div class="side-card promo">
+      <h3>🎯 Gratis dakinspectie</h3>
+      <div class="promo-h">Twijfel over de staat van je dak?</div>
+      <p>Binnen 24 uur een helder rapport — geschikt voor verzekering of onderhoudsbudget. Geen verplichtingen.</p>
+      <a href="index.html#inspectie">Meer over de inspectie →</a>
+    </div>
+
+    <div class="side-card">
+      <h3>📍 Werkgebied</h3>
+      <p style="margin-top:6px">Heel Zuid-Limburg en Westelijke Mijnstreek. Klik op uw plaats voor lokale info.</p>
+      <div class="side-chips">
+        <a class="side-chip" href="dakdekker-heerlen.html">Heerlen</a>
+        <a class="side-chip" href="dakdekker-brunssum.html">Brunssum</a>
+        <a class="side-chip" href="dakdekker-hoensbroek.html">Hoensbroek</a>
+        <a class="side-chip" href="dakdekker-landgraaf.html">Landgraaf</a>
+        <a class="side-chip" href="dakdekker-kerkrade.html">Kerkrade</a>
+        <a class="side-chip" href="dakdekker-voerendaal.html">Voerendaal</a>
+        <a class="side-chip" href="dakdekker-eygelshoven.html">Eygelshoven</a>
+        <a class="side-chip" href="dakdekker-simpelveld.html">Simpelveld</a>
+        <a class="side-chip" href="dakdekker-schinveld.html">Schinveld</a>
+        <a class="side-chip" href="dakdekker-nuth.html">Nuth</a>
+        <a class="side-chip" href="dakdekker-schinnen.html">Schinnen</a>
+        <a class="side-chip" href="dakdekker-klimmen.html">Klimmen</a>
+        <a class="side-chip" href="dakdekker-valkenburg.html">Valkenburg</a>
+        <a class="side-chip" href="dakdekker-beek.html">Beek</a>
+        <a class="side-chip" href="dakdekker-geleen.html">Geleen</a>
+        <a class="side-chip" href="dakdekker-sittard.html">Sittard</a>
+        <a class="side-chip" href="dakdekker-born.html">Born</a>
+        <a class="side-chip" href="dakdekker-echt.html">Echt</a>
+      </div>
+    </div>
+  </aside>
+
+</form>
+
+<!-- ============= FAQ ============= -->
+<section class="faq-section">
+  <div class="container" style="max-width:840px">
+    <h2>Veelgestelde vragen</h2>
+    <p class="lead">Wat klanten vaak vragen voor ze een offerte aanvragen.</p>
+
+    <details class="faq" open>
+      <summary>Hoe snel krijg ik een offerte?</summary>
+      <p>Binnen 48 uur na uw aanvraag, vaak sneller. Bij spoed (lekkage) bellen we direct terug en proberen we binnen 1 uur ter plaatse te zijn.</p>
+    </details>
+    <details class="faq">
+      <summary>Is de dakinspectie echt gratis?</summary>
+      <p>Ja, in ons werkgebied (heel Limburg) rekenen we niets voor een inspectie. U ontvangt een helder rapport met foto's en aanbevelingen.</p>
+    </details>
+    <details class="faq">
+      <summary>Wat kost een gemiddelde klus?</summary>
+      <p>Dat hangt af van type dak, oppervlakte en materiaal. We geven binnen 48 uur een vaste prijs op een A4 — geen verrassingen achteraf, geen meerwerk-trucs.</p>
+    </details>
+    <details class="faq">
+      <summary>Geven jullie garantie?</summary>
+      <p>Op uitvoering geven we 10 jaar garantie. Op materialen geldt de fabrieksgarantie (vaak 10–20 jaar bij A-merken zoals Soprema, Velux en Wienerberger).</p>
+    </details>
+    <details class="faq">
+      <summary>Werken jullie ook voor VvE's en bedrijven?</summary>
+      <p>Ja. We hebben ervaring met VvE-projecten tot 1000m². Periodiek onderhoudsplan op maat, btw-conforme facturen en fotorapport per beurt.</p>
+    </details>
+    <details class="faq">
+      <summary>Wat als ik niet tevreden ben?</summary>
+      <p>We lossen het op. Uw tevredenheid is onze garantie — we komen terug tot het resultaat klopt.</p>
+    </details>
+  </div>
+</section>
+
+<!-- ============= FOOTER ============= -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+
+      <!-- Brand -->
+      <div class="foot-brand">
+        <a class="brand" href="index.html" aria-label="Adams Daktechniek">
+          <img class="brand-logo brand-logo--footer" src="../Images/LogoAdamsDaktechniek.png" alt="Adams Daktechniek">
+        </a>
+        <p>Specialist in pannendaken, platte daken, zinkwerken, trespawerken, dakkapellen en isolaties. Werkzaam in heel Limburg en omgeving.</p>
+        <div class="foot-slogan">Samen duurzaam de toekomst in.</div>
+        <div class="socials" style="margin-top:18px">
+          <a href="https://www.tiktok.com/@adamsdaktechniek" aria-label="TikTok" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 8.2a6 6 0 0 1-3.5-1.1v7.4a5.7 5.7 0 1 1-5.7-5.7v3a2.7 2.7 0 1 0 2.7 2.7V2h3a3.8 3.8 0 0 0 3.5 3.4v2.8z"/></svg>
+          </a>
+          </div>
+      </div>
+
+      <!-- Diensten -->
+      <div class="foot">
+        <h6>Diensten</h6>
+        <ul>
+          <li><a href="platte-daken.html">Platte daken</a></li>
+          <li><a href="pannendaken.html">Pannendaken</a></li>
+          <li><a href="dakkapellen.html">Dakkapellen</a></li>
+          <li><a href="zinkwerken.html">Zinkwerken &amp; dakgoten</a></li>
+          <li><a href="trespawerken.html">Trespawerken</a></li>
+          <li><a href="spoed-lekkages.html">Spoed &amp; lekkages</a></li>
+          <li><a href="dakraam-velux.html">Dakraam / Velux</a></li>
+          <li><a href="dakisolatie.html">Dakisolatie</a></li>
+          <li><a href="schoorstenen.html">Schoorstenen</a></li>
+          <li><a href="onderhoud-inspectie.html">Onderhoud &amp; inspectie</a></li>
+          <li><a href="renovatie-verbouw.html">Renovatie &amp; verbouw</a></li>
+          <li><a href="dakreiniging.html">Dakreiniging</a></li>
+        </ul>
+      </div>
+
+      <!-- Werkgebied -->
+      <div class="foot">
+        <h6>Werkgebied</h6>
+        <ul style="column-count:2;column-gap:20px;-webkit-column-count:2">
+          <li><a href="dakdekker-heerlen.html">Heerlen</a></li>
+          <li><a href="dakdekker-hoensbroek.html">Hoensbroek</a></li>
+          <li><a href="dakdekker-brunssum.html">Brunssum</a></li>
+          <li><a href="dakdekker-landgraaf.html">Landgraaf</a></li>
+          <li><a href="dakdekker-kerkrade.html">Kerkrade</a></li>
+          <li><a href="dakdekker-eygelshoven.html">Eygelshoven</a></li>
+          <li><a href="dakdekker-voerendaal.html">Voerendaal</a></li>
+          <li><a href="dakdekker-simpelveld.html">Simpelveld</a></li>
+          <li><a href="dakdekker-nuth.html">Nuth</a></li>
+          <li><a href="dakdekker-schinnen.html">Schinnen</a></li>
+          <li><a href="dakdekker-schinveld.html">Schinveld</a></li>
+          <li><a href="dakdekker-klimmen.html">Klimmen</a></li>
+          <li><a href="dakdekker-valkenburg.html">Valkenburg</a></li>
+          <li><a href="dakdekker-beek.html">Beek</a></li>
+          <li><a href="dakdekker-geleen.html">Geleen</a></li>
+          <li><a href="dakdekker-sittard.html">Sittard</a></li>
+          <li><a href="dakdekker-born.html">Born</a></li>
+          <li><a href="dakdekker-echt.html">Echt</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="foot">
+        <h6>Contact</h6>
+        <ul>
+          <li><a href="tel:0683396082">06-83 396 082</a></li>
+          <li><a href="mailto:info@adamsdaktechniek.nl">info@adamsdaktechniek.nl</a></li>
+          <li>KvK 89562135</li>
+        </ul>
+        <h6 style="margin-top:24px">Bedrijf</h6>
+        <ul>
+          <li><a href="offerte.html">Offerte aanvragen</a></li>
+          <li><a href="projecten.html">Projecten</a></li>
+          <li><a href="index.html#reviews">Reviews</a></li>
+          <li><a href="index.html#werkwijze">Werkwijze</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="legal">
+      <div>&#169; <span id="yr"></span> Adams Daktechniek &middot; Alle rechten voorbehouden</div>
+      <div>KvK 89562135 &middot; Heerlen, Limburg &middot; NL</div>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp FAB -->
+<a class="wa-fab" href="https://wa.me/31683396082?text=Hallo%20Adams%20Daktechniek%2C%20ik%20heb%20een%20vraag%20over%20mijn%20dak." target="_blank" rel="noopener" aria-label="WhatsApp Adams Daktechniek">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.122 1.532 5.856L.057 23.215a.75.75 0 0 0 .922.924l5.421-1.461A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.718 9.718 0 0 1-4.964-1.356l-.355-.211-3.685.993.977-3.596-.232-.369A9.718 9.718 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+</a>
+
+<!-- Sticky mobile CTA -->
+<div class="mobile-cta">
+  <a class="mb-call" href="tel:0683396082">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Bel direct
+  </a>
+  <a class="mb-mail" href="mailto:info@adamsdaktechniek.nl">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+    Mail
+  </a>
+</div>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // Nav scroll
+  const nav = document.getElementById('nav');
+  document.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 12), {passive:true});
+
+  // Burger
+  const burger = document.getElementById('burger');
+  const menu = document.getElementById('mobileMenu');
+  burger.addEventListener('click', () => {
+    const open = !nav.classList.contains('open');
+    nav.classList.toggle('open', open);
+    menu.classList.toggle('open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    nav.classList.remove('open'); menu.classList.remove('open');
+    document.body.style.overflow = '';
+  }));
+
+  // ===== WIZARD =====
+  const form = document.getElementById('offerteForm');
+  const steps = form.querySelectorAll('.step');
+  const pills = form.querySelectorAll('.step-pill');
+  const ty = form.querySelector('[data-ty]');
+  let currentStep = 1;
+
+  function goToStep(n){
+    currentStep = n;
+    steps.forEach(s => s.classList.toggle('is-active', +s.dataset.step === n));
+    pills.forEach(p => {
+      const i = +p.dataset.stepPill;
+      p.classList.toggle('active', i === n);
+      p.classList.toggle('done', i < n);
+    });
+    window.scrollTo({top: form.offsetTop - 100, behavior:'smooth'});
+  }
+
+  form.querySelectorAll('[data-next]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if(!validateStep(currentStep)) return;
+      goToStep(+btn.dataset.next);
+    });
+  });
+  form.querySelectorAll('[data-prev]').forEach(btn => {
+    btn.addEventListener('click', () => goToStep(+btn.dataset.prev));
+  });
+  pills.forEach(p => p.addEventListener('click', () => {
+    const target = +p.dataset.stepPill;
+    if(target < currentStep) goToStep(target);
+  }));
+
+  // Tile selection (radio + checkbox)
+  form.querySelectorAll('.tile').forEach(tile => {
+    tile.addEventListener('click', () => {
+      if(tile.dataset.radio){
+        const name = tile.dataset.radio;
+        form.querySelectorAll(`[data-radio="${name}"]`).forEach(t => t.classList.remove('selected'));
+        tile.classList.add('selected');
+        if(name === 'customer'){
+          const isBiz = tile.dataset.value === 'zakelijk';
+          document.getElementById('b2bBlock').classList.toggle('is-open', isBiz);
+        }
+      } else if(tile.dataset.checkbox){
+        tile.classList.toggle('selected');
+      }
+    });
+  });
+
+  function validateStep(n){
+    if(n === 1){
+      const customer = form.querySelector('[data-radio="customer"].selected');
+      const services = form.querySelectorAll('[data-checkbox="services"].selected');
+      if(!customer){ alert('Geef aan of u particulier of zakelijk bent.'); return false; }
+      if(services.length === 0){ alert('Selecteer minstens één dienst.'); return false; }
+      return true;
+    }
+    if(n === 2){
+      const required = form.querySelectorAll('[data-step="2"] input[required]');
+      for(const inp of required){
+        if(!inp.value.trim()){ inp.focus(); inp.style.borderColor='#ef4444'; setTimeout(()=>inp.style.borderColor='',1500); return false; }
+      }
+      return true;
+    }
+    return true;
+  }
+
+  // ============ FILE UPLOAD HANDLING ============
+  const uploadZone = document.getElementById('uploadZone');
+  const fileInput  = document.getElementById('fileInput');
+  const previews   = document.getElementById('uploadPreviews');
+  let uploadedFiles = [];
+  const MAX_FILES = 10;
+  const MAX_BYTES = 10 * 1024 * 1024; // 10 MB
+
+  function addFiles(newFiles){
+    for(const file of newFiles){
+      if(uploadedFiles.length >= MAX_FILES){ alert('Maximaal ' + MAX_FILES + ' bestanden toegestaan.'); break; }
+      if(file.size > MAX_BYTES){ alert(file.name + ' is groter dan 10 MB en wordt overgeslagen.'); continue; }
+      uploadedFiles.push(file);
+      renderPreview(file, uploadedFiles.length - 1);
+    }
+  }
+
+  function renderPreview(file, idx){
+    const wrap = document.createElement('div');
+    wrap.className = 'upload-preview';
+    wrap.dataset.idx = idx;
+    if(file.type.startsWith('image/')){
+      const img = document.createElement('img');
+      img.alt = file.name;
+      const reader = new FileReader();
+      reader.onload = e => img.src = e.target.result;
+      reader.readAsDataURL(file);
+      wrap.appendChild(img);
+    } else {
+      const icon = document.createElement('div');
+      icon.className = 'up-icon';
+      icon.textContent = '📄';
+      wrap.appendChild(icon);
+    }
+    const btn = document.createElement('button');
+    btn.className = 'up-remove';
+    btn.type = 'button';
+    btn.setAttribute('aria-label', 'Verwijder ' + file.name);
+    btn.textContent = '×';
+    btn.addEventListener('click', () => {
+      uploadedFiles.splice(parseInt(wrap.dataset.idx), 1);
+      rebuildPreviews();
+    });
+    wrap.appendChild(btn);
+    previews.appendChild(wrap);
+  }
+
+  function rebuildPreviews(){
+    previews.innerHTML = '';
+    uploadedFiles.forEach((f, i) => renderPreview(f, i));
+  }
+
+  fileInput.addEventListener('change', () => { addFiles(fileInput.files); fileInput.value = ''; });
+
+  uploadZone.addEventListener('dragover', e => { e.preventDefault(); uploadZone.classList.add('drag-over'); });
+  uploadZone.addEventListener('dragleave', () => uploadZone.classList.remove('drag-over'));
+  uploadZone.addEventListener('drop', e => {
+    e.preventDefault();
+    uploadZone.classList.remove('drag-over');
+    addFiles(e.dataTransfer.files);
+  });
+
+  function submitOfferte(){
+    // Validate step 3
+    const required = form.querySelectorAll('[data-step="3"] input[required], [data-step="3"] [name="privacy"]');
+    for(const inp of required){
+      if(inp.type === 'checkbox' && !inp.checked){ alert('Privacy-akkoord is nodig om door te gaan.'); return; }
+      if(inp.type !== 'checkbox' && !inp.value.trim()){ inp.focus(); inp.style.borderColor='#ef4444'; setTimeout(()=>inp.style.borderColor='',1500); return; }
+    }
+    // Hide all steps + pills, show thank-you
+    steps.forEach(s => s.classList.remove('is-active'));
+    document.querySelector('.stepper').style.display = 'none';
+    ty.classList.add('is-active');
+    window.scrollTo({top: form.offsetTop - 100, behavior:'smooth'});
+
+    // NOTE: in productie hier echte form-submit naar Formspree / eigen endpoint
+    console.log('Offerte aanvraag ontvangen (demo).');
+  }
+
+  // Mobile menu Diensten accordion
+  document.querySelectorAll('[data-mm-toggle]').forEach(trigger => {
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      trigger.classList.toggle('open');
+      const sub = trigger.nextElementSibling;
+      if(sub && sub.classList.contains('mm-sub')) sub.classList.toggle('open');
+    });
+  });
+
+
+  // Diensten dropdown: click to toggle (in addition to hover)
+  document.querySelectorAll('.nav-dropdown').forEach(dd => {
+    const toggle = dd.querySelector('.nav-dropdown-toggle');
+    if (!toggle) return;
+    toggle.addEventListener('click', (e) => {
+      // On touch / narrow viewport, prevent navigation and toggle
+      const isTouch = window.matchMedia('(hover: none)').matches;
+      const isOpen = dd.classList.contains('is-open');
+      if (isTouch || !isOpen) {
+        e.preventDefault();
+        // Close other open dropdowns
+        document.querySelectorAll('.nav-dropdown.is-open').forEach(o => { if(o !== dd) o.classList.remove('is-open'); });
+        dd.classList.toggle('is-open');
+      }
+      // else allow navigation to #diensten on second click when already open via hover
+    });
+  });
+  // Close dropdown when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.nav-dropdown')) {
+      document.querySelectorAll('.nav-dropdown.is-open').forEach(o => o.classList.remove('is-open'));
+    }
+  });
+
+</script>
+
+</body>
+</html>

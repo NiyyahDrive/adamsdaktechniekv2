@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#0a0a0a" />
+
+<!-- TODO: Pas title + description + canonical aan voor deze pagina -->
+<title>TODO PAGINATITEL | Adams Daktechniek</title>
+<meta name="description" content="TODO: unieke meta description voor deze pagina" />
+<link rel="canonical" href="https://niyyahdrive.github.io/adamsdaktechniekv2/WebSite/todo-pagina.html" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="../Images/LogoAdamsDaktechniek.png">
+
+<style>
+  :root{
+    --bg:#070707; --bg-2:#0d0d0d; --bg-3:#141414;
+    --line:#1f1f1f; --line-2:#2a2a2a;
+    --ink:#f6f6f6; --ink-dim:#a8a8a8; --ink-mute:#6b6b6b;
+    --green:#5CC27A; --green-2:#2E7D45;
+    --green-glow:rgba(92,194,122,0.18);
+    --container:1200px;
+    --ease:cubic-bezier(.22,.61,.36,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  img,svg{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
+  body::before{content:"";position:fixed;inset:0;background-image:radial-gradient(circle at 20% 0%,rgba(92,194,122,.06),transparent 40%),radial-gradient(circle at 80% 100%,rgba(92,194,122,.04),transparent 50%),linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:auto,auto,64px 64px,64px 64px;opacity:.25;pointer-events:none;z-index:-1;mask-image:linear-gradient(180deg,rgba(0,0,0,.9),rgba(0,0,0,.2))}
+  .container{max-width:var(--container);margin:0 auto;padding:0 24px}
+
+  .nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(0,0,0,0.88);backdrop-filter:blur(14px) saturate(140%);border-bottom:1px solid transparent;transition:all .3s var(--ease)}
+  .nav.scrolled{border-color:var(--line);background:rgba(0,0,0,0.95)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:112px}
+  .brand{display:flex;align-items:center;gap:12px}
+  .brand-logo{height:92px;width:auto;display:block;mix-blend-mode:lighten}
+  .nav-links{display:flex;gap:32px;align-items:center}
+  .nav-links a{font-size:14px;font-weight:500;color:var(--ink-dim);position:relative;padding:6px 0;transition:color .25s var(--ease)}
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--green);transition:width .3s var(--ease)}
+  .nav-links a:hover{color:#fff}
+  .nav-links a:hover::after{width:100%}
+  .nav-cta{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;background:var(--green);color:#0a0a0a;font-weight:700;font-size:13px;letter-spacing:.5px;box-shadow:0 8px 30px var(--green-glow)}
+
+  .nav-dropdown{position:relative}
+  .nav-dropdown > .nav-dropdown-toggle{display:flex !important;align-items:center;gap:5px;cursor:pointer}
+  .nav-dropdown > .nav-dropdown-toggle svg{transition:transform .25s var(--ease);opacity:.7}
+  .nav-dropdown:hover > .nav-dropdown-toggle svg{transform:rotate(180deg);opacity:1}
+  .nav-dropdown:hover > .nav-dropdown-toggle{color:#fff !important}
+  .nav-dropdown:hover > .nav-dropdown-toggle::after{width:100% !important}
+  .nav-dropdown-panel{position:absolute;top:calc(100% + 14px);left:-24px;background:rgba(0,0,0,0.96);backdrop-filter:blur(20px);border:1px solid var(--line-2);border-radius:16px;padding:14px;width:520px;opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .25s var(--ease),transform .25s var(--ease),visibility .25s;display:grid;grid-template-columns:1fr 1fr;gap:2px;box-shadow:0 30px 80px rgba(0,0,0,.6);z-index:51}
+  .nav-dropdown::before{content:"";position:absolute;top:100%;left:0;right:0;height:14px}
+  .nav-dropdown:hover .nav-dropdown-panel{opacity:1;visibility:visible;transform:translateY(0)}
+  .nav-dropdown-panel a{padding:11px 14px !important;font-size:13.5px !important;font-weight:600 !important;border-radius:10px;color:#e6e6e6 !important;transition:background .15s var(--ease),color .15s var(--ease);border-bottom:none !important;display:flex !important;align-items:center;gap:6px;line-height:1.2 !important}
+  .nav-dropdown-panel a::after{content:none !important}
+  .nav-dropdown-panel a:hover{background:rgba(92,194,122,0.12) !important;color:var(--green) !important}
+
+  .burger{display:none;width:42px;height:42px;border-radius:10px;border:1px solid var(--line-2);position:relative}
+  .burger span{position:absolute;left:11px;right:11px;height:2px;background:#fff;border-radius:2px;transition:transform .45s cubic-bezier(.7,0,.3,1), opacity .25s var(--ease), top .2s var(--ease);transform-origin:center}
+  .burger span:nth-child(1){top:14px}
+  .burger span:nth-child(2){top:20px}
+  .burger span:nth-child(3){top:26px}
+  .nav.open .burger span:nth-child(1){top:20px;transform:rotate(45deg)}
+  .nav.open .burger span:nth-child(2){opacity:0;transform:scaleX(0)}
+  .nav.open .burger span:nth-child(3){top:20px;transform:rotate(-45deg)}
+  .mobile-menu{position:fixed;left:0;right:0;top:112px;height:calc(100svh - 112px);height:calc(100dvh - 112px);background:#000;z-index:49;display:flex;flex-direction:column;padding:28px 28px 32px;opacity:0;pointer-events:none;transition:opacity .35s var(--ease)}
+  .mobile-menu.open{opacity:1;pointer-events:auto}
+  .mobile-menu nav{display:block;flex:0 0 auto}
+  .mobile-menu nav a{display:flex;align-items:baseline;gap:18px;padding:clamp(14px, 2.6vw, 18px) 0;font-family:'Manrope','Inter',sans-serif;font-size:clamp(24px, 6.6vw, 32px);font-weight:700;letter-spacing:-.02em;line-height:1;color:#fff;border-bottom:1px solid rgba(255,255,255,.06);text-decoration:none;opacity:0;transform:translateY(14px);transition:opacity .2s var(--ease), transform .25s var(--ease), color .2s var(--ease)}
+  .mobile-menu.open nav a{opacity:1;transform:none;transition:opacity .55s var(--ease) calc(var(--i,0) * 70ms + 140ms),transform .8s cubic-bezier(.16,1,.3,1) calc(var(--i,0) * 70ms + 140ms),color .2s var(--ease)}
+  .mobile-menu nav a:last-of-type{border-bottom:none}
+  .mobile-menu nav a:active{color:var(--green)}
+  .mobile-menu nav a .mm-num{font-size:11px;font-weight:600;letter-spacing:2.5px;color:var(--green);opacity:.55;font-family:'Inter',sans-serif;width:18px;flex-shrink:0}
+  .mobile-menu .mm-foot{margin-top:auto;display:flex;flex-direction:column;gap:16px;padding-top:24px;border-top:1px solid rgba(255,255,255,.06);opacity:0;transform:translateY(14px);transition:opacity .2s var(--ease), transform .25s var(--ease)}
+  .mobile-menu.open .mm-foot{opacity:1;transform:none;transition:opacity .55s var(--ease) 520ms,transform .8s cubic-bezier(.16,1,.3,1) 520ms}
+  .mobile-menu .mm-cta{display:block;padding:20px 24px;background:var(--green);color:#0a0a0a;font-family:'Manrope','Inter',sans-serif;font-weight:800;font-size:18px;letter-spacing:.3px;text-align:center;border-radius:999px;text-decoration:none;box-shadow:0 14px 40px rgba(92,194,122,.22);transition:transform .2s var(--ease), box-shadow .2s var(--ease)}
+  .mobile-menu .mm-cta:active{transform:scale(.985);box-shadow:0 6px 20px rgba(92,194,122,.3)}
+  .mobile-menu .mm-cta small{display:block;font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;opacity:.6;margin-bottom:3px}
+  .mobile-menu .mm-meta{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;font-size:12px;color:var(--ink-mute);font-weight:500;letter-spacing:.2px}
+  .mobile-menu .mm-meta a{color:var(--ink-dim);text-decoration:none}
+  .mobile-menu .mm-meta a:active{color:#fff}
+  .mobile-menu .mm-meta .sep{opacity:.4}
+  .mobile-menu .mm-sub{display:none;flex-direction:column;gap:0;margin:0 0 14px 0;padding:6px 0 14px;border-bottom:1px solid rgba(255,255,255,.06)}
+  .mobile-menu .mm-sub.open{display:flex}
+  .mobile-menu .mm-sub a{padding:11px 0 11px 22px !important;font-size:17px !important;font-weight:500 !important;color:var(--ink-dim) !important;border-bottom:none !important;line-height:1.2 !important}
+  .mobile-menu .mm-trigger{cursor:pointer;position:relative}
+  .mobile-menu .mm-trigger::after{content:"+";position:absolute;right:0;top:50%;transform:translateY(-50%);font-size:24px;color:var(--green);font-weight:400;transition:transform .3s var(--ease)}
+  .mobile-menu .mm-trigger.open::after{transform:translateY(-50%) rotate(45deg)}
+
+  .hero{padding:170px 0 72px}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;padding:8px 14px;border-radius:999px;border:1px solid var(--line-2);background:rgba(7,7,7,.5);font-size:12px;font-weight:600;letter-spacing:1.5px;color:var(--ink-dim);text-transform:uppercase;margin-bottom:22px}
+  h1{font-family:'Manrope';font-size:clamp(36px,5.5vw,62px);line-height:1.04;font-weight:800;letter-spacing:-.02em;margin-bottom:14px}
+  .lead{font-size:17px;color:#e6e6e6;max-width:62ch;line-height:1.6}
+
+  section{padding:72px 0}
+  h2{font-family:'Manrope';font-size:clamp(28px,3.8vw,44px);font-weight:800;letter-spacing:-.02em;line-height:1.1;margin-bottom:14px}
+  .card{padding:24px;border-radius:14px;background:rgba(255,255,255,.03);border:1px solid var(--line)}
+  .card p{color:var(--ink-dim)}
+
+  footer{padding:50px 0 100px;border-top:1px solid var(--line);background:#050505}
+  .foot-grid{display:grid;grid-template-columns:2fr 1fr 1.2fr 1fr;gap:48px}
+  .foot-brand .brand-logo--footer{height:120px;mix-blend-mode:lighten}
+  .foot-brand p{color:var(--ink-dim);font-size:14px;margin-top:18px;max-width:300px}
+  .foot-slogan{margin-top:18px;font-family:'Manrope';font-size:12px;letter-spacing:3px;color:var(--green);text-transform:uppercase;font-weight:700}
+  .foot h6{font-size:12px;text-transform:uppercase;letter-spacing:2px;color:#fff;margin-bottom:18px}
+  .foot ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .foot a{color:var(--ink-dim);font-size:14px;transition:color .2s}
+  .foot a:hover{color:var(--green)}
+  .legal{margin-top:48px;padding-top:24px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;color:var(--ink-mute);font-size:12px}
+  .socials{display:flex;gap:10px}
+  .socials a{width:38px;height:38px;border-radius:10px;border:1px solid var(--line-2);background:#0a0a0a;display:flex;align-items:center;justify-content:center;color:var(--ink-dim);transition:all .25s var(--ease)}
+  .socials a:hover{color:var(--green);border-color:var(--green)}
+
+  @media (max-width:980px){
+    .nav-inner{height:92px}
+    .brand-logo{height:72px}
+    .mobile-menu{top:92px;height:calc(100svh - 92px)}
+    .nav-links,.nav-cta{display:none}
+    .burger{display:block}
+    .hero{padding:130px 0 56px}
+    .foot-grid{grid-template-columns:1fr 1fr;gap:32px}
+  }
+  @media (max-width:560px){
+    .foot-grid{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV: wijzig alleen class="active" voor de huidige pagina -->
+<nav class="nav" id="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html" aria-label="Adams Daktechniek">
+      <img class="brand-logo" src="../Images/LogoAdamsDaktechniek.png" alt="Adams Daktechniek">
+    </a>
+    <div class="nav-links">
+      <div class="nav-dropdown">
+        <a href="index.html#diensten" class="nav-dropdown-toggle">Diensten<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></a>
+        <div class="nav-dropdown-panel">
+          <a href="platte-daken.html">Platte daken</a>
+          <a href="pannendaken.html">Pannendaken</a>
+          <a href="dakkapellen.html">Dakkapellen</a>
+          <a href="zinkwerken.html">Zinkwerken</a>
+          <a href="trespawerken.html">Trespawerken</a>
+          <a href="spoed-lekkages.html">Spoed & lekkages</a>
+          <a href="dakraam-velux.html">Dakraam / Velux</a>
+          <a href="dakisolatie.html">Dakisolatie</a>
+          <a href="schoorstenen.html">Schoorstenen</a>
+          <a href="onderhoud-inspectie.html">Onderhoud & inspectie</a>
+          <a href="renovatie-verbouw.html">Renovatie & verbouw</a>
+          <a href="dakreiniging.html">Dakreiniging</a>
+        </div>
+      </div>
+      <a href="projecten.html">Projecten</a>
+      <a href="index.html#werkwijze">Werkwijze</a>
+      <a href="index.html#reviews">Reviews</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+    <a class="nav-cta" href="offerte.html">Offerte aanvragen<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <nav>
+      <a href="index.html#diensten" class="mm-trigger" data-mm-toggle>Diensten</a>
+      <div class="mm-sub">
+        <a href="platte-daken.html">Platte daken</a>
+        <a href="pannendaken.html">Pannendaken</a>
+        <a href="dakkapellen.html">Dakkapellen</a>
+        <a href="zinkwerken.html">Zinkwerken</a>
+        <a href="trespawerken.html">Trespawerken</a>
+        <a href="spoed-lekkages.html">Spoed & lekkages</a>
+        <a href="dakraam-velux.html">Dakraam / Velux</a>
+        <a href="dakisolatie.html">Dakisolatie</a>
+        <a href="schoorstenen.html">Schoorstenen</a>
+        <a href="onderhoud-inspectie.html">Onderhoud & inspectie</a>
+        <a href="renovatie-verbouw.html">Renovatie & verbouw</a>
+        <a href="dakreiniging.html">Dakreiniging</a>
+      </div>
+      <a href="projecten.html" style="--i:1">Projecten</a>
+      <a href="index.html#werkwijze" style="--i:2">Werkwijze</a>
+      <a href="index.html#waarom" style="--i:3">Waarom Adams</a>
+      <a href="index.html#contact" style="--i:4">Contact</a>
+    </nav>
+    <div class="mm-foot">
+      <a class="mm-cta" href="tel:0683396082"><small>Bel direct</small>06-83396082</a>
+      <div class="mm-meta">
+        <a href="mailto:info@adamsdaktechniek.nl">info@adamsdaktechniek.nl</a>
+        <span class="sep">·</span>
+        <span>Heerlen · Limburg</span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <span class="eyebrow">TODO paginanaam</span>
+    <h1>TODO hoofdtitel van deze pagina</h1>
+    <p class="lead">TODO korte inleiding van de pagina met de belangrijkste zoekwoorden en waarde voor de bezoeker.</p>
+  </div>
+</header>
+
+<main>
+  <!-- TODO: Vervang deze secties met je echte contentblokken -->
+  <section>
+    <div class="container card">
+      <h2>TODO Sectie 1</h2>
+      <p>Gebruik dit blok als startpunt voor je eerste inhoudssectie.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container card">
+      <h2>TODO Sectie 2</h2>
+      <p>Gebruik hier bijvoorbeeld voordelen, werkwijze, FAQ of een CTA.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="index.html" aria-label="Adams Daktechniek">
+          <img class="brand-logo brand-logo--footer" src="../Images/LogoAdamsDaktechniek.png" alt="Adams Daktechniek">
+        </a>
+        <p>Specialist in pannendaken, platte daken, zinkwerken, trespawerken, dakkapellen en isolaties. Werkzaam in heel Limburg en omgeving.</p>
+        <div class="foot-slogan">Samen duurzaam de toekomst in.</div>
+        <div class="socials" style="margin-top:18px">
+          <a href="https://www.tiktok.com/@adamsdaktechniek" aria-label="TikTok" target="_blank" rel="noopener">T</a>
+          </div>
+      </div>
+
+      <div class="foot">
+        <h6>Diensten</h6>
+        <ul>
+          <li><a href="platte-daken.html">Platte daken</a></li>
+          <li><a href="pannendaken.html">Pannendaken</a></li>
+          <li><a href="dakkapellen.html">Dakkapellen</a></li>
+          <li><a href="zinkwerken.html">Zinkwerken & dakgoten</a></li>
+          <li><a href="trespawerken.html">Trespawerken</a></li>
+          <li><a href="spoed-lekkages.html">Spoed & lekkages</a></li>
+          <li><a href="dakraam-velux.html">Dakraam / Velux</a></li>
+          <li><a href="dakisolatie.html">Dakisolatie</a></li>
+          <li><a href="schoorstenen.html">Schoorstenen</a></li>
+          <li><a href="onderhoud-inspectie.html">Onderhoud & inspectie</a></li>
+          <li><a href="renovatie-verbouw.html">Renovatie & verbouw</a></li>
+          <li><a href="dakreiniging.html">Dakreiniging</a></li>
+        </ul>
+      </div>
+
+      <div class="foot">
+        <h6>Werkgebied</h6>
+        <ul style="column-count:2;column-gap:20px;-webkit-column-count:2">
+          <li><a href="dakdekker-heerlen.html">Heerlen</a></li>
+          <li><a href="dakdekker-hoensbroek.html">Hoensbroek</a></li>
+          <li><a href="dakdekker-brunssum.html">Brunssum</a></li>
+          <li><a href="dakdekker-landgraaf.html">Landgraaf</a></li>
+          <li><a href="dakdekker-kerkrade.html">Kerkrade</a></li>
+          <li><a href="dakdekker-eygelshoven.html">Eygelshoven</a></li>
+          <li><a href="dakdekker-voerendaal.html">Voerendaal</a></li>
+          <li><a href="dakdekker-simpelveld.html">Simpelveld</a></li>
+          <li><a href="dakdekker-nuth.html">Nuth</a></li>
+          <li><a href="dakdekker-schinnen.html">Schinnen</a></li>
+          <li><a href="dakdekker-schinveld.html">Schinveld</a></li>
+          <li><a href="dakdekker-klimmen.html">Klimmen</a></li>
+          <li><a href="dakdekker-valkenburg.html">Valkenburg</a></li>
+          <li><a href="dakdekker-beek.html">Beek</a></li>
+          <li><a href="dakdekker-geleen.html">Geleen</a></li>
+          <li><a href="dakdekker-sittard.html">Sittard</a></li>
+          <li><a href="dakdekker-born.html">Born</a></li>
+          <li><a href="dakdekker-echt.html">Echt</a></li>
+        </ul>
+      </div>
+
+      <div class="foot">
+        <h6>Contact</h6>
+        <ul>
+          <li><a href="tel:0683396082">06-83 396 082</a></li>
+          <li><a href="mailto:info@adamsdaktechniek.nl">info@adamsdaktechniek.nl</a></li>
+          <li>KvK 89562135</li>
+        </ul>
+        <h6 style="margin-top:24px">Bedrijf</h6>
+        <ul>
+          <li><a href="offerte.html">Offerte aanvragen</a></li>
+          <li><a href="projecten.html">Projecten</a></li>
+          <li><a href="index.html#reviews">Reviews</a></li>
+          <li><a href="index.html#werkwijze">Werkwijze</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="legal">
+      <div>&copy; <span id="yr"></span> Adams Daktechniek - Alle rechten voorbehouden</div>
+      <div>KvK 89562135 - Heerlen, Limburg - NL</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  const nav = document.getElementById('nav');
+  const burger = document.getElementById('burger');
+  const menu = document.getElementById('mobileMenu');
+
+  document.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 12), {passive:true});
+
+  burger.addEventListener('click', () => {
+    const open = !nav.classList.contains('open');
+    nav.classList.toggle('open', open);
+    menu.classList.toggle('open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    nav.classList.remove('open');
+    menu.classList.remove('open');
+    document.body.style.overflow = '';
+  }));
+
+  document.querySelectorAll('[data-mm-toggle]').forEach(trigger => {
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      trigger.classList.toggle('open');
+      const sub = trigger.nextElementSibling;
+      if(sub && sub.classList.contains('mm-sub')) sub.classList.toggle('open');
+    });
+  });
+
+  document.querySelectorAll('.nav-dropdown').forEach(dd => {
+    const toggle = dd.querySelector('.nav-dropdown-toggle');
+    if (!toggle) return;
+    toggle.addEventListener('click', (e) => {
+      const isTouch = window.matchMedia('(hover: none)').matches;
+      const isOpen = dd.classList.contains('is-open');
+      if (isTouch || !isOpen) {
+        e.preventDefault();
+        document.querySelectorAll('.nav-dropdown.is-open').forEach(o => { if(o !== dd) o.classList.remove('is-open'); });
+        dd.classList.toggle('is-open');
+      }
+    });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.nav-dropdown')) {
+      document.querySelectorAll('.nav-dropdown.is-open').forEach(o => o.classList.remove('is-open'));
+    }
+  });
+</script>
+
+</body>
+</html>
