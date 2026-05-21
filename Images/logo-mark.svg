@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 160" role="img" aria-label="Adams Daktechniek mark">
+  <defs>
+    <linearGradient id="leafGradMark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#5CC27A"/>
+      <stop offset="100%" stop-color="#2E7D45"/>
+    </linearGradient>
+  </defs>
+  <g fill="#ffffff">
+    <polygon points="100,18 180,110 150,110 100,52 50,110 20,110"/>
+    <g stroke="#ffffff" stroke-width="4">
+      <line x1="108" y1="56" x2="170" y2="110"/>
+      <line x1="118" y1="62" x2="170" y2="102"/>
+      <line x1="128" y1="68" x2="170" y2="94"/>
+      <line x1="138" y1="74" x2="170" y2="86"/>
+    </g>
+  </g>
+  <g transform="translate(70,62) rotate(-18)">
+    <path d="M0,22 C0,6 14,-8 30,-8 C33,8 28,24 16,32 C8,36 3,32 0,22 Z" fill="url(#leafGradMark)"/>
+  </g>
+</svg>

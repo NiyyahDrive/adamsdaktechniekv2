@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://niyyahdrive.github.io/adamsdaktechniekv2/sitemap.xml
