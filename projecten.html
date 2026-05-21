@@ -43,7 +43,7 @@ a{color:inherit;text-decoration:none}
 .nav.open .burger span:nth-child(1){top:20px;transform:rotate(45deg)}
 .nav.open .burger span:nth-child(2){opacity:0}
 .nav.open .burger span:nth-child(3){top:20px;transform:rotate(-45deg)}
-.mobile-menu{position:fixed;left:0;right:0;top:112px;height:calc(100svh - 112px);background:#000;z-index:49;padding:28px;opacity:0;pointer-events:none;transition:opacity .35s var(--ease)}
+.mobile-menu{position:fixed;left:0;right:0;top:112px;height:calc(100svh - 112px);background:#000;z-index:49;padding:28px;opacity:0;pointer-events:none;transition:opacity .35s var(--ease);overflow-y:auto;-webkit-overflow-scrolling:touch}
 .mobile-menu.open{opacity:1;pointer-events:auto}
 .mobile-menu nav a{display:block;padding:14px 0;font-family:'Manrope';font-size:26px;font-weight:700;color:#fff;border-bottom:1px solid rgba(255,255,255,.06)}
 .mobile-cta{display:none;position:fixed;bottom:14px;left:14px;right:14px;z-index:60;background:rgba(7,7,7,.92);backdrop-filter:blur(14px);border:1px solid var(--line-2);border-radius:16px;padding:10px;gap:8px}
@@ -68,6 +68,9 @@ a{color:inherit;text-decoration:none}
 .mobile-menu .mm-sub.open{display:flex}
 .mobile-menu .mm-sub a{padding:11px 0 11px 22px !important;font-size:17px !important;font-weight:500 !important;color:var(--ink-dim) !important;border-bottom:none !important;line-height:1.2 !important}
 .mobile-menu .mm-sub a:active{color:var(--green) !important}
+  /* Active dienst in mobiel sub-menu */
+  .mobile-menu .mm-sub a[aria-current="page"]{color:var(--green) !important;font-weight:700 !important;position:relative}
+  .mobile-menu .mm-sub a[aria-current="page"]::before{content:"►";position:absolute;left:2px;font-size:10px;color:var(--green)}
 .mobile-menu .mm-trigger{cursor:pointer;position:relative}
 .mobile-menu .mm-trigger::after{content:"+";position:absolute;right:0;top:50%;transform:translateY(-50%);font-size:24px;color:var(--green);font-weight:400;transition:transform .3s var(--ease)}
 .mobile-menu .mm-trigger.open::after{transform:translateY(-50%) rotate(45deg)}
@@ -430,9 +433,12 @@ a{color:inherit;text-decoration:none}
     mobileMenu.classList.toggle('open', open);
     document.body.style.overflow = open ? 'hidden' : '';
   });
-  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  // Sluit menu op link-klik, MAAR niet op de Diensten-trigger (die toggelt sub-menu)
+  mobileMenu.querySelectorAll('a:not(.mm-trigger)').forEach(a => a.addEventListener('click', () => {
     navEl.classList.remove('open'); mobileMenu.classList.remove('open');
     document.body.style.overflow = '';
+    // Reset sub-menu state zodat volgende opening schoon begint
+    mobileMenu.querySelectorAll('.mm-sub.open, .mm-trigger.open').forEach(el => el.classList.remove('open'));
   }));
   document.querySelectorAll('[data-mm-toggle]').forEach(trigger => {
     trigger.addEventListener('click', (e) => {
@@ -441,6 +447,27 @@ a{color:inherit;text-decoration:none}
       const sub = trigger.nextElementSibling;
       if(sub && sub.classList.contains('mm-sub')) sub.classList.toggle('open');
     });
+
+  // Markeer actieve dienst in mobiel sub-menu + open sub-menu automatisch op dienstpagina
+  (function(){
+    const path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+    const subLinks = document.querySelectorAll('.mobile-menu .mm-sub a');
+    let foundActive = false;
+    subLinks.forEach(a => {
+      const href = (a.getAttribute('href') || '').toLowerCase();
+      if (href === path) {
+        a.setAttribute('aria-current', 'page');
+        foundActive = true;
+      }
+    });
+    // Als we op een dienst-pagina zitten: klap het sub-menu standaard open
+    if (foundActive) {
+      const trigger = document.querySelector('.mobile-menu .mm-trigger');
+      const sub = document.querySelector('.mobile-menu .mm-sub');
+      if (trigger) trigger.classList.add('open');
+      if (sub) sub.classList.add('open');
+    }
+  })();
   });
 </script>
 

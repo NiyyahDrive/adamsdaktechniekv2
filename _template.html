@@ -68,7 +68,7 @@
   .nav.open .burger span:nth-child(1){top:20px;transform:rotate(45deg)}
   .nav.open .burger span:nth-child(2){opacity:0;transform:scaleX(0)}
   .nav.open .burger span:nth-child(3){top:20px;transform:rotate(-45deg)}
-  .mobile-menu{position:fixed;left:0;right:0;top:112px;height:calc(100svh - 112px);height:calc(100dvh - 112px);background:#000;z-index:49;display:flex;flex-direction:column;padding:28px 28px 32px;opacity:0;pointer-events:none;transition:opacity .35s var(--ease)}
+  .mobile-menu{position:fixed;left:0;right:0;top:112px;height:calc(100svh - 112px);height:calc(100dvh - 112px);background:#000;z-index:49;display:flex;flex-direction:column;padding:28px 28px 32px;opacity:0;pointer-events:none;transition:opacity .35s var(--ease);overflow-y:auto;-webkit-overflow-scrolling:touch}
   .mobile-menu.open{opacity:1;pointer-events:auto}
   .mobile-menu nav{display:block;flex:0 0 auto}
   .mobile-menu nav a{display:flex;align-items:baseline;gap:18px;padding:clamp(14px, 2.6vw, 18px) 0;font-family:'Manrope','Inter',sans-serif;font-size:clamp(24px, 6.6vw, 32px);font-weight:700;letter-spacing:-.02em;line-height:1;color:#fff;border-bottom:1px solid rgba(255,255,255,.06);text-decoration:none;opacity:0;transform:translateY(14px);transition:opacity .2s var(--ease), transform .25s var(--ease), color .2s var(--ease)}
@@ -88,6 +88,9 @@
   .mobile-menu .mm-sub{display:none;flex-direction:column;gap:0;margin:0 0 14px 0;padding:6px 0 14px;border-bottom:1px solid rgba(255,255,255,.06)}
   .mobile-menu .mm-sub.open{display:flex}
   .mobile-menu .mm-sub a{padding:11px 0 11px 22px !important;font-size:17px !important;font-weight:500 !important;color:var(--ink-dim) !important;border-bottom:none !important;line-height:1.2 !important}
+  /* Active dienst in mobiel sub-menu */
+  .mobile-menu .mm-sub a[aria-current="page"]{color:var(--green) !important;font-weight:700 !important;position:relative}
+  .mobile-menu .mm-sub a[aria-current="page"]::before{content:"►";position:absolute;left:2px;font-size:10px;color:var(--green)}
   .mobile-menu .mm-trigger{cursor:pointer;position:relative}
   .mobile-menu .mm-trigger::after{content:"+";position:absolute;right:0;top:50%;transform:translateY(-50%);font-size:24px;color:var(--green);font-weight:400;transition:transform .3s var(--ease)}
   .mobile-menu .mm-trigger.open::after{transform:translateY(-50%) rotate(45deg)}
@@ -327,10 +330,12 @@
     document.body.style.overflow = open ? 'hidden' : '';
   });
 
-  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  // Sluit menu op link-klik, MAAR niet op de Diensten-trigger (die toggelt sub-menu)
+  menu.querySelectorAll('a:not(.mm-trigger)').forEach(a => a.addEventListener('click', () => {
     nav.classList.remove('open');
     menu.classList.remove('open');
     document.body.style.overflow = '';
+    menu.querySelectorAll('.mm-sub.open, .mm-trigger.open').forEach(el => el.classList.remove('open'));
   }));
 
   document.querySelectorAll('[data-mm-toggle]').forEach(trigger => {
@@ -340,6 +345,27 @@
       const sub = trigger.nextElementSibling;
       if(sub && sub.classList.contains('mm-sub')) sub.classList.toggle('open');
     });
+
+  // Markeer actieve dienst in mobiel sub-menu + open sub-menu automatisch op dienstpagina
+  (function(){
+    const path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+    const subLinks = document.querySelectorAll('.mobile-menu .mm-sub a');
+    let foundActive = false;
+    subLinks.forEach(a => {
+      const href = (a.getAttribute('href') || '').toLowerCase();
+      if (href === path) {
+        a.setAttribute('aria-current', 'page');
+        foundActive = true;
+      }
+    });
+    // Als we op een dienst-pagina zitten: klap het sub-menu standaard open
+    if (foundActive) {
+      const trigger = document.querySelector('.mobile-menu .mm-trigger');
+      const sub = document.querySelector('.mobile-menu .mm-sub');
+      if (trigger) trigger.classList.add('open');
+      if (sub) sub.classList.add('open');
+    }
+  })();
   });
 
   document.querySelectorAll('.nav-dropdown').forEach(dd => {

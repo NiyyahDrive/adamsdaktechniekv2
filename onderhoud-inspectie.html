@@ -52,7 +52,7 @@
   .nav.open .burger span:nth-child(1){top:20px;transform:rotate(45deg)}
   .nav.open .burger span:nth-child(2){opacity:0;transform:scaleX(0)}
   .nav.open .burger span:nth-child(3){top:20px;transform:rotate(-45deg)}
-  .mobile-menu{position:fixed;left:0;right:0;top:112px;height:calc(100svh - 112px);height:calc(100dvh - 112px);background:#000;z-index:49;display:flex;flex-direction:column;padding:28px 28px 32px;opacity:0;pointer-events:none;transition:opacity .35s var(--ease)}
+  .mobile-menu{position:fixed;left:0;right:0;top:112px;height:calc(100svh - 112px);height:calc(100dvh - 112px);background:#000;z-index:49;display:flex;flex-direction:column;padding:28px 28px 32px;opacity:0;pointer-events:none;transition:opacity .35s var(--ease);overflow-y:auto;-webkit-overflow-scrolling:touch}
   .mobile-menu.open{opacity:1;pointer-events:auto}
   .mobile-menu nav{display:block;flex:0 0 auto}
   .mobile-menu nav a{display:flex;align-items:baseline;gap:18px;padding:clamp(14px, 2.6vw, 18px) 0;font-family:'Manrope','Inter',sans-serif;font-size:clamp(24px, 6.6vw, 32px);font-weight:700;letter-spacing:-.02em;line-height:1;color:#fff;border-bottom:1px solid rgba(255,255,255,.06);text-decoration:none;opacity:0;transform:translateY(14px);transition:opacity .2s var(--ease), transform .25s var(--ease), color .2s var(--ease)}
@@ -223,6 +223,9 @@
     transition:color .15s var(--ease) !important;
   }
   .mobile-menu .mm-sub a:active{color:var(--green) !important}
+  /* Active dienst in mobiel sub-menu */
+  .mobile-menu .mm-sub a[aria-current="page"]{color:var(--green) !important;font-weight:700 !important;position:relative}
+  .mobile-menu .mm-sub a[aria-current="page"]::before{content:"►";position:absolute;left:2px;font-size:10px;color:var(--green)}
   .mobile-menu .mm-trigger{cursor:pointer;position:relative}
   .mobile-menu .mm-trigger::after{
     content:"+" !important;color:var(--green);font-size:24px;font-weight:300;
@@ -598,9 +601,12 @@
     menu.classList.toggle('open', open);
     document.body.style.overflow = open ? 'hidden' : '';
   });
-  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  // Sluit menu op link-klik, MAAR niet op de Diensten-trigger (die toggelt sub-menu)
+  menu.querySelectorAll('a:not(.mm-trigger)').forEach(a => a.addEventListener('click', () => {
     nav.classList.remove('open'); menu.classList.remove('open');
     document.body.style.overflow = '';
+    // Reset sub-menu state zodat volgende opening schoon begint
+    menu.querySelectorAll('.mm-sub.open, .mm-trigger.open').forEach(el => el.classList.remove('open'));
   }));
 
   // Mobile menu Diensten accordion
@@ -611,6 +617,27 @@
       const sub = trigger.nextElementSibling;
       if(sub && sub.classList.contains('mm-sub')) sub.classList.toggle('open');
     });
+
+  // Markeer actieve dienst in mobiel sub-menu + open sub-menu automatisch op dienstpagina
+  (function(){
+    const path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+    const subLinks = document.querySelectorAll('.mobile-menu .mm-sub a');
+    let foundActive = false;
+    subLinks.forEach(a => {
+      const href = (a.getAttribute('href') || '').toLowerCase();
+      if (href === path) {
+        a.setAttribute('aria-current', 'page');
+        foundActive = true;
+      }
+    });
+    // Als we op een dienst-pagina zitten: klap het sub-menu standaard open
+    if (foundActive) {
+      const trigger = document.querySelector('.mobile-menu .mm-trigger');
+      const sub = document.querySelector('.mobile-menu .mm-sub');
+      if (trigger) trigger.classList.add('open');
+      if (sub) sub.classList.add('open');
+    }
+  })();
   });
 
 
