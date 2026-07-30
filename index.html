@@ -7,6 +7,15 @@
 <title>Adams Daktechniek — Dakdekker Heerlen &amp; Limburg</title>
 <meta name="description" content="Adams Daktechniek — vakdakdekker in Heerlen & Limburg. Platte daken, pannendaken, dakkapellen, zinkwerk en spoedlekkages. Bel 06-83396082." />
 
+<meta property="og:title" content="Adams Daktechniek — Dakdekker Heerlen &amp; Limburg" />
+<meta property="og:description" content="Adams Daktechniek — vakdakdekker in Heerlen & Limburg. Platte daken, pannendaken, dakkapellen, zinkwerk en spoedlekkages. Bel 06-83396082." />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Adams Daktechniek" />
+<meta property="og:image" content="https://adamsdaktechniek.nl/Images/LogoAdamsDaktechniek.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://adamsdaktechniek.nl/Images/LogoAdamsDaktechniek.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
@@ -750,7 +759,7 @@
   .field input,.field select,.field textarea{
     width:100%;padding:14px 16px;border-radius:12px;
     background:#080808;border:1px solid var(--line-2);
-    color:#fff;font:inherit;font-size:15px;
+    color:#fff;font:inherit;font-size:16px;
     transition:border-color .25s var(--ease), background .25s var(--ease);
   }
   .field input:focus,.field select:focus,.field textarea:focus{
@@ -924,15 +933,7 @@
   .socials a{width:38px;height:38px;border-radius:10px;border:1px solid var(--line-2);background:#0a0a0a;display:flex;align-items:center;justify-content:center;color:var(--ink-dim);transition:all .25s var(--ease)}
   .socials a:hover{color:var(--green);border-color:var(--green)}
 </style>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-T6MES5SRBW"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-T6MES5SRBW');
-</script>
+<script src="consent.js" defer></script>
 </head>
 <body>
 
@@ -994,7 +995,7 @@
       <a href="#contact"    style="--i:4">Contact</a>
     </nav>
     <div class="mm-foot">
-      <a class="mm-cta" href="tel:0683396082"><small>Bel direct</small>06-83396082</a>
+      <a class="mm-cta" href="tel:+31683396082"><small>Bel direct</small>06-83396082</a>
       <div class="mm-meta">
         <a href="mailto:info@adamsdaktechniek.nl">info@adamsdaktechniek.nl</a>
         <span class="sep">·</span>
@@ -1018,7 +1019,7 @@
         zinkwerk en dakrenovaties in heel Limburg. Eerlijk advies, nette uitvoering, scherpe prijs.
       </p>
       <div class="cta-row" data-reveal data-reveal-delay="3">
-        <a class="btn btn-primary" href="tel:0683396082">
+        <a class="btn btn-primary" href="tel:+31683396082">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           Bel direct
         </a>
@@ -1047,7 +1048,7 @@
 <div class="urgency">
   <div class="container urgency-inner">
     <span class="red-pulse"></span>
-    <span>Lekkage in huis? <a href="tel:0683396082">Bel 06-83396082</a> — we zijn er vaak binnen 1 uur.</span>
+    <span>Lekkage in huis? <a href="tel:+31683396082">Bel 06-83396082</a> — we zijn er vaak binnen 1 uur.</span>
   </div>
 </div>
 
@@ -1440,15 +1441,21 @@
       </div>
     </div>
 
-    <form class="quote" data-reveal data-reveal-delay="1" onsubmit="event.preventDefault(); alert('Bedankt! We nemen binnen één werkdag contact op.'); this.reset();">
+    <form class="quote" data-reveal data-reveal-delay="1"
+          action="https://api.adamsdaktechniek.nl"
+          method="POST">
       <h3>Offerte aanvragen</h3>
       <p class="muted">Vrijblijvend — reactie binnen 1 werkdag.</p>
 
-      <div class="field"><label>Naam</label><input type="text" required placeholder="Voor- en achternaam"></div>
-      <div class="field"><label>Telefoon</label><input type="tel" required placeholder="06-..."></div>
-      <div class="field"><label>E-mail</label><input type="email" placeholder="optioneel"></div>
+      <input type="hidden" name="_subject" value="Snelle aanvraag via homepage">
+      <input type="hidden" name="_next" value="https://adamsdaktechniek.nl/bedankt.html">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+      <div class="field"><label>Naam</label><input type="text" name="naam" required placeholder="Voor- en achternaam"></div>
+      <div class="field"><label>Telefoon</label><input type="tel" name="telefoon" required placeholder="06-..."></div>
+      <div class="field"><label>E-mail</label><input type="email" name="email" placeholder="optioneel"></div>
       <div class="field"><label>Welke dienst heeft u nodig?</label>
-        <select required>
+        <select name="dienst" required>
           <option value="">Maak een keuze…</option>
           <option>Platte daken</option>
           <option>Pannedaken / hellend dak</option>
@@ -1461,7 +1468,11 @@
           <option>Anders</option>
         </select>
       </div>
-      <div class="field"><label>Toelichting</label><textarea placeholder="Beschrijf kort de situatie of vraag"></textarea></div>
+      <div class="field"><label>Toelichting</label><textarea name="toelichting" placeholder="Beschrijf kort de situatie of vraag"></textarea></div>
+      <label style="display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--ink-dim);margin:8px 0 16px;line-height:1.5">
+        <input type="checkbox" name="privacy_akkoord" required style="margin-top:3px">
+        <span>Ik ga akkoord met de verwerking van mijn gegevens. <a href="privacy.html" target="_blank" rel="noopener" style="color:var(--green);text-decoration:underline">Privacyverklaring</a>.</span>
+      </label>
       <button class="btn btn-primary" type="submit">
         Verstuur aanvraag
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
@@ -1555,7 +1566,7 @@
       <div class="foot">
         <h3 class="foot-h">Contact</h3>
         <ul>
-          <li><a href="tel:0683396082">06-83 396 082</a></li>
+          <li><a href="tel:+31683396082">06-83 396 082</a></li>
           <li><a href="mailto:info@adamsdaktechniek.nl">info@adamsdaktechniek.nl</a></li>
           <li>KvK 89562135</li>
         </ul>
@@ -1571,7 +1582,7 @@
     </div>
     <div class="legal">
       <div>&#169; <span id="yr"></span> Adams Daktechniek &middot; Alle rechten voorbehouden</div>
-      <div>KvK 89562135 &middot; Heerlen, Limburg &middot; NL</div>
+      <div>KvK 89562135 &middot; Heerlen, Limburg &middot; NL &middot; <a href="privacy.html" style="color:inherit;text-decoration:underline;text-underline-offset:3px">Privacy</a> &middot; <a href="#" onclick="if(window.AdamsCookies){window.AdamsCookies.reset();return false;}" style="color:inherit;text-decoration:underline;text-underline-offset:3px">Cookievoorkeuren</a></div>
     </div>
   </div>
 </footer>
@@ -1583,7 +1594,7 @@
 
 <!-- Sticky mobile CTA — 3 channels -->
 <div class="mobile-cta">
-  <a class="mb-call" href="tel:0683396082" aria-label="Bel">
+  <a class="mb-call" href="tel:+31683396082" aria-label="Bel">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
     Bel
   </a>

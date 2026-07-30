@@ -8,20 +8,26 @@
 <title>Bedankt — Aanvraag ontvangen | Adams Daktechniek</title>
 <meta name="description" content="Bedankt voor je aanvraag bij Adams Daktechniek. We reageren binnen 48 uur met een heldere offerte op maat." />
 <link rel="canonical" href="https://adamsdaktechniek.nl/bedankt.html" />
+<meta property="og:title" content="Bedankt — Aanvraag ontvangen | Adams Daktechniek" />
+<meta property="og:description" content="Bedankt voor je aanvraag bij Adams Daktechniek. We reageren binnen 48 uur met een heldere offerte op maat." />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Adams Daktechniek" />
+<meta property="og:image" content="https://adamsdaktechniek.nl/Images/LogoAdamsDaktechniek.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://adamsdaktechniek.nl/Images/LogoAdamsDaktechniek.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="Images/LogoAdamsDaktechniek.png">
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-T6MES5SRBW"></script>
+<script src="consent.js" defer></script>
 <script>
+  // Conversion event: lead succesvol afgerond. Wordt pas naar GA verstuurd
+  // als de bezoeker eerder cookie-toestemming heeft gegeven; anders blijft het in de queue.
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-T6MES5SRBW');
-  // Conversion event: lead succesvol afgerond
-  gtag('event', 'generate_lead', { form: 'offerte', method: 'thank_you_page' });
+  window.dataLayer.push(['event', 'generate_lead', { form: 'offerte', method: 'thank_you_page' }]);
 </script>
 
 <style>
@@ -36,7 +42,7 @@
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-  body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100svh;display:flex;flex-direction:column}
+  body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100svh;display:flex;flex-direction:column;overflow-x:hidden}
   a{color:inherit;text-decoration:none}
 
   /* HEADER */
@@ -124,7 +130,7 @@
 
       <div class="spoed">
         <strong>Acute lekkage of spoed?</strong><br>
-        Bel direct <a href="tel:0683396082">06-83396082</a> &mdash; we proberen binnen 1 uur ter plaatse te zijn.
+        Bel direct <a href="tel:+31683396082">06-83396082</a> &mdash; we proberen binnen 1 uur ter plaatse te zijn.
       </div>
     </div>
   </div>
@@ -132,7 +138,9 @@
 
 <footer class="site">
   <div class="container">
-    &copy; 2026 Adams Daktechniek &middot; KvK 89562135 &middot; Heerlen, Limburg
+    &copy; 2026 Adams Daktechniek &middot; KvK 89562135 &middot; Heerlen, Limburg &middot;
+    <a href="privacy.html" style="color:inherit;text-decoration:underline;text-underline-offset:3px">Privacy</a> &middot;
+    <a href="#" onclick="if(window.AdamsCookies){window.AdamsCookies.reset();return false;}" style="color:inherit;text-decoration:underline;text-underline-offset:3px">Cookievoorkeuren</a>
   </div>
 </footer>
 

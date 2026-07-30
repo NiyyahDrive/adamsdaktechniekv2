@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Disallow mockups/templates die per ongeluk online kunnen komen
+Disallow: /_template.html
+Disallow: /projecten-video-mockup.html
+
+Sitemap: https://adamsdaktechniek.nl/sitemap.xml

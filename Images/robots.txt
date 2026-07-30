@@ -1,4 +1,5 @@
+# Deze file hoort hier niet — de echte robots.txt staat op /robots.txt (root).
+# Dit bestand mag handmatig verwijderd worden uit /Images/.
 User-agent: *
 Allow: /
-
-Sitemap: https://niyyahdrive.github.io/adamsdaktechniekv2/sitemap.xml
+Sitemap: https://adamsdaktechniek.nl/sitemap.xml
