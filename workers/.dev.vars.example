@@ -1,0 +1,5 @@
+# Kopieer naar `.dev.vars` voor lokaal testen met `wrangler dev`.
+# `.dev.vars` NOOIT committen (staat in .gitignore).
+MAILERLITE_API_KEY=plak_hier_je_mailerlite_api_key
+GROUP_DAKGIDS_OPTIN=123456
+GROUP_DAKGIDS_ONLY=123457

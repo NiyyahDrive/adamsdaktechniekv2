@@ -226,6 +226,129 @@
   </section>
 </main>
 
+<!-- DAKGIDS-BLOK START (gegenereerd — wijzig centraal en her-injecteer, zie HANDOVER) -->
+<section id="dakgids" class="dg-section" style="background:#050505">
+  <style>
+    .dg-section{padding:80px 0}
+    .dg-card{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:40px;align-items:center;
+      background:var(--bg-2);border:1px solid var(--line);border-radius:var(--radius);
+      padding:40px;position:relative;overflow:hidden}
+    .dg-card::before{content:"";position:absolute;inset:0;pointer-events:none;
+      background:radial-gradient(600px 300px at 15% 20%, var(--green-glow), transparent 70%)}
+    .dg-cover{position:relative;z-index:1}
+    .dg-cover img{width:100%;max-width:300px;height:auto;border-radius:var(--radius-sm);border:1px solid var(--line-2);
+      box-shadow:0 24px 60px rgba(0,0,0,.55);margin:0 auto}
+    .dg-content{position:relative;z-index:1;min-width:0}
+    .dg-eyebrow{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--green);margin-bottom:12px}
+    .dg-content h2{font-family:'Manrope',sans-serif;font-size:clamp(24px,3.4vw,34px);line-height:1.15;margin-bottom:8px}
+    .dg-sub{color:var(--ink-dim);font-size:15px;margin-bottom:20px}
+    .dg-points{list-style:none;margin:0 0 24px;padding:0;display:grid;gap:10px}
+    .dg-points li{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;color:var(--ink-dim)}
+    .dg-points li strong{color:var(--ink);font-weight:600}
+    .dg-points .gr{color:var(--green);font-weight:800;flex:0 0 auto}
+    .dg-form{display:flex;flex-wrap:wrap;gap:12px}
+    .dg-form input[type=text],.dg-form input[type=email]{
+      flex:1 1 180px;min-width:0;background:var(--bg-3);border:1px solid var(--line-2);border-radius:12px;
+      padding:14px 16px;color:var(--ink);font:inherit;font-size:16px;outline:none;transition:border-color .25s var(--ease)}
+    .dg-form input:focus{border-color:var(--green)}
+    .dg-btn{flex:1 1 100%;display:inline-flex;justify-content:center;align-items:center;gap:8px;
+      padding:15px 26px;border-radius:999px;background:var(--green);color:#0a0a0a;font-weight:800;font-size:15px;
+      letter-spacing:.3px;transition:transform .25s var(--ease),opacity .2s;box-shadow:0 8px 30px var(--green-glow)}
+    .dg-btn:hover{transform:translateY(-2px)}
+    .dg-btn[disabled]{opacity:.6;cursor:wait;transform:none}
+    .dg-optin{display:flex;gap:10px;align-items:flex-start;margin-top:14px;font-size:13px;color:var(--ink-dim);line-height:1.5}
+    .dg-optin input[type=checkbox]{width:17px;height:17px;margin-top:2px;accent-color:var(--green);flex:0 0 auto}
+    .dg-optin a{color:var(--green);text-decoration:underline}
+    .dg-avg{margin-top:10px;font-size:12px;color:var(--ink-mute);line-height:1.5}
+    .dg-proof{display:flex;flex-wrap:wrap;gap:14px;margin-top:16px;font-size:12.5px;color:var(--ink-dim)}
+    .dg-proof .gr{color:var(--green)}
+    .dg-error{display:none;margin-top:12px;font-size:13.5px;color:#f0a8a8;background:rgba(239,68,68,.08);
+      border:1px solid rgba(239,68,68,.35);border-radius:12px;padding:10px 14px}
+    .dg-error.show{display:block}
+    .dg-hp{position:absolute;left:-9999px;opacity:0;height:0;overflow:hidden}
+    @media(max-width:760px){
+      .dg-card{grid-template-columns:1fr;padding:28px 20px;gap:24px}
+      .dg-cover img{max-width:200px}
+      .dg-form input[type=text],.dg-form input[type=email]{flex-basis:100%}
+    }
+  </style>
+  <div class="container">
+    <div class="dg-card">
+      <div class="dg-cover">
+        <img src="Images/dakgids-cover.png" alt="Cover van De Complete Dakgids voor Huiseigenaren — Editie 2026" loading="lazy" width="636" height="900">
+      </div>
+      <div class="dg-content">
+        <div class="dg-eyebrow">Gratis download · Editie 2026</div>
+        <h2>De Complete Dakgids <span class="green">voor Huiseigenaren</span></h2>
+        <p class="dg-sub">Renoveren, onderhouden en slim besparen met subsidie — alles wat je als huiseigenaar over je dak moet weten, in één gids.</p>
+        <ul class="dg-points">
+          <li><span class="gr">✓</span><span><strong>Levensduurtabel</strong> — wanneer is jouw dak(bedekking) écht aan vervanging toe</span></li>
+          <li><span class="gr">✓</span><span><strong>ISDE-subsidie 2026</strong> — tot €32,50 per m² terugkrijgen op dakisolatie</span></li>
+          <li><span class="gr">✓</span><span><strong>Checklist dakdekker kiezen</strong> — herken vakwerk en voorkom miskopen</span></li>
+          <li><span class="gr">✓</span><span><strong>Onderhoudskalender</strong> — wat je per seizoen zelf checkt</span></li>
+        </ul>
+        <form class="dg-form" id="dgForm" method="POST" action="https://api.adamsdaktechniek.nl/dakgids" novalidate>
+          <input type="text" name="voornaam" placeholder="Voornaam" autocomplete="given-name" required>
+          <input type="email" name="email" placeholder="E-mailadres" autocomplete="email" required>
+          <div class="dg-hp" aria-hidden="true">
+            <label>Laat dit veld leeg <input type="text" name="_honey" tabindex="-1" autocomplete="off"></label>
+          </div>
+          <button type="submit" class="dg-btn">
+            Stuur mij de gids
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </button>
+          <label class="dg-optin">
+            <input type="checkbox" name="optin" value="ja">
+            <span>Ja, stuur mij daarna ook praktische daktips en subsidie-updates per e-mail (max. enkele mails, uitschrijven kan altijd). Zie onze <a href="privacy.html">privacyverklaring</a>.</span>
+          </label>
+          <p class="dg-avg">Je ontvangt de gids direct. Zonder vinkje gebruiken we je e-mailadres alléén om de gids te sturen.</p>
+          <div class="dg-error" id="dgError" role="alert"></div>
+        </form>
+        <div class="dg-proof">
+          <span><span class="gr">★</span> 4,9 klantscore</span>
+          <span><span class="gr">✓</span> 10 jaar garantie</span>
+          <span><span class="gr">✓</span> Top 30 Vakbedrijf '26-'27</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+  (function(){
+    var form = document.getElementById('dgForm');
+    if(!form) return;
+    var btn = form.querySelector('.dg-btn');
+    var err = document.getElementById('dgError');
+    function fail(msg){ err.textContent = msg; err.classList.add('show'); btn.disabled = false; btn.firstChild.textContent = 'Stuur mij de gids '; }
+    form.addEventListener('submit', function(ev){
+      ev.preventDefault();
+      err.classList.remove('show');
+      var naam = form.voornaam.value.trim();
+      var mail = form.email.value.trim();
+      if(!naam){ form.voornaam.focus(); fail('Vul je voornaam in — dan weten we wie we de gids sturen.'); return; }
+      if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(mail)){ form.email.focus(); fail('Dat e-mailadres lijkt niet te kloppen. Check je even op typfouten?'); return; }
+      btn.disabled = true; btn.firstChild.textContent = 'Versturen… ';
+      var payload = { voornaam: naam, email: mail, optin: form.optin.checked ? 'ja' : 'nee', _honey: form._honey.value, bron: location.pathname };
+      // Lokaal testen zonder API: mock-succes op localhost
+      if(/^(localhost|127\.0\.0\.1)$/.test(location.hostname)){
+        console.log('[dakgids] mock submit', payload);
+        setTimeout(function(){ window.location.href = 'dakgids-bedankt.html'; }, 400);
+        return;
+      }
+      fetch(form.action, {
+        method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload)
+      }).then(function(r){
+        if(!r.ok) throw new Error('http ' + r.status);
+        if(typeof gtag === 'function'){ gtag('event','generate_lead',{ form:'dakgids', bron: location.pathname }); }
+        window.location.href = 'dakgids-bedankt.html';
+      }).catch(function(){
+        fail('Versturen lukte even niet. Probeer het opnieuw, of mail ons via info@adamsdaktechniek.nl — dan sturen we de gids handmatig.');
+      });
+    });
+  })();
+  </script>
+</section>
+<!-- DAKGIDS-BLOK END -->
+
 <footer>
   <div class="container">
     <div class="foot-grid">

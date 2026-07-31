@@ -5,4 +5,8 @@ Allow: /
 Disallow: /_template.html
 Disallow: /projecten-video-mockup.html
 
+# Leadmagnet: gids en bedankpagina niet indexeren (gated content)
+Disallow: /downloads/
+Disallow: /dakgids-bedankt.html
+
 Sitemap: https://adamsdaktechniek.nl/sitemap.xml

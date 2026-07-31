@@ -1,0 +1,17 @@
+# Cloudflare Worker — Dakgids leadmagnet
+# Deploy: `wrangler deploy` (vereist `wrangler login` met het Adams/Cloudflare-account)
+# API-key zetten (eenmalig, wordt secret): `wrangler secret put MAILERLITE_API_KEY`
+
+name = "adams-dakgids"
+main = "dakgids-worker.js"
+compatibility_date = "2026-07-01"
+
+# Route op het bestaande api-subdomein (zone moet in hetzelfde CF-account zitten)
+routes = [
+  { pattern = "api.adamsdaktechniek.nl/dakgids", zone_name = "adamsdaktechniek.nl" }
+]
+
+[vars]
+# MailerLite groeps-ID's — invullen na aanmaken van de groepen (zie HANDOVER)
+GROUP_DAKGIDS_OPTIN = "VUL_IN"
+GROUP_DAKGIDS_ONLY = "VUL_IN"

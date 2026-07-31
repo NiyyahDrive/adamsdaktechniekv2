@@ -1,0 +1,12 @@
+# Cloudflare Pages headers
+# PDF's hebben geen meta-robots-tag; X-Robots-Tag houdt ze uit Google,
+# ook als iemand er extern naar linkt (robots.txt alleen is daarvoor niet genoeg).
+
+/downloads/*
+  X-Robots-Tag: noindex, nofollow
+
+/dakgids-bedankt.html
+  X-Robots-Tag: noindex, nofollow
+
+/dakgids-bedankt
+  X-Robots-Tag: noindex, nofollow
