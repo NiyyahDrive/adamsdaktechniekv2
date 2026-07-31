@@ -3,7 +3,8 @@
   MAIL 1 — Dag 0: bezorging Dakgids
   Trigger: subscriber komt in groep "Dakgids" (beide groepen krijgen deze mail).
   Personalisatie: {$name} = MailerLite-veld voor voornaam.
-  [CONCEPTTEKST]-blokken vervangen door definitieve tekst van Mojo.
+  Concepttekst v01 (Claude, 2026-07-31) — cijfers 1-op-1 uit de Dakgids; redigeren door Mojo.
+  Onderwerpregel-suggestie: "Je Dakgids staat voor je klaar, {$name} 📗" · Preheader: "Plus: zo check je je dak in 10 minuten zelf."
 -->
 <html lang="nl">
 <head>
@@ -23,17 +24,20 @@
         <tr><td style="padding:36px 32px 8px;">
           <p style="margin:0 0 6px;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#2E7D45;font-weight:bold;">Je gids staat klaar</p>
           <h1 style="margin:0 0 16px;font-size:26px;line-height:1.2;color:#111;">Hoi {$name}, hier is je Complete Dakgids</h1>
-          <p style="margin:0 0 20px;font-size:15px;line-height:1.6;color:#444;">
-            [CONCEPTTEKST — korte intro: bedankt voor het aanvragen, wat de gids je oplevert
-            (levensduurtabel, ISDE-subsidie 2026 tot &euro;32,50/m&sup2;, checklist dakdekker kiezen,
-            onderhoudskalender), 2-3 zinnen.]
+          <p style="margin:0 0 16px;font-size:15px;line-height:1.6;color:#444;">
+            Goed dat je hem hebt aangevraagd &mdash; je dak is het meest vergeten deel van je huis, tot het misgaat. In deze gids vind je alles om problemen v&oacute;&oacute;r te blijven:
           </p>
+          <ul style="margin:0 0 20px;padding:0 0 0 20px;font-size:14.5px;line-height:1.8;color:#444;">
+            <li><strong>De levensduurtabel</strong> &mdash; zo zie je of jouw dakbedekking aan vervanging toe is</li>
+            <li><strong>ISDE-subsidie 2026</strong> &mdash; tot &euro;32,50 per m&sup2; terug op dakisolatie</li>
+            <li><strong>De onderhoudskalender</strong> &mdash; twee vaste checkmomenten per jaar volstaan</li>
+            <li><strong>De dakdekker-checklist</strong> &mdash; herken vakwerk en voorkom meerwerk-verrassingen</li>
+          </ul>
           <table role="presentation" cellpadding="0" cellspacing="0" style="margin:0 auto 24px;"><tr><td style="border-radius:999px;background:#2E7D45;">
             <a href="https://adamsdaktechniek.nl/downloads/dakgids-2026.pdf" style="display:inline-block;padding:15px 32px;font-size:15px;font-weight:bold;color:#ffffff;text-decoration:none;border-radius:999px;">Download de Dakgids (PDF)</a>
           </td></tr></table>
           <p style="margin:0 0 24px;font-size:14px;line-height:1.6;color:#444;">
-            [CONCEPTTEKST — zachte brug naar gratis dakinspectie: "vragen over je eigen dak?
-            We komen gratis en vrijblijvend kijken." + telefoonnummer.]
+            Vragen over je eigen dak? We komen <strong>gratis en vrijblijvend</strong> langs voor een inspectie &mdash; van nok tot goot, met binnen 24 uur een helder rapport en een berekening van jouw subsidie. Bel of app <a href="tel:+31683396082" style="color:#2E7D45;font-weight:bold;text-decoration:none;">06-83 396 082</a>.
           </p>
         </td></tr>
         <!-- Footer -->
