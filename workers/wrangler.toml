@@ -13,5 +13,5 @@ routes = [
 
 [vars]
 # MailerLite groeps-ID's — invullen na aanmaken van de groepen (zie HANDOVER)
-GROUP_DAKGIDS_OPTIN = "VUL_IN"
-GROUP_DAKGIDS_ONLY = "VUL_IN"
+GROUP_DAKGIDS_OPTIN = "197590358470690473"
+GROUP_DAKGIDS_ONLY = "197590382382416910"
