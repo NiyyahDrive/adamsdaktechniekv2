@@ -8,5 +8,6 @@ compatibility_date = "2026-06-02"
 [assets]
 directory = "../_deploy_prod"
 binding = "ASSETS"
+run_worker_first = true             # anders serveert de assets-laag bestaande paden zonder de Worker (geen www-redirect)
 html_handling = "auto-trailing-slash"   # x.html -> /x (zoals nu live)
 not_found_handling = "404-page"          # 404.html met status 404
