@@ -1,0 +1,1001 @@
+--- a/404.html
++++ b/404.html
+@@ -6,8 +6,8 @@
+ <meta name="theme-color" content="#0a0a0a" />
+ <title>Pagina niet gevonden | Adams Daktechniek</title>
+ <meta name="description" content="Deze pagina bestaat niet (meer). Ga naar de homepage of bel Adams Daktechniek op 06-83396082." />
+-<meta property="og:title" content="Privacyverklaring | Adams Daktechniek" />
+-<meta property="og:description" content="Hoe Adams Daktechniek omgaat met uw persoonsgegevens." />
++<meta property="og:title" content="Pagina niet gevonden | Adams Daktechniek" />
++<meta property="og:description" content="Deze pagina bestaat niet (meer). Ga terug naar de homepage van Adams Daktechniek." />
+ <meta property="og:image" content="https://adamsdaktechniek.nl/Images/og-image.jpg" />
+ <meta property="og:type" content="website" />
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+@@ -23,14 +23,14 @@
+   :root{
+     --bg:#070707; --bg-2:#0d0d0d; --bg-3:#141414;
+     --line:#1f1f1f; --line-2:#2a2a2a;
+-    --ink:#f6f6f6; --ink-dim:#a8a8a8; --ink-mute:#6b6b6b;
++    --ink:#f6f6f6; --ink-dim:#a8a8a8; --ink-mute:#858585;
+     --green:#5CC27A; --green-2:#2E7D45;
+     --container:820px;
+     --ease:cubic-bezier(.22,.61,.36,1);
+   }
+   *{box-sizing:border-box;margin:0;padding:0}
+   html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+-  body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased;min-height:100svh;display:flex;flex-direction:column overflow-x:hidden;}
++  body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased;min-height:100svh;display:flex;flex-direction:column;overflow-x:hidden;}
+   a{color:var(--green);text-decoration:underline;text-underline-offset:3px}
+   a:hover{color:#8be0a0}
+ 
+--- a/bedankt.html
++++ b/bedankt.html
+@@ -36,7 +36,7 @@
+   :root{
+     --bg:#070707; --bg-2:#0d0d0d; --bg-3:#141414;
+     --line:#1f1f1f; --line-2:#2a2a2a;
+-    --ink:#f6f6f6; --ink-dim:#a8a8a8; --ink-mute:#6b6b6b;
++    --ink:#f6f6f6; --ink-dim:#a8a8a8; --ink-mute:#858585;
+     --green:#5CC27A; --green-2:#2E7D45;
+     --green-glow:rgba(92,194,122,0.18);
+     --container:1100px;
+--- a/dakdekker-beek.html
++++ b/dakdekker-beek.html
+@@ -43,7 +43,7 @@
+   :root{
+     --bg:#070707; --bg-2:#0d0d0d; --bg-3:#141414;
+     --line:#1f1f1f; --line-2:#2a2a2a;
+-    --ink:#f6f6f6; --ink-dim:#a8a8a8; --ink-mute:#6b6b6b;
++    --ink:#f6f6f6; --ink-dim:#a8a8a8; --ink-mute:#858585;
+     --green:#5CC27A; --green-2:#2E7D45;
+     --green-glow:rgba(92,194,122,0.18);
+     --container:1200px;
+@@ -284,7 +284,7 @@
+   footer{padding:50px 0 100px;border-top:1px solid var(--line);background:#050505}
+   .foot-grid{display:grid;grid-template-columns:2fr 1fr 1.2fr 1fr;gap:48px}
+   .foot-brand p{color:var(--ink-dim);font-size:14px;margin-top:18px;max-width:300px}
+-  .foot-brand .brand-logo--footer{height:120px;mix-blend-mode:lighten}
++  .foot-brand .brand-logo--footer{width:120px;height:auto;mix-blend-mode:lighten}
+   .foot-slogan{margin-top:18px;font-family:'Manrope';font-size:12px;letter-spacing:3px;color:var(--green);text-transform:uppercase;font-weight:700}
+   .foot h3.foot-h{font-size:12px;text-transform:uppercase;letter-spacing:2px;color:#fff;margin-bottom:18px}
+   .foot ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+--- a/dakdekker-born.html
++++ b/dakdekker-born.html
+@@ -43,7 +43,7 @@
+   :root{
+     --bg:#070707; --bg-2:#0d0d0d; --bg-3:#141414;
+     --line:#1f1f1f; --line-2:#2a2a2a;
+-    --ink:#f6f6f6; --ink-dim:#a8a8a8; --ink-mute:#6b6b6b;
++    --ink:#f6f6f6; --ink-dim:#a8a8a8; --ink-mute:#858585;
+     --green:#5CC27A; --green-2:#2E7D45;
+     --green-glow:rgba(92,194,122,0.18);
+     --container:1200px;
+@@ -284,7 +284,7 @@
+   footer{padding:50px 0 100px;border-top:1px solid var(--line);background:#050505}
+   .foot-grid{display:grid;grid-template-columns:2fr 1fr 1.2fr 1fr;gap:48px}
+   .foot-brand p{color:var(--ink-dim);font-size:14px;margin-top:18px;max-width:300px}
+-  .foot-brand .brand-logo--footer{height:120px;mix-blend-mode:lighten}
++  .foot-brand .brand-logo--footer{width:120px;height:auto;mix-blend-mode:lighten}
+   .foot-slogan{margin-top:18px;font-family:'Manrope';font-size:12px;letter-spacing:3px;color:var(--green);text-transform:uppercase;font-weight:700}
+   .foot h3.foot-h{font-size:12px;text-transform:uppercase;letter-spacing:2px;color:#fff;margin-bottom:18px}
+   .foot ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+--- a/dakdekker-brunssum.html
++++ b/dakdekker-brunssum.html
+@@ -43,7 +43,7 @@
+   :root{
+     --bg:#070707; --bg-2:#0d0d0d; --bg-3:#141414;
+     --line:#1f1f1f; --line-2:#2a2a2a;
+-    --ink:#f6f6f6; --ink-dim:#a8a8a8; --ink-mute:#6b6b6b;
++    --ink:#f6f6f6; --ink-dim:#a8a8a8; --ink-mute:#858585;
+     --green:#5CC27A; --green-2:#2E7D45;
+     --green-glow:rgba(92,194,122,0.18);
+     --container:1200px;
+@@ -284,7 +284,7 @@
+   footer{padding:50px 0 100px;border-top:1px solid var(--line);background:#050505}
+   .foot-grid{display:grid;grid-template-columns:2fr 1fr 1.2fr 1fr;gap:48px}
+   .foot-brand p{color:var(--ink-dim);font-size:14px;margin-top:18px;max-width:300px}
+-  .foot-brand .brand-logo--footer{height:120px;mix-blend-mode:lighten}
++  .foot-brand .brand-logo--footer{width:120px;height:auto;mix-blend-mode:lighten}
+   .foot-slogan{margin-top:18px;font-family:'Manrope';font-size:12px;letter-spacing:3px;color:var(--green);text-transform:uppercase;font-weight:700}
+   .foot h3.foot-h{font-size:12px;text-transform:uppercase;letter-spacing:2px;color:#fff;margin-bottom:18px}
+   .foot ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+--- a/dakdekker-echt.html
++++ b/dakdekker-echt.html
+@@ -4,7 +4,7 @@
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+ <meta name="theme-color" content="#0a0a0a" />
+-<title>Dakdekker Echt | Adams Daktechniek — Vakwerk in Midden-Limburg</title>
++<title>Dakdekker Echt | Adams Daktechniek</title>
+ <meta name="description" content="Dakdekker Echt nodig? Adams Daktechniek verzorgt platte daken, pannendaken, dakkapellen en spoedlekkages. Gratis offerte. Bel 06-83396082." />
+ <meta name="keywords" content="dakdekker echt, dakreparatie echt, platdak echt, pannendak echt, lekkage echt, dakgoten echt, dakkapel echt, Adams Daktechniek echt" />
+ <link rel="canonical" href="https://adamsdaktechniek.nl/dakdekker-echt" />
+@@ -43,7 +43,7 @@
+   :root{
+     --bg:#070707; --bg-2:#0d0d0d; --bg-3:#141414;
+     --line:#1f1f1f; --line-2:#2a2a2a;
+-    --ink:#f6f6f6; --ink-dim:#a8a8a8; --ink-mute:#6b6b6b;
++    --ink:#f6f6f6; --ink-dim:#a8a8a8; --ink-mute:#858585;
+     --green:#5CC27A; --green-2:#2E7D45;
+     --green-glow:rgba(92,194,122,0.18);
+     --container:1200px;
+@@ -284,7 +284,7 @@
+   footer{padding:50px 0 100px;border-top:1px solid var(--line);background:#050505}
+   .foot-grid{display:grid;grid-template-columns:2fr 1fr 1.2fr 1fr;gap:48px}
+   .foot-brand p{color:var(--ink-dim);font-size:14px;margin-top:18px;max-width:300px}
+-  .foot-brand .brand-logo--footer{height:120px;mix-blend-mode:lighten}
++  .foot-brand .brand-logo--footer{width:120px;height:auto;mix-blend-mode:lighten}
+   .foot-slogan{margin-top:18px;font-family:'Manrope';font-size:12px;letter-spacing:3px;color:var(--green);text-transform:uppercase;font-weight:700}
+   .foot h3.foot-h{font-size:12px;text-transform:uppercase;letter-spacing:2px;color:#fff;margin-bottom:18px}
+   .foot ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+--- a/dakdekker-eygelshoven.html
++++ b/dakdekker-eygelshoven.html
+@@ -43,7 +43,7 @@
+   :root{
+     --bg:#070707; --bg-2:#0d0d0d; --bg-3:#141414;
+     --line:#1f1f1f; --line-2:#2a2a2a;
+-    --ink:#f6f6f6; --ink-dim:#a8a8a8; --ink-mute:#6b6b6b;
++    --ink:#f6f6f6; --ink-dim:#a8a8a8; --ink-mute:#858585;
+     --green:#5CC27A; --green-2:#2E7D45;
+     --green-glow:rgba(92,194,122,0.18);
+     --container:1200px;
+@@ -284,7 +284,7 @@
+   footer{padding:50px 0 100px;border-top:1px solid var(--line);background:#050505}
+   .foot-grid{display:grid;grid-template-columns:2fr 1fr 1.2fr 1fr;gap:48px}
+   .foot-brand p{color:var(--ink-dim);font-size:14px;margin-top:18px;max-width:300px}
+-  .foot-brand .brand-logo--footer{height:120px;mix-blend-mode:lighten}
++  .foot-brand .brand-logo--footer{width:120px;height:auto;mix-blend-mode:lighten}
+   .foot-slogan{margin-top:18px;font-family:'Manrope';font-size:12px;letter-spacing:3px;color:var(--green);text-transform:uppercase;font-weight:700}
+   .foot h3.foot-h{font-size:12px;text-transform:uppercase;letter-spacing:2px;color:#fff;margin-bottom:18px}
+   .foot ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+--- a/dakdekker-geleen.html
++++ b/dakdekker-geleen.html
+@@ -43,7 +43,7 @@
+   :root{
+     --bg:#070707; --bg-2:#0d0d0d; --bg-3:#141414;
+     --line:#1f1f1f; --line-2:#2a2a2a;
+-    --ink:#f6f6f6; --ink-dim:#a8a8a8; --ink-mute:#6b6b6b;
++    --ink:#f6f6f6; --ink-dim:#a8a8a8; --ink-mute:#858585;
+     --green:#5CC27A; --green-2:#2E7D45;
+     --green-glow:rgba(92,194,122,0.18);
+     --container:1200px;
+@@ -284,7 +284,7 @@
+   footer{padding:50px 0 100px;border-top:1px solid var(--line);background:#050505}
+   .foot-grid{display:grid;grid-template-columns:2fr 1fr 1.2fr 1fr;gap:48px}
+   .foot-brand p{color:var(--ink-dim);font-size:14px;margin-top:18px;max-width:300px}
+-  .foot-brand .brand-logo--footer{height:120px;mix-blend-mode:lighten}
++  .foot-brand .brand-logo--footer{width:120px;height:auto;mix-blend-mode:lighten}
+   .foot-slogan{margin-top:18px;font-family:'Manrope';font-size:12px;letter-spacing:3px;color:var(--green);text-transform:uppercase;font-weight:700}
+   .foot h3.foot-h{font-size:12px;text-transform:uppercase;letter-spacing:2px;color:#fff;margin-bottom:18px}
+   .foot ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+--- a/dakdekker-heerlen.html
++++ b/dakdekker-heerlen.html
+@@ -43,7 +43,7 @@
+   :root{
+     --bg:#070707; --bg-2:#0d0d0d; --bg-3:#141414;
+     --line:#1f1f1f; --line-2:#2a2a2a;
+-    --ink:#f6f6f6; --ink-dim:#a8a8a8; --ink-mute:#6b6b6b;
++    --ink:#f6f6f6; --ink-dim:#a8a8a8; --ink-mute:#858585;
+     --green:#5CC27A; --green-2:#2E7D45;
+     --green-glow:rgba(92,194,122,0.18);
+     --container:1200px;
+@@ -284,7 +284,7 @@
+   footer{padding:50px 0 100px;border-top:1px solid var(--line);background:#050505}
+   .foot-grid{display:grid;grid-template-columns:2fr 1fr 1.2fr 1fr;gap:48px}
+   .foot-brand p{color:var(--ink-dim);font-size:14px;margin-top:18px;max-width:300px}
+-  .foot-brand .brand-logo--footer{height:120px;mix-blend-mode:lighten}
++  .foot-brand .brand-logo--footer{width:120px;height:auto;mix-blend-mode:lighten}
+   .foot-slogan{margin-top:18px;font-family:'Manrope';font-size:12px;letter-spacing:3px;color:var(--green);text-transform:uppercase;font-weight:700}
+   .foot h3.foot-h{font-size:12px;text-transform:uppercase;letter-spacing:2px;color:#fff;margin-bottom:18px}
+   .foot ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+--- a/dakdekker-hoensbroek.html
++++ b/dakdekker-hoensbroek.html
+@@ -43,7 +43,7 @@
+   :root{
+     --bg:#070707; --bg-2:#0d0d0d; --bg-3:#141414;
+     --line:#1f1f1f; --line-2:#2a2a2a;
+-    --ink:#f6f6f6; --ink-dim:#a8a8a8; --ink-mute:#6b6b6b;
++    --ink:#f6f6f6; --ink-dim:#a8a8a8; --ink-mute:#858585;
+     --green:#5CC27A; --green-2:#2E7D45;
+     --green-glow:rgba(92,194,122,0.18);
+     --container:1200px;
+@@ -284,7 +284,7 @@
+   footer{padding:50px 0 100px;border-top:1px solid var(--line);background:#050505}
+   .foot-grid{display:grid;grid-template-columns:2fr 1fr 1.2fr 1fr;gap:48px}
+   .foot-brand p{color:var(--ink-dim);font-size:14px;margin-top:18px;max-width:300px}
+-  .foot-brand .brand-logo--footer{height:120px;mix-blend-mode:lighten}
++  .foot-brand .brand-logo--footer{width:120px;height:auto;mix-blend-mode:lighten}
+   .foot-slogan{margin-top:18px;font-family:'Manrope';font-size:12px;letter-spacing:3px;color:var(--green);text-transform:uppercase;font-weight:700}
+   .foot h3.foot-h{font-size:12px;text-transform:uppercase;letter-spacing:2px;color:#fff;margin-bottom:18px}
+   .foot ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+--- a/dakdekker-kerkrade.html
++++ b/dakdekker-kerkrade.html
+@@ -43,7 +43,7 @@
+   :root{
+     --bg:#070707; --bg-2:#0d0d0d; --bg-3:#141414;
+     --line:#1f1f1f; --line-2:#2a2a2a;
+-    --ink:#f6f6f6; --ink-dim:#a8a8a8; --ink-mute:#6b6b6b;
++    --ink:#f6f6f6; --ink-dim:#a8a8a8; --ink-mute:#858585;
+     --green:#5CC27A; --green-2:#2E7D45;
+     --green-glow:rgba(92,194,122,0.18);
+     --container:1200px;
+@@ -284,7 +284,7 @@
+   footer{padding:50px 0 100px;border-top:1px solid var(--line);background:#050505}
+   .foot-grid{display:grid;grid-template-columns:2fr 1fr 1.2fr 1fr;gap:48px}
+   .foot-brand p{color:var(--ink-dim);font-size:14px;margin-top:18px;max-width:300px}
+-  .foot-brand .brand-logo--footer{height:120px;mix-blend-mode:lighten}
++  .foot-brand .brand-logo--footer{width:120px;height:auto;mix-blend-mode:lighten}
+   .foot-slogan{margin-top:18px;font-family:'Manrope';font-size:12px;letter-spacing:3px;color:var(--green);text-transform:uppercase;font-weight:700}
+   .foot h3.foot-h{font-size:12px;text-transform:uppercase;letter-spacing:2px;color:#fff;margin-bottom:18px}
+   .foot ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+--- a/dakdekker-klimmen.html
++++ b/dakdekker-klimmen.html
+@@ -4,7 +4,7 @@
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+ <meta name="theme-color" content="#0a0a0a" />
+-<title>Dakdekker Klimmen | Adams Daktechniek — Vakwerk in Heuvelland</title>
++<title>Dakdekker Klimmen | Adams Daktechniek</title>
+ <meta name="description" content="Dakdekker Klimmen? Adams Daktechniek verzorgt platte daken, pannendaken, dakkapellen en spoedlekkages. Gratis offerte. Bel 06-83396082." />
+ <meta name="keywords" content="dakdekker klimmen, dakreparatie klimmen, platdak klimmen, pannendak klimmen, lekkage klimmen, dakgoten klimmen, dakkapel klimmen, Adams Daktechniek klimmen" />
+ <link rel="canonical" href="https://adamsdaktechniek.nl/dakdekker-klimmen" />
+@@ -43,7 +43,7 @@
+   :root{
+     --bg:#070707; --bg-2:#0d0d0d; --bg-3:#141414;
+     --line:#1f1f1f; --line-2:#2a2a2a;
+-    --ink:#f6f6f6; --ink-dim:#a8a8a8; --ink-mute:#6b6b6b;
++    --ink:#f6f6f6; --ink-dim:#a8a8a8; --ink-mute:#858585;
+     --green:#5CC27A; --green-2:#2E7D45;
+     --green-glow:rgba(92,194,122,0.18);
+     --container:1200px;
+@@ -284,7 +284,7 @@
+   footer{padding:50px 0 100px;border-top:1px solid var(--line);background:#050505}
+   .foot-grid{display:grid;grid-template-columns:2fr 1fr 1.2fr 1fr;gap:48px}
+   .foot-brand p{color:var(--ink-dim);font-size:14px;margin-top:18px;max-width:300px}
+-  .foot-brand .brand-logo--footer{height:120px;mix-blend-mode:lighten}
++  .foot-brand .brand-logo--footer{width:120px;height:auto;mix-blend-mode:lighten}
+   .foot-slogan{margin-top:18px;font-family:'Manrope';font-size:12px;letter-spacing:3px;color:var(--green);text-transform:uppercase;font-weight:700}
+   .foot h3.foot-h{font-size:12px;text-transform:uppercase;letter-spacing:2px;color:#fff;margin-bottom:18px}
+   .foot ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+--- a/dakdekker-landgraaf.html
++++ b/dakdekker-landgraaf.html
+@@ -43,7 +43,7 @@
+   :root{
+     --bg:#070707; --bg-2:#0d0d0d; --bg-3:#141414;
+     --line:#1f1f1f; --line-2:#2a2a2a;
+-    --ink:#f6f6f6; --ink-dim:#a8a8a8; --ink-mute:#6b6b6b;
++    --ink:#f6f6f6; --ink-dim:#a8a8a8; --ink-mute:#858585;
+     --green:#5CC27A; --green-2:#2E7D45;
+     --green-glow:rgba(92,194,122,0.18);
+     --container:1200px;
+@@ -284,7 +284,7 @@
+   footer{padding:50px 0 100px;border-top:1px solid var(--line);background:#050505}
+   .foot-grid{display:grid;grid-template-columns:2fr 1fr 1.2fr 1fr;gap:48px}
+   .foot-brand p{color:var(--ink-dim);font-size:14px;margin-top:18px;max-width:300px}
+-  .foot-brand .brand-logo--footer{height:120px;mix-blend-mode:lighten}
++  .foot-brand .brand-logo--footer{width:120px;height:auto;mix-blend-mode:lighten}
+   .foot-slogan{margin-top:18px;font-family:'Manrope';font-size:12px;letter-spacing:3px;color:var(--green);text-transform:uppercase;font-weight:700}
+   .foot h3.foot-h{font-size:12px;text-transform:uppercase;letter-spacing:2px;color:#fff;margin-bottom:18px}
+   .foot ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+--- a/dakdekker-nuth.html
++++ b/dakdekker-nuth.html
+@@ -43,7 +43,7 @@
+   :root{
+     --bg:#070707; --bg-2:#0d0d0d; --bg-3:#141414;
+     --line:#1f1f1f; --line-2:#2a2a2a;
+-    --ink:#f6f6f6; --ink-dim:#a8a8a8; --ink-mute:#6b6b6b;
++    --ink:#f6f6f6; --ink-dim:#a8a8a8; --ink-mute:#858585;
+     --green:#5CC27A; --green-2:#2E7D45;
+     --green-glow:rgba(92,194,122,0.18);
+     --container:1200px;
+@@ -284,7 +284,7 @@
+   footer{padding:50px 0 100px;border-top:1px solid var(--line);background:#050505}
+   .foot-grid{display:grid;grid-template-columns:2fr 1fr 1.2fr 1fr;gap:48px}
+   .foot-brand p{color:var(--ink-dim);font-size:14px;margin-top:18px;max-width:300px}
+-  .foot-brand .brand-logo--footer{height:120px;mix-blend-mode:lighten}
++  .foot-brand .brand-logo--footer{width:120px;height:auto;mix-blend-mode:lighten}
+   .foot-slogan{margin-top:18px;font-family:'Manrope';font-size:12px;letter-spacing:3px;color:var(--green);text-transform:uppercase;font-weight:700}
+   .foot h3.foot-h{font-size:12px;text-transform:uppercase;letter-spacing:2px;color:#fff;margin-bottom:18px}
+   .foot ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+--- a/dakdekker-schinnen.html
++++ b/dakdekker-schinnen.html
+@@ -4,7 +4,7 @@
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+ <meta name="theme-color" content="#0a0a0a" />
+-<title>Dakdekker Schinnen | Adams Daktechniek — Vakwerk in Beekdaelen</title>
++<title>Dakdekker Schinnen | Adams Daktechniek</title>
+ <meta name="description" content="Dakdekker Schinnen? Adams Daktechniek verzorgt platte daken, pannendaken, dakkapellen en spoedlekkages. Gratis offerte. Bel 06-83396082." />
+ <meta name="keywords" content="dakdekker schinnen, dakreparatie schinnen, platdak schinnen, pannendak schinnen, lekkage schinnen, dakgoten schinnen, dakkapel schinnen, Adams Daktechniek schinnen" />
+ <link rel="canonical" href="https://adamsdaktechniek.nl/dakdekker-schinnen" />
+@@ -43,7 +43,7 @@
+   :root{
+     --bg:#070707; --bg-2:#0d0d0d; --bg-3:#141414;
+     --line:#1f1f1f; --line-2:#2a2a2a;
+-    --ink:#f6f6f6; --ink-dim:#a8a8a8; --ink-mute:#6b6b6b;
++    --ink:#f6f6f6; --ink-dim:#a8a8a8; --ink-mute:#858585;
+     --green:#5CC27A; --green-2:#2E7D45;
+     --green-glow:rgba(92,194,122,0.18);
+     --container:1200px;
+@@ -284,7 +284,7 @@
+   footer{padding:50px 0 100px;border-top:1px solid var(--line);background:#050505}
+   .foot-grid{display:grid;grid-template-columns:2fr 1fr 1.2fr 1fr;gap:48px}
+   .foot-brand p{color:var(--ink-dim);font-size:14px;margin-top:18px;max-width:300px}
+-  .foot-brand .brand-logo--footer{height:120px;mix-blend-mode:lighten}
++  .foot-brand .brand-logo--footer{width:120px;height:auto;mix-blend-mode:lighten}
+   .foot-slogan{margin-top:18px;font-family:'Manrope';font-size:12px;letter-spacing:3px;color:var(--green);text-transform:uppercase;font-weight:700}
+   .foot h3.foot-h{font-size:12px;text-transform:uppercase;letter-spacing:2px;color:#fff;margin-bottom:18px}
+   .foot ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+--- a/dakdekker-schinveld.html
++++ b/dakdekker-schinveld.html
+@@ -4,7 +4,7 @@
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+ <meta name="theme-color" content="#0a0a0a" />
+-<title>Dakdekker Schinveld | Adams Daktechniek — Vakwerk in Beekdaelen</title>
++<title>Dakdekker Schinveld | Adams Daktechniek</title>
+ <meta name="description" content="Dakdekker Schinveld? Adams Daktechniek verzorgt platte daken, pannendaken, dakkapellen en spoedlekkages. Gratis offerte. Bel 06-83396082." />
+ <meta name="keywords" content="dakdekker schinveld, dakreparatie schinveld, platdak schinveld, pannendak schinveld, lekkage schinveld, dakgoten schinveld, dakkapel schinveld, Adams Daktechniek schinveld" />
+ <link rel="canonical" href="https://adamsdaktechniek.nl/dakdekker-schinveld" />
+@@ -43,7 +43,7 @@
+   :root{
+     --bg:#070707; --bg-2:#0d0d0d; --bg-3:#141414;
+     --line:#1f1f1f; --line-2:#2a2a2a;
+-    --ink:#f6f6f6; --ink-dim:#a8a8a8; --ink-mute:#6b6b6b;
++    --ink:#f6f6f6; --ink-dim:#a8a8a8; --ink-mute:#858585;
+     --green:#5CC27A; --green-2:#2E7D45;
+     --green-glow:rgba(92,194,122,0.18);
+     --container:1200px;
+@@ -284,7 +284,7 @@
+   footer{padding:50px 0 100px;border-top:1px solid var(--line);background:#050505}
+   .foot-grid{display:grid;grid-template-columns:2fr 1fr 1.2fr 1fr;gap:48px}
+   .foot-brand p{color:var(--ink-dim);font-size:14px;margin-top:18px;max-width:300px}
+-  .foot-brand .brand-logo--footer{height:120px;mix-blend-mode:lighten}
++  .foot-brand .brand-logo--footer{width:120px;height:auto;mix-blend-mode:lighten}
+   .foot-slogan{margin-top:18px;font-family:'Manrope';font-size:12px;letter-spacing:3px;color:var(--green);text-transform:uppercase;font-weight:700}
+   .foot h3.foot-h{font-size:12px;text-transform:uppercase;letter-spacing:2px;color:#fff;margin-bottom:18px}
+   .foot ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+--- a/dakdekker-simpelveld.html
++++ b/dakdekker-simpelveld.html
+@@ -4,7 +4,7 @@
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+ <meta name="theme-color" content="#0a0a0a" />
+-<title>Dakdekker Simpelveld | Adams Daktechniek — Vakwerk in Heuvelland</title>
++<title>Dakdekker Simpelveld | Adams Daktechniek</title>
+ <meta name="description" content="Dakdekker Simpelveld? Adams Daktechniek verzorgt platte daken, pannendaken, dakkapellen en spoedlekkages. Gratis offerte. Bel 06-83396082." />
+ <meta name="keywords" content="dakdekker simpelveld, dakreparatie simpelveld, platdak simpelveld, pannendak simpelveld, lekkage simpelveld, dakgoten simpelveld, dakkapel simpelveld, Adams Daktechniek simpelveld" />
+ <link rel="canonical" href="https://adamsdaktechniek.nl/dakdekker-simpelveld" />
+@@ -43,7 +43,7 @@
+   :root{
+     --bg:#070707; --bg-2:#0d0d0d; --bg-3:#141414;
+     --line:#1f1f1f; --line-2:#2a2a2a;
+-    --ink:#f6f6f6; --ink-dim:#a8a8a8; --ink-mute:#6b6b6b;
++    --ink:#f6f6f6; --ink-dim:#a8a8a8; --ink-mute:#858585;
+     --green:#5CC27A; --green-2:#2E7D45;
+     --green-glow:rgba(92,194,122,0.18);
+     --container:1200px;
+@@ -284,7 +284,7 @@
+   footer{padding:50px 0 100px;border-top:1px solid var(--line);background:#050505}
+   .foot-grid{display:grid;grid-template-columns:2fr 1fr 1.2fr 1fr;gap:48px}
+   .foot-brand p{color:var(--ink-dim);font-size:14px;margin-top:18px;max-width:300px}
+-  .foot-brand .brand-logo--footer{height:120px;mix-blend-mode:lighten}
++  .foot-brand .brand-logo--footer{width:120px;height:auto;mix-blend-mode:lighten}
+   .foot-slogan{margin-top:18px;font-family:'Manrope';font-size:12px;letter-spacing:3px;color:var(--green);text-transform:uppercase;font-weight:700}
+   .foot h3.foot-h{font-size:12px;text-transform:uppercase;letter-spacing:2px;color:#fff;margin-bottom:18px}
+   .foot ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+--- a/dakdekker-sittard.html
++++ b/dakdekker-sittard.html
+@@ -43,7 +43,7 @@
+   :root{
+     --bg:#070707; --bg-2:#0d0d0d; --bg-3:#141414;
+     --line:#1f1f1f; --line-2:#2a2a2a;
+-    --ink:#f6f6f6; --ink-dim:#a8a8a8; --ink-mute:#6b6b6b;
++    --ink:#f6f6f6; --ink-dim:#a8a8a8; --ink-mute:#858585;
+     --green:#5CC27A; --green-2:#2E7D45;
+     --green-glow:rgba(92,194,122,0.18);
+     --container:1200px;
+@@ -284,7 +284,7 @@
+   footer{padding:50px 0 100px;border-top:1px solid var(--line);background:#050505}
+   .foot-grid{display:grid;grid-template-columns:2fr 1fr 1.2fr 1fr;gap:48px}
+   .foot-brand p{color:var(--ink-dim);font-size:14px;margin-top:18px;max-width:300px}
+-  .foot-brand .brand-logo--footer{height:120px;mix-blend-mode:lighten}
++  .foot-brand .brand-logo--footer{width:120px;height:auto;mix-blend-mode:lighten}
+   .foot-slogan{margin-top:18px;font-family:'Manrope';font-size:12px;letter-spacing:3px;color:var(--green);text-transform:uppercase;font-weight:700}
+   .foot h3.foot-h{font-size:12px;text-transform:uppercase;letter-spacing:2px;color:#fff;margin-bottom:18px}
+   .foot ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+--- a/dakdekker-valkenburg.html
++++ b/dakdekker-valkenburg.html
+@@ -4,7 +4,7 @@
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+ <meta name="theme-color" content="#0a0a0a" />
+-<title>Dakdekker Valkenburg | Adams Daktechniek — Vakwerk in Heuvelland</title>
++<title>Dakdekker Valkenburg | Adams Daktechniek</title>
+ <meta name="description" content="Dakdekker Valkenburg? Adams Daktechniek verzorgt platte daken, pannendaken, dakkapellen en spoedlekkages. Gratis offerte. Bel 06-83396082." />
+ <meta name="keywords" content="dakdekker valkenburg, dakreparatie valkenburg, platdak valkenburg, pannendak valkenburg, lekkage valkenburg, dakgoten valkenburg, dakkapel valkenburg, Adams Daktechniek valkenburg" />
+ <link rel="canonical" href="https://adamsdaktechniek.nl/dakdekker-valkenburg" />
+@@ -43,7 +43,7 @@
+   :root{
+     --bg:#070707; --bg-2:#0d0d0d; --bg-3:#141414;
+     --line:#1f1f1f; --line-2:#2a2a2a;
+-    --ink:#f6f6f6; --ink-dim:#a8a8a8; --ink-mute:#6b6b6b;
++    --ink:#f6f6f6; --ink-dim:#a8a8a8; --ink-mute:#858585;
+     --green:#5CC27A; --green-2:#2E7D45;
+     --green-glow:rgba(92,194,122,0.18);
+     --container:1200px;
+@@ -284,7 +284,7 @@
+   footer{padding:50px 0 100px;border-top:1px solid var(--line);background:#050505}
+   .foot-grid{display:grid;grid-template-columns:2fr 1fr 1.2fr 1fr;gap:48px}
+   .foot-brand p{color:var(--ink-dim);font-size:14px;margin-top:18px;max-width:300px}
+-  .foot-brand .brand-logo--footer{height:120px;mix-blend-mode:lighten}
++  .foot-brand .brand-logo--footer{width:120px;height:auto;mix-blend-mode:lighten}
+   .foot-slogan{margin-top:18px;font-family:'Manrope';font-size:12px;letter-spacing:3px;color:var(--green);text-transform:uppercase;font-weight:700}
+   .foot h3.foot-h{font-size:12px;text-transform:uppercase;letter-spacing:2px;color:#fff;margin-bottom:18px}
+   .foot ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+--- a/dakdekker-voerendaal.html
++++ b/dakdekker-voerendaal.html
+@@ -4,7 +4,7 @@
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+ <meta name="theme-color" content="#0a0a0a" />
+-<title>Dakdekker Voerendaal | Adams Daktechniek — Vakwerk in Heuvelland</title>
++<title>Dakdekker Voerendaal | Adams Daktechniek</title>
+ <meta name="description" content="Dakdekker Voerendaal? Adams Daktechniek verzorgt platte daken, pannendaken, dakkapellen en spoedlekkages. Gratis offerte. Bel 06-83396082." />
+ <meta name="keywords" content="dakdekker voerendaal, dakreparatie voerendaal, platdak voerendaal, pannendak voerendaal, lekkage voerendaal, dakgoten voerendaal, dakkapel voerendaal, Adams Daktechniek voerendaal" />
+ <link rel="canonical" href="https://adamsdaktechniek.nl/dakdekker-voerendaal" />
+@@ -43,7 +43,7 @@
+   :root{
+     --bg:#070707; --bg-2:#0d0d0d; --bg-3:#141414;
+     --line:#1f1f1f; --line-2:#2a2a2a;
+-    --ink:#f6f6f6; --ink-dim:#a8a8a8; --ink-mute:#6b6b6b;
++    --ink:#f6f6f6; --ink-dim:#a8a8a8; --ink-mute:#858585;
+     --green:#5CC27A; --green-2:#2E7D45;
+     --green-glow:rgba(92,194,122,0.18);
+     --container:1200px;
+@@ -284,7 +284,7 @@
+   footer{padding:50px 0 100px;border-top:1px solid var(--line);background:#050505}
+   .foot-grid{display:grid;grid-template-columns:2fr 1fr 1.2fr 1fr;gap:48px}
+   .foot-brand p{color:var(--ink-dim);font-size:14px;margin-top:18px;max-width:300px}
+-  .foot-brand .brand-logo--footer{height:120px;mix-blend-mode:lighten}
++  .foot-brand .brand-logo--footer{width:120px;height:auto;mix-blend-mode:lighten}
+   .foot-slogan{margin-top:18px;font-family:'Manrope';font-size:12px;letter-spacing:3px;color:var(--green);text-transform:uppercase;font-weight:700}
+   .foot h3.foot-h{font-size:12px;text-transform:uppercase;letter-spacing:2px;color:#fff;margin-bottom:18px}
+   .foot ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+--- a/dakgids-bedankt.html
++++ b/dakgids-bedankt.html
+@@ -27,7 +27,7 @@
+   :root{
+     --bg:#070707; --bg-2:#0d0d0d; --bg-3:#141414;
+     --line:#1f1f1f; --line-2:#2a2a2a;
+-    --ink:#f6f6f6; --ink-dim:#a8a8a8; --ink-mute:#6b6b6b;
++    --ink:#f6f6f6; --ink-dim:#a8a8a8; --ink-mute:#858585;
+     --green:#5CC27A; --green-2:#2E7D45;
+     --green-glow:rgba(92,194,122,0.18);
+     --container:1100px;
+--- a/dakisolatie.html
++++ b/dakisolatie.html
+@@ -35,7 +35,7 @@
+ </script>
+ 
+ <style>
+-  :root{--bg:#070707;--bg-2:#0d0d0d;--bg-3:#141414;--line:#1f1f1f;--line-2:#2a2a2a;--ink:#f6f6f6;--ink-dim:#a8a8a8;--ink-mute:#6b6b6b;--green:#5CC27A;--green-2:#2E7D45;--green-glow:rgba(92,194,122,0.18);--container:1200px;--ease:cubic-bezier(.22,.61,.36,1);}
++  :root{--bg:#070707;--bg-2:#0d0d0d;--bg-3:#141414;--line:#1f1f1f;--line-2:#2a2a2a;--ink:#f6f6f6;--ink-dim:#a8a8a8;--ink-mute:#858585;--green:#5CC27A;--green-2:#2E7D45;--green-glow:rgba(92,194,122,0.18);--container:1200px;--ease:cubic-bezier(.22,.61,.36,1);}
+   *{box-sizing:border-box;margin:0;padding:0}
+   html{scroll-behavior:smooth}
+   body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+@@ -257,7 +257,7 @@
+   footer{padding:50px 0 100px;border-top:1px solid var(--line);background:#050505}
+   .foot-grid{display:grid;grid-template-columns:2fr 1fr 1.2fr 1fr;gap:48px}
+   .foot-brand p{color:var(--ink-dim);font-size:14px;margin-top:18px;max-width:300px}
+-  .foot-brand .brand-logo--footer{height:120px;mix-blend-mode:lighten}
++  .foot-brand .brand-logo--footer{width:120px;height:auto;mix-blend-mode:lighten}
+   .foot-slogan{margin-top:18px;font-family:'Manrope';font-size:12px;letter-spacing:3px;color:var(--green);text-transform:uppercase;font-weight:700}
+   .foot h3.foot-h{font-size:12px;text-transform:uppercase;letter-spacing:2px;color:#fff;margin-bottom:18px}
+   .foot ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+--- a/dakkapellen.html
++++ b/dakkapellen.html
+@@ -35,7 +35,7 @@
+ </script>
+ 
+ <style>
+-  :root{--bg:#070707;--bg-2:#0d0d0d;--bg-3:#141414;--line:#1f1f1f;--line-2:#2a2a2a;--ink:#f6f6f6;--ink-dim:#a8a8a8;--ink-mute:#6b6b6b;--green:#5CC27A;--green-2:#2E7D45;--green-glow:rgba(92,194,122,0.18);--container:1200px;--ease:cubic-bezier(.22,.61,.36,1);}
++  :root{--bg:#070707;--bg-2:#0d0d0d;--bg-3:#141414;--line:#1f1f1f;--line-2:#2a2a2a;--ink:#f6f6f6;--ink-dim:#a8a8a8;--ink-mute:#858585;--green:#5CC27A;--green-2:#2E7D45;--green-glow:rgba(92,194,122,0.18);--container:1200px;--ease:cubic-bezier(.22,.61,.36,1);}
+   *{box-sizing:border-box;margin:0;padding:0}
+   html{scroll-behavior:smooth}
+   body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+@@ -257,7 +257,7 @@
+   footer{padding:50px 0 100px;border-top:1px solid var(--line);background:#050505}
+   .foot-grid{display:grid;grid-template-columns:2fr 1fr 1.2fr 1fr;gap:48px}
+   .foot-brand p{color:var(--ink-dim);font-size:14px;margin-top:18px;max-width:300px}
+-  .foot-brand .brand-logo--footer{height:120px;mix-blend-mode:lighten}
++  .foot-brand .brand-logo--footer{width:120px;height:auto;mix-blend-mode:lighten}
+   .foot-slogan{margin-top:18px;font-family:'Manrope';font-size:12px;letter-spacing:3px;color:var(--green);text-transform:uppercase;font-weight:700}
+   .foot h3.foot-h{font-size:12px;text-transform:uppercase;letter-spacing:2px;color:#fff;margin-bottom:18px}
+   .foot ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+--- a/dakraam-velux.html
++++ b/dakraam-velux.html
+@@ -35,7 +35,7 @@
+ </script>
+ 
+ <style>
+-  :root{--bg:#070707;--bg-2:#0d0d0d;--bg-3:#141414;--line:#1f1f1f;--line-2:#2a2a2a;--ink:#f6f6f6;--ink-dim:#a8a8a8;--ink-mute:#6b6b6b;--green:#5CC27A;--green-2:#2E7D45;--green-glow:rgba(92,194,122,0.18);--container:1200px;--ease:cubic-bezier(.22,.61,.36,1);}
++  :root{--bg:#070707;--bg-2:#0d0d0d;--bg-3:#141414;--line:#1f1f1f;--line-2:#2a2a2a;--ink:#f6f6f6;--ink-dim:#a8a8a8;--ink-mute:#858585;--green:#5CC27A;--green-2:#2E7D45;--green-glow:rgba(92,194,122,0.18);--container:1200px;--ease:cubic-bezier(.22,.61,.36,1);}
+   *{box-sizing:border-box;margin:0;padding:0}
+   html{scroll-behavior:smooth}
+   body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+@@ -257,7 +257,7 @@
+   footer{padding:50px 0 100px;border-top:1px solid var(--line);background:#050505}
+   .foot-grid{display:grid;grid-template-columns:2fr 1fr 1.2fr 1fr;gap:48px}
+   .foot-brand p{color:var(--ink-dim);font-size:14px;margin-top:18px;max-width:300px}
+-  .foot-brand .brand-logo--footer{height:120px;mix-blend-mode:lighten}
++  .foot-brand .brand-logo--footer{width:120px;height:auto;mix-blend-mode:lighten}
+   .foot-slogan{margin-top:18px;font-family:'Manrope';font-size:12px;letter-spacing:3px;color:var(--green);text-transform:uppercase;font-weight:700}
+   .foot h3.foot-h{font-size:12px;text-transform:uppercase;letter-spacing:2px;color:#fff;margin-bottom:18px}
+   .foot ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+--- a/dakreiniging.html
++++ b/dakreiniging.html
+@@ -35,7 +35,7 @@
+ </script>
+ 
+ <style>
+-  :root{--bg:#070707;--bg-2:#0d0d0d;--bg-3:#141414;--line:#1f1f1f;--line-2:#2a2a2a;--ink:#f6f6f6;--ink-dim:#a8a8a8;--ink-mute:#6b6b6b;--green:#5CC27A;--green-2:#2E7D45;--green-glow:rgba(92,194,122,0.18);--container:1200px;--ease:cubic-bezier(.22,.61,.36,1);}
++  :root{--bg:#070707;--bg-2:#0d0d0d;--bg-3:#141414;--line:#1f1f1f;--line-2:#2a2a2a;--ink:#f6f6f6;--ink-dim:#a8a8a8;--ink-mute:#858585;--green:#5CC27A;--green-2:#2E7D45;--green-glow:rgba(92,194,122,0.18);--container:1200px;--ease:cubic-bezier(.22,.61,.36,1);}
+   *{box-sizing:border-box;margin:0;padding:0}
+   html{scroll-behavior:smooth}
+   body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+@@ -257,7 +257,7 @@
+   footer{padding:50px 0 100px;border-top:1px solid var(--line);background:#050505}
+   .foot-grid{display:grid;grid-template-columns:2fr 1fr 1.2fr 1fr;gap:48px}
+   .foot-brand p{color:var(--ink-dim);font-size:14px;margin-top:18px;max-width:300px}
+-  .foot-brand .brand-logo--footer{height:120px;mix-blend-mode:lighten}
++  .foot-brand .brand-logo--footer{width:120px;height:auto;mix-blend-mode:lighten}
+   .foot-slogan{margin-top:18px;font-family:'Manrope';font-size:12px;letter-spacing:3px;color:var(--green);text-transform:uppercase;font-weight:700}
+   .foot h3.foot-h{font-size:12px;text-transform:uppercase;letter-spacing:2px;color:#fff;margin-bottom:18px}
+   .foot ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+--- a/index.html
++++ b/index.html
+@@ -35,7 +35,7 @@
+     --line-2:#2a2a2a;
+     --ink:#f6f6f6;
+     --ink-dim:#a8a8a8;
+-    --ink-mute:#6b6b6b;
++    --ink-mute:#858585;
+     --green:#5CC27A;
+     --green-2:#2E7D45;
+     --green-glow:rgba(92,194,122,0.18);
+@@ -672,7 +672,7 @@
+     aspect-ratio:4/5;border-radius:24px;overflow:hidden;
+     background:
+       linear-gradient(180deg, rgba(0,0,0,.1) 0%, rgba(0,0,0,.35) 50%, rgba(0,0,0,.82) 100%),
+-      url('Images/pannendak-renovatie-heerlen.jpeg') center/cover no-repeat;
++      url('Images/pannendak-renovatie-heerlen.webp') center/cover no-repeat;
+     border:1px solid var(--line-2);
+     position:relative;
+     display:flex;align-items:flex-end;padding:32px;
+@@ -926,7 +926,7 @@
+   footer{padding:50px 0 100px;border-top:1px solid var(--line);background:#050505}
+   .foot-grid{display:grid;grid-template-columns:2fr 1fr 1.2fr 1fr;gap:48px}
+   .foot-brand p{color:var(--ink-dim);font-size:14px;margin-top:18px;max-width:300px}
+-  .foot-brand .brand-logo--footer{height:120px;mix-blend-mode:lighten}
++  .foot-brand .brand-logo--footer{width:120px;height:auto;mix-blend-mode:lighten}
+   .foot-slogan{margin-top:18px;font-family:'Manrope';font-size:12px;letter-spacing:3px;color:var(--green);text-transform:uppercase;font-weight:700}
+   .foot h3.foot-h{font-size:12px;text-transform:uppercase;letter-spacing:2px;color:#fff;margin-bottom:18px}
+   .foot ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+--- a/offerte.html
++++ b/offerte.html
+@@ -4,7 +4,7 @@
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+ <meta name="theme-color" content="#0a0a0a" />
+-<title>Gratis Offerte Aanvragen | Adams Daktechniek — Heerlen & Limburg</title>
++<title>Gratis offerte aanvragen | Adams Daktechniek Heerlen</title>
+ <meta name="description" content="Vraag gratis offerte aan bij Adams Daktechniek. 3 korte stappen, offerte binnen 48 uur. Particulieren, bedrijven en VvE's welkom. Bel 06-83396082." />
+ <link rel="canonical" href="https://adamsdaktechniek.nl/offerte" />
+ <meta property="og:url" content="https://adamsdaktechniek.nl/offerte" />
+@@ -28,7 +28,7 @@
+   :root{
+     --bg:#070707; --bg-2:#0d0d0d; --bg-3:#141414;
+     --line:#1f1f1f; --line-2:#2a2a2a;
+-    --ink:#f6f6f6; --ink-dim:#a8a8a8; --ink-mute:#6b6b6b;
++    --ink:#f6f6f6; --ink-dim:#a8a8a8; --ink-mute:#858585;
+     --green:#5CC27A; --green-2:#2E7D45;
+     --green-glow:rgba(92,194,122,0.18);
+     --radius:18px; --radius-sm:12px; --container:1200px;
+@@ -415,7 +415,7 @@
+   footer{padding:50px 0 100px;border-top:1px solid var(--line);background:#050505}
+   .foot-grid{display:grid;grid-template-columns:2fr 1fr 1.2fr 1fr;gap:48px}
+   .foot-brand p{color:var(--ink-dim);font-size:14px;margin-top:18px;max-width:300px}
+-  .foot-brand .brand-logo--footer{height:120px;mix-blend-mode:lighten}
++  .foot-brand .brand-logo--footer{width:120px;height:auto;mix-blend-mode:lighten}
+   .foot-slogan{margin-top:18px;font-family:'Manrope';font-size:12px;letter-spacing:3px;color:var(--green);text-transform:uppercase;font-weight:700}
+   .foot h3.foot-h{font-size:12px;text-transform:uppercase;letter-spacing:2px;color:#fff;margin-bottom:18px}
+   .foot ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+--- a/onderhoud-inspectie.html
++++ b/onderhoud-inspectie.html
+@@ -35,7 +35,7 @@
+ </script>
+ 
+ <style>
+-  :root{--bg:#070707;--bg-2:#0d0d0d;--bg-3:#141414;--line:#1f1f1f;--line-2:#2a2a2a;--ink:#f6f6f6;--ink-dim:#a8a8a8;--ink-mute:#6b6b6b;--green:#5CC27A;--green-2:#2E7D45;--green-glow:rgba(92,194,122,0.18);--container:1200px;--ease:cubic-bezier(.22,.61,.36,1);}
++  :root{--bg:#070707;--bg-2:#0d0d0d;--bg-3:#141414;--line:#1f1f1f;--line-2:#2a2a2a;--ink:#f6f6f6;--ink-dim:#a8a8a8;--ink-mute:#858585;--green:#5CC27A;--green-2:#2E7D45;--green-glow:rgba(92,194,122,0.18);--container:1200px;--ease:cubic-bezier(.22,.61,.36,1);}
+   *{box-sizing:border-box;margin:0;padding:0}
+   html{scroll-behavior:smooth}
+   body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+@@ -257,7 +257,7 @@
+   footer{padding:50px 0 100px;border-top:1px solid var(--line);background:#050505}
+   .foot-grid{display:grid;grid-template-columns:2fr 1fr 1.2fr 1fr;gap:48px}
+   .foot-brand p{color:var(--ink-dim);font-size:14px;margin-top:18px;max-width:300px}
+-  .foot-brand .brand-logo--footer{height:120px;mix-blend-mode:lighten}
++  .foot-brand .brand-logo--footer{width:120px;height:auto;mix-blend-mode:lighten}
+   .foot-slogan{margin-top:18px;font-family:'Manrope';font-size:12px;letter-spacing:3px;color:var(--green);text-transform:uppercase;font-weight:700}
+   .foot h3.foot-h{font-size:12px;text-transform:uppercase;letter-spacing:2px;color:#fff;margin-bottom:18px}
+   .foot ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+--- a/pannendaken.html
++++ b/pannendaken.html
+@@ -35,7 +35,7 @@
+ </script>
+ 
+ <style>
+-  :root{--bg:#070707;--bg-2:#0d0d0d;--bg-3:#141414;--line:#1f1f1f;--line-2:#2a2a2a;--ink:#f6f6f6;--ink-dim:#a8a8a8;--ink-mute:#6b6b6b;--green:#5CC27A;--green-2:#2E7D45;--green-glow:rgba(92,194,122,0.18);--container:1200px;--ease:cubic-bezier(.22,.61,.36,1);}
++  :root{--bg:#070707;--bg-2:#0d0d0d;--bg-3:#141414;--line:#1f1f1f;--line-2:#2a2a2a;--ink:#f6f6f6;--ink-dim:#a8a8a8;--ink-mute:#858585;--green:#5CC27A;--green-2:#2E7D45;--green-glow:rgba(92,194,122,0.18);--container:1200px;--ease:cubic-bezier(.22,.61,.36,1);}
+   *{box-sizing:border-box;margin:0;padding:0}
+   html{scroll-behavior:smooth}
+   body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+@@ -260,7 +260,7 @@
+   footer{padding:50px 0 100px;border-top:1px solid var(--line);background:#050505}
+   .foot-grid{display:grid;grid-template-columns:2fr 1fr 1.2fr 1fr;gap:48px}
+   .foot-brand p{color:var(--ink-dim);font-size:14px;margin-top:18px;max-width:300px}
+-  .foot-brand .brand-logo--footer{height:120px;mix-blend-mode:lighten}
++  .foot-brand .brand-logo--footer{width:120px;height:auto;mix-blend-mode:lighten}
+   .foot-slogan{margin-top:18px;font-family:'Manrope';font-size:12px;letter-spacing:3px;color:var(--green);text-transform:uppercase;font-weight:700}
+   .foot h3.foot-h{font-size:12px;text-transform:uppercase;letter-spacing:2px;color:#fff;margin-bottom:18px}
+   .foot ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+--- a/platte-daken.html
++++ b/platte-daken.html
+@@ -35,7 +35,7 @@
+ </script>
+ 
+ <style>
+-  :root{--bg:#070707;--bg-2:#0d0d0d;--bg-3:#141414;--line:#1f1f1f;--line-2:#2a2a2a;--ink:#f6f6f6;--ink-dim:#a8a8a8;--ink-mute:#6b6b6b;--green:#5CC27A;--green-2:#2E7D45;--green-glow:rgba(92,194,122,0.18);--container:1200px;--ease:cubic-bezier(.22,.61,.36,1);}
++  :root{--bg:#070707;--bg-2:#0d0d0d;--bg-3:#141414;--line:#1f1f1f;--line-2:#2a2a2a;--ink:#f6f6f6;--ink-dim:#a8a8a8;--ink-mute:#858585;--green:#5CC27A;--green-2:#2E7D45;--green-glow:rgba(92,194,122,0.18);--container:1200px;--ease:cubic-bezier(.22,.61,.36,1);}
+   *{box-sizing:border-box;margin:0;padding:0}
+   html{scroll-behavior:smooth}
+   body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+@@ -260,7 +260,7 @@
+   footer{padding:50px 0 100px;border-top:1px solid var(--line);background:#050505}
+   .foot-grid{display:grid;grid-template-columns:2fr 1fr 1.2fr 1fr;gap:48px}
+   .foot-brand p{color:var(--ink-dim);font-size:14px;margin-top:18px;max-width:300px}
+-  .foot-brand .brand-logo--footer{height:120px;mix-blend-mode:lighten}
++  .foot-brand .brand-logo--footer{width:120px;height:auto;mix-blend-mode:lighten}
+   .foot-slogan{margin-top:18px;font-family:'Manrope';font-size:12px;letter-spacing:3px;color:var(--green);text-transform:uppercase;font-weight:700}
+   .foot h3.foot-h{font-size:12px;text-transform:uppercase;letter-spacing:2px;color:#fff;margin-bottom:18px}
+   .foot ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+--- a/privacy.html
++++ b/privacy.html
+@@ -24,14 +24,14 @@
+   :root{
+     --bg:#070707; --bg-2:#0d0d0d; --bg-3:#141414;
+     --line:#1f1f1f; --line-2:#2a2a2a;
+-    --ink:#f6f6f6; --ink-dim:#a8a8a8; --ink-mute:#6b6b6b;
++    --ink:#f6f6f6; --ink-dim:#a8a8a8; --ink-mute:#858585;
+     --green:#5CC27A; --green-2:#2E7D45;
+     --container:820px;
+     --ease:cubic-bezier(.22,.61,.36,1);
+   }
+   *{box-sizing:border-box;margin:0;padding:0}
+   html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+-  body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased;min-height:100svh;display:flex;flex-direction:column overflow-x:hidden;}
++  body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased;min-height:100svh;display:flex;flex-direction:column;overflow-x:hidden;}
+   a{color:var(--green);text-decoration:underline;text-underline-offset:3px}
+   a:hover{color:#8be0a0}
+ 
+@@ -124,7 +124,7 @@
+     <ul>
+       <li><strong>Onze boekhouder / accountant</strong> &mdash; voor facturatie en belastingaangifte</li>
+       <li><strong>Leveranciers</strong> &mdash; alleen werkadres wanneer materiaal direct moet worden geleverd</li>
+-      <li><strong>Formsubmit.co</strong> &mdash; verwerker van het offerteformulier (gevestigd in de EU, verwerkersovereenkomst van toepassing)</li>
++      <li><strong>Cloudflare en Resend</strong> &mdash; technische verwerking en verzending van offerte- en Dakgidsformulieren; controleer en documenteer de toepasselijke verwerkersvoorwaarden en doorgiften</li>
+       <li><strong>Google Analytics</strong> &mdash; geanonimiseerde bezoekersstatistieken, alleen na uw cookie-toestemming</li>
+     </ul>
+ 
+--- a/projecten.html
++++ b/projecten.html
+@@ -5,7 +5,7 @@
+ <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+ <meta name="theme-color" content="#0a0a0a" />
+ <title>Projecten — Adams Daktechniek | Dakwerk in Heerlen & Limburg</title>
+-<meta name="description" content="Bekijk projecten van Adams Daktechniek: plat dak renovatie met PIR-isolatie, luifel- en bedrijfsdaken, pannendaken, zinkwerk en dakramen in Heerlen en heel Limburg." />
++<meta name="description" content="Projecten van Adams Daktechniek: platte en hellende daken, isolatie, zinkwerk en dakramen in Heerlen en Limburg. Bekijk ons recente dakwerk." />
+ <link rel="canonical" href="https://adamsdaktechniek.nl/projecten" />
+ <meta property="og:title" content="Projecten — Adams Daktechniek | Dakwerk in Heerlen & Limburg" />
+ <meta property="og:description" content="Bekijk projecten van Adams Daktechniek: plat dak renovatie met PIR-isolatie, luifel- en bedrijfsdaken, pannendaken, zinkwerk en dakramen in Heerlen en heel Limburg." />
+@@ -204,7 +204,7 @@
+   footer{padding:50px 0 100px;border-top:1px solid var(--line);background:#050505}
+   .foot-grid{display:grid;grid-template-columns:2fr 1fr 1.2fr 1fr;gap:48px}
+   .foot-brand p{color:var(--ink-dim);font-size:14px;margin-top:18px;max-width:300px}
+-  .foot-brand .brand-logo--footer{height:120px;mix-blend-mode:lighten}
++  .foot-brand .brand-logo--footer{width:120px;height:auto;mix-blend-mode:lighten}
+   .foot-slogan{margin-top:18px;font-family:'Manrope';font-size:12px;letter-spacing:3px;color:var(--green);text-transform:uppercase;font-weight:700}
+   .foot h3.foot-h{font-size:12px;text-transform:uppercase;letter-spacing:2px;color:#fff;margin-bottom:18px}
+   .foot ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+@@ -447,7 +447,7 @@
+         <div class="strip-cap">Boeiboord renovatie</div>
+       </a>
+       <a class="strip-item" href="Images/Boeiborden_3.jpeg" target="_blank" rel="noopener">
+-        <img src="Images/boeiborden-3.webp" alt="Detailafwerking van boeiborden en dakrand" loading="lazy" width="1200" height="900">
++        <img src="Images/boeiborden-3.webp" alt="Detailafwerking van boeiborden en dakrand" loading="lazy" width="${p.width}" height="${p.height}">
+         <div class="strip-cap">Dakranddetail</div>
+       </a>
+       <a class="strip-item" href="Images/loodwerk-schoorsteen-heerlen.jpeg" target="_blank" rel="noopener">
+@@ -765,127 +765,127 @@
+ const projects = [
+   // ===== VOEG HIER NIEUW PROJECT TOE (bovenaan = nieuwste) =====
+ 
+-  { img: 'Images/pannendak-vervangen-heerlen.webp',
++  { img: 'Images/pannendak-vervangen-heerlen.webp', width: 837, height: 1200,
+     cat: 'pannendak',
+     title: 'Pannendak vervangen — eengezinswoning',
+     desc: 'Volledige pannenvervanging incl. tengels en isolatie in Heerlen.',
+     alt: 'Dakdekker Adams Daktechniek op pannendak in Heerlen — pannenvervanging' },
+ 
+-  { img: 'Images/bitumen-platdak-heerlen.webp',
++  { img: 'Images/bitumen-platdak-heerlen.webp', width: 942, height: 1200,
+     cat: 'platdak',
+     title: 'Bitumen platdak — garage Heerlen',
+     desc: 'Twee laags bitumen met nieuwe daktrim. Strak en lekvrij.',
+     alt: 'Bitumen plat dak aanleg met gasbrander door Adams Daktechniek Heerlen' },
+ 
+-  { img: 'Images/velux-dakraam-heerlen.webp',
++  { img: 'Images/velux-dakraam-heerlen.webp', width: 900, height: 1200,
+     cat: 'dakraam',
+     title: 'VELUX dakraam plaatsen',
+     desc: 'Vakkundige plaatsing en waterdichte aansluiting op bitumen dak.',
+     alt: 'VELUX dakraam geplaatst op plat dak door Adams Daktechniek Heerlen' },
+ 
+-  { img: 'Images/zinken-daktrim-boeiboord-limburg.webp',
++  { img: 'Images/zinken-daktrim-boeiboord-limburg.webp', width: 699, height: 1200,
+     cat: 'zinkwerk',
+     title: 'Zinken daktrim & boeiboord',
+     desc: 'Compleet vervangen met strakke aansluitingen — vakwerk dat decennia meegaat.',
+     alt: 'Zinken daktrim en boeiboord door Adams Daktechniek in Limburg' },
+ 
+-  { img: 'Images/pannendak-renovatie-heerlen.webp',
++  { img: 'Images/pannendak-renovatie-heerlen.webp', width: 1200, height: 866,
+     cat: 'renovatie',
+     title: 'Pannendak in aanbouw — tengels & panlatten',
+     desc: 'Complete dakrenovatie met dampopen folie, tengels en panlatten in Heerlen.',
+     alt: 'Pannendak renovatie met panlatten en tengels door Adams Daktechniek Heerlen' },
+ 
+-  { img: 'Images/loodwerk-schoorsteen-heerlen.webp',
++  { img: 'Images/loodwerk-schoorsteen-heerlen.webp', width: 926, height: 1200,
+     cat: 'loodwerk',
+     title: 'Loodwerk schoorsteenaansluiting',
+     desc: 'Lekvrije loodaansluiting op pannendak — vakwerk in detail.',
+     alt: 'Loodwerk schoorsteen aansluiting op pannendak door Adams Daktechniek' },
+ 
+-  { img: 'Images/boeiborden.webp',
++  { img: 'Images/boeiborden.webp', width: 900, height: 1200,
+     cat: 'renovatie',
+     title: 'Boeiborden vervangen',
+     desc: 'Strakke afwerking van boeidelen met duurzame materialen.',
+     alt: 'Boeiborden vervangen door Adams Daktechniek in Limburg' },
+ 
+-  { img: 'Images/boeiborden-2.webp',
++  { img: 'Images/boeiborden-2.webp', width: 900, height: 1200,
+     cat: 'renovatie',
+     title: 'Boeiborden renovatie',
+     desc: 'Herstel en vernieuwing voor een nette dakrand en gevelovergang.',
+     alt: 'Boeiborden renovatie en afwerking door Adams Daktechniek' },
+ 
+-  { img: 'Images/boeiborden-3.webp',
++  { img: 'Images/boeiborden-3.webp', width: 1200, height: 900,
+     cat: 'renovatie',
+     title: 'Boeiborden detailafwerking',
+     desc: 'Net afgewerkte dakranddetails voor een duurzaam eindresultaat.',
+     alt: 'Boeiborden detailafwerking door Adams Daktechniek' },
+ 
+-  { img: 'Images/dakgoot.webp',
++  { img: 'Images/dakgoot.webp', width: 902, height: 1200,
+     cat: 'zinkwerk',
+     title: 'Dakgoot vervangen',
+     desc: 'Nieuwe dakgoot met nette aansluiting en goede waterafvoer.',
+     alt: 'Dakgoot vervangen en geplaatst door Adams Daktechniek' },
+ 
+-  { img: 'Images/dakgoot-2.webp',
++  { img: 'Images/dakgoot-2.webp', width: 910, height: 1200,
+     cat: 'zinkwerk',
+     title: 'Dakgoot & afvoer',
+     desc: 'Functionele afwatering met een strakke afwerking langs de gevel.',
+     alt: 'Dakgoot en regenafvoer door Adams Daktechniek' },
+ 
+-  { img: 'Images/dakkoepel-plaatsing-platdak-heerlen.webp',
++  { img: 'Images/dakkoepel-plaatsing-platdak-heerlen.webp', width: 675, height: 1200,
+     cat: 'platdak',
+     title: 'Dakkoepel plaatsen',
+     desc: 'Meer licht en ventilatie met een nette, waterdichte aansluiting.',
+     alt: 'Dakkoepel geplaatst op plat dak in Heerlen' },
+ 
+-  { img: 'Images/hellenddak-velux-raam.webp',
++  { img: 'Images/hellenddak-velux-raam.webp', width: 900, height: 1200,
+     cat: 'dakraam',
+     title: 'VELUX op hellend dak',
+     desc: 'Vakkundige montage voor extra daglicht en ventilatie.',
+     alt: 'VELUX dakraam op hellend dak geplaatst door Adams Daktechniek' },
+ 
+-  { img: 'Images/hellenddak-velux-raam.webp',
++  { img: 'Images/hellenddak-velux-raam.webp', width: 900, height: 1200,
+     cat: 'dakraam',
+     title: 'VELUX renovatie',
+     desc: 'Vervanging en afwerking van dakraam met oog voor detail.',
+     alt: 'VELUX dakraam renovatie op hellend dak door Adams Daktechniek' },
+ 
+-  { img: 'Images/platdak-beek.webp',
++  { img: 'Images/platdak-beek.webp', width: 675, height: 1200,
+     cat: 'platdak',
+     title: 'Platdak in Beek',
+     desc: 'Strakke dakafwerking voor een duurzame, lekvrije oplossing.',
+     alt: 'Plat dak project in Beek uitgevoerd door Adams Daktechniek' },
+ 
+-  { img: 'Images/platdak-hoensbroek.webp',
++  { img: 'Images/platdak-hoensbroek.webp', width: 900, height: 1200,
+     cat: 'platdak',
+     title: 'Platdak in Hoensbroek',
+     desc: 'Vakkundig geplaatst met aandacht voor afschot en aansluitingen.',
+     alt: 'Plat dak project in Hoensbroek uitgevoerd door Adams Daktechniek' },
+ 
+-  { img: 'Images/platdak-kerkrade.webp',
++  { img: 'Images/platdak-kerkrade.webp', width: 675, height: 1200,
+     cat: 'platdak',
+     title: 'Platdak in Kerkrade',
+     desc: 'Net afgewerkt dak met duurzame materialen en waterdichte details.',
+     alt: 'Plat dak project in Kerkrade uitgevoerd door Adams Daktechniek' },
+ 
+-  { img: 'Images/platdak-klimmen.webp',
++  { img: 'Images/platdak-klimmen.webp', width: 919, height: 1200,
+     cat: 'platdak',
+     title: 'Platdak in Klimmen',
+     desc: 'Renovatie en vernieuwing voor langdurige bescherming.',
+     alt: 'Plat dak project in Klimmen uitgevoerd door Adams Daktechniek' },
+ 
+-  { img: 'Images/platdak-landgraaf.webp',
++  { img: 'Images/platdak-landgraaf.webp', width: 900, height: 1200,
+     cat: 'platdak',
+     title: 'Platdak in Landgraaf',
+     desc: 'Stabiele opbouw en nette afwerking voor een betrouwbaar resultaat.',
+     alt: 'Plat dak project in Landgraaf uitgevoerd door Adams Daktechniek' },
+ 
+-  { img: 'Images/platdak-landgraaf-2.webp',
++  { img: 'Images/platdak-landgraaf-2.webp', width: 900, height: 1200,
+     cat: 'platdak',
+     title: 'Platdak Landgraaf 2',
+     desc: 'Extra projectbeeld van een platdak met strakke dakrandafwerking.',
+     alt: 'Tweede plat dak project in Landgraaf uitgevoerd door Adams Daktechniek' },
+ 
+-  { img: 'Images/platdak-schinnenjpeg.webp',
++  { img: 'Images/platdak-schinnenjpeg.webp', width: 900, height: 1200,
+     cat: 'platdak',
+     title: 'Platdak in Schinnen',
+     desc: 'Uitvoering met aandacht voor afdichting, detail en levensduur.',
+@@ -942,7 +942,7 @@
+   const catLabel = k => (categories.find(c=>c.key===k)||{}).label || k;
+   galleryEl.innerHTML = list.map(p => `
+     <a class="card" href="${p.img}" target="_blank" rel="noopener">
+-      <img class="card-img" src="${p.img}" alt="${p.alt}" loading="lazy" width="1200" height="900">
++      <img class="card-img" src="${p.img}" alt="${p.alt}" loading="lazy" width="${p.width}" height="${p.height}">
+       <span class="card-tag">${catLabel(p.cat)}</span>
+       <div class="card-body">
+         <h3>${p.title}</h3>
+--- a/renovatie-verbouw.html
++++ b/renovatie-verbouw.html
+@@ -35,7 +35,7 @@
+ </script>
+ 
+ <style>
+-  :root{--bg:#070707;--bg-2:#0d0d0d;--bg-3:#141414;--line:#1f1f1f;--line-2:#2a2a2a;--ink:#f6f6f6;--ink-dim:#a8a8a8;--ink-mute:#6b6b6b;--green:#5CC27A;--green-2:#2E7D45;--green-glow:rgba(92,194,122,0.18);--container:1200px;--ease:cubic-bezier(.22,.61,.36,1);}
++  :root{--bg:#070707;--bg-2:#0d0d0d;--bg-3:#141414;--line:#1f1f1f;--line-2:#2a2a2a;--ink:#f6f6f6;--ink-dim:#a8a8a8;--ink-mute:#858585;--green:#5CC27A;--green-2:#2E7D45;--green-glow:rgba(92,194,122,0.18);--container:1200px;--ease:cubic-bezier(.22,.61,.36,1);}
+   *{box-sizing:border-box;margin:0;padding:0}
+   html{scroll-behavior:smooth}
+   body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+@@ -257,7 +257,7 @@
+   footer{padding:50px 0 100px;border-top:1px solid var(--line);background:#050505}
+   .foot-grid{display:grid;grid-template-columns:2fr 1fr 1.2fr 1fr;gap:48px}
+   .foot-brand p{color:var(--ink-dim);font-size:14px;margin-top:18px;max-width:300px}
+-  .foot-brand .brand-logo--footer{height:120px;mix-blend-mode:lighten}
++  .foot-brand .brand-logo--footer{width:120px;height:auto;mix-blend-mode:lighten}
+   .foot-slogan{margin-top:18px;font-family:'Manrope';font-size:12px;letter-spacing:3px;color:var(--green);text-transform:uppercase;font-weight:700}
+   .foot h3.foot-h{font-size:12px;text-transform:uppercase;letter-spacing:2px;color:#fff;margin-bottom:18px}
+   .foot ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+--- a/robots.txt
++++ b/robots.txt
+@@ -7,9 +7,6 @@
+ Disallow: /projecten-video-mockup.html
+ Disallow: /projecten-video-mockup
+ 
+-# Leadmagnet: gids en bedankpagina niet indexeren (gated content)
+-Disallow: /downloads/
+-Disallow: /dakgids-bedankt.html
+-Disallow: /dakgids-bedankt
++# Leadmagnet blijft crawlbaar zodat Google het X-Robots-Tag/noindex-signaal kan lezen.
+ 
+ Sitemap: https://adamsdaktechniek.nl/sitemap.xml
+--- a/schoorstenen.html
++++ b/schoorstenen.html
+@@ -35,7 +35,7 @@
+ </script>
+ 
+ <style>
+-  :root{--bg:#070707;--bg-2:#0d0d0d;--bg-3:#141414;--line:#1f1f1f;--line-2:#2a2a2a;--ink:#f6f6f6;--ink-dim:#a8a8a8;--ink-mute:#6b6b6b;--green:#5CC27A;--green-2:#2E7D45;--green-glow:rgba(92,194,122,0.18);--container:1200px;--ease:cubic-bezier(.22,.61,.36,1);}
++  :root{--bg:#070707;--bg-2:#0d0d0d;--bg-3:#141414;--line:#1f1f1f;--line-2:#2a2a2a;--ink:#f6f6f6;--ink-dim:#a8a8a8;--ink-mute:#858585;--green:#5CC27A;--green-2:#2E7D45;--green-glow:rgba(92,194,122,0.18);--container:1200px;--ease:cubic-bezier(.22,.61,.36,1);}
+   *{box-sizing:border-box;margin:0;padding:0}
+   html{scroll-behavior:smooth}
+   body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+@@ -257,7 +257,7 @@
+   footer{padding:50px 0 100px;border-top:1px solid var(--line);background:#050505}
+   .foot-grid{display:grid;grid-template-columns:2fr 1fr 1.2fr 1fr;gap:48px}
+   .foot-brand p{color:var(--ink-dim);font-size:14px;margin-top:18px;max-width:300px}
+-  .foot-brand .brand-logo--footer{height:120px;mix-blend-mode:lighten}
++  .foot-brand .brand-logo--footer{width:120px;height:auto;mix-blend-mode:lighten}
+   .foot-slogan{margin-top:18px;font-family:'Manrope';font-size:12px;letter-spacing:3px;color:var(--green);text-transform:uppercase;font-weight:700}
+   .foot h3.foot-h{font-size:12px;text-transform:uppercase;letter-spacing:2px;color:#fff;margin-bottom:18px}
+   .foot ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+--- a/spoed-lekkages.html
++++ b/spoed-lekkages.html
+@@ -35,7 +35,7 @@
+ </script>
+ 
+ <style>
+-  :root{--bg:#070707;--bg-2:#0d0d0d;--bg-3:#141414;--line:#1f1f1f;--line-2:#2a2a2a;--ink:#f6f6f6;--ink-dim:#a8a8a8;--ink-mute:#6b6b6b;--green:#5CC27A;--green-2:#2E7D45;--green-glow:rgba(92,194,122,0.18);--container:1200px;--ease:cubic-bezier(.22,.61,.36,1);}
++  :root{--bg:#070707;--bg-2:#0d0d0d;--bg-3:#141414;--line:#1f1f1f;--line-2:#2a2a2a;--ink:#f6f6f6;--ink-dim:#a8a8a8;--ink-mute:#858585;--green:#5CC27A;--green-2:#2E7D45;--green-glow:rgba(92,194,122,0.18);--container:1200px;--ease:cubic-bezier(.22,.61,.36,1);}
+   *{box-sizing:border-box;margin:0;padding:0}
+   html{scroll-behavior:smooth}
+   body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+@@ -257,7 +257,7 @@
+   footer{padding:50px 0 100px;border-top:1px solid var(--line);background:#050505}
+   .foot-grid{display:grid;grid-template-columns:2fr 1fr 1.2fr 1fr;gap:48px}
+   .foot-brand p{color:var(--ink-dim);font-size:14px;margin-top:18px;max-width:300px}
+-  .foot-brand .brand-logo--footer{height:120px;mix-blend-mode:lighten}
++  .foot-brand .brand-logo--footer{width:120px;height:auto;mix-blend-mode:lighten}
+   .foot-slogan{margin-top:18px;font-family:'Manrope';font-size:12px;letter-spacing:3px;color:var(--green);text-transform:uppercase;font-weight:700}
+   .foot h3.foot-h{font-size:12px;text-transform:uppercase;letter-spacing:2px;color:#fff;margin-bottom:18px}
+   .foot ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+--- a/trespawerken.html
++++ b/trespawerken.html
+@@ -35,7 +35,7 @@
+ </script>
+ 
+ <style>
+-  :root{--bg:#070707;--bg-2:#0d0d0d;--bg-3:#141414;--line:#1f1f1f;--line-2:#2a2a2a;--ink:#f6f6f6;--ink-dim:#a8a8a8;--ink-mute:#6b6b6b;--green:#5CC27A;--green-2:#2E7D45;--green-glow:rgba(92,194,122,0.18);--container:1200px;--ease:cubic-bezier(.22,.61,.36,1);}
++  :root{--bg:#070707;--bg-2:#0d0d0d;--bg-3:#141414;--line:#1f1f1f;--line-2:#2a2a2a;--ink:#f6f6f6;--ink-dim:#a8a8a8;--ink-mute:#858585;--green:#5CC27A;--green-2:#2E7D45;--green-glow:rgba(92,194,122,0.18);--container:1200px;--ease:cubic-bezier(.22,.61,.36,1);}
+   *{box-sizing:border-box;margin:0;padding:0}
+   html{scroll-behavior:smooth}
+   body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+@@ -257,7 +257,7 @@
+   footer{padding:50px 0 100px;border-top:1px solid var(--line);background:#050505}
+   .foot-grid{display:grid;grid-template-columns:2fr 1fr 1.2fr 1fr;gap:48px}
+   .foot-brand p{color:var(--ink-dim);font-size:14px;margin-top:18px;max-width:300px}
+-  .foot-brand .brand-logo--footer{height:120px;mix-blend-mode:lighten}
++  .foot-brand .brand-logo--footer{width:120px;height:auto;mix-blend-mode:lighten}
+   .foot-slogan{margin-top:18px;font-family:'Manrope';font-size:12px;letter-spacing:3px;color:var(--green);text-transform:uppercase;font-weight:700}
+   .foot h3.foot-h{font-size:12px;text-transform:uppercase;letter-spacing:2px;color:#fff;margin-bottom:18px}
+   .foot ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+--- a/zinkwerken.html
++++ b/zinkwerken.html
+@@ -35,7 +35,7 @@
+ </script>
+ 
+ <style>
+-  :root{--bg:#070707;--bg-2:#0d0d0d;--bg-3:#141414;--line:#1f1f1f;--line-2:#2a2a2a;--ink:#f6f6f6;--ink-dim:#a8a8a8;--ink-mute:#6b6b6b;--green:#5CC27A;--green-2:#2E7D45;--green-glow:rgba(92,194,122,0.18);--container:1200px;--ease:cubic-bezier(.22,.61,.36,1);}
++  :root{--bg:#070707;--bg-2:#0d0d0d;--bg-3:#141414;--line:#1f1f1f;--line-2:#2a2a2a;--ink:#f6f6f6;--ink-dim:#a8a8a8;--ink-mute:#858585;--green:#5CC27A;--green-2:#2E7D45;--green-glow:rgba(92,194,122,0.18);--container:1200px;--ease:cubic-bezier(.22,.61,.36,1);}
+   *{box-sizing:border-box;margin:0;padding:0}
+   html{scroll-behavior:smooth}
+   body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+@@ -257,7 +257,7 @@
+   footer{padding:50px 0 100px;border-top:1px solid var(--line);background:#050505}
+   .foot-grid{display:grid;grid-template-columns:2fr 1fr 1.2fr 1fr;gap:48px}
+   .foot-brand p{color:var(--ink-dim);font-size:14px;margin-top:18px;max-width:300px}
+-  .foot-brand .brand-logo--footer{height:120px;mix-blend-mode:lighten}
++  .foot-brand .brand-logo--footer{width:120px;height:auto;mix-blend-mode:lighten}
+   .foot-slogan{margin-top:18px;font-family:'Manrope';font-size:12px;letter-spacing:3px;color:var(--green);text-transform:uppercase;font-weight:700}
+   .foot h3.foot-h{font-size:12px;text-transform:uppercase;letter-spacing:2px;color:#fff;margin-bottom:18px}
+   .foot ul{list-style:none;display:flex;flex-direction:column;gap:10px}
