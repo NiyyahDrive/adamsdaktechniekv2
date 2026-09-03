@@ -1,0 +1,11 @@
+# Productie-deploy van de statische site als Cloudflare Worker met static assets.
+# Naam MOET gelijk zijn aan de bestaande productie-Worker in het dashboard (Workers & Pages),
+# anders ontstaat een tweede Worker naast de live site. Vul in en deploy met:
+#   python3 ../tools/build_staging.py --prod && wrangler deploy -c wrangler.production.toml
+name = "VUL_IN_naam_van_productie_worker"
+compatibility_date = "2026-07-01"
+
+[assets]
+directory = "../_deploy_prod"
+html_handling = "auto-trailing-slash"   # zelfde gedrag als nu live (x.html -> /x)
+not_found_handling = "404-page"          # serveert 404.html met status 404
