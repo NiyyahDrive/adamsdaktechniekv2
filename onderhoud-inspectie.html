@@ -274,6 +274,19 @@
 .nav-dropdown-panel a:hover .dd-ico{opacity:1}
 /* Hero direct zichtbaar, niet wachten op scroll-reveal (first paint) */
 .hero [data-reveal]{opacity:1;transform:none;transition:none}
+
+/* Mobiel menu: onderbalk + WhatsApp-knop verbergen zolang het menu open is; ruimte voor de bel-knop */
+body.menu-open .mobile-cta, body.menu-open .wa-fab{display:none !important}
+.mobile-menu{padding-bottom:calc(32px + env(safe-area-inset-bottom, 0px))}
+.mobile-menu .mm-foot{gap:12px}
+.mobile-menu .mm-cta--ghost{background:transparent;color:var(--green);border:1px solid var(--green);box-shadow:none}
+.brand-logo,.brand-logo--footer{mix-blend-mode:normal}
+
+/* Mobiel menu: gelijke voet op alle pagina's */
+.mobile-menu .mm-foot{margin-top:auto;display:flex;flex-direction:column;gap:12px;padding-top:24px;border-top:1px solid rgba(255,255,255,.06)}
+.mobile-menu .mm-cta{display:block;margin-top:0;padding:20px 24px;background:var(--green);color:#0a0a0a;font-family:'Manrope','Inter',sans-serif;font-weight:800;font-size:18px;letter-spacing:.3px;text-align:center;border-radius:999px;text-decoration:none}
+.mobile-menu .mm-cta small{display:block;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;font-weight:700;opacity:.7;margin-bottom:4px}
+.mobile-menu .mm-cta--ghost{background:transparent;color:var(--green);border:1px solid var(--green);box-shadow:none}
 </style>
 <script src="consent.js" defer></script>
 </head>
@@ -281,7 +294,7 @@
 
 <nav class="nav" id="nav">
   <div class="container nav-inner">
-    <a class="brand" href="/" aria-label="Adams Daktechniek — terug naar homepage"><img class="brand-logo" src="Images/logo-256.webp" alt="Adams Daktechniek" width="256" height="256"></a>
+    <a class="brand" href="/" aria-label="Adams Daktechniek — terug naar homepage"><img class="brand-logo" src="Images/logo-256-t.webp" alt="Adams Daktechniek" width="256" height="256"></a>
     <div class="nav-links">
       <div class="nav-dropdown">
       <a href="/#diensten" class="nav-dropdown-toggle">Diensten<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></a>
@@ -327,11 +340,12 @@
       </div>
       <a href="/projecten" style="--i:1">Projecten</a>
       <a href="/#werkwijze" style="--i:2">Werkwijze</a>
-      <a href="/#waarom" style="--i:3">Waarom Adams</a>
+      <a href="/#reviews" style="--i:3">Reviews</a>
       <a href="/#contact" style="--i:4">Contact</a>
     </nav>
     <div class="mm-foot">
       <a class="mm-cta" href="tel:+31683396082"><small>Bel direct</small>06-83396082</a>
+      <a class="mm-cta mm-cta--ghost" href="/offerte">Gratis offerte aanvragen</a>
       <div class="mm-meta">
         <a href="mailto:info@adamsdaktechniek.nl">info@adamsdaktechniek.nl</a>
         <span class="sep">·</span>
@@ -632,7 +646,7 @@
       <!-- Brand -->
       <div class="foot-brand">
         <a class="brand" href="/" aria-label="Adams Daktechniek">
-          <img class="brand-logo brand-logo--footer" src="Images/logo-256.webp" alt="Adams Daktechniek" width="256" height="256">
+          <img class="brand-logo brand-logo--footer" src="Images/logo-256-t.webp" alt="Adams Daktechniek" width="256" height="256">
         </a>
         <p>Specialist in pannendaken, platte daken, zinkwerken, trespawerken, dakkapellen en isolaties. Werkzaam in heel Limburg en omgeving.</p>
         <div class="foot-slogan">Samen duurzaam de toekomst in.</div>
@@ -738,11 +752,13 @@
     const open = !nav.classList.contains('open');
     nav.classList.toggle('open', open);
     menu.classList.toggle('open', open);
+    document.body.classList.toggle('menu-open', open);
     document.body.style.overflow = open ? 'hidden' : '';
   });
   // Sluit menu op link-klik, MAAR niet op de Diensten-trigger (die toggelt sub-menu)
   menu.querySelectorAll('a:not(.mm-trigger)').forEach(a => a.addEventListener('click', () => {
     nav.classList.remove('open'); menu.classList.remove('open');
+    document.body.classList.remove('menu-open');
     document.body.style.overflow = '';
     // Reset sub-menu state zodat volgende opening schoon begint
     menu.querySelectorAll('.mm-sub.open, .mm-trigger.open').forEach(el => el.classList.remove('open'));
