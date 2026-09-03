@@ -11,16 +11,18 @@
 <meta property="og:description" content="Adams Daktechniek — vakdakdekker in Heerlen & Limburg. Platte daken, pannendaken, dakkapellen, zinkwerk en spoedlekkages. Bel 06-83396082." />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Adams Daktechniek" />
-<meta property="og:image" content="https://adamsdaktechniek.nl/Images/LogoAdamsDaktechniek.png" />
+<meta property="og:image" content="https://adamsdaktechniek.nl/Images/og-image.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://adamsdaktechniek.nl/Images/LogoAdamsDaktechniek.png" />
+<meta name="twitter:image" content="https://adamsdaktechniek.nl/Images/og-image.jpg" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
 
-<link rel="icon" type="image/png" href="Images/LogoAdamsDaktechniek.png">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/Images/favicon-32.png">
+<link rel="apple-touch-icon" href="/Images/apple-touch-icon.png">
 
 <style>
   :root{
@@ -932,41 +934,252 @@
   .socials{display:flex;gap:10px}
   .socials a{width:38px;height:38px;border-radius:10px;border:1px solid var(--line-2);background:#0a0a0a;display:flex;align-items:center;justify-content:center;color:var(--ink-dim);transition:all .25s var(--ease)}
   .socials a:hover{color:var(--green);border-color:var(--green)}
+
+/* Diensten-dropdown: SVG-iconen i.p.v. emoji (zelfde set als de dienstkaarten) */
+.nav-dropdown-panel a{display:flex;align-items:center;gap:10px}
+.nav-dropdown-panel .dd-ico{width:16px;height:16px;flex:0 0 auto;color:var(--green);opacity:.8}
+.nav-dropdown-panel a:hover .dd-ico{opacity:1}
+/* Hero direct zichtbaar, niet wachten op scroll-reveal (first paint) */
+.hero [data-reveal]{opacity:1;transform:none;transition:none}
 </style>
 <script src="consent.js" defer></script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "RoofingContractor",
+ "@id": "https://adamsdaktechniek.nl/#organisatie",
+ "name": "Adams Daktechniek",
+ "url": "https://adamsdaktechniek.nl/",
+ "logo": "https://adamsdaktechniek.nl/Images/logo-640.webp",
+ "image": "https://adamsdaktechniek.nl/Images/og-image.jpg",
+ "telephone": "+31683396082",
+ "email": "info@adamsdaktechniek.nl",
+ "address": {
+  "@type": "PostalAddress",
+  "addressLocality": "Heerlen",
+  "addressRegion": "Limburg",
+  "addressCountry": "NL"
+ },
+ "identifier": {
+  "@type": "PropertyValue",
+  "propertyID": "KvK",
+  "value": "89562135"
+ },
+ "areaServed": [
+  {
+   "@type": "City",
+   "name": "Beek"
+  },
+  {
+   "@type": "City",
+   "name": "Born"
+  },
+  {
+   "@type": "City",
+   "name": "Brunssum"
+  },
+  {
+   "@type": "City",
+   "name": "Echt"
+  },
+  {
+   "@type": "City",
+   "name": "Eygelshoven"
+  },
+  {
+   "@type": "City",
+   "name": "Geleen"
+  },
+  {
+   "@type": "City",
+   "name": "Heerlen"
+  },
+  {
+   "@type": "City",
+   "name": "Hoensbroek"
+  },
+  {
+   "@type": "City",
+   "name": "Kerkrade"
+  },
+  {
+   "@type": "City",
+   "name": "Klimmen"
+  },
+  {
+   "@type": "City",
+   "name": "Landgraaf"
+  },
+  {
+   "@type": "City",
+   "name": "Nuth"
+  },
+  {
+   "@type": "City",
+   "name": "Schinnen"
+  },
+  {
+   "@type": "City",
+   "name": "Schinveld"
+  },
+  {
+   "@type": "City",
+   "name": "Simpelveld"
+  },
+  {
+   "@type": "City",
+   "name": "Sittard"
+  },
+  {
+   "@type": "City",
+   "name": "Valkenburg"
+  },
+  {
+   "@type": "City",
+   "name": "Voerendaal"
+  }
+ ],
+ "sameAs": [
+  "https://www.tiktok.com/@adamsdaktechniek",
+  "https://www.instagram.com/adamsdaktechniek"
+ ],
+ "hasOfferCatalog": {
+  "@type": "OfferCatalog",
+  "name": "Dakdiensten",
+  "itemListElement": [
+   {
+    "@type": "Offer",
+    "itemOffered": {
+     "@type": "Service",
+     "name": "Platte daken",
+     "url": "https://adamsdaktechniek.nl/platte-daken"
+    }
+   },
+   {
+    "@type": "Offer",
+    "itemOffered": {
+     "@type": "Service",
+     "name": "Pannendaken",
+     "url": "https://adamsdaktechniek.nl/pannendaken"
+    }
+   },
+   {
+    "@type": "Offer",
+    "itemOffered": {
+     "@type": "Service",
+     "name": "Dakkapellen",
+     "url": "https://adamsdaktechniek.nl/dakkapellen"
+    }
+   },
+   {
+    "@type": "Offer",
+    "itemOffered": {
+     "@type": "Service",
+     "name": "Zinkwerken & dakgoten",
+     "url": "https://adamsdaktechniek.nl/zinkwerken"
+    }
+   },
+   {
+    "@type": "Offer",
+    "itemOffered": {
+     "@type": "Service",
+     "name": "Trespawerken",
+     "url": "https://adamsdaktechniek.nl/trespawerken"
+    }
+   },
+   {
+    "@type": "Offer",
+    "itemOffered": {
+     "@type": "Service",
+     "name": "Spoed & lekkages",
+     "url": "https://adamsdaktechniek.nl/spoed-lekkages"
+    }
+   },
+   {
+    "@type": "Offer",
+    "itemOffered": {
+     "@type": "Service",
+     "name": "Dakraam & Velux",
+     "url": "https://adamsdaktechniek.nl/dakraam-velux"
+    }
+   },
+   {
+    "@type": "Offer",
+    "itemOffered": {
+     "@type": "Service",
+     "name": "Dakisolatie",
+     "url": "https://adamsdaktechniek.nl/dakisolatie"
+    }
+   },
+   {
+    "@type": "Offer",
+    "itemOffered": {
+     "@type": "Service",
+     "name": "Schoorstenen",
+     "url": "https://adamsdaktechniek.nl/schoorstenen"
+    }
+   },
+   {
+    "@type": "Offer",
+    "itemOffered": {
+     "@type": "Service",
+     "name": "Onderhoud & inspectie",
+     "url": "https://adamsdaktechniek.nl/onderhoud-inspectie"
+    }
+   },
+   {
+    "@type": "Offer",
+    "itemOffered": {
+     "@type": "Service",
+     "name": "Renovatie & verbouw",
+     "url": "https://adamsdaktechniek.nl/renovatie-verbouw"
+    }
+   },
+   {
+    "@type": "Offer",
+    "itemOffered": {
+     "@type": "Service",
+     "name": "Dakreiniging",
+     "url": "https://adamsdaktechniek.nl/dakreiniging"
+    }
+   }
+  ]
+ }
+}
+</script>
 </head>
 <body>
 
 <!-- ============= NAV ============= -->
 <nav class="nav" id="nav">
   <div class="container nav-inner">
-    <a class="brand" href="index.html" aria-label="Adams Daktechniek — naar home">
-      <img class="brand-logo" src="Images/LogoAdamsDaktechniek.png" alt="Adams Daktechniek">
+    <a class="brand" href="/" aria-label="Adams Daktechniek — naar home">
+      <img class="brand-logo" src="Images/logo-256.webp" alt="Adams Daktechniek">
     </a>
     <div class="nav-links">
       <div class="nav-dropdown">
       <a href="#diensten" class="nav-dropdown-toggle">Diensten<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></a>
       <div class="nav-dropdown-panel">
-        <a href="platte-daken.html">🏠 Platte daken</a>
-        <a href="pannendaken.html">🏡 Pannendaken</a>
-        <a href="dakkapellen.html">🪟 Dakkapellen</a>
-        <a href="zinkwerken.html">⚙️ Zinkwerken</a>
-        <a href="trespawerken.html">🧱 Trespawerken</a>
-        <a href="spoed-lekkages.html">🚨 Spoed & lekkages</a>
-        <a href="dakraam-velux.html">☀️ Dakraam / Velux</a>
-        <a href="dakisolatie.html">🌡️ Dakisolatie</a>
-        <a href="schoorstenen.html">🏭 Schoorstenen</a>
-        <a href="onderhoud-inspectie.html">🔧 Onderhoud & inspectie</a>
-        <a href="renovatie-verbouw.html">🏗️ Renovatie & verbouw</a>
-        <a href="dakreiniging.html">🧹 Dakreiniging</a>
+        <a href="/platte-daken"><svg class="dd-ico" aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M3 7l9-5 9 5v10l-9 5-9-5V7z"/></svg>Platte daken</a>
+        <a href="/pannendaken"><svg class="dd-ico" aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-8 9 8M5 10v10h14V10"/></svg>Pannendaken</a>
+        <a href="/dakkapellen"><svg class="dd-ico" aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M3 21V8l9-5 9 5v13M9 21v-7h6v7"/></svg>Dakkapellen</a>
+        <a href="/zinkwerken"><svg class="dd-ico" aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17l6-6 4 4 6-6"/><path d="M14 5h6v6"/></svg>Zinkwerken</a>
+        <a href="/trespawerken"><svg class="dd-ico" aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h3l2 12h12l2-8H7"/></svg>Trespawerken</a>
+        <a href="/spoed-lekkages"><svg class="dd-ico" aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>Spoed & lekkages</a>
+        <a href="/dakraam-velux"><svg class="dd-ico" aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/></svg>Dakraam / Velux</a>
+        <a href="/dakisolatie"><svg class="dd-ico" aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M5 19l3-3M16 8l3-3"/></svg>Dakisolatie</a>
+        <a href="/schoorstenen"><svg class="dd-ico" aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 22V8l7-5 7 5v14M9 22v-6h6v6"/><path d="M14 6h3v3"/></svg>Schoorstenen</a>
+        <a href="/onderhoud-inspectie"><svg class="dd-ico" aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12h18M3 6h18M3 18h18"/></svg>Onderhoud & inspectie</a>
+        <a href="/renovatie-verbouw"><svg class="dd-ico" aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M4 21V10l8-6 8 6v11M9 21v-6h6v6"/></svg>Renovatie & verbouw</a>
+        <a href="/dakreiniging"><svg class="dd-ico" aria-hidden="true" focusable="false" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-8 9 8M5 10v10h14V10M9 16h6"/></svg>Dakreiniging</a>
       </div>
     </div>
-      <a href="projecten.html">Projecten</a>
+      <a href="/projecten">Projecten</a>
       <a href="#werkwijze">Werkwijze</a>
       <a href="#reviews">Reviews</a>
       <a href="#contact">Contact</a>
     </div>
-    <a class="nav-cta" href="offerte.html">
+    <a class="nav-cta" href="/offerte">
       Offerte aanvragen
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
     </a>
@@ -976,20 +1189,20 @@
     <nav>
       <a href="#diensten" class="mm-trigger" data-mm-toggle>Diensten</a>
       <div class="mm-sub">
-        <a href="platte-daken.html">Platte daken</a>
-        <a href="pannendaken.html">Pannendaken</a>
-        <a href="dakkapellen.html">Dakkapellen</a>
-        <a href="zinkwerken.html">Zinkwerken</a>
-        <a href="trespawerken.html">Trespawerken</a>
-        <a href="spoed-lekkages.html">Spoed & lekkages</a>
-        <a href="dakraam-velux.html">Dakraam / Velux</a>
-        <a href="dakisolatie.html">Dakisolatie</a>
-        <a href="schoorstenen.html">Schoorstenen</a>
-        <a href="onderhoud-inspectie.html">Onderhoud & inspectie</a>
-        <a href="renovatie-verbouw.html">Renovatie & verbouw</a>
-        <a href="dakreiniging.html">Dakreiniging</a>
+        <a href="/platte-daken">Platte daken</a>
+        <a href="/pannendaken">Pannendaken</a>
+        <a href="/dakkapellen">Dakkapellen</a>
+        <a href="/zinkwerken">Zinkwerken</a>
+        <a href="/trespawerken">Trespawerken</a>
+        <a href="/spoed-lekkages">Spoed & lekkages</a>
+        <a href="/dakraam-velux">Dakraam / Velux</a>
+        <a href="/dakisolatie">Dakisolatie</a>
+        <a href="/schoorstenen">Schoorstenen</a>
+        <a href="/onderhoud-inspectie">Onderhoud & inspectie</a>
+        <a href="/renovatie-verbouw">Renovatie & verbouw</a>
+        <a href="/dakreiniging">Dakreiniging</a>
       </div>
-      <a href="projecten.html"  style="--i:1">Projecten</a>
+      <a href="/projecten"  style="--i:1">Projecten</a>
       <a href="#werkwijze"  style="--i:2">Werkwijze</a>
       <a href="#waarom"     style="--i:3">Waarom Adams</a>
       <a href="#contact"    style="--i:4">Contact</a>
@@ -1038,7 +1251,7 @@
     </div>
     <!-- 3D logo mode: logo-3d-subtle (default), logo-3d-strong, logo-3d-off (rollback) -->
     <div class="hero-logo-wrap logo-3d-subtle" data-reveal data-reveal-delay="2">
-      <img src="Images/LogoAdamsDaktechniek.png" alt="Adams Daktechniek — Kwaliteit · Vakmanschap · Duurzaam">
+      <img src="Images/logo-640.webp" alt="Adams Daktechniek — Kwaliteit · Vakmanschap · Duurzaam">
       <div class="hero-badge"><span class="pulse"></span> Beschikbaar voor spoedklussen</div>
     </div>
   </div>
@@ -1093,7 +1306,7 @@
         <strong style="color:#fff">gratis dakinspectie</strong> — geen verplichtingen, geen sales-praatjes.
         Binnen 24 uur ontvang je een helder rapport met aanbevelingen.
       </p>
-      <a class="btn btn-primary" href="offerte.html" style="margin-top:28px">
+      <a class="btn btn-primary" href="/offerte" style="margin-top:28px">
         Plan jouw gratis inspectie
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
       </a>
@@ -1125,62 +1338,62 @@
     </div>
 
     <div class="services">
-      <a class="service" href="platte-daken.html" data-reveal data-reveal-delay="1">
+      <a class="service" href="/platte-daken" data-reveal data-reveal-delay="1">
         <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M3 7l9-5 9 5v10l-9 5-9-5V7z"/></svg></div>
         <h3>Platte daken</h3>
         <p>Bitumen en EPDM. Aanleg, vervanging en lekdetectie. Strakke aansluitingen die jaren meegaan.</p>
       </a>
-      <a class="service" href="pannendaken.html" data-reveal data-reveal-delay="2">
+      <a class="service" href="/pannendaken" data-reveal data-reveal-delay="2">
         <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-8 9 8M5 10v10h14V10"/></svg></div>
         <h3>Pannendaken</h3>
         <p>Pannendaken, dakvervanging en isolatie. Onder elke pan: zorgvuldig vakwerk.</p>
       </a>
-      <a class="service" href="dakkapellen.html" data-reveal data-reveal-delay="3">
+      <a class="service" href="/dakkapellen" data-reveal data-reveal-delay="3">
         <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M3 21V8l9-5 9 5v13M9 21v-7h6v7"/></svg></div>
         <h3>Dakkapellen</h3>
         <p>Meer ruimte en licht op zolder. Op maat geplaatst, netjes afgewerkt en goed geïsoleerd.</p>
       </a>
-      <a class="service" href="zinkwerken.html" data-reveal data-reveal-delay="1">
+      <a class="service" href="/zinkwerken" data-reveal data-reveal-delay="1">
         <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17l6-6 4 4 6-6"/><path d="M14 5h6v6"/></svg></div>
         <h3>Zinkwerken</h3>
         <p>Goten, kilgoten, daktrimmen en aansluitingen. Strak, lekvrij en voor de lange termijn.</p>
       </a>
-      <a class="service" href="trespawerken.html" data-reveal data-reveal-delay="2">
+      <a class="service" href="/trespawerken" data-reveal data-reveal-delay="2">
         <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h3l2 12h12l2-8H7"/></svg></div>
         <h3>Trespawerken</h3>
         <p>Duurzame trespa gevelbekleding — strak, modern en onderhoudsarm voor uitbouwen en bedrijfspanden.</p>
       </a>
-      <a class="service" href="spoed-lekkages.html" data-reveal data-reveal-delay="3">
+      <a class="service" href="/spoed-lekkages" data-reveal data-reveal-delay="3">
         <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
         <h3>Spoed & lekkages</h3>
         <p>Lekkage in huis? Bel direct. We komen snel ter plaatse en stoppen het probleem bij de bron.</p>
       </a>
-      <a class="service" href="dakraam-velux.html" data-reveal data-reveal-delay="1">
+      <a class="service" href="/dakraam-velux" data-reveal data-reveal-delay="1">
         <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/></svg></div>
         <h3>Dakraam & Velux</h3>
         <p>Plaatsing en vervanging van dakramen. Daglicht en ventilatie zonder gedoe.</p>
       </a>
-      <a class="service" href="dakisolatie.html" data-reveal data-reveal-delay="2">
+      <a class="service" href="/dakisolatie" data-reveal data-reveal-delay="2">
         <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M5 19l3-3M16 8l3-3"/></svg></div>
         <h3>Isolaties</h3>
         <p>Dak- en zolderisolatie. Lager energieverbruik, comfortabeler huis en hogere woningwaarde.</p>
       </a>
-      <a class="service" href="schoorstenen.html" data-reveal data-reveal-delay="3">
+      <a class="service" href="/schoorstenen" data-reveal data-reveal-delay="3">
         <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 22V8l7-5 7 5v14M9 22v-6h6v6"/><path d="M14 6h3v3"/></svg></div>
         <h3>Schoorstenen</h3>
         <p>Renovatie, voegwerk en loodslabben. Lekvrij en wind-bestendig.</p>
       </a>
-      <a class="service" href="onderhoud-inspectie.html" data-reveal data-reveal-delay="1">
+      <a class="service" href="/onderhoud-inspectie" data-reveal data-reveal-delay="1">
         <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12h18M3 6h18M3 18h18"/></svg></div>
         <h3>Onderhoud & inspectie</h3>
         <p>Jaarlijkse check, goten reinigen en kleine reparaties. Voorkom grote kosten later.</p>
       </a>
-      <a class="service" href="renovatie-verbouw.html" data-reveal data-reveal-delay="2">
+      <a class="service" href="/renovatie-verbouw" data-reveal data-reveal-delay="2">
         <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M4 21V10l8-6 8 6v11M9 21v-6h6v6"/></svg></div>
         <h3>Renovatie & verbouw</h3>
         <p>Aanbouw, opbouw en verbouwingen. Eén partij voor je hele klus.</p>
       </a>
-      <a class="service" href="dakreiniging.html" data-reveal data-reveal-delay="3">
+      <a class="service" href="/dakreiniging" data-reveal data-reveal-delay="3">
         <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-8 9 8M5 10v10h14V10M9 16h6"/></svg></div>
         <h3>Dakreiniging</h3>
         <p>Mos en algen verwijderen + preventieve behandeling. Dak gaat jaren langer mee.</p>
@@ -1261,8 +1474,8 @@
           <li><span class="gr">✓</span><span><strong>Onderhoudskalender</strong> — wat je per seizoen zelf checkt</span></li>
         </ul>
         <form class="dg-form" id="dgForm" method="POST" action="https://api.adamsdaktechniek.nl/dakgids" novalidate>
-          <input type="text" name="voornaam" placeholder="Voornaam" autocomplete="given-name" required>
-          <input type="email" name="email" placeholder="E-mailadres" autocomplete="email" required>
+          <input type="text" name="voornaam" placeholder="Voornaam" aria-label="Voornaam" autocomplete="given-name" required>
+          <input type="email" name="email" placeholder="E-mailadres" aria-label="E-mailadres" autocomplete="email" required>
           <div class="dg-hp" aria-hidden="true">
             <label>Laat dit veld leeg <input type="text" name="_honey" tabindex="-1" autocomplete="off"></label>
           </div>
@@ -1272,7 +1485,7 @@
           </button>
           <label class="dg-optin">
             <input type="checkbox" name="optin" value="ja">
-            <span>Ja, stuur mij daarna ook praktische daktips en subsidie-updates per e-mail (max. enkele mails, uitschrijven kan altijd). Zie onze <a href="privacy.html">privacyverklaring</a>.</span>
+            <span>Ja, stuur mij daarna ook praktische daktips en subsidie-updates per e-mail (max. enkele mails, uitschrijven kan altijd). Zie onze <a href="/privacy">privacyverklaring</a>.</span>
           </label>
           <p class="dg-avg">Je ontvangt de gids direct. Zonder vinkje gebruiken we je e-mailadres alléén om de gids te sturen.</p>
           <div class="dg-error" id="dgError" role="alert"></div>
@@ -1304,7 +1517,7 @@
       // Lokaal testen zonder API: mock-succes op localhost
       if(/^(localhost|127\.0\.0\.1)$/.test(location.hostname)){
         console.log('[dakgids] mock submit', payload);
-        setTimeout(function(){ window.location.href = 'dakgids-bedankt.html'; }, 400);
+        setTimeout(function(){ window.location.href = '/dakgids-bedankt'; }, 400);
         return;
       }
       fetch(form.action, {
@@ -1312,7 +1525,7 @@
       }).then(function(r){
         if(!r.ok) throw new Error('http ' + r.status);
         if(typeof gtag === 'function'){ gtag('event','generate_lead',{ form:'dakgids', bron: location.pathname }); }
-        window.location.href = 'dakgids-bedankt.html';
+        window.location.href = '/dakgids-bedankt';
       }).catch(function(){
         fail('Versturen lukte even niet. Probeer het opnieuw, of mail ons via info@adamsdaktechniek.nl — dan sturen we de gids handmatig.');
       });
@@ -1443,7 +1656,7 @@
           <li><strong>Gemiddelde renovaties (zoals een plat garagedak of dakgoot):</strong> Richtprijzen tussen € 1.500,&ndash; en € 3.500,&ndash; *</li>
           <li><strong>Grotere projecten (volledige pannendaken of isolatie):</strong> Richtprijzen vanaf € 4.500,&ndash; *</li>
         </ul>
-        <p>Benieuwd naar de specifieke richtprijzen per dienst? Bekijk dan onze <a href="index.html#diensten">dienstpagina&rsquo;s</a>. Voor een exacte prijs komen we gratis bij je langs voor een inspectie.</p>
+        <p>Benieuwd naar de specifieke richtprijzen per dienst? Bekijk dan onze <a href="/#diensten">dienstpagina&rsquo;s</a>. Voor een exacte prijs komen we gratis bij je langs voor een inspectie.</p>
         <p><small>* Alle genoemde bedragen zijn louter indicatieve richtprijzen (exclusief btw en eventuele specifieke materiaalkosten/steigers) en vormen geen bindend aanbod. De definitieve prijs volgt altijd via een schriftelijke offerte.</small></p>
       </details>
       <details class="faq">
@@ -1508,24 +1721,24 @@
       <p>Vanuit Heerlen rijden we dagelijks voor klussen in deze plaatsen. Klik op uw plaats voor lokale info, of bel direct als u liever overlegt.</p>
     </div>
     <div class="city-chips" data-reveal data-reveal-delay="1">
-      <a class="city-chip" href="dakdekker-heerlen.html">Heerlen</a>
-      <a class="city-chip" href="dakdekker-brunssum.html">Brunssum</a>
-      <a class="city-chip" href="dakdekker-hoensbroek.html">Hoensbroek</a>
-      <a class="city-chip" href="dakdekker-landgraaf.html">Landgraaf</a>
-      <a class="city-chip" href="dakdekker-kerkrade.html">Kerkrade</a>
-      <a class="city-chip" href="dakdekker-voerendaal.html">Voerendaal</a>
-      <a class="city-chip" href="dakdekker-eygelshoven.html">Eygelshoven</a>
-      <a class="city-chip" href="dakdekker-simpelveld.html">Simpelveld</a>
-      <a class="city-chip" href="dakdekker-schinveld.html">Schinveld</a>
-      <a class="city-chip" href="dakdekker-nuth.html">Nuth</a>
-      <a class="city-chip" href="dakdekker-schinnen.html">Schinnen</a>
-      <a class="city-chip" href="dakdekker-klimmen.html">Klimmen</a>
-      <a class="city-chip" href="dakdekker-valkenburg.html">Valkenburg</a>
-      <a class="city-chip" href="dakdekker-beek.html">Beek</a>
-      <a class="city-chip" href="dakdekker-geleen.html">Geleen</a>
-      <a class="city-chip" href="dakdekker-sittard.html">Sittard</a>
-      <a class="city-chip" href="dakdekker-born.html">Born</a>
-      <a class="city-chip" href="dakdekker-echt.html">Echt</a>
+      <a class="city-chip" href="/dakdekker-heerlen">Heerlen</a>
+      <a class="city-chip" href="/dakdekker-brunssum">Brunssum</a>
+      <a class="city-chip" href="/dakdekker-hoensbroek">Hoensbroek</a>
+      <a class="city-chip" href="/dakdekker-landgraaf">Landgraaf</a>
+      <a class="city-chip" href="/dakdekker-kerkrade">Kerkrade</a>
+      <a class="city-chip" href="/dakdekker-voerendaal">Voerendaal</a>
+      <a class="city-chip" href="/dakdekker-eygelshoven">Eygelshoven</a>
+      <a class="city-chip" href="/dakdekker-simpelveld">Simpelveld</a>
+      <a class="city-chip" href="/dakdekker-schinveld">Schinveld</a>
+      <a class="city-chip" href="/dakdekker-nuth">Nuth</a>
+      <a class="city-chip" href="/dakdekker-schinnen">Schinnen</a>
+      <a class="city-chip" href="/dakdekker-klimmen">Klimmen</a>
+      <a class="city-chip" href="/dakdekker-valkenburg">Valkenburg</a>
+      <a class="city-chip" href="/dakdekker-beek">Beek</a>
+      <a class="city-chip" href="/dakdekker-geleen">Geleen</a>
+      <a class="city-chip" href="/dakdekker-sittard">Sittard</a>
+      <a class="city-chip" href="/dakdekker-born">Born</a>
+      <a class="city-chip" href="/dakdekker-echt">Echt</a>
     </div>
   </div>
 </section>
@@ -1571,14 +1784,14 @@
       <p class="muted">Vrijblijvend — reactie binnen 1 werkdag.</p>
 
       <input type="hidden" name="_subject" value="Snelle aanvraag via homepage">
-      <input type="hidden" name="_next" value="https://adamsdaktechniek.nl/bedankt.html">
+      <input type="hidden" name="_next" value="https://adamsdaktechniek.nl/bedankt">
       <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
 
-      <div class="field"><label>Naam</label><input type="text" name="naam" required placeholder="Voor- en achternaam"></div>
-      <div class="field"><label>Telefoon</label><input type="tel" name="telefoon" required placeholder="06-..."></div>
-      <div class="field"><label>E-mail</label><input type="email" name="email" placeholder="optioneel"></div>
-      <div class="field"><label>Welke dienst heeft u nodig?</label>
-        <select name="dienst" required>
+      <div class="field"><label for="qf-naam">Naam</label><input id="qf-naam" type="text" name="naam" autocomplete="name" required placeholder="Voor- en achternaam"></div>
+      <div class="field"><label for="qf-telefoon">Telefoon</label><input id="qf-telefoon" type="tel" name="telefoon" autocomplete="tel" required placeholder="06-..."></div>
+      <div class="field"><label for="qf-email">E-mail</label><input id="qf-email" type="email" name="email" autocomplete="email" placeholder="optioneel"></div>
+      <div class="field"><label for="qf-dienst">Welke dienst heeft u nodig?</label>
+        <select id="qf-dienst" name="dienst" required>
           <option value="">Maak een keuze…</option>
           <option>Platte daken</option>
           <option>Pannedaken / hellend dak</option>
@@ -1591,10 +1804,10 @@
           <option>Anders</option>
         </select>
       </div>
-      <div class="field"><label>Toelichting</label><textarea name="toelichting" placeholder="Beschrijf kort de situatie of vraag"></textarea></div>
+      <div class="field"><label for="qf-toelichting">Toelichting</label><textarea id="qf-toelichting" name="toelichting" placeholder="Beschrijf kort de situatie of vraag"></textarea></div>
       <label style="display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--ink-dim);margin:8px 0 16px;line-height:1.5">
         <input type="checkbox" name="privacy_akkoord" required style="margin-top:3px">
-        <span>Ik ga akkoord met de verwerking van mijn gegevens. <a href="privacy.html" target="_blank" rel="noopener" style="color:var(--green);text-decoration:underline">Privacyverklaring</a>.</span>
+        <span>Ik ga akkoord met de verwerking van mijn gegevens. <a href="/privacy" target="_blank" rel="noopener" style="color:var(--green);text-decoration:underline">Privacyverklaring</a>.</span>
       </label>
       <button class="btn btn-primary" type="submit">
         Verstuur aanvraag
@@ -1612,7 +1825,7 @@
       <h2>Klaar voor een dak<br>dat <span class="green">staat</span>?</h2>
       <p>Bel direct of vraag online een offerte aan — eerlijke prijs, helder advies, vakkundige uitvoering.</p>
     </div>
-    <a class="btn btn-primary btn-xl" href="offerte.html" data-reveal data-reveal-delay="1">
+    <a class="btn btn-primary btn-xl" href="/offerte" data-reveal data-reveal-delay="1">
       Vraag offerte aan
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
     </a>
@@ -1626,8 +1839,8 @@
 
       <!-- Brand -->
       <div class="foot-brand">
-        <a class="brand" href="index.html" aria-label="Adams Daktechniek">
-          <img class="brand-logo brand-logo--footer" src="Images/LogoAdamsDaktechniek.png" alt="Adams Daktechniek">
+        <a class="brand" href="/" aria-label="Adams Daktechniek">
+          <img class="brand-logo brand-logo--footer" src="Images/logo-256.webp" alt="Adams Daktechniek">
         </a>
         <p>Specialist in pannendaken, platte daken, zinkwerken, trespawerken, dakkapellen en isolaties. Werkzaam in heel Limburg en omgeving.</p>
         <div class="foot-slogan">Samen duurzaam de toekomst in.</div>
@@ -1645,18 +1858,18 @@
       <div class="foot">
         <h3 class="foot-h">Diensten</h3>
         <ul>
-          <li><a href="platte-daken.html">Platte daken</a></li>
-          <li><a href="pannendaken.html">Pannendaken</a></li>
-          <li><a href="dakkapellen.html">Dakkapellen</a></li>
-          <li><a href="zinkwerken.html">Zinkwerken &amp; dakgoten</a></li>
-          <li><a href="trespawerken.html">Trespawerken</a></li>
-          <li><a href="spoed-lekkages.html">Spoed &amp; lekkages</a></li>
-          <li><a href="dakraam-velux.html">Dakraam / Velux</a></li>
-          <li><a href="dakisolatie.html">Dakisolatie</a></li>
-          <li><a href="schoorstenen.html">Schoorstenen</a></li>
-          <li><a href="onderhoud-inspectie.html">Onderhoud &amp; inspectie</a></li>
-          <li><a href="renovatie-verbouw.html">Renovatie &amp; verbouw</a></li>
-          <li><a href="dakreiniging.html">Dakreiniging</a></li>
+          <li><a href="/platte-daken">Platte daken</a></li>
+          <li><a href="/pannendaken">Pannendaken</a></li>
+          <li><a href="/dakkapellen">Dakkapellen</a></li>
+          <li><a href="/zinkwerken">Zinkwerken &amp; dakgoten</a></li>
+          <li><a href="/trespawerken">Trespawerken</a></li>
+          <li><a href="/spoed-lekkages">Spoed &amp; lekkages</a></li>
+          <li><a href="/dakraam-velux">Dakraam / Velux</a></li>
+          <li><a href="/dakisolatie">Dakisolatie</a></li>
+          <li><a href="/schoorstenen">Schoorstenen</a></li>
+          <li><a href="/onderhoud-inspectie">Onderhoud &amp; inspectie</a></li>
+          <li><a href="/renovatie-verbouw">Renovatie &amp; verbouw</a></li>
+          <li><a href="/dakreiniging">Dakreiniging</a></li>
         </ul>
       </div>
 
@@ -1664,24 +1877,24 @@
       <div class="foot">
         <h3 class="foot-h">Werkgebied</h3>
         <ul style="column-count:2;column-gap:20px;-webkit-column-count:2">
-          <li><a href="dakdekker-heerlen.html">Heerlen</a></li>
-          <li><a href="dakdekker-hoensbroek.html">Hoensbroek</a></li>
-          <li><a href="dakdekker-brunssum.html">Brunssum</a></li>
-          <li><a href="dakdekker-landgraaf.html">Landgraaf</a></li>
-          <li><a href="dakdekker-kerkrade.html">Kerkrade</a></li>
-          <li><a href="dakdekker-eygelshoven.html">Eygelshoven</a></li>
-          <li><a href="dakdekker-voerendaal.html">Voerendaal</a></li>
-          <li><a href="dakdekker-simpelveld.html">Simpelveld</a></li>
-          <li><a href="dakdekker-nuth.html">Nuth</a></li>
-          <li><a href="dakdekker-schinnen.html">Schinnen</a></li>
-          <li><a href="dakdekker-schinveld.html">Schinveld</a></li>
-          <li><a href="dakdekker-klimmen.html">Klimmen</a></li>
-          <li><a href="dakdekker-valkenburg.html">Valkenburg</a></li>
-          <li><a href="dakdekker-beek.html">Beek</a></li>
-          <li><a href="dakdekker-geleen.html">Geleen</a></li>
-          <li><a href="dakdekker-sittard.html">Sittard</a></li>
-          <li><a href="dakdekker-born.html">Born</a></li>
-          <li><a href="dakdekker-echt.html">Echt</a></li>
+          <li><a href="/dakdekker-heerlen">Heerlen</a></li>
+          <li><a href="/dakdekker-hoensbroek">Hoensbroek</a></li>
+          <li><a href="/dakdekker-brunssum">Brunssum</a></li>
+          <li><a href="/dakdekker-landgraaf">Landgraaf</a></li>
+          <li><a href="/dakdekker-kerkrade">Kerkrade</a></li>
+          <li><a href="/dakdekker-eygelshoven">Eygelshoven</a></li>
+          <li><a href="/dakdekker-voerendaal">Voerendaal</a></li>
+          <li><a href="/dakdekker-simpelveld">Simpelveld</a></li>
+          <li><a href="/dakdekker-nuth">Nuth</a></li>
+          <li><a href="/dakdekker-schinnen">Schinnen</a></li>
+          <li><a href="/dakdekker-schinveld">Schinveld</a></li>
+          <li><a href="/dakdekker-klimmen">Klimmen</a></li>
+          <li><a href="/dakdekker-valkenburg">Valkenburg</a></li>
+          <li><a href="/dakdekker-beek">Beek</a></li>
+          <li><a href="/dakdekker-geleen">Geleen</a></li>
+          <li><a href="/dakdekker-sittard">Sittard</a></li>
+          <li><a href="/dakdekker-born">Born</a></li>
+          <li><a href="/dakdekker-echt">Echt</a></li>
         </ul>
       </div>
 
@@ -1695,17 +1908,17 @@
         </ul>
         <h3 class="foot-h" style="margin-top:24px">Bedrijf</h3>
         <ul>
-          <li><a href="offerte.html">Offerte aanvragen</a></li>
-          <li><a href="projecten.html">Projecten</a></li>
-          <li><a href="index.html#reviews">Reviews</a></li>
-          <li><a href="index.html#werkwijze">Werkwijze</a></li>
+          <li><a href="/offerte">Offerte aanvragen</a></li>
+          <li><a href="/projecten">Projecten</a></li>
+          <li><a href="/#reviews">Reviews</a></li>
+          <li><a href="/#werkwijze">Werkwijze</a></li>
         </ul>
       </div>
 
     </div>
     <div class="legal">
       <div>&#169; <span id="yr"></span> Adams Daktechniek &middot; Alle rechten voorbehouden</div>
-      <div>KvK 89562135 &middot; Heerlen, Limburg &middot; NL &middot; <a href="privacy.html" style="color:inherit;text-decoration:underline;text-underline-offset:3px">Privacy</a> &middot; <a href="#" onclick="if(window.AdamsCookies){window.AdamsCookies.reset();return false;}" style="color:inherit;text-decoration:underline;text-underline-offset:3px">Cookievoorkeuren</a></div>
+      <div>KvK 89562135 &middot; Heerlen, Limburg &middot; NL &middot; <a href="/privacy" style="color:inherit;text-decoration:underline;text-underline-offset:3px">Privacy</a> &middot; <a href="#" onclick="if(window.AdamsCookies){window.AdamsCookies.reset();return false;}" style="color:inherit;text-decoration:underline;text-underline-offset:3px">Cookievoorkeuren</a></div>
     </div>
   </div>
 </footer>
@@ -1721,7 +1934,7 @@
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
     Bel
   </a>
-  <a class="mb-offerte" href="offerte.html" aria-label="Offerte aanvragen">
+  <a class="mb-offerte" href="/offerte" aria-label="Offerte aanvragen">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg>
     Offerte
   </a>
@@ -1783,7 +1996,7 @@
 
   // Markeer actieve dienst in mobiel sub-menu + open sub-menu automatisch op dienstpagina
   (function(){
-    const path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+    const path = (location.pathname.split('/').pop() || '/index').toLowerCase();
     const subLinks = document.querySelectorAll('.mobile-menu .mm-sub a');
     let foundActive = false;
     subLinks.forEach(a => {

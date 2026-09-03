@@ -2,9 +2,9 @@
   "version": "0.0.1",
   "configurations": [
     {
-      "name": "adams-dakgids-static",
-      "runtimeExecutable": "python3",
-      "runtimeArgs": ["-m", "http.server", "8123", "--directory", "/Users/mojo/ai-agents-hub/claude projects/Projects/Adams Daktechniek/site_lokaal/WebSite"],
+      "name": "adams-staging-local",
+      "runtimeExecutable": "wrangler",
+      "runtimeArgs": ["pages", "dev", "../GitHubPagesStaging", "--port", "8123", "--ip", "127.0.0.1"],
       "port": 8123
     }
   ]
