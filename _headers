@@ -10,3 +10,19 @@
 
 /dakgids-bedankt
   X-Robots-Tag: noindex, nofollow
+
+# Cache: afbeeldingen/PDF/JS een jaar (bestandsnamen veranderen bij wijziging), HTML blijft standaard (must-revalidate)
+/Images/*
+  Cache-Control: public, max-age=31536000, immutable
+/downloads/*
+  Cache-Control: public, max-age=31536000, immutable
+/favicon.ico
+  Cache-Control: public, max-age=604800
+
+# Security-headers
+/*
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
