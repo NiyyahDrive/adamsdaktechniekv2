@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="theme-color" content="#0a0a0a" />
 <title>Projecten — Adams Daktechniek | Dakwerk in Heerlen & Limburg</title>
-<meta name="description" content="Bekijk projecten van Adams Daktechniek: pannendaken, platte daken, dakramen, zinkwerk en renovaties in Heerlen en heel Limburg." />
+<meta name="description" content="Bekijk projecten van Adams Daktechniek: plat dak renovatie met PIR-isolatie, luifel- en bedrijfsdaken, pannendaken, zinkwerk en dakramen in Heerlen en heel Limburg." />
 <link rel="canonical" href="https://adamsdaktechniek.nl/projecten.html" />
 <meta property="og:title" content="Projecten — Adams Daktechniek | Dakwerk in Heerlen & Limburg" />
-<meta property="og:description" content="Bekijk projecten van Adams Daktechniek: pannendaken, platte daken, dakramen, zinkwerk en renovaties in Heerlen en heel Limburg." />
+<meta property="og:description" content="Bekijk projecten van Adams Daktechniek: plat dak renovatie met PIR-isolatie, luifel- en bedrijfsdaken, pannendaken, zinkwerk en dakramen in Heerlen en heel Limburg." />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Adams Daktechniek" />
 <meta property="og:image" content="https://adamsdaktechniek.nl/Images/LogoAdamsDaktechniek.png" />
@@ -116,6 +116,54 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit;-we
 .card-body h3{font-family:'Manrope';font-size:17px;font-weight:700;margin-bottom:6px}
 .card-body p{color:var(--ink-dim);font-size:14px}
 .empty{grid-column:1/-1;text-align:center;padding:60px;color:var(--ink-dim)}
+
+/* SECTIEKOP (gedeeld) */
+.section-head{padding-top:58px}
+.section-head h2{font-family:'Manrope';font-size:clamp(26px,3vw,38px);font-weight:800;letter-spacing:-.02em;margin-bottom:10px}
+.section-head p{color:var(--ink-dim);max-width:70ch;font-size:15px}
+.note{margin-top:16px;padding:12px 15px;border:1px solid var(--line);border-left:2px solid var(--green);border-radius:10px;background:rgba(255,255,255,.02);color:var(--ink-dim);font-size:13.5px;max-width:80ch}
+
+/* UITGELICHTE PROJECTEN */
+.featured{padding-bottom:20px}
+.feature{display:grid;grid-template-columns:1.02fr 1fr;gap:40px;align-items:center;padding:38px 0}
+.feature+.feature{border-top:1px solid var(--line)}
+.feature-media{display:grid;gap:10px}
+.feature--reverse .feature-media{order:2}
+.feature-main{position:relative;display:block;border-radius:16px;overflow:hidden;border:1px solid var(--line);background:#111}
+.feature-main img{aspect-ratio:4/3;width:100%;object-fit:cover;transition:transform .5s var(--ease)}
+.feature-main:hover img{transform:scale(1.03)}
+.feature-thumbs{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.feature-thumb{display:block;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:#111}
+.feature-thumb img{aspect-ratio:16/10;width:100%;object-fit:cover;transition:transform .5s var(--ease)}
+.feature-thumb:hover img{transform:scale(1.05)}
+.ref-badge{position:absolute;left:12px;bottom:12px;padding:5px 10px;border-radius:999px;background:rgba(0,0,0,.74);backdrop-filter:blur(8px);border:1px solid var(--line-2);font-size:10.5px;letter-spacing:1px;text-transform:uppercase;font-weight:700;color:var(--ink-dim)}
+.feature-tag{display:inline-block;padding:5px 12px;border-radius:999px;background:var(--green);color:#072e15;font-size:11px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;margin-bottom:14px}
+.feature h3{font-family:'Manrope';font-size:clamp(22px,2.6vw,30px);font-weight:800;letter-spacing:-.02em;line-height:1.15;margin-bottom:12px}
+.feature-meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.meta-chip{display:inline-flex;align-items:center;gap:6px;padding:5px 11px;border-radius:999px;border:1px solid var(--line-2);background:rgba(255,255,255,.03);font-size:12px;color:var(--ink-dim)}
+.feature .lead{color:var(--ink-dim);font-size:15.5px;margin-bottom:22px}
+.spec-title{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#fff;font-weight:700;margin-bottom:12px}
+.spec-list{list-style:none;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:rgba(255,255,255,.02);margin-bottom:20px}
+.spec-list li{display:grid;grid-template-columns:24px 1fr;gap:12px;align-items:start;padding:12px 14px;font-size:14px;color:var(--ink-dim);border-bottom:1px solid var(--line)}
+.spec-list li:last-child{border-bottom:none}
+.spec-list b{color:var(--ink);font-weight:600}
+.spec-n{width:24px;height:24px;border-radius:7px;background:rgba(92,194,122,.12);border:1px solid rgba(92,194,122,.3);color:var(--green);font-size:11.5px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.mat-pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.mat-pill{padding:6px 12px;border-radius:999px;background:rgba(92,194,122,.1);border:1px solid rgba(92,194,122,.28);color:var(--green);font-size:12.5px;font-weight:700}
+.feature-actions{display:flex;gap:10px;flex-wrap:wrap}
+@media (max-width:940px){.feature{grid-template-columns:1fr;gap:26px;padding:30px 0}.feature--reverse .feature-media{order:0}}
+
+/* OVERIGE WERKZAAMHEDEN — STRIP */
+.strip-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap}
+.strip-hint{font-size:12.5px;color:var(--ink-dim);opacity:.85;white-space:nowrap}
+.strip{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(228px,1fr);gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:24px 2px 16px;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:var(--line-2) transparent}
+.strip::-webkit-scrollbar{height:6px}
+.strip::-webkit-scrollbar-track{background:transparent}
+.strip::-webkit-scrollbar-thumb{background:var(--line-2);border-radius:99px}
+.strip-item{scroll-snap-align:start;display:block;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--bg-2);transition:transform .25s var(--ease),border-color .25s var(--ease)}
+.strip-item:hover{transform:translateY(-3px);border-color:var(--green)}
+.strip-item img{aspect-ratio:4/3;width:100%;object-fit:cover;background:#111}
+.strip-cap{padding:11px 13px;font-size:13px;color:var(--ink-dim);font-weight:500}
 
 /* VIDEO PROJECTEN */
 .video-projects{padding:10px 0 72px}
@@ -227,11 +275,218 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit;-we
   <div class="container">
     <div class="eyebrow"><span class="dot"></span> Projecten · Heerlen & Limburg</div>
     <h1>Vakwerk dat <em>blijft staan.</em></h1>
-    <p>Een selectie van projecten die Adams Daktechniek heeft uitgevoerd in Heerlen en omstreken. Pannendaken, platte daken, zinkwerk, dakramen en renovaties — eerlijk advies en nette uitvoering.</p>
+    <p>Een selectie van projecten die Adams Daktechniek heeft uitgevoerd in Heerlen en omstreken. Pannendaken, platte daken, zinkwerk, dakramen en renovaties — eerlijk advies en nette uitvoering. Hieronder eerst twee projecten volledig uitgewerkt, daarna een greep uit het overige werk.</p>
   </div>
 </header>
 
-<section class="container">
+<!-- ============================================================
+     UITGELICHTE PROJECTEN
+     ------------------------------------------------------------
+     Teksten zijn 1-op-1 gebaseerd op de projectomschrijvingen van
+     Mano (WhatsApp, juli 2026). Geen toegevoegde claims.
+
+     LET OP — FOTO'S: de WhatsApp-export bevatte geen mediabestanden.
+     De beelden hieronder zijn bestaande referentiefoto's van eigen
+     werk uit /Images en tonen NIET het betreffende project. Zodra de
+     originele projectfoto's er zijn: vervang de src's die gemarkeerd
+     staan met SWAP-ME en verwijder de bijbehorende .ref-badge.
+     ============================================================ -->
+<section class="featured" id="uitgelicht">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow"><span class="dot"></span> Uitgelicht</div>
+      <h2>Twee projecten in detail</h2>
+      <p>Van isolatie tot waterdichte toplaag — hieronder de volledige dakopbouw van twee recent uitgevoerde projecten, stap voor stap zoals ze op de bouw zijn aangebracht.</p>
+      <div class="note"><strong>Let op (staging):</strong> de foto's bij deze twee projecten zijn referentiebeelden van eigen werk en tonen niet het betreffende project. De originele projectfoto's worden nog toegevoegd.</div>
+    </div>
+
+    <!-- Project 1 — Plat dak Wijnandsrade -->
+    <article class="feature">
+      <div class="feature-media">
+        <!-- SWAP-ME: vervang door originele foto plat dak Wijnandsrade -->
+        <a class="feature-main" href="Images/bitumen-platdak-heerlen.jpeg" target="_blank" rel="noopener">
+          <img src="Images/bitumen-platdak-heerlen.jpeg" alt="Bitumen toplaag op een plat dak, uitgevoerd door Adams Daktechniek" loading="lazy">
+          <span class="ref-badge">Referentiebeeld</span>
+        </a>
+        <div class="feature-thumbs">
+          <!-- SWAP-ME -->
+          <a class="feature-thumb" href="Images/Platdak_Klimmen.jpeg" target="_blank" rel="noopener">
+            <img src="Images/Platdak_Klimmen.jpeg" alt="Plat dak met bitumen dakrandafwerking door Adams Daktechniek" loading="lazy">
+          </a>
+          <!-- SWAP-ME -->
+          <a class="feature-thumb" href="Images/Platdak_Beek.jpeg" target="_blank" rel="noopener">
+            <img src="Images/Platdak_Beek.jpeg" alt="Dakdekker brandt bitumen banen aan op een plat dak" loading="lazy">
+          </a>
+        </div>
+      </div>
+      <div class="feature-body">
+        <span class="feature-tag">Plat dak · Renovatie</span>
+        <h3>Renovatie plat dak met 80 mm PIR-isolatie</h3>
+        <div class="feature-meta">
+          <span class="meta-chip">📍 Wijnandsrade</span>
+          <span class="meta-chip">🌡️ 80 mm PIR</span>
+          <span class="meta-chip">🔥 Twee bitumen lagen</span>
+        </div>
+        <p class="lead">Om de thermische prestaties van het dak te verbeteren is het dak voorzien van een isolatielaag van 80 mm PIR, waarmee een aanzienlijk betere isolatiewaarde wordt gerealiseerd. Het resultaat is een duurzame, hoogwaardige en betrouwbare dakconstructie die voldoet aan de hedendaagse eisen op het gebied van isolatie en waterdichtheid.</p>
+        <div class="spec-title">Dakopbouw</div>
+        <ul class="spec-list">
+          <li><span class="spec-n">1</span><span><b>Isolatie</b> — 80 mm PIR aangebracht voor een aanzienlijk betere isolatiewaarde.</span></li>
+          <li><span class="spec-n">2</span><span><b>Onderlaag</b> — BASE 460P60 volledig gemonteerd op de isolatie.</span></li>
+          <li><span class="spec-n">3</span><span><b>Toplaag</b> — 470K24 als definitieve waterdichte afwerking.</span></li>
+        </ul>
+        <div class="mat-pills">
+          <span class="mat-pill">80 mm PIR</span>
+          <span class="mat-pill">BASE 460P60</span>
+          <span class="mat-pill">470K24</span>
+        </div>
+        <div class="feature-actions">
+          <a class="video-btn primary" href="offerte.html">Vergelijkbaar project aanvragen</a>
+          <a class="video-btn" href="dakisolatie.html">Meer over dakisolatie</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Project 2 — Luifel bedrijfspand, in opdracht van Grausbouw -->
+    <article class="feature feature--reverse">
+      <div class="feature-media">
+        <!-- SWAP-ME: vervang door originele foto luifel Grausbouw -->
+        <a class="feature-main" href="Images/Platdak_Kerkrade.jpeg" target="_blank" rel="noopener">
+          <img src="Images/Platdak_Kerkrade.jpeg" alt="Bitumen dakvlak met zinken afwerking op een bedrijfspand, uitgevoerd door Adams Daktechniek" loading="lazy">
+          <span class="ref-badge">Referentiebeeld</span>
+        </a>
+        <div class="feature-thumbs">
+          <!-- SWAP-ME -->
+          <a class="feature-thumb" href="Images/Platdak_Schinnenjpeg.jpeg" target="_blank" rel="noopener">
+            <img src="Images/Platdak_Schinnenjpeg.jpeg" alt="Dakafvoer en randaansluiting op een bitumen dakvlak" loading="lazy">
+          </a>
+          <!-- SWAP-ME -->
+          <a class="feature-thumb" href="Images/zinken-daktrim-boeiboord-limburg.jpeg" target="_blank" rel="noopener">
+            <img src="Images/zinken-daktrim-boeiboord-limburg.jpeg" alt="Strak zinkwerk als dakrandafwerking door Adams Daktechniek" loading="lazy">
+          </a>
+        </div>
+      </div>
+      <div class="feature-body">
+        <span class="feature-tag">Bedrijfspand · Nieuwbouw luifel</span>
+        <h3>Nieuwe luifel voorzien van een compleet waterdicht dak</h3>
+        <div class="feature-meta">
+          <span class="meta-chip">🏗️ In opdracht van Grausbouw</span>
+          <span class="meta-chip">⚙️ Staalconstructie</span>
+          <span class="meta-chip">🔥 470K24 bitumen</span>
+        </div>
+        <p class="lead">De nieuwe luifel aan het bedrijfspand is voorzien van een compleet nieuw en waterdicht dak. De luifel bestaat uit een staalconstructie met daarboven een underlayment plaat. Een mooie opdracht met een prachtig eindresultaat: een degelijk en waterdicht dak dat weer jarenlang mee kan.</p>
+        <div class="spec-title">Dakopbouw</div>
+        <ul class="spec-list">
+          <li><span class="spec-n">1</span><span><b>Ondergrond</b> — staalconstructie met daarboven een underlayment plaat.</span></li>
+          <li><span class="spec-n">2</span><span><b>Onderlaag</b> — zelfklevende, ventilerende onderlaag aangebracht.</span></li>
+          <li><span class="spec-n">3</span><span><b>Dakafvoer</b> — geplaatst en ingebrand met een stuk 470K24 bitumen van 1 m².</span></li>
+          <li><span class="spec-n">4</span><span><b>Dakvlak</b> — volledig afgewerkt met 470K24 bitumen.</span></li>
+          <li><span class="spec-n">5</span><span><b>Randwerk</b> — stalen balk geprimerd, daarna het randwerk zorgvuldig ingebrand.</span></li>
+          <li><span class="spec-n">6</span><span><b>Afwerking</b> — rondom de afvoer wordt nog een zinken kap aangebracht voor een nette en duurzame afwerking.</span></li>
+        </ul>
+        <div class="mat-pills">
+          <span class="mat-pill">Underlayment</span>
+          <span class="mat-pill">Ventilerende onderlaag</span>
+          <span class="mat-pill">470K24</span>
+          <span class="mat-pill">Zinkwerk</span>
+        </div>
+        <div class="feature-actions">
+          <a class="video-btn primary" href="offerte.html">Offerte voor bedrijfspand</a>
+          <a class="video-btn" href="platte-daken.html">Meer over platte daken</a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============================================================
+     OVERIGE WERKZAAMHEDEN — beeldstrip
+     Bestaande foto's uit /Images. Bijschriften bewust generiek
+     (werksoort, geen plaats/datum-claims).
+     ============================================================ -->
+<section class="strip-wrap" id="overige">
+  <div class="container">
+    <div class="section-head">
+      <div class="strip-head">
+        <div>
+          <div class="eyebrow"><span class="dot"></span> Overige werkzaamheden</div>
+          <h2>Een greep uit ons dagelijks werk</h2>
+          <p>Zinkwerk, boeiborden, dakramen, loodwerk en dakdetails — het kleinere werk dat net zo goed strak afgewerkt moet worden.</p>
+        </div>
+        <span class="strip-hint">Sleep opzij voor meer →</span>
+      </div>
+    </div>
+
+    <div class="strip">
+      <a class="strip-item" href="Images/Dakgoot.jpg" target="_blank" rel="noopener">
+        <img src="Images/Dakgoot.jpg" alt="Nieuwe dakgoot geplaatst door Adams Daktechniek" loading="lazy">
+        <div class="strip-cap">Dakgoot vervangen</div>
+      </a>
+      <a class="strip-item" href="Images/Dakgoot_2.jpg" target="_blank" rel="noopener">
+        <img src="Images/Dakgoot_2.jpg" alt="Dakgoot met regenafvoer langs de gevel" loading="lazy">
+        <div class="strip-cap">Dakgoot &amp; regenafvoer</div>
+      </a>
+      <a class="strip-item" href="Images/zinken-daktrim-boeiboord-limburg.jpeg" target="_blank" rel="noopener">
+        <img src="Images/zinken-daktrim-boeiboord-limburg.jpeg" alt="Zinken daktrim en boeiboord door Adams Daktechniek" loading="lazy">
+        <div class="strip-cap">Zinken daktrim</div>
+      </a>
+      <a class="strip-item" href="Images/Boeiborden.jpeg" target="_blank" rel="noopener">
+        <img src="Images/Boeiborden.jpeg" alt="Boeiborden vervangen door Adams Daktechniek" loading="lazy">
+        <div class="strip-cap">Boeiborden vervangen</div>
+      </a>
+      <a class="strip-item" href="Images/Boeiborden_2.jpeg" target="_blank" rel="noopener">
+        <img src="Images/Boeiborden_2.jpeg" alt="Boeiborden renovatie en gevelovergang" loading="lazy">
+        <div class="strip-cap">Boeiboord renovatie</div>
+      </a>
+      <a class="strip-item" href="Images/Boeiborden_3.jpeg" target="_blank" rel="noopener">
+        <img src="Images/Boeiborden_3.jpeg" alt="Detailafwerking van boeiborden en dakrand" loading="lazy">
+        <div class="strip-cap">Dakranddetail</div>
+      </a>
+      <a class="strip-item" href="Images/loodwerk-schoorsteen-heerlen.jpeg" target="_blank" rel="noopener">
+        <img src="Images/loodwerk-schoorsteen-heerlen.jpeg" alt="Loodwerk rondom schoorsteenaansluiting op pannendak" loading="lazy">
+        <div class="strip-cap">Loodwerk schoorsteen</div>
+      </a>
+      <a class="strip-item" href="Images/Dakkoepel-plaatsing-Platdak-heerlen.jpeg" target="_blank" rel="noopener">
+        <img src="Images/Dakkoepel-plaatsing-Platdak-heerlen.jpeg" alt="Dakkoepel geplaatst op een plat dak" loading="lazy">
+        <div class="strip-cap">Dakkoepel plaatsen</div>
+      </a>
+      <a class="strip-item" href="Images/velux-dakraam-heerlen.jpeg" target="_blank" rel="noopener">
+        <img src="Images/velux-dakraam-heerlen.jpeg" alt="VELUX dakraam met waterdichte aansluiting" loading="lazy">
+        <div class="strip-cap">VELUX dakraam</div>
+      </a>
+      <a class="strip-item" href="Images/HellendDak_Velux%20Raam.jpeg" target="_blank" rel="noopener">
+        <img src="Images/HellendDak_Velux%20Raam.jpeg" alt="VELUX dakraam gemonteerd op een hellend dak" loading="lazy">
+        <div class="strip-cap">Dakraam op hellend dak</div>
+      </a>
+      <a class="strip-item" href="Images/pannendak-renovatie-heerlen.jpeg" target="_blank" rel="noopener">
+        <img src="Images/pannendak-renovatie-heerlen.jpeg" alt="Pannendak met tengels en panlatten tijdens renovatie" loading="lazy">
+        <div class="strip-cap">Tengels &amp; panlatten</div>
+      </a>
+      <a class="strip-item" href="Images/pannendak-vervangen-heerlen.jpeg" target="_blank" rel="noopener">
+        <img src="Images/pannendak-vervangen-heerlen.jpeg" alt="Dakpannen vervangen op een hellend dak" loading="lazy">
+        <div class="strip-cap">Dakpannen vervangen</div>
+      </a>
+      <a class="strip-item" href="Images/Platdak_Hoensbroek.jpeg" target="_blank" rel="noopener">
+        <img src="Images/Platdak_Hoensbroek.jpeg" alt="Herstelwerk aan een bitumen plat dak" loading="lazy">
+        <div class="strip-cap">Herstel bitumen dak</div>
+      </a>
+      <a class="strip-item" href="Images/Platdak_Landgraaf.jpg" target="_blank" rel="noopener">
+        <img src="Images/Platdak_Landgraaf.jpg" alt="Plat dak met ontluchtingen en nette aansluitingen" loading="lazy">
+        <div class="strip-cap">Ontluchtingen &amp; aansluitingen</div>
+      </a>
+      <a class="strip-item" href="Images/Platdak_Landgraaf_2.jpg" target="_blank" rel="noopener">
+        <img src="Images/Platdak_Landgraaf_2.jpg" alt="Plat dak met dakkoepels en strakke dakrandafwerking" loading="lazy">
+        <div class="strip-cap">Dakvlak met lichtkoepels</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="container" id="alle-projecten">
+  <div class="section-head">
+    <div class="eyebrow"><span class="dot"></span> Archief</div>
+    <h2>Alle projecten</h2>
+    <p>Filter op werksoort om gericht door onze uitgevoerde projecten te bladeren.</p>
+  </div>
   <div class="filters" id="filters">
     <!-- Filter buttons worden automatisch gegenereerd door JS -->
   </div>
