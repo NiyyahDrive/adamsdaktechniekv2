@@ -2,9 +2,11 @@
 # Deploy:   cd site_lokaal && python3 tools/build_staging.py --prod && cd WebSite && wrangler deploy -c wrangler.production.toml
 # Rollback: wrangler rollback --name adamsdaktechniek   (vorige Worker-versie)  — of _rollback/live_20260903/ opnieuw deployen
 name = "adamsdaktechniek"
+main = "workers/site-worker.js"
 compatibility_date = "2026-06-02"
 
 [assets]
 directory = "../_deploy_prod"
+binding = "ASSETS"
 html_handling = "auto-trailing-slash"   # x.html -> /x (zoals nu live)
 not_found_handling = "404-page"          # 404.html met status 404
