@@ -941,6 +941,9 @@
 .nav-dropdown-panel a:hover .dd-ico{opacity:1}
 /* Hero direct zichtbaar, niet wachten op scroll-reveal (first paint) */
 .hero [data-reveal]{opacity:1;transform:none;transition:none}
+
+.reviews-more{margin-top:28px;text-align:center;font-size:14px;color:var(--ink-dim)}
+.reviews-more a{color:var(--green);text-decoration:underline;text-underline-offset:3px}
 </style>
 <script src="consent.js" defer></script>
 <script type="application/ld+json">
@@ -956,6 +959,8 @@
  "email": "info@adamsdaktechniek.nl",
  "address": {
   "@type": "PostalAddress",
+  "streetAddress": "Schrieversheideweg 56",
+  "postalCode": "6414 RL",
   "addressLocality": "Heerlen",
   "addressRegion": "Limburg",
   "addressCountry": "NL"
@@ -1040,6 +1045,7 @@
   }
  ],
  "sameAs": [
+  "https://www.google.com/maps?cid=6858481556635463667",
   "https://www.tiktok.com/@adamsdaktechniek",
   "https://www.instagram.com/adamsdaktechniek"
  ],
@@ -1144,7 +1150,22 @@
     }
    }
   ]
- }
+ },
+ "hasMap": "https://www.google.com/maps?cid=6858481556635463667",
+ "openingHoursSpecification": [
+  {
+   "@type": "OpeningHoursSpecification",
+   "dayOfWeek": [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday"
+   ],
+   "opens": "08:00",
+   "closes": "18:00"
+  }
+ ]
 }
 </script>
 </head>
@@ -1242,7 +1263,7 @@
         </a>
       </div>
       <div class="hero-stats" data-reveal data-reveal-delay="4">
-        <div class="stat"><div class="num"><span>4,9</span>★</div><div class="lbl">24 reviews</div></div>
+        <div class="stat"><div class="num"><span>4,9</span>★</div><div class="lbl"><a href="https://www.google.com/maps?cid=6858481556635463667" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-underline-offset:3px">29 reviews op Google</a></div></div>
         <div class="stat"><div class="num"><span>10</span> jr</div><div class="lbl">Garantie uitvoering</div></div>
         <div class="stat"><div class="num"><span>48u</span></div><div class="lbl">Offerte op de mat</div></div>
         <div class="stat"><div class="num"><span>1u</span></div><div class="lbl">Bij spoed ter plaatse</div></div>
@@ -1491,7 +1512,7 @@
           <div class="dg-error" id="dgError" role="alert"></div>
         </form>
         <div class="dg-proof">
-          <span><span class="gr">★</span> 4,9 klantscore</span>
+          <span><span class="gr">★</span> <a href="https://www.google.com/maps?cid=6858481556635463667" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-underline-offset:3px">4,9 op Google (29 reviews)</a></span>
           <span><span class="gr">✓</span> 10 jaar garantie</span>
           <span><span class="gr">✓</span> Top 30 Vakbedrijf '26-'27</span>
         </div>
@@ -1709,7 +1730,9 @@
         <div class="review-author"><div class="avatar">SL</div><div><div class="name">Sandra L.</div><div class="loc">Appartement, Landgraaf</div></div></div>
       </div>
     </div>
-  </div>
+  
+      <p class="reviews-more">Dit zijn vrije citaten. <a href="https://www.google.com/maps?cid=6858481556635463667" target="_blank" rel="noopener">Lees alle 29 reviews op Google</a> &middot; Zelf klant geweest? <a href="https://www.google.com/maps?cid=6858481556635463667" target="_blank" rel="noopener">Laat een review achter</a>.</p>
+    </div>
 </section>
 
 <!-- ============= WERKGEBIED ============= -->
@@ -1904,7 +1927,9 @@
         <ul>
           <li><a href="tel:+31683396082">06-83 396 082</a></li>
           <li><a href="mailto:info@adamsdaktechniek.nl">info@adamsdaktechniek.nl</a></li>
+          <li>Schrieversheideweg 56, 6414 RL Heerlen</li>
           <li>KvK 89562135</li>
+          <li><a href="https://www.google.com/maps?cid=6858481556635463667" target="_blank" rel="noopener">Google-reviews: 4,9 ★ (29)</a></li>
         </ul>
         <h3 class="foot-h" style="margin-top:24px">Bedrijf</h3>
         <ul>
