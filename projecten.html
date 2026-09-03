@@ -230,6 +230,35 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit;-we
 .card-thumb{width:48px;height:36px;padding:0;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:#111;cursor:pointer;opacity:.55;transition:opacity .2s,border-color .2s}
 .card-thumb img{width:100%;height:100%;object-fit:cover;display:block}
 .card-thumb.on,.card-thumb:hover,.card-thumb:focus-visible{opacity:1;border-color:var(--green);outline:none}
+
+/* Kaart-navigatie */
+.card-media{position:relative;overflow:hidden}
+.card-nav{position:absolute;top:50%;transform:translateY(-50%);width:38px;height:38px;border-radius:50%;background:rgba(0,0,0,.62);color:#fff;border:1px solid rgba(255,255,255,.25);font-size:26px;line-height:1;display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;transition:opacity .2s,background .2s;z-index:2}
+.card-nav.prev{left:10px}.card-nav.next{right:10px}
+.card-nav:hover{background:var(--green);color:#072e15}
+.card:hover .card-nav,.card-nav:focus-visible{opacity:1}
+@media(hover:none){.card-nav{opacity:1}}
+/* Lightbox */
+.lb{position:fixed;inset:0;z-index:100000;background:rgba(5,5,5,.94);display:grid;grid-template-columns:60px 1fr 60px;grid-template-rows:1fr auto;align-items:center}
+.lb[hidden]{display:none}
+.lb-stage{grid-column:2;grid-row:1;display:flex;align-items:center;justify-content:center;height:calc(100vh - 80px);padding:20px 0}
+.lb-img{max-width:100%;max-height:100%;object-fit:contain;border-radius:8px;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.lb-prev,.lb-next{grid-row:1;width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.2);font-size:32px;line-height:1;cursor:pointer;justify-self:center;transition:background .2s}
+.lb-prev{grid-column:1}.lb-next{grid-column:3}
+.lb-prev:hover,.lb-next:hover{background:var(--green);color:#072e15}
+.lb.single .lb-prev,.lb.single .lb-next{visibility:hidden}
+.lb-close{position:absolute;top:14px;right:14px;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.2);font-size:28px;line-height:1;cursor:pointer;z-index:2}
+.lb-close:hover{background:#fff;color:#000}
+.lb-cap{grid-column:1/4;grid-row:2;display:flex;justify-content:center;gap:16px;padding:0 20px 18px;font-size:14px;color:var(--ink-dim)}
+.lb-count{color:var(--green);font-weight:700;font-variant-numeric:tabular-nums}
+@media(max-width:720px){
+  .lb{grid-template-columns:1fr;grid-template-rows:1fr auto auto}
+  .lb-stage{grid-column:1;height:calc(100vh - 130px);padding:56px 12px 8px}
+  .lb-prev,.lb-next{grid-column:1;grid-row:2;width:56px;height:44px;border-radius:999px}
+  .lb-prev{justify-self:start;margin-left:20px}.lb-next{justify-self:end;margin-right:20px;margin-top:-44px}
+  .lb-cap{grid-row:3}
+  .card-thumb{width:56px;height:42px}
+}
 </style>
 <script src="consent.js" defer></script>
 </head>
@@ -745,6 +774,15 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit;-we
   });
 </script>
 
+<!-- Lightbox voor projectfoto's -->
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Fotoweergave">
+  <button type="button" class="lb-close" aria-label="Sluiten (Esc)">&times;</button>
+  <button type="button" class="lb-prev" aria-label="Vorige foto (pijl links)">&#8249;</button>
+  <div class="lb-stage"><img class="lb-img" alt=""></div>
+  <button type="button" class="lb-next" aria-label="Volgende foto (pijl rechts)">&#8250;</button>
+  <div class="lb-cap"><span class="lb-title"></span><span class="lb-count"></span></div>
+</div>
+
 <script>
 /* ============================================================
    PROJECTEN — DATA-ARRAY
@@ -1005,6 +1043,7 @@ function renderFilters(){
   });
 }
 
+const full = s => s.includes('projecten-2026-09/') ? s.replace(/\.webp$/, '.jpg') : s;
 function renderGallery(){
   const list = active === 'all' ? projects : projects.filter(p => p.cat === active);
   if (!list.length){
@@ -1012,7 +1051,6 @@ function renderGallery(){
     return;
   }
   const catLabel = k => (categories.find(c=>c.key===k)||{}).label || k;
-  const full = s => s.includes('projecten-2026-09/') ? s.replace(/\.webp$/, '.jpg') : s;
   galleryEl.innerHTML = list.map(p => {
     const imgs = p.imgs || [p.img];
     const thumbs = imgs.length > 1 ? `
@@ -1020,10 +1058,13 @@ function renderGallery(){
         ${imgs.map((s, j) => `<button type="button" class="card-thumb${s === p.img ? ' on' : ''}" data-src="${s}" aria-label="Foto ${j+1} van ${imgs.length}"><img src="${s}" alt="" loading="lazy" width="96" height="72"></button>`).join('')}
       </div>` : '';
     return `
-    <div class="card">
-      <a class="card-link" href="${full(p.img)}" target="_blank" rel="noopener">
-        <img class="card-img" src="${p.img}" alt="${p.alt}" loading="lazy" width="1200" height="900">
-      </a>
+    <div class="card" data-idx="${projects.indexOf(p)}">
+      <div class="card-media">
+        <a class="card-link" href="${full(p.img)}" target="_blank" rel="noopener" aria-label="Open foto's van ${p.title}">
+          <img class="card-img" src="${p.img}" alt="${p.alt}" loading="lazy" width="1200" height="900">
+        </a>
+        ${imgs.length > 1 ? `<button type="button" class="card-nav prev" aria-label="Vorige foto">&#8249;</button><button type="button" class="card-nav next" aria-label="Volgende foto">&#8250;</button>` : ''}
+      </div>
       <span class="card-tag">${catLabel(p.cat)}</span>
       ${imgs.length > 1 ? `<span class="card-count">${imgs.length} foto's</span>` : ''}
       ${thumbs}
@@ -1034,17 +1075,99 @@ function renderGallery(){
     </div>`;
   }).join('');
 }
-// Foto-reeks: klik op een miniatuur wisselt de hoofdfoto (en de klik-door-link)
+// Foto-reeks op de kaart: miniaturen + pijltjes wisselen de hoofdfoto; klik op de hoofdfoto opent de lightbox
+function cardSet(card, src){
+  const img = card.querySelector('.card-img'), link = card.querySelector('.card-link');
+  img.src = src; link.href = full(src);
+  card.querySelectorAll('.card-thumb').forEach(t => t.classList.toggle('on', t.dataset.src === src));
+}
+function cardImgs(card){ const p = projects[+card.dataset.idx]; return p.imgs || [p.img]; }
 galleryEl.addEventListener('click', e => {
-  const b = e.target.closest('.card-thumb'); if (!b) return;
-  const card = b.closest('.card'); const img = card.querySelector('.card-img'); const link = card.querySelector('.card-link');
-  img.src = b.dataset.src; link.href = (b.dataset.src.includes('projecten-2026-09/') ? b.dataset.src.replace(/\.webp$/, '.jpg') : b.dataset.src);
-  card.querySelectorAll('.card-thumb').forEach(t => t.classList.toggle('on', t === b));
+  const card = e.target.closest('.card'); if (!card) return;
+  const t = e.target.closest('.card-thumb');
+  if (t){ cardSet(card, t.dataset.src); return; }
+  const nav = e.target.closest('.card-nav');
+  if (nav){
+    const imgs = cardImgs(card), cur = card.querySelector('.card-img').getAttribute('src');
+    let i = imgs.indexOf(cur); i = (i + (nav.classList.contains('next') ? 1 : -1) + imgs.length) % imgs.length;
+    cardSet(card, imgs[i]); return;
+  }
+  const link = e.target.closest('.card-link');
+  if (link){
+    e.preventDefault();
+    const p = projects[+card.dataset.idx], imgs = cardImgs(card), cur = card.querySelector('.card-img').getAttribute('src');
+    openLightbox(imgs.map((s, j) => ({ src: full(s), alt: p.alt, cap: p.title })), Math.max(0, imgs.indexOf(cur)));
+  }
 });
+
+// ===== Lightbox: pijlen, toetsenbord (← → Esc), swipe, teller =====
+const lb = document.getElementById('lb');
+const lbImg = lb.querySelector('.lb-img'), lbCap = lb.querySelector('.lb-title'), lbCount = lb.querySelector('.lb-count');
+let lbItems = [], lbIdx = 0, lbLast = null;
+function lbShow(i){
+  lbIdx = (i + lbItems.length) % lbItems.length;
+  const it = lbItems[lbIdx];
+  lbImg.src = it.src; lbImg.alt = it.alt || '';
+  lbCap.textContent = it.cap || '';
+  lbCount.textContent = lbItems.length > 1 ? `${lbIdx + 1} / ${lbItems.length}` : '';
+  lb.classList.toggle('single', lbItems.length < 2);
+  [lbIdx + 1, lbIdx - 1].forEach(j => { const n = lbItems[(j + lbItems.length) % lbItems.length]; if (n) { const pre = new Image(); pre.src = n.src; } });
+}
+function openLightbox(items, i){
+  lbItems = items; lbLast = document.activeElement;
+  lb.hidden = false; document.body.style.overflow = 'hidden';
+  lbShow(i || 0); lb.querySelector('.lb-close').focus();
+}
+function closeLightbox(){
+  lb.hidden = true; document.body.style.overflow = '';
+  lbImg.removeAttribute('src'); if (lbLast && lbLast.focus) lbLast.focus();
+}
+lb.querySelector('.lb-close').addEventListener('click', closeLightbox);
+lb.querySelector('.lb-prev').addEventListener('click', () => lbShow(lbIdx - 1));
+lb.querySelector('.lb-next').addEventListener('click', () => lbShow(lbIdx + 1));
+lb.addEventListener('click', e => { if (e.target === lb || e.target.classList.contains('lb-stage')) closeLightbox(); });
+document.addEventListener('keydown', e => {
+  if (lb.hidden) return;
+  if (e.key === 'Escape') closeLightbox();
+  else if (e.key === 'ArrowRight') lbShow(lbIdx + 1);
+  else if (e.key === 'ArrowLeft') lbShow(lbIdx - 1);
+});
+let tx = null;
+lb.addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, { passive: true });
+lb.addEventListener('touchend', e => {
+  if (tx === null) return; const dx = e.changedTouches[0].clientX - tx; tx = null;
+  if (Math.abs(dx) > 40) lbShow(lbIdx + (dx < 0 ? 1 : -1));
+}, { passive: true });
+
+// Uitgelichte projecten: klik opent de volledige reeks van dat project (volgorde _1.._n)
+document.querySelectorAll('.feature-media').forEach(media => {
+  media.addEventListener('click', e => {
+    const a = e.target.closest('a'); if (!a) return;
+    e.preventDefault();
+    const clicked = a.querySelector('img').getAttribute('src');
+    const p = projects.find(q => (q.imgs || [q.img]).includes(clicked));
+    const srcs = p ? (p.imgs || [p.img]) : [...media.querySelectorAll('a img')].map(i => i.getAttribute('src'));
+    const alts = {}; media.querySelectorAll('a img').forEach(i => alts[i.getAttribute('src')] = i.alt);
+    const cap = media.parentElement.querySelector('h3')?.textContent || '';
+    openLightbox(srcs.map(s => ({ src: full(s), alt: alts[s] || (p && p.alt) || '', cap })), Math.max(0, srcs.indexOf(clicked)));
+  });
+});
+
+// Fotostrip: bladert door alle strip-foto's
+const stripEl = document.querySelector('.strip');
+if (stripEl){
+  stripEl.addEventListener('click', e => {
+    const a = e.target.closest('.strip-item'); if (!a) return;
+    e.preventDefault();
+    const items = [...stripEl.querySelectorAll('.strip-item')];
+    openLightbox(items.map(it => ({ src: it.getAttribute('href'), alt: it.querySelector('img').alt, cap: it.querySelector('.strip-cap')?.textContent || '' })), items.indexOf(a));
+  });
+}
 
 function renderAll(){ renderFilters(); renderGallery(); }
 renderAll();
 </script>
+
 
 </body>
 </html>
