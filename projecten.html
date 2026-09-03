@@ -222,6 +222,14 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit;-we
 /* Hero direct zichtbaar, niet wachten op scroll-reveal (first paint) */
 .hero [data-reveal]{opacity:1;transform:none;transition:none}
 .meta-chip svg{width:13px;height:13px;color:var(--green);flex:0 0 auto}
+
+/* Projectkaart met foto-reeks */
+.card-link{display:block;overflow:hidden}
+.card-count{position:absolute;top:14px;right:14px;padding:5px 11px;border-radius:999px;background:rgba(0,0,0,.7);backdrop-filter:blur(8px);font-size:11px;font-weight:700;letter-spacing:.5px;color:var(--ink-dim)}
+.card-thumbs{display:flex;flex-wrap:wrap;gap:6px;padding:10px 14px 0}
+.card-thumb{width:48px;height:36px;padding:0;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:#111;cursor:pointer;opacity:.55;transition:opacity .2s,border-color .2s}
+.card-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.card-thumb.on,.card-thumb:hover,.card-thumb:focus-visible{opacity:1;border-color:var(--green);outline:none}
 </style>
 <script src="consent.js" defer></script>
 </head>
@@ -421,58 +429,6 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit;-we
     </div>
 
     <div class="strip">
-      <a class="strip-item" href="Images/projecten-2026-09/dakgoten-brunssum-3.jpg" target="_blank" rel="noopener">
-        <img src="Images/projecten-2026-09/dakgoten-brunssum-3.webp" alt="Dakgoten vernieuwd in Brunssum" loading="lazy" width="750" height="1000">
-        <div class="strip-cap">Dakgoten vernieuwd — Brunssum</div>
-      </a>
-      <a class="strip-item" href="Images/projecten-2026-09/zinken-windveer-schinveld-1.jpg" target="_blank" rel="noopener">
-        <img src="Images/projecten-2026-09/zinken-windveer-schinveld-1.webp" alt="Nieuwe zinken windveer geplaatst in Schinveld" loading="lazy" width="750" height="1000">
-        <div class="strip-cap">Zinken windveer — Schinveld</div>
-      </a>
-      <a class="strip-item" href="Images/projecten-2026-09/hemelwaterafvoer-born-1.jpg" target="_blank" rel="noopener">
-        <img src="Images/projecten-2026-09/hemelwaterafvoer-born-1.webp" alt="Nieuwe hemelwaterafvoer geplaatst in Born" loading="lazy" width="750" height="1000">
-        <div class="strip-cap">Hemelwaterafvoer — Born</div>
-      </a>
-      <a class="strip-item" href="Images/projecten-2026-09/loodvervanger-gevel-brunssum-1.jpg" target="_blank" rel="noopener">
-        <img src="Images/projecten-2026-09/loodvervanger-gevel-brunssum-1.webp" alt="Loodindekking tegen de gevel met zelfklevende loodvervanger in Brunssum" loading="lazy" width="771" height="1000">
-        <div class="strip-cap">Loodvervanger tegen gevel — Brunssum</div>
-      </a>
-      <a class="strip-item" href="Images/projecten-2026-09/dakdoorvoer-heerlen-2.jpg" target="_blank" rel="noopener">
-        <img src="Images/projecten-2026-09/dakdoorvoer-heerlen-2.webp" alt="Nieuwe dakdoorvoer aangebracht in een pannendak in Heerlen" loading="lazy" width="750" height="1000">
-        <div class="strip-cap">Dakdoorvoer — Heerlen</div>
-      </a>
-      <a class="strip-item" href="Images/projecten-2026-09/dakdoorvoeren-simpelveld-1.jpg" target="_blank" rel="noopener">
-        <img src="Images/projecten-2026-09/dakdoorvoeren-simpelveld-1.webp" alt="Dakdoorvoeren geplaatst op een plat dak in Simpelveld" loading="lazy" width="750" height="1000">
-        <div class="strip-cap">Dakdoorvoeren — Simpelveld</div>
-      </a>
-      <a class="strip-item" href="Images/projecten-2026-09/nokconstructie-sittard-1.jpg" target="_blank" rel="noopener">
-        <img src="Images/projecten-2026-09/nokconstructie-sittard-1.webp" alt="Nieuwe nokconstructie aangebracht in Sittard" loading="lazy" width="1000" height="753">
-        <div class="strip-cap">Nokconstructie — Sittard</div>
-      </a>
-      <a class="strip-item" href="Images/projecten-2026-09/dakkapel-geleen-1.jpg" target="_blank" rel="noopener">
-        <img src="Images/projecten-2026-09/dakkapel-geleen-1.webp" alt="Dakkapel in Geleen vóór de vernieuwing: verweerde dakbedekking" loading="lazy" width="1000" height="563">
-        <div class="strip-cap">Dakkapel Geleen — vóór</div>
-      </a>
-      <a class="strip-item" href="Images/projecten-2026-09/dakkapel-geleen-2.jpg" target="_blank" rel="noopener">
-        <img src="Images/projecten-2026-09/dakkapel-geleen-2.webp" alt="Oude dakbedekking van de dakkapel in Geleen wordt verwijderd" loading="lazy" width="562" height="1000">
-        <div class="strip-cap">Dakkapel Geleen — tijdens</div>
-      </a>
-      <a class="strip-item" href="Images/projecten-2026-09/dakkapel-geleen-3.jpg" target="_blank" rel="noopener">
-        <img src="Images/projecten-2026-09/dakkapel-geleen-3.webp" alt="Nieuwe dakbedekking wordt aangebracht op de dakkapel in Geleen" loading="lazy" width="750" height="1000">
-        <div class="strip-cap">Dakkapel Geleen — nieuwe bedekking</div>
-      </a>
-      <a class="strip-item" href="Images/projecten-2026-09/dakgoten-brunssum-1.jpg" target="_blank" rel="noopener">
-        <img src="Images/projecten-2026-09/dakgoten-brunssum-1.webp" alt="Nieuwe zinken dakgoot in Brunssum, detail van de gootbeugels" loading="lazy" width="562" height="1000">
-        <div class="strip-cap">Dakgoten Brunssum — detail</div>
-      </a>
-      <a class="strip-item" href="Images/projecten-2026-09/dakgoten-brunssum-2.jpg" target="_blank" rel="noopener">
-        <img src="Images/projecten-2026-09/dakgoten-brunssum-2.webp" alt="Nieuwe zinken dakgoot langs het pannendak in Brunssum" loading="lazy" width="562" height="1000">
-        <div class="strip-cap">Dakgoten Brunssum — gootlijn</div>
-      </a>
-      <a class="strip-item" href="Images/projecten-2026-09/luifel-wijnandsrade-5.jpg" target="_blank" rel="noopener">
-        <img src="Images/projecten-2026-09/luifel-wijnandsrade-5.webp" alt="Bedrijfspand in Wijnandsrade met de nieuwe luifel, gezien vanaf de straat" loading="lazy" width="562" height="1000">
-        <div class="strip-cap">Luifel Wijnandsrade — vanaf de straat</div>
-      </a>
       <a class="strip-item" href="Images/Dakgoot.jpg" target="_blank" rel="noopener">
         <img src="Images/dakgoot.webp" alt="Nieuwe dakgoot geplaatst door Adams Daktechniek" loading="lazy" width="902" height="1200">
         <div class="strip-cap">Dakgoot vervangen</div>
@@ -812,30 +768,35 @@ button{font:inherit;cursor:pointer;border:none;background:none;color:inherit;-we
 const projects = [
   // ===== VOEG HIER NIEUW PROJECT TOE (bovenaan = nieuwste) =====
   { img: 'Images/projecten-2026-09/dakterras-pir-heel-1.webp',
+    imgs: ['Images/projecten-2026-09/dakterras-pir-heel-1.webp', 'Images/projecten-2026-09/dakterras-pir-heel-2.webp', 'Images/projecten-2026-09/dakterras-pir-heel-3.webp'],
     cat: 'platdak',
     title: 'Dakterras vernieuwd en geïsoleerd — Heel',
     desc: 'Nieuwe dakbedekking op 80 mm PIR-isolatie, afgewerkt met terrastegels.',
     alt: 'Vernieuwd en geïsoleerd dakterras in Heel door Adams Daktechniek' },
 
   { img: 'Images/projecten-2026-09/luifel-wijnandsrade-6.webp',
+    imgs: ['Images/projecten-2026-09/luifel-wijnandsrade-1.webp', 'Images/projecten-2026-09/luifel-wijnandsrade-2.webp', 'Images/projecten-2026-09/luifel-wijnandsrade-3.webp', 'Images/projecten-2026-09/luifel-wijnandsrade-4.webp', 'Images/projecten-2026-09/luifel-wijnandsrade-5.webp', 'Images/projecten-2026-09/luifel-wijnandsrade-6.webp'],
     cat: 'platdak',
     title: 'Nieuwe luifel bedrijfspand — Wijnandsrade',
     desc: 'Staalconstructie met underlayment, volledig waterdicht afgewerkt met 470K24 bitumen. In opdracht van Grausbouw.',
     alt: 'Nieuwe luifel aan bedrijfspand in Wijnandsrade, waterdicht gemaakt door Adams Daktechniek' },
 
   { img: 'Images/projecten-2026-09/dakkapel-geleen-4.webp',
+    imgs: ['Images/projecten-2026-09/dakkapel-geleen-1.webp', 'Images/projecten-2026-09/dakkapel-geleen-2.webp', 'Images/projecten-2026-09/dakkapel-geleen-3.webp', 'Images/projecten-2026-09/dakkapel-geleen-4.webp'],
     cat: 'dakkapel',
     title: 'Dakkapel vernieuwd — Geleen',
-    desc: 'Dakbedekking en afwerking van de dakkapel volledig vernieuwd. Vóór, tijdens en na staan in de fotostrip hierboven.',
+    desc: 'Dakbedekking en afwerking van de dakkapel volledig vernieuwd. Vóór, tijdens en na: klik de foto\'s onder de kaart.',
     alt: 'Vernieuwde dakkapel in Geleen door Adams Daktechniek' },
 
   { img: 'Images/projecten-2026-09/dakgoten-brunssum-4.webp',
+    imgs: ['Images/projecten-2026-09/dakgoten-brunssum-1.webp', 'Images/projecten-2026-09/dakgoten-brunssum-2.webp', 'Images/projecten-2026-09/dakgoten-brunssum-3.webp', 'Images/projecten-2026-09/dakgoten-brunssum-4.webp'],
     cat: 'zinkwerk',
     title: 'Dakgoten vernieuwd — Brunssum',
     desc: 'Nieuwe zinken dakgoten langs het pannendak.',
     alt: 'Nieuwe zinken dakgoten in Brunssum door Adams Daktechniek' },
 
   { img: 'Images/projecten-2026-09/zinken-windveer-schinveld-2.webp',
+    imgs: ['Images/projecten-2026-09/zinken-windveer-schinveld-1.webp', 'Images/projecten-2026-09/zinken-windveer-schinveld-2.webp'],
     cat: 'zinkwerk',
     title: 'Zinken windveer — Schinveld',
     desc: 'Nieuwe zinken windveer geplaatst langs de dakrand.',
@@ -848,24 +809,28 @@ const projects = [
     alt: 'Nieuwe hemelwaterafvoer in Born door Adams Daktechniek' },
 
   { img: 'Images/projecten-2026-09/loodvervanger-gevel-brunssum-2.webp',
+    imgs: ['Images/projecten-2026-09/loodvervanger-gevel-brunssum-1.webp', 'Images/projecten-2026-09/loodvervanger-gevel-brunssum-2.webp'],
     cat: 'loodwerk',
     title: 'Loodindekking tegen gevel — Brunssum',
     desc: 'Zelfklevende loodvervanger aangebracht tegen de gevel voor een waterdichte aansluiting.',
     alt: 'Loodvervanger tegen gevel in Brunssum door Adams Daktechniek' },
 
   { img: 'Images/projecten-2026-09/nokconstructie-sittard-2.webp',
+    imgs: ['Images/projecten-2026-09/nokconstructie-sittard-1.webp', 'Images/projecten-2026-09/nokconstructie-sittard-2.webp'],
     cat: 'pannendak',
     title: 'Nieuwe nokconstructie — Sittard',
     desc: 'Nieuwe nokconstructie aangebracht op het pannendak.',
     alt: 'Nieuwe nokconstructie in Sittard door Adams Daktechniek' },
 
   { img: 'Images/projecten-2026-09/dakdoorvoer-heerlen-1.webp',
+    imgs: ['Images/projecten-2026-09/dakdoorvoer-heerlen-1.webp', 'Images/projecten-2026-09/dakdoorvoer-heerlen-2.webp'],
     cat: 'pannendak',
     title: 'Dakdoorvoer — Heerlen',
     desc: 'Nieuwe dakdoorvoer aangebracht in het pannendak.',
     alt: 'Nieuwe dakdoorvoer in pannendak in Heerlen door Adams Daktechniek' },
 
   { img: 'Images/projecten-2026-09/dakdoorvoeren-simpelveld-2.webp',
+    imgs: ['Images/projecten-2026-09/dakdoorvoeren-simpelveld-1.webp', 'Images/projecten-2026-09/dakdoorvoeren-simpelveld-2.webp'],
     cat: 'platdak',
     title: 'Dakdoorvoeren — Simpelveld',
     desc: 'Dakdoorvoeren geplaatst en waterdicht ingewerkt op een plat dak.',
@@ -1047,16 +1012,35 @@ function renderGallery(){
     return;
   }
   const catLabel = k => (categories.find(c=>c.key===k)||{}).label || k;
-  galleryEl.innerHTML = list.map(p => `
-    <a class="card" href="${p.img}" target="_blank" rel="noopener">
-      <img class="card-img" src="${p.img}" alt="${p.alt}" loading="lazy" width="1200" height="900">
+  const full = s => s.includes('projecten-2026-09/') ? s.replace(/\.webp$/, '.jpg') : s;
+  galleryEl.innerHTML = list.map(p => {
+    const imgs = p.imgs || [p.img];
+    const thumbs = imgs.length > 1 ? `
+      <div class="card-thumbs" role="group" aria-label="${imgs.length} foto's van dit project, in volgorde">
+        ${imgs.map((s, j) => `<button type="button" class="card-thumb${s === p.img ? ' on' : ''}" data-src="${s}" aria-label="Foto ${j+1} van ${imgs.length}"><img src="${s}" alt="" loading="lazy" width="96" height="72"></button>`).join('')}
+      </div>` : '';
+    return `
+    <div class="card">
+      <a class="card-link" href="${full(p.img)}" target="_blank" rel="noopener">
+        <img class="card-img" src="${p.img}" alt="${p.alt}" loading="lazy" width="1200" height="900">
+      </a>
       <span class="card-tag">${catLabel(p.cat)}</span>
+      ${imgs.length > 1 ? `<span class="card-count">${imgs.length} foto's</span>` : ''}
+      ${thumbs}
       <div class="card-body">
         <h3>${p.title}</h3>
         <p>${p.desc}</p>
       </div>
-    </a>`).join('');
+    </div>`;
+  }).join('');
 }
+// Foto-reeks: klik op een miniatuur wisselt de hoofdfoto (en de klik-door-link)
+galleryEl.addEventListener('click', e => {
+  const b = e.target.closest('.card-thumb'); if (!b) return;
+  const card = b.closest('.card'); const img = card.querySelector('.card-img'); const link = card.querySelector('.card-link');
+  img.src = b.dataset.src; link.href = (b.dataset.src.includes('projecten-2026-09/') ? b.dataset.src.replace(/\.webp$/, '.jpg') : b.dataset.src);
+  card.querySelectorAll('.card-thumb').forEach(t => t.classList.toggle('on', t === b));
+});
 
 function renderAll(){ renderFilters(); renderGallery(); }
 renderAll();
