@@ -314,6 +314,21 @@ body.menu-open .mobile-cta, body.menu-open .wa-fab{display:none !important}
 .mobile-menu .mm-cta{display:block;margin-top:0;padding:20px 24px;background:var(--green);color:#0a0a0a;font-family:'Manrope','Inter',sans-serif;font-weight:800;font-size:18px;letter-spacing:.3px;text-align:center;border-radius:999px;text-decoration:none}
 .mobile-menu .mm-cta small{display:block;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;font-weight:700;opacity:.7;margin-bottom:4px}
 .mobile-menu .mm-cta--ghost{background:transparent;color:var(--green);border:1px solid var(--green);box-shadow:none}
+
+/* Recent werk (plaatspagina) */
+.lw{padding:64px 0;border-top:1px solid var(--line)}
+.lw .section-eyebrow{margin-bottom:10px}
+.lw-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:26px}
+.lw-item{display:block;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#111;text-decoration:none;color:inherit;transition:transform .3s var(--ease),border-color .3s var(--ease)}
+.lw-item:hover{transform:translateY(-3px);border-color:var(--green)}
+.lw-item img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
+.lw-cap{padding:10px 12px 12px;font-size:13px;line-height:1.4;color:var(--ink-dim)}
+.lw-cap b{display:block;color:#fff;font-weight:600;margin-bottom:2px}
+.lw-review{margin-top:28px;padding:20px 22px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.02);max-width:720px}
+.lw-review .stars{color:var(--green);letter-spacing:2px;font-size:14px}
+.lw-review p{margin:8px 0 6px;font-style:italic;color:#e6e6e6;line-height:1.6}
+.lw-review small{color:var(--ink-mute)}
+@media(max-width:900px){.lw-grid{grid-template-columns:repeat(2,1fr)}}
 </style>
 <script src="consent.js" defer></script>
 </head>
@@ -430,6 +445,25 @@ body.menu-open .mobile-cta, body.menu-open .wa-fab{display:none !important}
     <p>Kerkrade grenst aan Duitsland (Herzogenrath). De stad heeft een rijk mijnverleden en een veelzijdige woningvoorraad: van vooroorlogse middenstandswoningen rond de Markt en Holzkuil tot moderne nieuwbouw in Bleijerheide en Spekholzerheide. We werken hier wekelijks aan pannendaken, zinken goten en bij spoedlekkages.</p>
     <p>Wat Kerkrade onderscheidt: veel woningen hebben <strong>typisch-Limburgse mergelmuren en steile pannendaken</strong> die om vakwerk vragen. We zien geregeld dat eerdere werkpartijen verkeerde pannensoorten hebben gemengd — wij houden vast aan één pansoort per dakvlak voor zowel uitstraling als waterdichtheid. Voor Eygelshoven (onderdeel Kerkrade) <a href='/dakdekker-eygelshoven' style='color:var(--green)'>zie aparte pagina</a>.</p>
     <p style="margin-top:18px;padding-top:18px;border-top:1px solid var(--line)">Voor elke klus in Kerkrade werken we hetzelfde: <strong>gratis inspectie binnen ons werkgebied</strong>, vaste prijs op een A4 binnen 48 uur, schoon werkterrein en 10 jaar garantie op uitvoering. Bij spoed (acute lekkage of stormschade) bellen we direct terug en proberen we binnen 1 uur ter plaatse te zijn — de 10 km vanuit Heerlen is geen drempel.</p>
+  </div>
+</section>
+
+<section class="lw" id="recent-werk">
+  <div class="container">
+    <div class="section-eyebrow">Projecten</div>
+    <h2>Recent werk in Kerkrade</h2>
+    <p>Een greep uit projecten die we in Kerkrade hebben uitgevoerd, aangevuld met werk in Heerlen en Landgraaf. Alle foto's zijn van ons eigen werk. <a href="/projecten">Bekijk alle projecten</a>.</p>
+    <div class="lw-grid">
+      <a class="lw-item" href="/projecten"><img src="Images/platdak-kerkrade.webp" alt="Platdak in Kerkrade in Kerkrade, uitgevoerd door Adams Daktechniek" loading="lazy" width="675" height="1200"><div class="lw-cap"><b>Platdak in Kerkrade</b>Kerkrade</div></a>
+      <a class="lw-item" href="/projecten"><img src="Images/bitumen-platdak-heerlen.webp" alt="Bitumen platdak, garage in Heerlen, uitgevoerd door Adams Daktechniek" loading="lazy" width="942" height="1200"><div class="lw-cap"><b>Bitumen platdak, garage</b>Heerlen</div></a>
+      <a class="lw-item" href="/projecten"><img src="Images/platdak-landgraaf.webp" alt="Platdak in Landgraaf in Landgraaf, uitgevoerd door Adams Daktechniek" loading="lazy" width="900" height="1200"><div class="lw-cap"><b>Platdak in Landgraaf</b>Landgraaf</div></a>
+      <a class="lw-item" href="/projecten"><img src="Images/projecten-2026-09/dakdoorvoer-heerlen-1.webp" alt="Nieuwe dakdoorvoer in pannendak in Heerlen, uitgevoerd door Adams Daktechniek" loading="lazy" width="750" height="1000"><div class="lw-cap"><b>Nieuwe dakdoorvoer in pannendak</b>Heerlen</div></a>
+    </div>
+    <div class="lw-review">
+      <div class="stars" aria-label="5 van 5 sterren">★★★★★</div>
+      <p>"Levert uitstekend werk en top communicatie voor een uitstekende prijs"</p>
+      <small>Raymond Debije · Google-review · juni 2026 · <a href="https://www.google.com/maps?cid=6858481556635463667" target="_blank" rel="noopener" style="color:inherit">alle 29 reviews</a></small>
+    </div>
   </div>
 </section>
 
