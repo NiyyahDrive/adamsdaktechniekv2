@@ -287,6 +287,22 @@ body.menu-open .mobile-cta, body.menu-open .wa-fab{display:none !important}
 .mobile-menu .mm-cta{display:block;margin-top:0;padding:20px 24px;background:var(--green);color:#0a0a0a;font-family:'Manrope','Inter',sans-serif;font-weight:800;font-size:18px;letter-spacing:.3px;text-align:center;border-radius:999px;text-decoration:none}
 .mobile-menu .mm-cta small{display:block;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;font-weight:700;opacity:.7;margin-bottom:4px}
 .mobile-menu .mm-cta--ghost{background:transparent;color:var(--green);border:1px solid var(--green);box-shadow:none}
+
+/* Foto's + reviews (dienstpagina) */
+.sw{padding:64px 0;border-top:1px solid var(--line)}
+.sw-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:26px}
+.sw-grid.n3{grid-template-columns:repeat(3,1fr)}.sw-grid.n2{grid-template-columns:repeat(2,1fr);max-width:720px}
+.sw-item{display:block;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#111;text-decoration:none;color:inherit;transition:transform .3s var(--ease),border-color .3s var(--ease)}
+.sw-item:hover{transform:translateY(-3px);border-color:var(--green)}
+.sw-item img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
+.sw-cap{padding:10px 12px 12px;font-size:13px;line-height:1.4;color:var(--ink-dim)}
+.sw-cap b{display:block;color:#fff;font-weight:600;margin-bottom:2px}
+.sw-reviews{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px}
+.sw-review{padding:18px 20px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.02)}
+.sw-review .stars{color:var(--green);letter-spacing:2px;font-size:14px}
+.sw-review p{margin:8px 0 6px;font-style:italic;color:#e6e6e6;line-height:1.6;font-size:15px}
+.sw-review small{color:var(--ink-mute)}
+@media(max-width:900px){.sw-grid,.sw-grid.n3{grid-template-columns:repeat(2,1fr)}.sw-reviews{grid-template-columns:1fr}}
 </style>
 <script src="consent.js" defer></script>
 </head>
@@ -456,6 +472,23 @@ body.menu-open .mobile-cta, body.menu-open .wa-fab{display:none !important}
 </section>
 
 <!-- FAQ -->
+<section class="sw" id="werk-en-reviews">
+  <div class="container">
+    <div class="section-eyebrow">Bewijs</div>
+    <h2>Eigen werk en wat klanten zeggen</h2>
+    <p>Foto's van projecten die we zelf hebben uitgevoerd, en reviews van ons <a href="https://www.google.com/maps?cid=6858481556635463667" target="_blank" rel="noopener">Google-bedrijfsprofiel</a>, letterlijk overgenomen. <a href="/projecten">Alle projecten</a>.</p>
+    <div class="sw-grid n3">
+      <a class="sw-item" href="/projecten"><img src="Images/projecten-2026-09/dakkapel-geleen-1.webp" alt="Dakkapel vóór de vernieuwing in Geleen, uitgevoerd door Adams Daktechniek" loading="lazy" width="1000" height="563"><div class="sw-cap"><b>Dakkapel vóór de vernieuwing</b>Geleen</div></a>
+      <a class="sw-item" href="/projecten"><img src="Images/projecten-2026-09/dakkapel-geleen-3.webp" alt="Nieuwe dakbedekking op de dakkapel in Geleen, uitgevoerd door Adams Daktechniek" loading="lazy" width="750" height="1000"><div class="sw-cap"><b>Nieuwe dakbedekking op de dakkapel</b>Geleen</div></a>
+      <a class="sw-item" href="/projecten"><img src="Images/projecten-2026-09/dakkapel-geleen-4.webp" alt="Dakkapel vernieuwd in Geleen, uitgevoerd door Adams Daktechniek" loading="lazy" width="1000" height="750"><div class="sw-cap"><b>Dakkapel vernieuwd</b>Geleen</div></a>
+    </div>
+    <div class="sw-reviews">
+      <div class="sw-review"><div class="stars" aria-label="5 van 5 sterren">★★★★★</div><p>"Afspraak=afspraak, vriendelijk, goed bereikbaar, zeer professioneel, meedenkend, schappelijke tarieven, service "van de oude stempel" in een tijd waarin dat helaas niet meer gebruikelijk is. Aanradertje!"</p><small>Jack Knubben · Google-review · juli 2026</small></div>
+      <div class="sw-review"><div class="stars" aria-label="5 van 5 sterren">★★★★★</div><p>"Fijne afhandeling en mooi resultaat afgeleverd!"</p><small>Dean von Dobschütz · Google-review · juni 2026</small></div>
+    </div>
+  </div>
+</section>
+
 <section>
   <div class="container" style="max-width:840px">
     <div class="section-head">
