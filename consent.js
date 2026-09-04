@@ -142,6 +142,8 @@
     return sec.id || (sec.className && String(sec.className).split(' ')[0]) || sec.tagName.toLowerCase();
   }
   document.addEventListener('click', function (e) {
+    var step = e.target.closest('[data-next],[data-prev]');
+    if (step) track('wizard_step', { to: step.getAttribute('data-next') || step.getAttribute('data-prev'), direction: step.hasAttribute('data-next') ? 'next' : 'back' });
     var a = e.target.closest('a[href]'); if (!a) return;
     var href = a.getAttribute('href') || '';
     if (href.indexOf('tel:') === 0) track('click_call', { placement: placement(a) });
@@ -149,8 +151,6 @@
     else if (href.indexOf('mailto:') === 0) track('click_email', { placement: placement(a) });
     else if (/\/offerte(\?|#|$)/.test(href)) track('click_offerte_cta', { placement: placement(a), label: (a.textContent || '').trim().slice(0, 40) });
     else if (/\.pdf(\?|$)/.test(href)) track('file_download', { file: href.split('/').pop() });
-    var step = e.target.closest('[data-next],[data-prev]');
-    if (step) track('wizard_step', { to: step.getAttribute('data-next') || step.getAttribute('data-prev'), direction: step.hasAttribute('data-next') ? 'next' : 'back' });
   }, true);
   document.addEventListener('submit', function (e) {
     var f = e.target; if (!f || f.tagName !== 'FORM') return;
