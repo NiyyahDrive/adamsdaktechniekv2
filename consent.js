@@ -77,12 +77,12 @@
       'body.acb-open .wa-fab{display:none !important}' +
       '@media (max-width:980px){#adams-cookie-banner{bottom:96px}}' +
       '@media (max-width:520px){#adams-cookie-banner{left:10px;right:10px;bottom:92px;padding:12px 14px;font-size:13px;line-height:1.45}' +
-      '#adams-cookie-banner h3{font-size:13px;margin-bottom:4px}#adams-cookie-banner p{margin:0 0 10px}' +
+      '#adams-cookie-banner h3{display:none}#adams-cookie-banner p{margin:0 0 10px}' +
       '#adams-cookie-banner .acb-row{flex-wrap:nowrap}#adams-cookie-banner button{min-width:0;padding:14px 8px;font-size:13px}}' +
       '</style>' +
       '<h3>Cookies op deze website</h3>' +
-      '<p>Wij gebruiken functionele cookies (altijd) en optionele analytische cookies (Google Analytics) ' +
-      'om de site te verbeteren. Lees onze <a href="/privacy">privacyverklaring</a>.</p>' +
+      '<p>Functionele cookies staan altijd aan. Analytische cookies (Google Analytics) alleen als je akkoord gaat. ' +
+      '<a href="/privacy">Privacyverklaring</a>.</p>' +
       '<div class="acb-row">' +
       '<button class="acb-decline" type="button">Alleen functioneel</button>' +
       '<button class="acb-accept" type="button">Accepteren</button>' +
