@@ -306,6 +306,11 @@ body.menu-open .mobile-cta, body.menu-open .wa-fab{display:none !important}
 .sw-review p{margin:8px 0 6px;font-style:italic;color:#e6e6e6;line-height:1.6;font-size:15px}
 .sw-review small{color:var(--ink-mute)}
 @media(max-width:900px){.sw-grid,.sw-grid.n3{grid-template-columns:repeat(2,1fr)}.sw-reviews{grid-template-columns:1fr}}
+/* Mobiel: footer-kolommen + geen horizontale overflow (2026-09-04; basisregel .foot-grid stond na de media-query) */
+@media (max-width:980px){.foot-grid{grid-template-columns:1fr 1fr;gap:36px 28px}.foot-brand{grid-column:1 / -1}.foot-brand p{max-width:none}}
+@media (max-width:560px){.foot-grid{grid-template-columns:1fr;gap:30px}.legal{flex-direction:column;align-items:flex-start}}
+.foot a,.foot li,.foot p{overflow-wrap:anywhere}
+html,body{overflow-x:clip}
 </style>
 <script src="consent.js" defer></script>
 </head>
