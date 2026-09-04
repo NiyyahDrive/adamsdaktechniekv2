@@ -67,7 +67,7 @@
       '#adams-cookie-banner p{margin:0 0 14px;color:#a8a8a8}' +
       '#adams-cookie-banner a{color:#5CC27A;text-decoration:underline}' +
       '#adams-cookie-banner .acb-row{display:flex;gap:8px;flex-wrap:wrap}' +
-      '#adams-cookie-banner button{flex:1 1 auto;min-width:120px;padding:12px 14px;border-radius:10px;' +
+      '#adams-cookie-banner button{flex:1 1 auto;min-width:120px;padding:13px 14px;border-radius:10px;' +
       'border:1px solid #2a2a2a;background:transparent;color:#f6f6f6;font:600 14px Inter,sans-serif;' +
       'cursor:pointer;transition:all .2s ease}' +
       '#adams-cookie-banner button:hover{border-color:#5CC27A;color:#5CC27A}' +
@@ -78,7 +78,7 @@
       '@media (max-width:980px){#adams-cookie-banner{bottom:96px}}' +
       '@media (max-width:520px){#adams-cookie-banner{left:10px;right:10px;bottom:92px;padding:12px 14px;font-size:13px;line-height:1.45}' +
       '#adams-cookie-banner h3{font-size:13px;margin-bottom:4px}#adams-cookie-banner p{margin:0 0 10px}' +
-      '#adams-cookie-banner .acb-row{flex-wrap:nowrap}#adams-cookie-banner button{min-width:0;padding:12px 8px;font-size:13px}}' +
+      '#adams-cookie-banner .acb-row{flex-wrap:nowrap}#adams-cookie-banner button{min-width:0;padding:14px 8px;font-size:13px}}' +
       '</style>' +
       '<h3>Cookies op deze website</h3>' +
       '<p>Wij gebruiken functionele cookies (altijd) en optionele analytische cookies (Google Analytics) ' +
