@@ -959,6 +959,14 @@ body.menu-open .mobile-cta, body.menu-open .wa-fab{display:none !important}
 .mobile-menu .mm-cta{display:block;margin-top:0;padding:20px 24px;background:var(--green);color:#0a0a0a;font-family:'Manrope','Inter',sans-serif;font-weight:800;font-size:18px;letter-spacing:.3px;text-align:center;border-radius:999px;text-decoration:none}
 .mobile-menu .mm-cta small{display:block;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;font-weight:700;opacity:.7;margin-bottom:4px}
 .mobile-menu .mm-cta--ghost{background:transparent;color:var(--green);border:1px solid var(--green);box-shadow:none}
+
+/* Google-reviews: uitklap + sterren */
+.stars .star-off{color:rgba(255,255,255,.18)}
+.reviews--rest{margin-top:18px}
+.reviews-nt{margin-top:22px;text-align:center;font-size:13px;color:var(--ink-mute)}
+.reviews-toggle{display:inline-block;margin:0 14px 10px 0;padding:11px 20px;border-radius:999px;border:1px solid var(--green);background:transparent;color:var(--green);font:inherit;font-weight:700;font-size:14px;cursor:pointer}
+.reviews-toggle:hover,.reviews-toggle:focus-visible{background:var(--green);color:#072e15;outline:none}
+.reviews--rest [data-reveal]{opacity:1;transform:none}
 </style>
 <script src="consent.js" defer></script>
 <script type="application/ld+json">
@@ -1764,33 +1772,143 @@ body.menu-open .mobile-cta, body.menu-open .wa-fab{display:none !important}
     <div class="section-head" data-reveal>
       <div class="section-eyebrow">Klanten</div>
       <h2>Wat opdrachtgevers in Limburg zeggen.</h2>
-      <p>Een greep uit de reacties die we de afgelopen jaren mochten ontvangen — vrij citaten van particulieren en VvE's.</p>
+      <p>Alle 29 reviews van ons <a href="https://www.google.com/maps?cid=6858481556635463667" target="_blank" rel="noopener">Google-bedrijfsprofiel</a>, letterlijk overgenomen. Gemiddeld <strong>4,9 van 5</strong>.</p>
     </div>
     <div class="reviews">
       <div class="review" data-reveal data-reveal-delay="1">
-        <div class="stars">★★★★★</div>
-        <p class="review-text">"Snel ter plaatse bij een lekkage en netjes opgelost. Geen geklungel, gewoon vakmanschap."</p>
-        <div class="review-author"><div class="avatar">JV</div><div><div class="name">Jan V.</div><div class="loc">Eengezinswoning, Heerlen</div></div></div>
+        <div class="stars" aria-label="5 van 5 sterren">★★★★★</div>
+        <p class="review-text">"Professioneel, kwaliteit, persoonlijk en klantvriendelijk. Na enkele kleine klussen waarbij we super zijn geholpen, hebben we ervoor gekozen ons gehele dak te laten vernieuwen. Dit is super snel en professioneel gebeurd. En het is heel mooi geworden. Mee denken met de klant en de klus altijd goed en netjes af willen maken zijn de onderscheidende factoren. En als er wat is, dan stuur je een berichtje en wordt het super snel opgelost als "service van de zaak". We zijn zeer tevreden en als er weer eens iets nodig is, gaan we zeker Mano weer erbij halen."</p>
+        <div class="review-author"><div class="avatar">JH</div><div><div class="name">John Huppertz</div><div class="loc">Google-review · juni 2026</div></div></div>
       </div>
       <div class="review" data-reveal data-reveal-delay="2">
-        <div class="stars">★★★★★</div>
-        <p class="review-text">"Heldere offerte, strakke planning, mooi opgeleverd. Komen graag terug voor de volgende klus."</p>
-        <div class="review-author"><div class="avatar">MK</div><div><div class="name">Marleen K.</div><div class="loc">VvE-bestuurder, Kerkrade</div></div></div>
+        <div class="stars" aria-label="5 van 5 sterren">★★★★★</div>
+        <p class="review-text">"Ik weet eerlijk gezegd meer van lekkende leidingen dan van daken, maar gelukkig bestaat Adams Daktechniek. Waar ik eerst emmers klaarzette bij elke regenbui, kan ik nu eindelijk weer ontspannen naar het Nederlandse weer kijken. Snelle communicatie, geen gladde verkooppraatjes en vooral vakmensen die weten wat ze doen. Ze kwamen, zagen en fixten het dak alsof het een pitstop in de Formule 1 was. Alles netjes achtergelaten en mijn dak ziet er weer uit alsof het nog jaren mee kan. Als mijn dak ooit weer kuren krijgt, weet ik in ieder geval wie ik bel..... al hoop ik ze natuurlijk pas over 40 jaar weer nodig te hebben 😉"</p>
+        <div class="review-author"><div class="avatar">RP</div><div><div class="name">Rick Post</div><div class="loc">Google-review · juni 2026</div></div></div>
       </div>
       <div class="review" data-reveal data-reveal-delay="3">
-        <div class="stars">★★★★★</div>
-        <p class="review-text">"Professioneel team. Dak is helemaal top afgewerkt en ze hebben netjes opgeruimd. Echt aanrader."</p>
-        <div class="review-author"><div class="avatar">RB</div><div><div class="name">Ruud B.</div><div class="loc">Particulier, Brunssum</div></div></div>
+        <div class="stars" aria-label="4 van 5 sterren">★★★★<span class="star-off">★</span></div>
+        <p class="review-text">"Nieuwe dakgoot laten plaatsen. Vakkundig werk afgeleverd, en achteraf ook nog de afwerking gepoetst. Klantvriendelijk en snel geholpen"</p>
+        <div class="review-author"><div class="avatar">MP</div><div><div class="name">Max Prins</div><div class="loc">Google-review · augustus 2026</div></div></div>
       </div>
       <div class="review" data-reveal data-reveal-delay="4">
-        <div class="stars">★★★★★</div>
-        <p class="review-text">"Gratis inspectie aangevraagd — binnen 24u een helder rapport én een eerlijke prijs. Top service."</p>
-        <div class="review-author"><div class="avatar">SL</div><div><div class="name">Sandra L.</div><div class="loc">Appartement, Landgraaf</div></div></div>
+        <div class="stars" aria-label="5 van 5 sterren">★★★★★</div>
+        <p class="review-text">"We hadden een lekkage op onze kamer boven. In de ochtend gebeld en in de namiddag stond de bus al voor de deur. Het probleem is direct verholpen. Goede service en erg vriendelijk!"</p>
+        <div class="review-author"><div class="avatar">EB</div><div><div class="name">Eszra Beens</div><div class="loc">Google-review · juni 2026</div></div></div>
+      </div>
+      <div class="review" data-reveal data-reveal-delay="1">
+        <div class="stars" aria-label="5 van 5 sterren">★★★★★</div>
+        <p class="review-text">"Super service! Ik heb mijn platte dak laten renoveren en een dakterras laten leggen. Het dak is gelegd met nieuw dakleer,alles super netjes afgewerkt en natuurlijk waterdicht. Mijn dakterras is perfect geworden! Oude tegels afgevoerd, dak gereinigd, gecontroleerd op lekkages, en vervolgens een fantastisch egaal dakterras gelegd met grote italiaanse tegels! Ik raad dit bedrijf aan!"</p>
+        <div class="review-author"><div class="avatar">DH</div><div><div class="name">David Hoen</div><div class="loc">Google-review · juni 2026</div></div></div>
+      </div>
+      <div class="review" data-reveal data-reveal-delay="2">
+        <div class="stars" aria-label="5 van 5 sterren">★★★★★</div>
+        <p class="review-text">"oei, gat in ons dak... gezocht naar een dakdekker uit de buurt die niet meteen een dakinspectie aanbied maar ons probleem oplost. De juiste man gevonden bij Adams Dak-Techniek...probleem snel gespot (mbv Drone) , opgepakt en opgelost..... dank!"</p>
+        <div class="review-author"><div class="avatar">TT</div><div><div class="name">Ton Timmermans</div><div class="loc">Google-review · augustus 2026</div></div></div>
       </div>
     </div>
-  
-      <p class="reviews-more">Dit zijn vrije citaten. <a href="https://www.google.com/maps?cid=6858481556635463667" target="_blank" rel="noopener">Lees alle 29 reviews op Google</a> &middot; Zelf klant geweest? <a href="https://www.google.com/maps?cid=6858481556635463667" target="_blank" rel="noopener">Laat een review achter</a>.</p>
+    <div class="reviews reviews--rest" id="reviewsRest" hidden>
+      <div class="review" data-reveal data-reveal-delay="1">
+        <div class="stars" aria-label="5 van 5 sterren">★★★★★</div>
+        <p class="review-text">"Renovatie en isolatie van plat dak laten doen. Mooie afwerking met goede kwaliteit materialen. Heel erg tevreden over de goede en snelle uitvoering."</p>
+        <div class="review-author"><div class="avatar">K</div><div><div class="name">Kevin</div><div class="loc">Google-review · juni 2026</div></div></div>
+      </div>
+      <div class="review" data-reveal data-reveal-delay="2">
+        <div class="stars" aria-label="5 van 5 sterren">★★★★★</div>
+        <p class="review-text">"Uiterst betrouwbaar en netjes op tijd. Kwam voor vervanging eindvorst betonpan, maar deed meteen een dakinspectie in de prijs inbegrepen."</p>
+        <div class="review-author"><div class="avatar">RR</div><div><div class="name">Richard Rozendaal</div><div class="loc">Google-review · augustus 2026</div></div></div>
+      </div>
+      <div class="review" data-reveal data-reveal-delay="3">
+        <div class="stars" aria-label="5 van 5 sterren">★★★★★</div>
+        <p class="review-text">"Alles netjes gegaan zoals afgesproken! Mano denkt mee en levert kwaliteit! Wij zijn super tevreden!!"</p>
+        <div class="review-author"><div class="avatar">LS</div><div><div class="name">Lars Schenkel</div><div class="loc">Google-review · augustus 2026</div></div></div>
+      </div>
+      <div class="review" data-reveal data-reveal-delay="4">
+        <div class="stars" aria-label="5 van 5 sterren">★★★★★</div>
+        <p class="review-text">"Afspraak=afspraak, vriendelijk, goed bereikbaar, zeer professioneel, meedenkend, schappelijke tarieven, service "van de oude stempel" in een tijd waarin dat helaas niet meer gebruikelijk is. Aanradertje!"</p>
+        <div class="review-author"><div class="avatar">JK</div><div><div class="name">Jack Knubben</div><div class="loc">Google-review · juli 2026</div></div></div>
+      </div>
+      <div class="review" data-reveal data-reveal-delay="1">
+        <div class="stars" aria-label="5 van 5 sterren">★★★★★</div>
+        <p class="review-text">"ze leveren topkwaliteit en zijn ook nog eens supervriendelijk. Echt een aanrader!”"</p>
+        <div class="review-author"><div class="avatar">MA</div><div><div class="name">Motaz Alow</div><div class="loc">Google-review · juni 2026</div></div></div>
+      </div>
+      <div class="review" data-reveal data-reveal-delay="2">
+        <div class="stars" aria-label="5 van 5 sterren">★★★★★</div>
+        <p class="review-text">"Dak goed en vakkundig gerepareerd en snelle service. Top gedaan 👍"</p>
+        <div class="review-author"><div class="avatar">JJ</div><div><div class="name">Jo Jansen</div><div class="loc">Google-review · juni 2026</div></div></div>
+      </div>
+      <div class="review" data-reveal data-reveal-delay="3">
+        <div class="stars" aria-label="5 van 5 sterren">★★★★★</div>
+        <p class="review-text">"Top service en erg tevreden over ons nieuwe dakraam."</p>
+        <div class="review-author"><div class="avatar">YB</div><div><div class="name">Youri In de Braekt</div><div class="loc">Google-review · juni 2026</div></div></div>
+      </div>
+      <div class="review" data-reveal data-reveal-delay="4">
+        <div class="stars" aria-label="5 van 5 sterren">★★★★★</div>
+        <p class="review-text">"Top service vriendelijke mensen en super correct 👍 😁"</p>
+        <div class="review-author"><div class="avatar">AV</div><div><div class="name">Anel Velic</div><div class="loc">Google-review · juni 2026</div></div></div>
+      </div>
+      <div class="review" data-reveal data-reveal-delay="1">
+        <div class="stars" aria-label="5 van 5 sterren">★★★★★</div>
+        <p class="review-text">"Levert top kwaliteit en heel erg klant vriendelijk."</p>
+        <div class="review-author"><div class="avatar">CH</div><div><div class="name">Collin H</div><div class="loc">Google-review · juni 2026</div></div></div>
+      </div>
+      <div class="review" data-reveal data-reveal-delay="2">
+        <div class="stars" aria-label="5 van 5 sterren">★★★★★</div>
+        <p class="review-text">"Levert uitstekend werk en top communicatie voor een uitstekende prijs"</p>
+        <div class="review-author"><div class="avatar">RD</div><div><div class="name">Raymond Debije</div><div class="loc">Google-review · juni 2026</div></div></div>
+      </div>
+      <div class="review" data-reveal data-reveal-delay="3">
+        <div class="stars" aria-label="5 van 5 sterren">★★★★★</div>
+        <p class="review-text">"Top service!!! En van hoog kwaliteit"</p>
+        <div class="review-author"><div class="avatar">JB</div><div><div class="name">Jago Bolo</div><div class="loc">Google-review · juni 2026</div></div></div>
+      </div>
+      <div class="review" data-reveal data-reveal-delay="4">
+        <div class="stars" aria-label="5 van 5 sterren">★★★★★</div>
+        <p class="review-text">"Heel tevreden over Adams Daktechniek! We hadden onverwachts een lekkage en hij heeft ons direct uit de brand geholpen. Hij was ontzettend professioneel, behulpzaam en kwam snel in actie. Alles netjes en vakkundig opgelost. Echt een aanrader als je met een lekkage of dakprobleem zit. Nogmaals bedankt voor de snelle hulp!"</p>
+        <div class="review-author"><div class="avatar">A</div><div><div class="name">Anoniem</div><div class="loc">Google-review · augustus 2026</div></div></div>
+      </div>
+      <div class="review" data-reveal data-reveal-delay="1">
+        <div class="stars" aria-label="5 van 5 sterren">★★★★★</div>
+        <p class="review-text">"Huge thanks to the team for a fantastic job! They recently installed the bitumen roofing for me, and the entire process was top-notch. They worked fast, professionally, and stuck strictly to what we agreed on. The site was left clean and tidy afterward. On top of that, communication was super friendly, personable, and quick to respond throughout. Highly recommended!"</p>
+        <div class="review-author"><div class="avatar">GP</div><div><div class="name">Gergely Plósz</div><div class="loc">Google-review · augustus 2026</div></div></div>
+      </div>
+      <div class="review" data-reveal data-reveal-delay="2">
+        <div class="stars" aria-label="5 van 5 sterren">★★★★★</div>
+        <p class="review-text">"Excellent and very professional service! Our roof was damaged and rain was coming into the room, so we contacted them for help. They responded very quickly, came to inspect the damage, and managed to fix the problem on the same day. We really appreciated their fast response, professionalism, and the quality of the work. It was a stressful situation, but they took care of everything quickly and efficiently. Highly recommended! 👏"</p>
+        <div class="review-author"><div class="avatar">R</div><div><div class="name">Ramona</div><div class="loc">Google-review · augustus 2026</div></div></div>
+      </div>
+      <div class="review" data-reveal data-reveal-delay="3">
+        <div class="stars" aria-label="5 van 5 sterren">★★★★★</div>
+        <p class="review-text">"Snel, goed en heel netjes geholpen met losliggend daklood. Dank je wel!"</p>
+        <div class="review-author"><div class="avatar">RL</div><div><div class="name">Ruud Linssen</div><div class="loc">Google-review · augustus 2026</div></div></div>
+      </div>
+      <div class="review" data-reveal data-reveal-delay="4">
+        <div class="stars" aria-label="5 van 5 sterren">★★★★★</div>
+        <p class="review-text">"Vakmanschap voor een eerlijke prijs. Snel ter plekke en top service. Aanrader."</p>
+        <div class="review-author"><div class="avatar">PG</div><div><div class="name">Patricia Gouder</div><div class="loc">Google-review · augustus 2026</div></div></div>
+      </div>
+      <div class="review" data-reveal data-reveal-delay="1">
+        <div class="stars" aria-label="5 van 5 sterren">★★★★★</div>
+        <p class="review-text">"Heeft bij mijn ouders het dak heel mooi en goed gemaakt. Echt top werk!!"</p>
+        <div class="review-author"><div class="avatar">MB</div><div><div class="name">Merle Gouder de Beauregard</div><div class="loc">Google-review · augustus 2026</div></div></div>
+      </div>
+      <div class="review" data-reveal data-reveal-delay="2">
+        <div class="stars" aria-label="5 van 5 sterren">★★★★★</div>
+        <p class="review-text">"Snelle service bij een reparatie, meedenkend voor een oplossing, waardoor je niet meteen de beurs hoeft te trekken. En ter plekke ook nog even bij de buren een klein probleem aan het dak opgelost, ja dan spreek ik van een eerlijke en betrouwbare vakman."</p>
+        <div class="review-author"><div class="avatar">RS</div><div><div class="name">Roy Sentjens</div><div class="loc">Google-review · juli 2026</div></div></div>
+      </div>
+      <div class="review" data-reveal data-reveal-delay="3">
+        <div class="stars" aria-label="5 van 5 sterren">★★★★★</div>
+        <p class="review-text">"Fijne afhandeling en mooi resultaat afgeleverd!"</p>
+        <div class="review-author"><div class="avatar">DD</div><div><div class="name">Dean von Dobschütz</div><div class="loc">Google-review · juni 2026</div></div></div>
+      </div>
     </div>
+    <p class="reviews-nt">Ook beoordeeld zonder tekst: Harry Maes (4★), Dennis Wingelaar (5★), ItzRowin (5★), Chuchi (5★).</p>
+    <p class="reviews-more">
+      <button type="button" class="reviews-toggle" id="reviewsToggle" aria-expanded="false" aria-controls="reviewsRest">Toon alle 29 reviews</button>
+      <a href="https://www.google.com/maps?cid=6858481556635463667" target="_blank" rel="noopener">Bekijk op Google</a> &middot; Zelf klant geweest? <a href="https://www.google.com/maps?cid=6858481556635463667" target="_blank" rel="noopener">Laat een review achter</a>.
+    </p>
+  </div>
 </section>
 
 <!-- ============= WERKGEBIED ============= -->
@@ -2055,6 +2173,19 @@ body.menu-open .mobile-cta, body.menu-open .wa-fab{display:none !important}
     // Reset sub-menu state zodat volgende opening schoon begint
     menu.querySelectorAll('.mm-sub.open, .mm-trigger.open').forEach(el => el.classList.remove('open'));
   }));
+
+
+  // Google-reviews: alle reviews uitklappen
+  (function(){
+    var t = document.getElementById('reviewsToggle'), rest = document.getElementById('reviewsRest');
+    if (!t || !rest) return;
+    t.addEventListener('click', function(){
+      var open = rest.hidden; rest.hidden = !open;
+      t.setAttribute('aria-expanded', open ? 'true' : 'false');
+      t.textContent = open ? 'Toon minder reviews' : 'Toon alle 29 reviews';
+      if (!open) document.getElementById('reviews').scrollIntoView({behavior:'smooth', block:'start'});
+    });
+  })();
 
   // Reveal on scroll
   const io = new IntersectionObserver((entries) => {
