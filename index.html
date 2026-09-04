@@ -1561,6 +1561,15 @@ p small,li small{font-size:13px}
 @media (max-width:980px){.city-chip{padding:11px 16px}}
 .dg-optin a{display:inline-block;padding:8px 0}
 .local-card h3 .h-ico,.faq h3 .h-ico,h3 .h-ico{vertical-align:-3px;margin-right:4px;color:var(--green)}
+/* Desktop-ruimte 2026-09-04: hero niet meer schermvullend op hoge schermen, stats op 1 rij, secties compacter */
+@media (min-width:981px){
+  .hero{min-height:min(100svh,880px);padding:110px 0 64px}
+  .hero-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px 18px;margin-top:40px}
+  .hero-stats .stat .num{font-size:28px}
+  .hero-stats .stat .lbl{font-size:12px;letter-spacing:1px}
+  section{padding:96px 0}
+  .hero-slogan{margin-top:22px}
+}
 </style>
   <div class="container">
     <div class="dg-card">
