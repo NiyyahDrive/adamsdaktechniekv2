@@ -520,6 +520,14 @@ body.menu-open .mobile-cta, body.menu-open .wa-fab{display:none !important}
 @media (max-width:560px){.foot-grid{grid-template-columns:1fr 1fr;gap:30px 20px}.foot-grid > .foot:last-child{grid-column:1 / -1}.foot ul{gap:8px}.legal{flex-direction:column;align-items:flex-start}}
 .foot a,.foot li,.foot p{overflow-wrap:anywhere}
 html,body{overflow-x:clip}
+/* Mobiel-audit 2026-09-04: tikdoelen, leesbaarheid, iconen */
+@media (max-width:980px){.foot ul{gap:0}.foot li{display:flex;align-items:center;min-height:44px}.foot li a{display:inline-block;padding:12px 0}}
+.dg-proof a,.legal a{display:inline-block;padding:6px 0}
+.legal,.foot h3.foot-h,.foot-slogan,.section-eyebrow,.dg-eyebrow,.dg-avg,.dg-proof,.eyebrow,.page-head .eyebrow,.art-eyebrow,.art th,.stat .lbl,.review-author .loc,.contact-row .lbl,.field label,.about-visual-content .kicker,.mobile-menu .mm-meta,.local-card .meta-row .lbl,.kn-card .tag,.feature-tag,.spec-title,.side-card .hrs,.meta-chip,.side-chip,.filter-count,.upload-label,.upload-zone .uz-sub,.tile-sub,.strip-hint,.mat-pill,.video-meta,.video-tag{font-size:13px}
+.mobile-menu .mm-cta small,.mobile-menu nav a .mm-num{font-size:12px}
+.info-card h3 .h-ico{vertical-align:-3px;margin-right:4px;color:var(--green)}
+.service-icon svg{width:22px;height:22px}
+.local-card .pin::before{content:"";display:inline-block;width:16px;height:16px;vertical-align:-3px;margin-right:6px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235CC27A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 21s7-6.2 7-11a7 7 0 0 0-14 0c0 4.8 7 11 7 11z'/%3E%3Ccircle cx='12' cy='10' r='2.5'/%3E%3C/svg%3E") center/contain no-repeat}
 </style>
   <div class="container">
     <div class="dg-card">
@@ -605,15 +613,15 @@ html,body{overflow-x:clip}
       <p>Van klein lekkageherstel tot complete dakrenovatie. Eén aanspreekpunt voor uw hele dak.</p>
     </div>
     <div class="services">
-      <a class="service" href="/platte-daken"><div class="service-icon">🏠</div><h3>Platte daken</h3><p>Bitumen en EPDM — aanleg, vervanging en lekdetectie in Eygelshoven.</p></a>
-      <a class="service" href="/pannendaken"><div class="service-icon">🏡</div><h3>Pannendaken</h3><p>Vervanging, herleggen en isolatie van hellende daken.</p></a>
-      <a class="service" href="/dakkapellen"><div class="service-icon">🪟</div><h3>Dakkapellen</h3><p>Op maat geplaatst en netjes afgewerkt — meer licht op uw zolder.</p></a>
-      <a class="service" href="/zinkwerken"><div class="service-icon">⚙️</div><h3>Zinkwerken & goten</h3><p>Goten, kilgoten, daktrimmen — strak, lekvrij en duurzaam.</p></a>
-      <a class="service" href="/spoed-lekkages"><div class="service-icon">🚨</div><h3>Spoed & lekkages</h3><p>Bij acute lekkage in Eygelshoven vaak binnen 1 uur ter plaatse.</p></a>
-      <a class="service" href="/onderhoud-inspectie"><div class="service-icon">🔍</div><h3>Gratis inspectie</h3><p>Helder rapport binnen 24 uur — geen verplichtingen.</p></a>
-      <a class="service" href="/dakisolatie"><div class="service-icon">🌡️</div><h3>Dakisolatie</h3><p>Lager energieverbruik en comfortabeler wonen in Eygelshoven.</p></a>
-      <a class="service" href="/dakraam-velux"><div class="service-icon">☀️</div><h3>Dakraam / Velux</h3><p>Plaatsing en vervanging van Velux-dakramen.</p></a>
-      <a class="service" href="/schoorstenen"><div class="service-icon">🏭</div><h3>Schoorstenen</h3><p>Renovatie, voegwerk en loodslabben — lekvrij en windvast.</p></a>
+      <a class="service" href="/platte-daken"><div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 7l9-5 9 5v10l-9 5-9-5V7z"/></svg></div><h3>Platte daken</h3><p>Bitumen en EPDM — aanleg, vervanging en lekdetectie in Eygelshoven.</p></a>
+      <a class="service" href="/pannendaken"><div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 12l9-8 9 8M5 10v10h14V10"/></svg></div><h3>Pannendaken</h3><p>Vervanging, herleggen en isolatie van hellende daken.</p></a>
+      <a class="service" href="/dakkapellen"><div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21V8l9-5 9 5v13M9 21v-7h6v7"/></svg></div><h3>Dakkapellen</h3><p>Op maat geplaatst en netjes afgewerkt — meer licht op uw zolder.</p></a>
+      <a class="service" href="/zinkwerken"><div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 5h18v3H3z"/><path d="M6 8v8a3 3 0 0 0 3 3h1"/><path d="M18 8v5"/></svg></div><h3>Zinkwerken & goten</h3><p>Goten, kilgoten, daktrimmen — strak, lekvrij en duurzaam.</p></a>
+      <a class="service" href="/spoed-lekkages"><div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l9 16H3z"/><path d="M12 10v4M12 17h.01"/></svg></div><h3>Spoed & lekkages</h3><p>Bij acute lekkage in Eygelshoven vaak binnen 1 uur ter plaatse.</p></a>
+      <a class="service" href="/onderhoud-inspectie"><div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div><h3>Gratis inspectie</h3><p>Helder rapport binnen 24 uur — geen verplichtingen.</p></a>
+      <a class="service" href="/dakisolatie"><div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14 14.8V5a2 2 0 0 0-4 0v9.8a4 4 0 1 0 4 0z"/></svg></div><h3>Dakisolatie</h3><p>Lager energieverbruik en comfortabeler wonen in Eygelshoven.</p></a>
+      <a class="service" href="/dakraam-velux"><div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/></svg></div><h3>Dakraam / Velux</h3><p>Plaatsing en vervanging van Velux-dakramen.</p></a>
+      <a class="service" href="/schoorstenen"><div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 22V8l7-5 7 5v14M9 22v-6h6v6"/><path d="M14 6h3v3"/></svg></div><h3>Schoorstenen</h3><p>Renovatie, voegwerk en loodslabben — lekvrij en windvast.</p></a>
     </div>
 
   </div>

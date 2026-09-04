@@ -308,6 +308,14 @@ body.menu-open .mobile-cta, body.menu-open .wa-fab{display:none !important}
 @media (max-width:560px){.foot-grid{grid-template-columns:1fr 1fr;gap:30px 20px}.foot-grid > .foot:last-child{grid-column:1 / -1}.foot ul{gap:8px}.legal{flex-direction:column;align-items:flex-start}}
 .foot a,.foot li,.foot p{overflow-wrap:anywhere}
 html,body{overflow-x:clip}
+/* Mobiel-audit 2026-09-04: tikdoelen, leesbaarheid, iconen */
+@media (max-width:980px){.foot ul{gap:0}.foot li{display:flex;align-items:center;min-height:44px}.foot li a{display:inline-block;padding:12px 0}}
+.dg-proof a,.legal a{display:inline-block;padding:6px 0}
+.legal,.foot h3.foot-h,.foot-slogan,.section-eyebrow,.dg-eyebrow,.dg-avg,.dg-proof,.eyebrow,.page-head .eyebrow,.art-eyebrow,.art th,.stat .lbl,.review-author .loc,.contact-row .lbl,.field label,.about-visual-content .kicker,.mobile-menu .mm-meta,.local-card .meta-row .lbl,.kn-card .tag,.feature-tag,.spec-title,.side-card .hrs,.meta-chip,.side-chip,.filter-count,.upload-label,.upload-zone .uz-sub,.tile-sub,.strip-hint,.mat-pill,.video-meta,.video-tag{font-size:13px}
+.mobile-menu .mm-cta small,.mobile-menu nav a .mm-num{font-size:12px}
+.info-card h3 .h-ico{vertical-align:-3px;margin-right:4px;color:var(--green)}
+.service-icon svg{width:22px;height:22px}
+.local-card .pin::before{content:"";display:inline-block;width:16px;height:16px;vertical-align:-3px;margin-right:6px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235CC27A' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 21s7-6.2 7-11a7 7 0 0 0-14 0c0 4.8 7 11 7 11z'/%3E%3Ccircle cx='12' cy='10' r='2.5'/%3E%3C/svg%3E") center/contain no-repeat}
 </style>
 <script src="consent.js" defer></script>
 </head>
@@ -464,7 +472,7 @@ html,body{overflow-x:clip}
     </div>
     <div class="info-row">
       <div class="info-card">
-        <h3>💶 Richtprijzen zinkwerken</h3>
+        <h3><svg class="h-ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="3"/></svg> Richtprijzen zinkwerken</h3>
         <ul>
           <li><strong>Zinken dakgoot (per strekkende meter, incl. plaatsing):</strong> Vanaf € 60,&ndash; *</li>
           <li><strong>Volledige goot rondom huis (ca. 20 m):</strong> Richtprijzen tussen € 1.200,&ndash; en € 1.800,&ndash; *</li>
@@ -473,7 +481,7 @@ html,body{overflow-x:clip}
         <p><small>* Alle prijsvermeldingen op deze pagina zijn louter indicatieve richtprijzen (vanaf-prijzen) en vormen geen bindend aanbod. De definitieve prijs is afhankelijk van de bereikbaarheid, het type dak, materiaalkeuzes en de actuele materiaalprijzen. Prijzen zijn exclusief btw, eventuele steigerhuur en stortkosten. Laatste update: mei 2026.</small></p>
       </div>
       <div class="info-card alt">
-        <h3>🛡️ Garantie</h3>
+        <h3><svg class="h-ico" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 2l8 3v6c0 5-3.5 9-8 11-4.5-2-8-6-8-11V5l8-3z"/><path d="M9 12l2 2 4-4"/></svg> Garantie</h3>
         <p>10 jaar garantie op uitvoering en waterdichtheid. Fabrieksgarantie zink: 30+ jaar.</p>
       </div>
     </div>

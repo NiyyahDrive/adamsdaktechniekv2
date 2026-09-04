@@ -67,33 +67,40 @@
       '#adams-cookie-banner p{margin:0 0 14px;color:#a8a8a8}' +
       '#adams-cookie-banner a{color:#5CC27A;text-decoration:underline}' +
       '#adams-cookie-banner .acb-row{display:flex;gap:8px;flex-wrap:wrap}' +
-      '#adams-cookie-banner button{flex:1 1 auto;min-width:120px;padding:11px 14px;border-radius:10px;' +
+      '#adams-cookie-banner button{flex:1 1 auto;min-width:120px;padding:12px 14px;border-radius:10px;' +
       'border:1px solid #2a2a2a;background:transparent;color:#f6f6f6;font:600 14px Inter,sans-serif;' +
       'cursor:pointer;transition:all .2s ease}' +
       '#adams-cookie-banner button:hover{border-color:#5CC27A;color:#5CC27A}' +
       '#adams-cookie-banner button.acb-accept{background:#5CC27A;border-color:#5CC27A;color:#0a0a0a}' +
       '#adams-cookie-banner button.acb-accept:hover{background:#6dd28a;color:#0a0a0a}' +
+      '#adams-cookie-banner a{display:inline-block;padding:4px 0}' +
+      'body.acb-open .wa-fab{display:none !important}' +
       '@media (max-width:980px){#adams-cookie-banner{bottom:96px}}' +
-      '@media (max-width:520px){#adams-cookie-banner{left:10px;right:10px;bottom:96px;padding:16px}}' +
+      '@media (max-width:520px){#adams-cookie-banner{left:10px;right:10px;bottom:92px;padding:12px 14px;font-size:13px;line-height:1.45}' +
+      '#adams-cookie-banner h3{font-size:13px;margin-bottom:4px}#adams-cookie-banner p{margin:0 0 10px}' +
+      '#adams-cookie-banner .acb-row{flex-wrap:nowrap}#adams-cookie-banner button{min-width:0;padding:12px 8px;font-size:13px}}' +
       '</style>' +
       '<h3>Cookies op deze website</h3>' +
       '<p>Wij gebruiken functionele cookies (altijd) en optionele analytische cookies (Google Analytics) ' +
-      'om de site te verbeteren. Lees onze <a href="privacy.html">privacyverklaring</a>.</p>' +
+      'om de site te verbeteren. Lees onze <a href="/privacy">privacyverklaring</a>.</p>' +
       '<div class="acb-row">' +
       '<button class="acb-decline" type="button">Alleen functioneel</button>' +
       '<button class="acb-accept" type="button">Accepteren</button>' +
       '</div>';
     document.body.appendChild(b);
+    document.body.classList.add('acb-open');
 
     b.querySelector('.acb-accept').addEventListener('click', function () {
       setCookie(COOKIE_NAME, 'accepted', COOKIE_DAYS);
       b.remove();
+      document.body.classList.remove('acb-open');
       loadGA();
     });
     b.querySelector('.acb-decline').addEventListener('click', function () {
       setCookie(COOKIE_NAME, 'declined', COOKIE_DAYS);
       removeGACookies();
       b.remove();
+      document.body.classList.remove('acb-open');
     });
   }
 
