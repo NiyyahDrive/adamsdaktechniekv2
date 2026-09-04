@@ -124,3 +124,37 @@
     init();
   }
 })();
+
+/* ============================================================
+   Conversiemeting (GA4) — sitewide, via event delegation.
+   Events komen in de dataLayer-stub; GA verwerkt ze pas na consent.
+   Events: click_call, click_whatsapp, click_email, click_offerte_cta,
+           wizard_step, generate_lead (form: snel|offerte|dakgids), file_download.
+   ============================================================ */
+(function () {
+  'use strict';
+  function track(name, params) {
+    try { window.gtag('event', name, Object.assign({ page: location.pathname }, params || {})); } catch (e) {}
+  }
+  function placement(el) {
+    var sec = el.closest('section, header, footer, nav, .mobile-cta, .mobile-menu, aside');
+    if (!sec) return 'page';
+    return sec.id || (sec.className && String(sec.className).split(' ')[0]) || sec.tagName.toLowerCase();
+  }
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a[href]'); if (!a) return;
+    var href = a.getAttribute('href') || '';
+    if (href.indexOf('tel:') === 0) track('click_call', { placement: placement(a) });
+    else if (href.indexOf('wa.me') !== -1) track('click_whatsapp', { placement: placement(a) });
+    else if (href.indexOf('mailto:') === 0) track('click_email', { placement: placement(a) });
+    else if (/\/offerte(\?|#|$)/.test(href)) track('click_offerte_cta', { placement: placement(a), label: (a.textContent || '').trim().slice(0, 40) });
+    else if (/\.pdf(\?|$)/.test(href)) track('file_download', { file: href.split('/').pop() });
+    var step = e.target.closest('[data-next],[data-prev]');
+    if (step) track('wizard_step', { to: step.getAttribute('data-next') || step.getAttribute('data-prev'), direction: step.hasAttribute('data-next') ? 'next' : 'back' });
+  }, true);
+  document.addEventListener('submit', function (e) {
+    var f = e.target; if (!f || f.tagName !== 'FORM') return;
+    var subject = f.querySelector('input[name="_subject"]');
+    if (subject && /homepage|snelle/i.test(subject.value)) track('generate_lead', { form: 'snel' });
+  }, true);
+})();
