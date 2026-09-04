@@ -274,7 +274,7 @@ body.menu-open .mobile-cta, body.menu-open .wa-fab{display:none !important}
 .mobile-menu .mm-cta--ghost{background:transparent;color:var(--green);border:1px solid var(--green);box-shadow:none}
 /* Mobiel: footer-kolommen + geen horizontale overflow (2026-09-04; basisregel .foot-grid stond na de media-query) */
 @media (max-width:980px){.foot-grid{grid-template-columns:1fr 1fr;gap:36px 28px}.foot-brand{grid-column:1 / -1}.foot-brand p{max-width:none}}
-@media (max-width:560px){.foot-grid{grid-template-columns:1fr;gap:30px}.legal{flex-direction:column;align-items:flex-start}}
+@media (max-width:560px){.foot-grid{grid-template-columns:1fr 1fr;gap:30px 20px}.foot-grid > .foot:last-child{grid-column:1 / -1}.foot ul{gap:8px}.legal{flex-direction:column;align-items:flex-start}}
 .foot a,.foot li,.foot p{overflow-wrap:anywhere}
 html,body{overflow-x:clip}
 </style>
